@@ -1,0 +1,892 @@
+body {
+    margin: 0;
+}
+
+/*******************************************************
+                       header
+*******************************************************/
+header {
+    background-color: black;
+    font-size: 1em;
+    text-align: right;
+}
+
+#FirstConnexion {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#FirstConnexion a {
+    margin: 10px 20px;
+}
+
+/*******************************************************
+                        FOOTER
+*******************************************************/
+
+footer {
+    background-color: #D3D3D3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: #154A58;
+    padding: 20px 0;
+    margin: 0;
+}
+
+footer img {
+    margin: 20px 0 0 0;
+    width: 10%;
+    max-width: 50px;
+}
+
+footer p {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+footer a {
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/*******************************************************
+                        Police
+*******************************************************/
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5em;
+    color: white;
+    margin: 5px 0;
+}
+
+h2 {
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    font-weight: normal;
+    color: white;
+    font-size: 1.5em;
+    padding-bottom: 40px;
+    margin: 0 20px;
+}
+
+h3 {
+    font-size: 2em;
+    font-family: "Montserrat", sans-serif;
+    padding-top: 20px;
+    margin: 0 20px;
+
+}
+
+h4 {
+    font-size: 1.5em;
+    font-family: "Montserrat", sans-serif;
+    width: 220px;
+}
+
+h5 {
+    margin: 0 20px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2em;
+}
+
+h6 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5em;
+    color: #154A58;
+    background-color: #B2C121;
+    width: 80%;
+    padding: 2% 10%;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+p {
+    width: 80%;
+    margin: 20px 20px;
+    color: #154A58;
+    font-size: 1.2em;
+}
+
+article {
+    padding: 2em 0;
+}
+
+article > div > img {
+    width: 50%;
+    margin: 2em 15%;
+}
+
+/*******************************************************
+                      bouton
+*******************************************************/
+
+.bouton {
+    width: 50%;
+    height: 40px;
+    max-width: 180px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8em;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 0.5em;
+    border: 2px solid #217689;
+    margin: 5% 25%;
+    display: inline-block;
+    background-color: inherit;
+    color: #217689;
+}
+
+.btn {
+    width: 55%;
+    height: 40px;
+    max-width: 180px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8em;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 0.5em;
+    border: 2px solid white;
+    margin: 5% 20%;
+    display: inline-block;
+}
+
+/*******************************************************
+                       Couleur police
+*******************************************************/
+
+.bleu {
+    color: #154A58;
+}
+
+.blanc {
+    color: white;
+}
+
+/*******************************************************
+                        colonnes
+*******************************************************/
+
+.col1 {
+    max-width: 500px;
+    display: inline-block;
+}
+
+.colonneaImage {
+    text-align: center;
+}
+
+.col2 {
+    max-width: 300px;
+    display: inline-block;
+    width: 100%;
+}
+
+.col3 {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col4 {
+    max-width: 240px;
+    display: inline-block;
+}
+
+.col5 {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*******************************************************
+                        Accueil
+*******************************************************/
+
+#accueil {
+    background-image: url("images/fond_planete_premiere_page.png");
+    background-position: center;
+    /**background-size: 100%;**/
+    text-align: center;
+    width: 100%;
+    height: 85vh;
+}
+
+#accueil img {
+    margin: 5% 10%;
+    max-width: 150px;
+    width: 20%;
+
+}
+
+#accueil div {
+    text-align: center;
+}
+
+#decouvrir {
+    background-color: #D3D3D3;
+}
+
+#Inscription {
+    background-color: #154A58;
+}
+
+#CarteEtudiant .col3 {
+    justify-content: flex-start;
+}
+
+/*******************************************************
+                      Etudiant
+*******************************************************/
+#decouvrirEtudiant {
+    background-color: #154A58;
+}
+
+#recherche {
+    background-color: #D3D3D3;
+}
+
+.col3titre {
+
+    justify-content: flex-start;
+}
+
+#carteI img {
+    width: 100%;
+    max-width: 350px;
+    height: 80px;
+    margin-top: -75px;
+}
+
+#carteI {
+    text-align: center;
+}
+
+#accesSuivi {
+    background-color: #154A58;
+}
+
+.pictoRecherche {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.pictoRecherche img {
+    width: 100%;
+    max-width: 30px;
+    max-height: 30px;
+    cursor: pointer;
+    display: inline-block;
+
+}
+
+.pictoRecherche span {
+    margin-left: 10px;
+    color: #154A58;
+
+}
+
+.listePictorecherche {
+    padding: 0 10%;
+    border-bottom: solid 1px #154A58;
+    width: 80%;
+}
+
+.selectRecherche select {
+    width: 80%;
+    padding: 2% 5%;
+    border-radius: 5%;
+}
+
+.selectRecherche {
+    width: 100%;
+    color: #154A58;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/*******************************************************
+                      Suivi
+*******************************************************/
+#acceuilSuivi {
+    background-image: url("images/fond_acceuil_etudiant.jpg");
+    background-position: center;
+    /**background-size: 100%;**/
+    text-align: center;
+    width: 100%;
+    height: 85vh;
+}
+
+#acceuilSuivi img {
+    margin: 5% 10%;
+    max-width: 150px;
+    width: 20%;
+
+}
+
+#monSuiviQuoi {
+    background-color: #154A58;
+}
+
+#suivi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+#suivi span {
+    width: 100%;
+    color: #154A58;
+}
+
+#suivi > div > div {
+    width: 60%;
+    margin: 0;
+    text-align: right;
+
+}
+
+#suivi > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+}
+
+#suivi input {
+    width: 50px;
+    height: 50px;
+    border: solid 1px #154A58;
+    background-color: inherit;
+}
+
+.monStage {
+    margin-left: 20px;
+    font-size: 1.4em;
+    color: #154A58;
+}
+
+/*******************************************************
+                      Entreprise
+*******************************************************/
+#Entreprise > div > h1 {
+    margin-left: 20px;
+}
+
+.map {
+    height: 150px;
+    overflow: hidden;
+}
+
+.imageAvis {
+    max-width: 75px;
+    max-height: 75px;
+
+}
+
+.texteAvis {
+    background-color: white;
+    padding: 20px;
+    border-bottom-right-radius: 40px;
+}
+
+#infoAvis{
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+#infoAvis h4 {
+    width: inherit;
+    margin-left: 20px;
+
+}
+
+#avisEntreprise {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #154A58;
+    padding: 2em 0;
+}
+
+/*******************************************************
+                      Recherche
+*******************************************************/
+#carte {
+    background-color: #D3D3D3;
+}
+
+#Liste {
+    padding: 0 0 2em 0;
+}
+
+/*.ficheEntreprise {
+    border: solid 1px #154A58;
+    width: 90%;
+    max-width: 250px;
+    margin: 50px 0;
+    display: inline-block;
+}*/
+
+#Listentreprise {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#Listentreprise > div {
+    display: none;
+    overflow: hidden;
+}
+
+#Listentreprise.affiche-tous > div,
+#Listentreprise.affiche-communication > div.communication,
+#Listentreprise.affiche-graphisme > div.graphisme,
+#Listentreprise.affiche-grandentreprise > div.grandentreprise,
+#Listentreprise.affiche-pme > div.pme,
+#Listentreprise.affiche-connu > div.connu,
+#Listentreprise.affiche-inconnu > div.inconnu,
+#Listentreprise.affiche-aimer > div.aimer,
+#Listentreprise.affiche-developpement > div.developpement {
+    border: solid 1px #154A58;
+    width: 90%;
+    height: inherit;
+    max-width: 250px;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.titreEntreprise {
+    background-color: #154A58;
+    padding: 20px;
+    height: 60px;
+}
+
+.descritpionEntreprise {
+    padding: 20px 10%;
+    margin: 0;
+    height: 70px;
+    overflow: hidden;
+
+}
+
+.villeEntreprise {
+    padding:10px 20px;
+    margin: 0;
+}
+
+.pictoFiltres {
+    display: inline-block;
+    padding: 10px 5%;
+}
+
+#ListeFiltre {
+    text-align: center;
+    width: 100%;
+}
+
+.pictoFiltres img {
+    width: 100%;
+    max-width: 30px;
+    max-height: 30px;
+    cursor: pointer;
+
+}
+
+.Ensavoirplus {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px #154A58;
+}
+
+.btnEntreprise {
+    padding: 10px 20px;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+/*******************************************************
+                      Erreur404
+*******************************************************/
+
+#erreur404 {
+    background-color: #154A58;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#erreur404 img {
+    width: 50%;
+    max-width: 200px;
+    max-height: 150px;
+    margin-left: 20px;
+}
+
+/*******************************************************
+                      Inscription
+*******************************************************/
+#inscription {
+    background-color: #154A58;
+}
+
+#inscription > div > form > div > label {
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+#inscription > div > form > div {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#inscription > div > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*******************************************************
+                       Modal
+*******************************************************/
+
+#blocConnection {
+    background-image: url("images/fond_modal.jpg");
+    background-size: 120%;
+    background-position: center;
+}
+
+#blocConnection > form > div > label {
+    text-align: center;
+    color: #154A58;
+    width: 100%;
+}
+
+#blocConnection > form > div {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#blocConnection > form {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*******************************************************
+                      Mon profil
+*******************************************************/
+#monProfil {
+    background-color: #154A58;
+}
+
+#monProfil > div > div > span {
+    color: white;
+}
+
+#imageProfil {
+    text-align: center;
+}
+
+#monProfil > div > div {
+    margin-left: 20px;
+}
+
+#monProfil img {
+    width: 30%;
+}
+
+/*******************************************************
+                        Modal
+*******************************************************/
+#myModal{
+    height: 100vh;
+}
+
+
+#top-menu li {
+    border: solid 1px white;
+    width: 300px;
+    text-decoration: none;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#top-menu img{
+    margin: 0 100px;
+    width: 70px;
+    height: 70px;
+
+}
+
+#nomMenu {
+    color: white;
+    font-size: 1.2em;
+    font-family: "Montserrat", sans-serif;
+}
+#menu {
+    width: 30px;
+    margin: 1% 5%;
+}
+#top-menu {
+    background-color:#154A58 ;
+    padding: 0;
+    margin: 0;
+}
+
+#top-menu a {
+    display: block;
+    text-align: center;
+    transition: .5s all ease-out;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+#top-menu > a > div{
+  width: 150px;
+}
+
+
+.navbar1 > div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+/*******************************************************
+                        Admin
+*******************************************************/
+
+.retourAccueil{
+    width: 75px;
+    height: 75px;
+}
+
+#listeAdminE,
+#listeAdminP{
+    background-color: #D3D3D3;
+}
+
+.btnModif{
+    width: 25px;
+    height: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 500px) {
+    article {
+        padding: 5em 0;
+    }
+
+    #decouvrir {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .btn {
+        margin: 5%;
+
+    }
+
+
+
+    .listePictorecherche {
+        padding: 0;
+        border-bottom: 0px;
+        border-right: solid 1px #154A58;
+    }
+
+    #carteI {
+        text-align: center;
+    }
+
+
+
+    #acceuilSuivi {
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+    }
+
+    #monProfil {
+        height: 65vh;
+        align-items: center;
+    }
+
+    #monProfil > .col1 > div {
+        font-size: 1.5em;
+    }
+
+    #monProfil img {
+        width: 70%;
+    }
+
+    #carteI img {
+
+        margin: -130px 355px 0 355px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    #decouvrirEtudiant > .bouton {
+        margin: 5%;
+
+    }
+
+    .col3{
+        margin:20px 10%;
+    }
+
+    .col5 > .bouton{
+        margin: 5%;
+    }
+
+    .col1{
+        width:500px;
+    }
+
+    #filtres{
+        width: 1000px;
+        display: flex;
+        align-items: center;
+    }
+
+    #ListeFiltre{
+        width: 600px;
+    }
+
+    .pictoFiltres{
+        padding: 10px 3%;
+    }
+
+}
+@media screen and (min-width: 800px){
+
+    #top-menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10% 7%;
+    }
+
+
+    #top-menu li {
+        width: 250px;
+        height: 250px;
+
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 500px) {
+    #CarteEtudiant,
+    #decouvrir,
+    #Inscription,
+    #decouvrirEtudiant,
+    #recherche,
+    #carteI,
+    #accesSuivi,
+    #monProfil,
+    #Entreprise,
+    #Liste,
+    #monSuiviQuoi {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+
+    #top-menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10% 7%;
+    }
+
+
+    #top-menu li {
+        border: solid 1px white;
+        width: 200px;
+        text-decoration: none;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #top-menu > a > li > div{
+        width: 150px;
+    }
+
+    #top-menu img{
+        width: 100px;
+        height: 100px;
+        margin: 0 25px;
+
+    }
+
+
+
+}
+
+
+
