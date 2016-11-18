@@ -1,0 +1,48 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
+
+{% block contenu %}
+    <article id="inscription">
+
+        <div>
+            <div class="ficheEntreprise communication grandentreprise connu aimer">
+                <div class="titreEntreprise ">
+                    <h5>{{ entreprise.bean.nom }}</h5>
+                </div>
+                <p class="descritpionEntreprise">{{ entreprise.bean.description }}</p>
+                <p class="villeEntreprise">{{ entreprise.bean.ville }}, {{ entreprise.bean.pays }}</p>
+                <div class="pictoFiltres">
+                    <img src="CSS/images/Picto/picto2_communication.png" alt="">
+                    <img src="CSS/images/Picto/picto2_grandenteprise.png" alt="">
+                    <img src="CSS/images/Picto/picto2_connu.png" alt="">
+                    <img src="CSS/images/Picto/picto2_aimer.png" alt="">
+                </div>
+                <div class="Ensavoirplus">
+                    <a class="btnEntreprise bleu" href="index.php?page=Entreprise">En savoir plus</a>
+                </div>
+
+            </div>
+        </div>
+
+        <form method="post" action="index.php?page=suppEntreprise" enctype="multipart/form-data">
+            <span>Etes vous sur de vouloir supprimer cette enteprise ?</span>
+
+
+
+
+
+                <div class="panel panel-footer">
+                    <button type="submit" class="btn" name="oui">
+                       oui
+                    </button>
+                </div>
+            <div class="panel panel-footer">
+                    <button type="submit" class="btn" name="non">
+                        non
+                    </button>
+                </div>
+            </form>
+
+    </article>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'generalNON.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
+
+{% block contenu %}
+<article id="accueil">
+    <img src="CSS/images/logoMMI.png" alt="">
+    <div><h1>MMI Monbéliard</h1>
+        <h2>vous accompagne pour votre stage à l’étranger</h2>
+    </div>
+    <a class="btn" href="#decouvrir">Découvrir</a>
+    <a class="btn" href="index.php?page=Etudiant">Espace étudiant</a>
+</article>
+<article id="decouvrir">
+    <div class="col1">
+        <h3 class="bleu">MMI Montbéliard</h3>
+        <h2 class="bleu">Accompagne ses étudiants pour les aider à partir en tout sérénité</h2>
+        <p class="bleu">Notre département MMI de Monbéliard envoie des étudiants à travers le monde depuis 20 ans afin
+            de leur offrir
+            une ouverture internationale . Nos étudiants ont à réaliser un stage de fin d’études de 3 mois. Nous somme
+            en mesure de leur proposer de nombreux stages dans de nombreuses entreprise à l’étranger grâce à nos
+            contacts .</p>
+    </div>
+    <div class="col1 colonneaImage">
+        <img src="CSS/images/pourcentage.png" alt="">
+    </div>
+
+</article>
+<article id="CarteEtudiant">
+
+    <div class="col1">
+        <h3 class="bleu">MMI Montbéliard</h3>
+        <h2 class="bleu">Des étudiants y sont déja allé</h2>
+        <p class="bleu">Notre DUT fête ses 20 ans et depuis ces 20 ans, nous offrons aux étudiants la possibilité de
+            suivre un stage de fin d'études à l’étranger, vous offrant l'occasion de tenter la mobilité
+            internationale.</p>
+    </div>
+
+
+    <div class="col1 colonneaImage ">
+        <img src="CSS/images/carteA.png" alt="">
+    </div>
+</article>
+<article id="Inscription">
+    <div class="col1">
+        <h3 class="blanc">MMI Montbéliard</h3>
+        <h2 class="blanc">Tu es étudiant en MMI à Montbéliard ? Inscris toi !</h2>
+        <p class="blanc">Vous êtes étudiants au DUT MMI de Montbéliard ? Alors inscrivez-vous sur MMI Montbéliard Stage à
+            l’étranger afin d’accéder à une large liste d’entreprises susceptibles de vous accueillir, ainsi qu’à un
+            suivi administratif qui vous permettra de partir en toute sérénité.</p>
+    </div>
+    <div class="col1 colonneaImage">
+        <img src="CSS/images/Inscription.png" alt="">
+    </div>
+    <a class="bouton" href="index.php?page=Inscription">M'inscrire</a>
+</article>
+{% endblock %}

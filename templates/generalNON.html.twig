@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.css">
+
+    <script src="CSS/bootstrap-3.2.0-dist/js/jquery-1.10.2.js"></script>
+    <script src="CSS/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+    <title>{% block title %}MMI Stage à l'étranger{% endblock %}</title>
+</head>
+<body>
+<header id="FirstConnexion" >
+    <a data-toggle="modal" data-target="#myModal">Connexion</a>
+</header>
+
+
+{% block contenu %}
+{% endblock %}
+
+<footer>
+    <div class="col5">
+        <p>Ce site a été créé dans le cadre du projet collectif du semestre 3 au sein du département MMI de
+            Montbéliard.</p>
+        <a href="http://mmimontbeliard.com/"><img src="CSS/images/logoMMIFooter.png" alt="logoMMI"></a>
+    </div>
+
+</footer>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div id="blocConnection">
+                <form method="post" action="index.php?page=accueil" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <label for="mail">Mail</label>
+                        <input type="text" class="form-control" name="mail" id="mail" placeholder="Mail" required/>
+                    </div>
+                    <div class="input-group">
+                        <label for="mdp">Mdp</label>
+                        <input type="text" class="form-control" name="mdp" id="mdp" placeholder="Mdp" required/>
+                    </div>
+                    <a class="bleu" href="inscription.html.twig">Pas encore inscrit ?</a>
+                    <div class="panel panel-footer">
+                        <button type="submit" class="btn" name="connexion">
+                            connexion
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+

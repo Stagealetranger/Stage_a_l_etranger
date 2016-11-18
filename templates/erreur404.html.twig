@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage à l'étranger</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.css">
+
+    <script src="CSS/bootstrap-3.2.0-dist/js/jquery-1.10.2.js"></script>
+    <script src="CSS/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+<header id="FirstConnexion" >
+    <a data-toggle="modal" data-target="#myModal">Connexion</a>
+</header>
+<article id="erreur404">
+
+    <h3 class="blanc">Erreur 404</h3>
+    <h2 class="blanc">Vous êtes sur une page qui n'existe plus ou n'a jamais existé.
+        Page d'accueil <a href="index.html">stagealetranger.com</a></h2>
+    <img src="CSS/images/erreur404.png" alt="">
+</article>
+<footer>
+    <p>Ce site a été créé dans le cadre du projet collectif du semestre 3 au sein du département MMI de Montbéliard.</p>
+    <a href="http://mmimontbeliard.com/"><img src="CSS/images/logoMMIFooter.png" alt="logoMMI"></a>
+</footer>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="col3" id="blocConnection">
+                <form action="">
+                    <div>
+                        <label for="Email">Email</label>
+                        <input id="Email" type="text">
+                    </div>
+                    <div>
+                        <label for="MDP">Mot de passe</label>
+                        <input id="MDP" type="text">
+                    </div>
+                    <a class="bleu" href="inscription.html">Pas encore inscrit ?</a>
+                    <button class="bouton bleu" type="submit">
+                        Connexion
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

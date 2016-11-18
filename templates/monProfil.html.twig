@@ -1,0 +1,34 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
+
+{% block contenu %}
+    <article id="monProfil">
+        <div class="col1">
+            <h3 class="blanc">MMI Montbéliard</h3>
+            <h2 class="blanc">Mon profil</h2>
+
+            <div>
+                <span>Nom :</span>
+                <span>{{ session.nom }}</span>
+            </div>
+            <div>
+                <span>Prénom :</span>
+                <span>{{ session.prenom }}</span>
+            </div>
+            <div>
+                <span>Email :</span>
+                <span>{{ session.mail }}</span>
+                <a href="nouvelleAdresse.html">Ajouter une adresse mail</a>
+            </div>
+            <div>
+                <span>Mon stage :</span>
+                <span>Kaizen</span>
+            </div>
+        </div>
+        <div class="col1 colonneaImage" id="imageProfil">
+            <img src="CSS/images/{{ session.photo }}" alt="">
+        </div>
+
+    </article>
+{% endblock %}

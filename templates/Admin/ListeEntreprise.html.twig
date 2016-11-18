@@ -1,0 +1,37 @@
+{% extends 'general.html.twig' %}
+
+    {% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
+
+{% block contenu %}
+    <article id="listeAdminE">
+        <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/logoMenu_accueil.png" alt=""></a>
+        <div id="Listentreprise" class="col3 affiche-tous">
+            {% for entreprise in liste %}
+                <div>
+                    <a href="index.php?page=suppEntreprise&id={{ entreprise.id }}"><img class="btnModif" src="CSS/images/logoAdmin_supp.png" alt=""></a>
+                    <a href="index.php?page=modifEntreprise&id={{ entreprise.id }}"><img class="btnModif" src="CSS/images/logoAdmin_modif.png" alt=""></a>
+                    <div class="ficheEntreprise communication grandentreprise connu aimer">
+                        <div class="titreEntreprise ">
+                            <h5>{{ entreprise.nom }}</h5>
+                        </div>
+                        <p class="descritpionEntreprise">{{ entreprise.description }}</p>
+                        <p class="villeEntreprise">{{ entreprise.ville }}, {{ entreprise.pays }}</p>
+                        <div class="pictoFiltres">
+                            <img src="CSS/images/Picto/picto2_communication.png" alt="">
+                            <img src="CSS/images/Picto/picto2_grandenteprise.png" alt="">
+                            <img src="CSS/images/Picto/picto2_connu.png" alt="">
+                            <img src="CSS/images/Picto/picto2_aimer.png" alt="">
+                        </div>
+                        <div class="Ensavoirplus">
+                            <a class="btnEntreprise bleu" href="index.php?page=Entreprise">En savoir plus</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </article>
+
+
+{% endblock %}

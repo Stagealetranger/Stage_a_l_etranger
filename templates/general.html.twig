@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage à l'étranger</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.css">
+    <script src="CSS/bootstrap-3.2.0-dist/js/jquery-1.10.2.js"></script>
+
+    <script src="CSS/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+
+
+
+
+
+
+    <title>{% block title %}MMI Stage à l'étranger{% endblock %}</title>
+</head>
+<body>
+
+<header>
+    <div class="Nav" id="home">
+        <div class="navWarpper">
+            <div class="navbar1">
+                <div>
+
+
+                    <p id="nomMenu"><a href="{{ Admin }}">{{ Admin2 }}</a> {{ session.prenom }} {{ session.nom }}</p>
+                    <img id="menu" data-toggle="modal" data-target="#myModal" src="CSS/images/logoMMImenu.png"
+                         alt="menu">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+{% block contenu %}
+{% endblock %}
+
+<footer>
+    <div class="col5">
+        <p>Ce site a été créé dans le cadre du projet collectif du semestre 3 au sein du département MMI de
+            Montbéliard.</p>
+        <a href="http://mmimontbeliard.com/"><img src="CSS/images/logoMMIFooter.png" alt="logoMMI"></a>
+    </div>
+
+</footer>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <ul id="top-menu">
+                <a href="index.php?page=Etudiant">
+                    <li>
+                        <div>
+                            <img src="CSS/images/logoMenu_accueil.png" alt="">
+                            Accueil
+                        </div>
+                    </li>
+                </a>
+                <a href="index.php?page=Profil">
+                    <li>
+                        <div>
+                            <img src="CSS/images/logoMenu_profil.png" alt="">
+                            Mon profil
+                        </div>
+                    </li>
+                </a>
+                <a href="index.php?page=Suivi#monSuivi">
+
+                    <li>
+                        <div>
+                            <img src="CSS/images/logoMenu_suivi.png" alt="">
+                            Mon suivi
+                        </div>
+                    </li>
+                </a>
+                <a href="index.php?page=Etudiant#recherche">
+                    <li>
+                        <div>
+                            <img src="CSS/images/logoMenu_recherche.png" alt="">
+                            Recherche de stage
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
