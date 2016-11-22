@@ -1,6 +1,6 @@
 <?php
 require_once('dao/DaoEntreprise.php');
-session_start();
+
 
 $daoEntreprise = new DaoEntreprise();
 $daoEntreprise->find($_GET["id"]);

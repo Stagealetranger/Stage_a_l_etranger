@@ -290,7 +290,6 @@ article > div > img {
     max-width: 30px;
     max-height: 30px;
     cursor: pointer;
-    display: inline-block;
 
 }
 
@@ -317,6 +316,14 @@ article > div > img {
     color: #154A58;
     margin: 20px 0;
     text-align: center;
+}
+
+.listePictorecherche input{
+    margin-right: -30px;
+}
+
+.cache{
+    display: none;
 }
 
 /*******************************************************
