@@ -1,7 +1,6 @@
 <?php
 require_once('dao/DaoEntreprise.php');
 require_once('dao/DaoPersonne.php');
-session_start();
 
 
 $daoEntreprise = new DaoEntreprise();

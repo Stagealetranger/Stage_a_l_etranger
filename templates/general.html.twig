@@ -32,7 +32,7 @@
                 <div>
 
 
-                    <p id="nomMenu"><a href="{{ Admin }}">{{ Admin2 }}</a> {{ session.prenom }} {{ session.nom }}</p>
+                    <p id="nomMenu">{% if session.admin == 1 %} <a href="index.php?page=pageAdmin">Administrateur</a>{% endif %}  {{ session.prenom }} {{ session.nom }}</p>
                     <img id="menu" data-toggle="modal" data-target="#myModal" src="CSS/images/logoMMImenu.png"
                          alt="menu">
                 </div>

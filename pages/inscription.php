@@ -2,7 +2,7 @@
 require_once('dao/DaoPersonne.php');
 
 
-session_start();
+
 if ($_SESSION != ''){
     session_unset();
 }

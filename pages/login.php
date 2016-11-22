@@ -3,7 +3,7 @@
 require_once('dao/DaoPersonne.php');
 $daoPersonne = new DaoPersonne;
 
-session_start();
+
 
 
 if ($_SESSION != ''){
@@ -14,7 +14,6 @@ if ($_SESSION != ''){
 
 if(isset($_POST["connexion"])) {
     $daoPersonne->connect($_POST["mail"],sha1($_POST["mdp"]));
-    session_start();
     $_SESSION['id'] = $daoPersonne->bean->getId();
     $_SESSION['nom'] = $daoPersonne->bean->getNom();
     $_SESSION['prenom'] = $daoPersonne->bean->getPrenom();

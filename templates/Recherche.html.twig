@@ -56,7 +56,7 @@
         <div id="Listentreprise" class="col3 affiche-tous">
 
 {% for entreprise in liste %}
-    <div class="ficheEntreprise communication grandentreprise connu aimer">
+    <div class="ficheEntreprise {% if type == 1 %}communication{% endif %} grandentreprise connu aimer">
         <div class="titreEntreprise ">
             <h5>{{ entreprise.nom }}</h5>
         </div>

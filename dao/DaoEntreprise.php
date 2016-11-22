@@ -1,5 +1,6 @@
 <?php
 require_once 'classes/class.Entreprise.php';
+require_once 'classes/class.Type.php';
 
 require_once 'Dao.php';
 
@@ -99,5 +100,20 @@ class DaoEntreprise extends Dao
         return $liste;
     }
 
-
+    public function setLesTypes()
+    {
+        $sql = "SELECT * FROM `est_de_type` WHERE `ID_TYPE` = 1 
+AND `ID_ENTREPRISE` = " . $this->bean->getId();
+        $requete = $this->pdo->prepare($sql);
+        if ($requete->execute()) {
+            $type = new Type();
+            if ($donnees = $requete->fetch()) {
+                $type = new Type(
+                    $donnees['ID_TYPE'],
+                    $donnees['TYPE']
+                );
+            }
+            $this->bean->setLesTypes($type);
+        }
+    }
 }

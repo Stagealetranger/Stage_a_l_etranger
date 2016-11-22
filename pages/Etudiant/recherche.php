@@ -1,20 +1,26 @@
 <?php
 
 require_once 'dao/DaoEntreprise.php';
-session_start();
+require_once 'dao/DaoType.php';
+
+
 
 $daoEntreprise = new DaoEntreprise();
+$daoType = new DaoType();
 
 
 $listeEntreprise = $daoEntreprise->getListe();
-
-
 for ($i = 0; $i < count($listeEntreprise); $i++) {
 
     $daoEntreprise = new DaoEntreprise();
 
     $daoEntreprise->find($listeEntreprise[$i]->getId());
+
+    $daoEntreprise->setLesTypes();
+
+
     $listeEntreprise[$i] = $daoEntreprise->bean;
+
     
 }
 $param = array(
@@ -33,3 +39,5 @@ if (($_SESSION['mail']) == ''){
 
 }
 ?>
+
+
