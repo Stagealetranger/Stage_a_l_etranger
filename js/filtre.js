@@ -6,8 +6,7 @@
 (function () {
     "use strict";
 
-    var listeImage = document.querySelectorAll('imgFiltre');
-
+    var listeImage = document.querySelectorAll('.imgFiltre');
 
     function basculeGris() {
         for (var i = 0; i < listeImage.length; i++) {

@@ -293,7 +293,7 @@ article > div > img {
 
 }
 
-.pictoRecherche span {
+.pictoRecherche label {
     margin-left: 10px;
     color: #154A58;
 
@@ -305,7 +305,7 @@ article > div > img {
     width: 80%;
 }
 
-.selectRecherche select {
+.selectRecherche input {
     width: 80%;
     padding: 2% 5%;
     border-radius: 5%;
@@ -319,7 +319,10 @@ article > div > img {
 }
 
 .listePictorecherche input{
-    margin-right: -30px;
+    margin-left: -27px;
+    height: 25px;
+    width: 25px;
+
 }
 
 .cache{

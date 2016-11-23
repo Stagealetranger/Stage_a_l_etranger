@@ -52,7 +52,7 @@
 
 
         <div id="Listentreprise"
-             class="col3  {% if type == 1 %}affiche-communication{% endif %} {% if type == 2 %}affiche-graphisme{% endif %} {% if type == 3 %}affiche-developpement{% endif %} {% if taille == 0 %}affiche-pme{% endif %} {% if taille == 1 %}affiche-grandentreprise{% endif %} {% if visite == 0 %}affiche-inconnu{% endif %} {% if visite == 1 %}affiche-connu{% endif %} {% if avis == 1 %}affiche-aimer{% endif %}">
+             class="col3  {% if recherche.communcation == 1 %}affiche-communication{% endif %} {% if recherche.graphisme == 1 %}affiche-graphisme{% endif %} {% if recherche.developpement == 1 %}affiche-developpement{% endif %} {% if recherche.PME == 1 %}affiche-pme{% endif %} {% if recherche.GE == 1 %}affiche-grandentreprise{% endif %} {% if recherche.inconnu == 1 %}affiche-inconnu{% endif %} {% if recherche.connu == 1 %}affiche-connu{% endif %} {% if recherche.aimer == 1 %}affiche-aimer{% endif %}">
 
             {% for entreprise in liste %}
                 <div class="ficheEntreprise {% if entreprise.type == 1 %}communication{% endif %} {% if entreprise.type == 2 %}graphisme{% endif %} {% if entreprise.type == 3 %}developpement{% endif %} {% if entreprise.taile == 0 %}pme{% endif %} {% if entreprise.taile == 1 %}grandentreprise{% endif %}  {% if entreprise.visiter == 0 %}inconnu{% endif %} {% if entreprise.visiter == 1 %}connu{% endif %} {% if entreprise.avis == 1 %}aimer{% endif %}">
@@ -110,7 +110,7 @@
                     return;
                 }
                 affiche
-                liste.className = '';
+
                 liste.classList.add("affiche-" + affiche);
             }
 

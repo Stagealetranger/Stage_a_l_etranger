@@ -33,63 +33,72 @@
                 <h2 class="bleu">Des étudiants y sont déja allé</h2>
             </div>
         </div>
-        <form action="index.php?page=Etudiant" enctype="multipart/form-data">
+        <form method="post" action="index.php?page=Etudiant" enctype="multipart/form-data">
             <div class="col3">
                 <div class="col2 listePictorecherche">
 
                     <div class="pictoRecherche">
-                        <input type="checkbox">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-communication.png" alt="communication">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-communication.png"
                              alt="comunication">
-                        <span>Communication</span>
+                        <input name="communication" id="communication" value="1" type="checkbox">
+                        <label for="communication">Communication</label>
                     </div>
                     <div class="pictoRecherche">
-                        <input type="checkbox">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-graphisme.png" alt="graphisme">
-                        <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-graphisme.png" alt="graphisme">
-                        <span>Graphisme</span>
+                        <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-graphisme.png"
+                             alt="graphisme">
+                        <input name="graphisme" value="1"  id="graphisme" type="checkbox">
+                        <label for="graphisme">Graphisme</label>
+
                     </div>
                     <div class="pictoRecherche">
-                        <input type="checkbox">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-developpement.png" alt="developpement">
-                        <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-developpement.png" alt="developpement">
-                        <span>Developpement</span>
+                        <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-developpement.png"
+                             alt="developpement">
+                        <input name="developpement" value="1"  id="devellopement" type="checkbox">
+                        <label for="devellopement">Developpement</label>
+
                     </div>
                 </div>
                 <div class="col2 listePictorecherche">
                     <div class="pictoRecherche">
-                        <input type="checkbox">
+
                         <img class="imgFiltre" src="CSS/images/Picto/picto-grandentreprise.png" alt="GE">
-                        <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-grandentreprise.png" alt="GE">
-                        <span>Grande entreprise</span>
+                        <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-grandentreprise.png"
+                             alt="GE">
+                        <input name="GE" value="1"  id="GE" type="checkbox">
+                        <label for="GE">Grande entreprise</label>
+
                     </div>
                     <div class="pictoRecherche">
-                        <input type="checkbox">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-PME.png" alt="PME">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-PME.png" alt="PME">
-                        <span>Petite/Moyen entreprise</span>
+                        <input name="PME" value="1"  id="PME" type="checkbox">
+                        <label for="PME">Petite/Moyen entreprise</label>
+
                     </div>
                 </div>
                 <div class="col2 listePictorecherche">
                     <div class="pictoRecherche">
-                        <input type="checkbox">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-inconnu.png" alt="New">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-inconnu.png" alt="inconnu">
-                        <span>Nouvelle entreprise</span>
+                        <input name="inconnu" value="1"  id="inconnu" type="checkbox">
+                        <label for="inconnu">Nouvelle entreprise</label>
                     </div>
                     <div class="pictoRecherche">
-                        <input type="checkbox">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-connu.png" alt="connu">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-connu.png" alt="connu">
-                        <span>Un etudiant y est deja allé</span>
+                        <input name="connu" value="1"  id="connu" type="checkbox">
+                        <label for="connu">Un etudiant y est deja allé</label>
                     </div>
                     <div class="pictoRecherche">
-                        <input type="checkbox">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-aimer.png" alt="aimer">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-aimer.png" alt="aimer">
-                        <span>Avis positif sur l'entreprise</span>
-                    </div>
+                        <input name="aimer" value="1" id="aimer" type="checkbox">
+                        <label for="aimer">Avis positif sur l'entreprise</label>
+
+                   </div>
                 </div>
             </div>
             <div class="col3">
@@ -103,8 +112,12 @@
                     <input type="search">
                 </div>
             </div>
+
+            <button type="submit" class="btn" name="recherche">
+                recherche
+            </button>
         </form>
-        <a class="bouton bleu" href="index.php?page=Recherche">Recherche</a>
+
     </article>
     <article id="carteI">
         <img src="CSS/images/triangle.png" alt="triangle">
@@ -403,12 +416,12 @@
         </div>
         <a class="bouton" href="index.php?page=Suivi#monSuivi">Acceder a mon suivi</a>
     </article>
+
     <script>
         (function () {
             "use strict";
 
             var listeImage = document.querySelectorAll('.imgFiltre');
-
 
             function basculeGris() {
                 for (var i = 0; i < listeImage.length; i++) {
