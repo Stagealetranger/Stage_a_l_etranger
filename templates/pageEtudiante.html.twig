@@ -41,14 +41,14 @@
                         <img class="imgFiltre" src="CSS/images/Picto/picto-communication.png" alt="communication">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-communication.png"
                              alt="comunication">
-                        <input name="communication" id="communication" value="1" type="checkbox">
+                        <input name="communication" id="communication" value="1" type="checkbox"  checked>
                         <label for="communication">Communication</label>
                     </div>
                     <div class="pictoRecherche">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-graphisme.png" alt="graphisme">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-graphisme.png"
                              alt="graphisme">
-                        <input name="graphisme" value="1"  id="graphisme" type="checkbox">
+                        <input name="graphisme" value="1" id="graphisme" type="checkbox" checked>
                         <label for="graphisme">Graphisme</label>
 
                     </div>
@@ -56,7 +56,7 @@
                         <img class="imgFiltre" src="CSS/images/Picto/picto-developpement.png" alt="developpement">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-developpement.png"
                              alt="developpement">
-                        <input name="developpement" value="1"  id="devellopement" type="checkbox">
+                        <input name="developpement" value="1" id="devellopement" type="checkbox" checked>
                         <label for="devellopement">Developpement</label>
 
                     </div>
@@ -67,14 +67,14 @@
                         <img class="imgFiltre" src="CSS/images/Picto/picto-grandentreprise.png" alt="GE">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-grandentreprise.png"
                              alt="GE">
-                        <input name="GE" value="1"  id="GE" type="checkbox">
+                        <input name="GE" value="1" id="GE" type="checkbox" checked>
                         <label for="GE">Grande entreprise</label>
 
                     </div>
                     <div class="pictoRecherche">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-PME.png" alt="PME">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-PME.png" alt="PME">
-                        <input name="PME" value="1"  id="PME" type="checkbox">
+                        <input name="PME" value="1" id="PME" type="checkbox" checked>
                         <label for="PME">Petite/Moyen entreprise</label>
 
                     </div>
@@ -83,39 +83,41 @@
                     <div class="pictoRecherche">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-inconnu.png" alt="New">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-inconnu.png" alt="inconnu">
-                        <input name="inconnu" value="1"  id="inconnu" type="checkbox">
+                        <input name="inconnu" value="1" id="inconnu" type="checkbox" checked>
                         <label for="inconnu">Nouvelle entreprise</label>
                     </div>
                     <div class="pictoRecherche">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-connu.png" alt="connu">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-connu.png" alt="connu">
-                        <input name="connu" value="1"  id="connu" type="checkbox">
+                        <input name="connu" value="1" id="connu" type="checkbox" checked>
                         <label for="connu">Un etudiant y est deja allé</label>
                     </div>
                     <div class="pictoRecherche">
                         <img class="imgFiltre" src="CSS/images/Picto/picto-aimer.png" alt="aimer">
                         <img class="imgFiltre cache" src="CSS/images/Picto/pictoNoir/picto-aimer.png" alt="aimer">
-                        <input name="aimer" value="1" id="aimer" type="checkbox">
+                        <input name="aimer" value="1" id="aimer" type="checkbox" checked>
                         <label for="aimer">Avis positif sur l'entreprise</label>
 
-                   </div>
+                    </div>
                 </div>
             </div>
             <div class="col3">
                 <div class="col1 selectRecherche">
                     <span>Choisir un pays</span>
-                    <input type="search">
+                    <input name="pays" id="pays" type="search">
                 </div>
 
                 <div class="col1 selectRecherche">
                     <span>Choisir une ville</span>
-                    <input type="search">
+                    <input name="ville" id="ville" type="search">
                 </div>
             </div>
+            <div class="col3">
+                <button type="submit" class="bouton bleu" name="recherche">
+                    recherche
+                </button>
+            </div>
 
-            <button type="submit" class="btn" name="recherche">
-                recherche
-            </button>
         </form>
 
     </article>

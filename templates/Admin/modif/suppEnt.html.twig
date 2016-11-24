@@ -8,10 +8,10 @@
         <div>
             <div class="ficheEntreprise communication grandentreprise connu aimer">
                 <div class="titreEntreprise ">
-                    <h5>{{ entreprise.bean.nom }}</h5>
+                    <h5>{{ entreprise.nom }}</h5>
                 </div>
-                <p class="descritpionEntreprise">{{ entreprise.bean.description }}</p>
-                <p class="villeEntreprise">{{ entreprise.bean.ville }}, {{ entreprise.bean.pays }}</p>
+                <p class="descritpionEntreprise">{{ entreprise.description }}</p>
+                <p class="villeEntreprise">{{ entreprise.ville }}, {{ entreprise.pays }}</p>
                 <div class="pictoFiltres">
                     <img src="CSS/images/Picto/picto2_communication.png" alt="">
                     <img src="CSS/images/Picto/picto2_grandenteprise.png" alt="">
@@ -25,14 +25,10 @@
             </div>
         </div>
 
-        <form method="post" action="index.php?page=suppEntreprise" enctype="multipart/form-data">
+        <form method="post" action="index.php?page=suppEntreprise&id={{ entreprise.id }}" enctype="multipart/form-data">
             <span>Etes vous sur de vouloir supprimer cette enteprise ?</span>
 
-
-
-
-
-                <div class="panel panel-footer">
+            <div class="panel panel-footer">
                     <button type="submit" class="btn" name="oui">
                        oui
                     </button>

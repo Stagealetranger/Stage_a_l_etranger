@@ -35,7 +35,7 @@ if (($_SESSION['mail']) == ''){
 
 
 $param = array(
-    "session" => $_SESSION,
+    
     "liste" => $listeEntreprise
 );
 

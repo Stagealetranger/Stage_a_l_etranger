@@ -31,6 +31,8 @@ if ($page != null) {
 
 $template = $twig->loadTemplate($template);
 
+$param["session"] = $_SESSION;
+
 echo $template->render($param);
 
 

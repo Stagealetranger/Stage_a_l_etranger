@@ -3,7 +3,7 @@
 
 
 $param = array(
-    "session" => $_SESSION
+   
   
 );
 

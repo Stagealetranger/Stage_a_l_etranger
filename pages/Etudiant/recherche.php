@@ -25,13 +25,21 @@ $graphisme = $_GET['graphisme'];
 
 $listeEntreprise = $daoEntreprise->getListe();
 for ($i = 0; $i < count($listeEntreprise); $i++) {
-
     $daoEntreprise = new DaoEntreprise();
-
+ /*if ((($_GET['pays']) != '')|(($_GET['ville']) != '')) {
+     if (($_GET['pays']) != ''){
+         $daoEntreprise->findByPays($listeEntreprise[$i]->getId());
+         $daoEntreprise->setLesTypes();
+     }
+     if (($_GET['ville']) != ''){
+         $daoEntreprise->findByVille($listeEntreprise[$i]->getId());
+         $daoEntreprise->setLesTypes();
+     }
+ }
+else{*/
     $daoEntreprise->find($listeEntreprise[$i]->getId());
-
     $daoEntreprise->setLesTypes();
-
+  /*}*/
 
     $listeEntreprise[$i] = $daoEntreprise->bean;
 
@@ -39,10 +47,13 @@ for ($i = 0; $i < count($listeEntreprise); $i++) {
 }
 $param = array(
     "recherche" => $recherche,
-    "session" => $_SESSION,
     "liste" => $listeEntreprise
 );
 
+
+echo "<pre>";
+print_r($param);
+echo "</pre>";
 
 if (($_SESSION['mail']) == '') {
     header('Location: index.php?page=accueil');

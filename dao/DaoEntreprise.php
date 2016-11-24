@@ -30,6 +30,34 @@ class DaoEntreprise extends Dao
         $this->bean->setVille($donnees['VILLE']);
     }
 
+    public function findByVille($ville = '')
+    {
+        $sql = "SELECT * FROM entreprise WHERE VILLE = '.$ville.'";
+        $requete = $this->pdo->prepare($sql);
+        if ($requete->execute()) {
+            if ($donnees = $requete->fetch()) {
+                $this->bean->setId($donnees['ID_ENTREPRISE']);
+                $this->bean->setNom($donnees['NOM_ENTREPRISE']);
+                $this->bean->setVisiter($donnees['VISITER']);
+                $this->bean->setDescription($donnees['DESCRIPTION']);
+                $this->bean->setRue($donnees['RUE']);
+                $this->bean->setDescriptionAvis($donnees['DESCRIPTION_AVIS']);
+                $this->bean->setAvis($donnees['AVIS']);
+                $this->bean->setTaille($donnees['TAILLE']);
+                $this->bean->setProfil($donnees['PROFIL']);
+                $this->bean->setPays($donnees['PAYS']);
+                $this->bean->setVille($donnees['VILLE']);
+                return $donnees;
+            }
+
+        }
+
+    }
+
+
+
+
+
     public function create()
     {
         $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, DESCRIPTION_AVIS, AVIS, TAILLE, PROFIL, PAYS, VILLE) 
@@ -52,6 +80,7 @@ class DaoEntreprise extends Dao
     {
         $donnees = $this->deleteById("entreprise", "ID_ENTREPRISE", $this->bean->getId());
     }
+
 
     public function update()
     {

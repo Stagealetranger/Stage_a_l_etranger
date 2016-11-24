@@ -4,22 +4,29 @@
 
 {% block contenu %}
     <article id="listeAdminP">
-        <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/logoMenu_accueil.png" alt=""></a>
-        <h2>Liste des papiers</h2>
-        <div class="col3">
+        <div class="titreAdmin">
+            <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                    alt="retourAdmin"></a>
+            <h2>Liste des papiers</h2>
+        </div>
+        <div>
+
             {% for papier in liste %}
                 <div>
-                    <a href="index.php?page=suppPapier&id={{papier.id}}"><img class="btnModif" src="CSS/images/logoAdmin_supp.png" alt=""></a>
-                    <a href="index.php?page=modifPapier&id={{papier.id}}"><img class="btnModif" src="CSS/images/logoAdmin_modif.png" alt=""></a>
-
-                    <div class="ficheEntreprise communication grandentreprise connu aimer">
-                        <div class="titreEntreprise ">
+                    <a href="index.php?page=suppPapier&id={{ papier.id }}"><img class="btnModif"
+                                                                                src="CSS/images/logoAdmin_supp.png"
+                                                                                alt=""></a>
+                    <a href="index.php?page=modifPapier&id={{ papier.id }}"><img class="btnModif"
+                                                                                 src="CSS/images/logoAdmin_modif.png"
+                                                                                 alt=""></a
+                    <div>
+                        <div class="titre">
                             <h5>{{ papier.nom }}</h5>
                         </div>
                         <p class="descritpionEntreprise">{{ papier.description }}</p>
                         <p class="descritpionEntreprise">{{ papier.conseil }}</p>
-                        <p class="descritpionEntreprise">{{ papier.pays }}</p>
-                        <p class="descritpionEntreprise">{{ papier.duree }} jours</p>
+                        <p class="villeEntreprise">{{ papier.pays }}</p>
+                        <p>{{ papier.duree }} jours</p>
                     </div>
                 </div>
 

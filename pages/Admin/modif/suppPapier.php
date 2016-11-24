@@ -1,11 +1,9 @@
 <?php
 require_once('dao/DaoPapier.php');
-session_start();
+
 $daoPapier = new DaoPapier();
 
 $id = $_GET["id"];
-
-
 $daoPapier->find($id);
 
 if (isset($_POST["oui"])) {
@@ -18,7 +16,7 @@ if (isset($_POST["non"])) {
 
 $param = array(
     "session" => $_SESSION,
-    "papier" => $daoPapier,
+    "papier" => $daoPapier->bean,
 );
 
 

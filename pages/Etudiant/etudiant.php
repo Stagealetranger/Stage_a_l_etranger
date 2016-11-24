@@ -1,21 +1,76 @@
 <?php
 
+$communication = "";
+$graphisme = "";
+$developpement = "";
+$connu ="";
+$inconnu = "";
+$PME = "";
+$GE = "";
+$aimer= "";
+$ville="";
+$pays="";
 
 if (isset($_POST["recherche"])) {
-    $communication = $_POST['communication'];
-    $graphisme = $_POST['graphisme'];
-    $developpement = $_POST['developpement'];
-    $GE = $_POST['GE'];
-    $PME = $_POST['PME'];
-    $connu = $_POST['connu'];
-    $inconnu = $_POST['inconnu'];
-    $aimer = $_POST['aimer'];
-    header('Location: index.php?page=Recherche&communication='.$communication.'&graphisme='.$graphisme.'&developpement='.$developpement.'&GE='.$GE.'&PME='.$PME.'&connu='.$connu.'&inconnu='.$inconnu.'&aimer='.$aimer.'');
+    if ($_POST['communication']== ""){
+        $communication = "0";
+    }else{
+        $communication = $_POST['communication'];
+    }
+    if ($_POST['graphisme']== ""){
+        $graphisme = "0";
+    }else{
+        $graphisme = $_POST['graphisme'];
+    }
+    if ($_POST['developpement']== ""){
+        $developpement = "0";
+    }else{
+        $developpement = $_POST['developpement'];
+    }
+    if ($_POST['GE']== ""){
+        $GE = "0";
+    }else{
+        $GE = $_POST['GE'];
+    }
+    if ($_POST['PME']== ""){
+        $PME = "0";
+    }else{
+        $PME = $_POST['PME'];
+    }
+    if ($_POST['connu']== ""){
+        $connu = "0";
+    }else{
+        $connu = $_POST['connu'];
+    }
+    if ($_POST['inconnu']== ""){
+        $inconnu= "0";
+    }else{
+        $inconnu = $_POST['inconnu'];
+    }
+    if ($_POST['aimer']== ""){
+        $aimer= "0";
+    }else{
+        $aimer = $_POST['aimer'];
+    }
+    $ville = $_POST['ville'];
+    $pays = $_POST['pays'];
+    header('Location: index.php?page=Recherche&communication='.$communication.'&graphisme='.$graphisme.'&developpement='.$developpement.'&GE='.$GE.'&PME='.$PME.'&connu='.$connu.'&inconnu='.$inconnu.'&aimer='.$aimer.'&ville='.$ville.'&pays='.$pays.'');
 }
 
-
+ 
 $param = array(
-    "session" => $_SESSION
+
+"communication" =>$communication ,
+"graphisme" =>$graphisme,
+"developpement" => $developpement,
+"connu" =>$connu,
+"inconnu" => $inconnu,
+"PME" => $PME,
+"GE" =>$GE,
+"aimer" =>$aimer,
+"ville" =>$ville,
+"pays" =>$pays
+    
 );
 
 if (($_SESSION['mail']) == '') {
@@ -23,9 +78,9 @@ if (($_SESSION['mail']) == '') {
 
 }
 
-
+/*
 echo "<pre>";
 print_r($param);
 echo "</pre>";
-
+*/
 ?>

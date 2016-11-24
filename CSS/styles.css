@@ -77,7 +77,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 1.8em;
     font-family: "Montserrat", sans-serif;
     padding-top: 20px;
     margin: 0 20px;
@@ -211,7 +211,6 @@ article > div > img {
     height: 100%;
 }
 
-
 /*******************************************************
                         Accueil
 *******************************************************/
@@ -318,14 +317,14 @@ article > div > img {
     text-align: center;
 }
 
-.listePictorecherche input{
+.listePictorecherche input {
     margin-left: -27px;
     height: 25px;
     width: 25px;
 
 }
 
-.cache{
+.cache {
     display: none;
 }
 
@@ -415,7 +414,7 @@ article > div > img {
     border-bottom-right-radius: 40px;
 }
 
-#infoAvis{
+#infoAvis {
     width: 80%;
     display: flex;
     align-items: center;
@@ -498,7 +497,7 @@ article > div > img {
 }
 
 .villeEntreprise {
-    padding:10px 20px;
+    padding: 10px 20px;
     margin: 0;
 }
 
@@ -638,10 +637,9 @@ article > div > img {
 /*******************************************************
                         Modal
 *******************************************************/
-#myModal{
+#myModal {
     height: 100vh;
 }
-
 
 #top-menu li {
     border: solid 1px white;
@@ -654,7 +652,7 @@ article > div > img {
 
 }
 
-#top-menu img{
+#top-menu img {
     margin: 0 100px;
     width: 70px;
     height: 70px;
@@ -666,12 +664,14 @@ article > div > img {
     font-size: 1.2em;
     font-family: "Montserrat", sans-serif;
 }
+
 #menu {
     width: 30px;
     margin: 1% 5%;
 }
+
 #top-menu {
-    background-color:#154A58 ;
+    background-color: #154A58;
     padding: 0;
     margin: 0;
 }
@@ -686,10 +686,9 @@ article > div > img {
     justify-content: center;
 }
 
-#top-menu > a > div{
-  width: 150px;
+#top-menu > a > div {
+    width: 150px;
 }
-
 
 .navbar1 > div {
     display: flex;
@@ -697,39 +696,195 @@ article > div > img {
     align-items: center;
 }
 
-
 /*******************************************************
                         Admin
 *******************************************************/
 
-.retourAccueil{
-    width: 75px;
-    height: 75px;
+/*************************************************************************************
+*****************Administrateur*******************************************************
+*************************************************************************************/
+
+#Admin {
+    background-color: #154A58;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.retourAccueil {
+    width: 50px;
+    height: 50px;
 }
 
 #listeAdminE,
-#listeAdminP{
+#listeAdminP {
     background-color: #D3D3D3;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.btnModif{
+.btnModif {
     width: 25px;
     height: 25px;
 }
 
+.titreAdmin {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 2em 10px;
+    width: 100%;
+}
+
+.titreAdmin > h2 {
+    padding: 0;
+    color: #3c3c3c;
+}
+
+.formulaireAdmin {
+    background-color: #D3D3D3;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.formulaireAdmin > form {
+    background-color: #dbdbdb;
+    border: 4px solid #3c3c3c;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+}
+
+.formulaireAdmin > form > div {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    border: 2px solid #3c3c3c;
+}
+
+.formulaireAdmin > form > div >.btn{
+  border: 2px solid #3c3c3c;
+    color: #3c3c3c;
+}
+
+
+.formulaireAdmin > form > div > label {
+     width: 100%;
+     color: #3c3c3c;
+     text-align: center;
+     margin: 20px 0;
+     font-size: 1.2em;
+ }
+
+.formulaireAdmin > form > div > input {
+     width: 70%;
+     text-align: center;
+     margin-bottom: 20px;
+ }
+
+.formulaireAdmin > form > div > select {
+    width: 70%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulaireAdmin > form > div > textarea {
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.formulaireAdmin > form > div > div {
+    width: 100%;
+    color: #3c3c3c;
+    margin: 20px 0;
+    font-size: 1.2em;
+    display: flex;
+justify-content: center;
+    align-items: center;
+
+}
+
+.formulaireAdmin > form > div > div > input {
+    height: 20px;
+    width: 20px;
+    margin: 2%;
+}
+
+.en {
+    background-color: white;
+    border: 1px solid #3c3c3c;
+    border-radius: 4px;
+    padding: 2% 5%;
+    width: 80%;
+    display: none;
+}
+
+#listeAdminE > div {
+    background-color: #dbdbdb;
+    border: 4px solid #3c3c3c;
+width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#listeAdminE > div > div {
+    background-color: white;
+    border: 1px solid #154A58;
+    width: 200px;
+    margin: 20px;
+}
+
+#listeAdminE > div > div {
+    background-color: white;
+    border: 1px solid #154A58;
+    width: 250px;
+    margin: 20px;
+}
+
+.titre{
+    background-color: #154A58;
+    height: 100px;
+    display: flex;
+    align-items: center;
+
+}
 
 
 
 
 
+#listeAdminP > div {
+    background-color: #dbdbdb;
+    border: 4px solid #3c3c3c;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
+#listeAdminP > div > div {
+    background-color: white;
+    border: 1px solid #154A58;
+    width: 200px;
+    margin: 20px;
+}
 
-
-
-
-
-
-
+#listeAdminP > div > div {
+    background-color: white;
+    border: 1px solid #154A58;
+    width: 250px;
+    margin: 20px;
+}
 
 
 
@@ -751,8 +906,6 @@ article > div > img {
 
     }
 
-
-
     .listePictorecherche {
         padding: 0;
         border-bottom: 0px;
@@ -762,8 +915,6 @@ article > div > img {
     #carteI {
         text-align: center;
     }
-
-
 
     #acceuilSuivi {
         background-size: 100%;
@@ -789,42 +940,44 @@ article > div > img {
         margin: -130px 355px 0 355px;
     }
 }
+
 @media screen and (min-width: 1000px) {
     #decouvrirEtudiant > .bouton {
         margin: 5%;
 
     }
 
-    .col3{
-        margin:20px 10%;
+    .col3 {
+        margin: 20px 10%;
     }
 
-    .col5 > .bouton{
+    .col5 > .bouton {
         margin: 5%;
     }
 
-    .col1{
-        width:500px;
+    .col1 {
+        width: 500px;
     }
 
-    #filtres{
+    #filtres {
         width: 1000px;
         display: flex;
         align-items: center;
     }
 
-    #ListeFiltre{
+    #ListeFiltre {
         width: 600px;
     }
 
-    .pictoFiltres{
+    .pictoFiltres {
         padding: 10px 3%;
     }
 
 }
-@media screen and (min-width: 800px){
 
-    #top-menu{
+@media screen and (min-width: 800px) {
+
+    #top-menu {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -832,17 +985,13 @@ article > div > img {
         padding: 10% 7%;
     }
 
-
     #top-menu li {
         width: 250px;
         height: 250px;
 
-
     }
 
 }
-
-
 
 @media screen and (min-width: 500px) {
     #CarteEtudiant,
@@ -861,16 +1010,13 @@ article > div > img {
         justify-content: center;
     }
 
-
-
-    #top-menu{
+    #top-menu {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         padding: 10% 7%;
     }
-
 
     #top-menu li {
         border: solid 1px white;
@@ -883,18 +1029,16 @@ article > div > img {
 
     }
 
-    #top-menu > a > li > div{
+    #top-menu > a > li > div {
         width: 150px;
     }
 
-    #top-menu img{
+    #top-menu img {
         width: 100px;
         height: 100px;
         margin: 0 25px;
 
     }
-
-
 
 }
 

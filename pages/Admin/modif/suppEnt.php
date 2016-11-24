@@ -8,6 +8,7 @@ $daoEntreprise->find($_GET["id"]);
 if (isset($_POST["oui"])) {
     $daoEntreprise->delete();
     header('Location: index.php?page=listeEntreprise');
+    exit();
 }
 if (isset($_POST["non"])) {
     header('Location: index.php?page=listeEntreprise');
@@ -15,7 +16,7 @@ if (isset($_POST["non"])) {
 
 $param = array(
     "session" => $_SESSION,
-"entreprise" => $daoEntreprise
+"entreprise" => $daoEntreprise->bean
 );
 
 
@@ -28,4 +29,11 @@ if (($_SESSION['mail']) == ''){
     }
 
 }
+
+echo "<pre>";
+print_r($param);
+echo "</pre>";
+
+
+
 ?>

@@ -4,31 +4,45 @@
 
 {% block contenu %}
     <article id="listeAdminE">
-        <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/logoMenu_accueil.png" alt=""></a>
-        <div id="Listentreprise" class="col3 affiche-tous">
+        <div class="titreAdmin">
+            <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png" alt=""></a>
+            <h2>Liste des entreprises</h2>
+        </div>
+
+        <div>
             {% for entreprise in liste %}
                 <div>
                     <a href="index.php?page=suppEntreprise&id={{ entreprise.id }}"><img class="btnModif" src="CSS/images/logoAdmin_supp.png" alt=""></a>
                     <a href="index.php?page=modifEntreprise&id={{ entreprise.id }}"><img class="btnModif" src="CSS/images/logoAdmin_modif.png" alt=""></a>
-                    <div class="ficheEntreprise communication grandentreprise connu aimer">
-                        <div class="titreEntreprise ">
+                    <div>
+                        <div class="titre">
                             <h5>{{ entreprise.nom }}</h5>
                         </div>
                         <p class="descritpionEntreprise">{{ entreprise.description }}</p>
                         <p class="villeEntreprise">{{ entreprise.ville }}, {{ entreprise.pays }}</p>
                         <div class="pictoFiltres">
-                            <img src="CSS/images/Picto/picto2_communication.png" alt="">
-                            <img src="CSS/images/Picto/picto2_grandenteprise.png" alt="">
-                            <img src="CSS/images/Picto/picto2_connu.png" alt="">
-                            <img src="CSS/images/Picto/picto2_aimer.png" alt="">
+                            {% if entreprise.type == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
+                                                               alt="communication">{% endif %}
+                            {% if entreprise.type == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
+                                                               alt="graphisme">{% endif %}
+                            {% if entreprise.type == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
+                                                               alt="developpement">{% endif %}
+                            {% if entreprise.taille == 1 %}<img src="CSS/images/Picto/picto2_grandenteprise.png"
+                                                                alt="GE">{% endif %}
+                            {% if entreprise.taille == 0 %}<img src="CSS/images/Picto/picto2_PME.png" alt="PME">{% endif %}
+                            {% if entreprisevisiter == 1 %}<img src="CSS/images/Picto/picto2_connu.png"
+                                                                alt="connu">{% endif %}
+                            {% if entreprisevisiter == 0 %}<img src="CSS/images/Picto/picto2_inconnu.png"
+                                                                alt="inconnu">{% endif %}
+                            {% if entreprise.avis == 1 %}<img src="CSS/images/Picto/picto2_aimer.png"
+                                                              alt="aimer">{% endif %}
                         </div>
                         <div class="Ensavoirplus">
-                            <a class="btnEntreprise bleu" href="index.php?page=Entreprise">En savoir plus</a>
+                            <a class="btnEntreprise bleu" href="index.php?page=Entreprise&id={{ entreprise.id }}">En savoir plus</a>
                         </div>
 
                     </div>
                 </div>
-
             {% endfor %}
         </div>
     </article>
