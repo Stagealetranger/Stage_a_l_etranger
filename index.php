@@ -12,7 +12,6 @@ $routes = parse_ini_file("param/routes.ini", true);
 session_start();
 
 
-
 if (isset($_GET["page"])) {
     $uriDemandee = $_GET["page"];
 }
@@ -28,13 +27,11 @@ if ($page != null) {
 }
 
 
-
 $template = $twig->loadTemplate($template);
 
 $param["session"] = $_SESSION;
 
 echo $template->render($param);
-
 
 
 ?>

@@ -1,34 +1,33 @@
 {% extends 'general.html.twig' %}
 
-{% block title %}MMI Stage à l'étranger/{{ entreprise.bean.nom }}{% endblock %}
+{% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
 
 {% block contenu %}
     <article id="Entreprise">
         <div class="col1">
-            <h1 class="bleu">{{ entreprise.bean.nom }}</h1>
+            <h1 class="bleu">{{ entreprise.nom }}</h1>
             <div><h3 class="bleu">Présentation de l’entreprise :</h3>
-                <p class="bleu">{{ entreprise.bean.description }}</p>
+                <p class="bleu">{{ entreprise.description }}</p>
             </div>
             <div><h3 class="bleu">Profil recherché :</h3>
-                <p class="bleu">{{ entreprise.bean.profil }}</p>
+                <p class="bleu">{{ entreprise.profil }}</p>
             </div>
         </div>
-        <div class="col1, map">
+        <div class="col1 map">
             <img src="CSS/images/map.jpg" alt="">
         </div>
-        <div class="col1">
-            <h3 class="bleu">Adresse :</h3>
-            <p class="bleu">{{ entreprise.bean.rue }},{{ entreprise.bean.ville }} | {{ entreprise.bean.pays }}</p>
+        <div class="col3">
+            <div class="col1">
+                <h3 class="bleu">Adresse :</h3>
+                <p class="bleu">{{ entreprise.rue }},{{ entreprise.ville }} | {{ entreprise.pays }}</p>
+            </div>
+            <div class="col1">
+                <h3 class="bleu">Les contacter:</h3>
+                <p class="bleu">http://www.kaizensearch.co.uk/</br>
+                    contact@kaizensearch.co.uk</br>
+                    +44 20 3286 1806</p>
+            </div>
         </div>
-        <div class="col1">
-            <h3 class="bleu">Les contacter:</h3>
-            <p class="bleu">http://www.kaizensearch.co.uk/</br>
-
-                contact@kaizensearch.co.uk</br>
-
-                +44 20 3286 1806</p>
-        </div>
-
         <div id="avisEntreprise">
             <img class="imageAvis" src="CSS/images/sandrine.jpg" alt="">
             <h4 class="blanc">Sandrine Ha / Devoleppeur web</h4>

@@ -8,12 +8,15 @@
             <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png" alt=""></a>
             <h2>Liste des entreprises</h2>
         </div>
-
         <div>
             {% for entreprise in liste %}
                 <div>
-                    <a href="index.php?page=suppEntreprise&id={{ entreprise.id }}"><img class="btnModif" src="CSS/images/logoAdmin_supp.png" alt=""></a>
-                    <a href="index.php?page=modifEntreprise&id={{ entreprise.id }}"><img class="btnModif" src="CSS/images/logoAdmin_modif.png" alt=""></a>
+                    <a href="index.php?page=suppEntreprise&id={{ entreprise.id }}"><img class="btnModif"
+                                                                                        src="CSS/images/logoAdmin_supp.png"
+                                                                                        alt=""></a>
+                    <a href="index.php?page=modifEntreprise&id={{ entreprise.id }}"><img class="btnModif"
+                                                                                         src="CSS/images/logoAdmin_modif.png"
+                                                                                         alt=""></a>
                     <div>
                         <div class="titre">
                             <h5>{{ entreprise.nom }}</h5>
@@ -29,7 +32,8 @@
                                                                alt="developpement">{% endif %}
                             {% if entreprise.taille == 1 %}<img src="CSS/images/Picto/picto2_grandenteprise.png"
                                                                 alt="GE">{% endif %}
-                            {% if entreprise.taille == 0 %}<img src="CSS/images/Picto/picto2_PME.png" alt="PME">{% endif %}
+                            {% if entreprise.taille == 0 %}<img src="CSS/images/Picto/picto2_PME.png"
+                                                                alt="PME">{% endif %}
                             {% if entreprisevisiter == 1 %}<img src="CSS/images/Picto/picto2_connu.png"
                                                                 alt="connu">{% endif %}
                             {% if entreprisevisiter == 0 %}<img src="CSS/images/Picto/picto2_inconnu.png"
@@ -38,7 +42,8 @@
                                                               alt="aimer">{% endif %}
                         </div>
                         <div class="Ensavoirplus">
-                            <a class="btnEntreprise bleu" href="index.php?page=Entreprise&id={{ entreprise.id }}">En savoir plus</a>
+                            <a class="btnEntreprise bleu" href="index.php?page=Entreprise&id={{ entreprise.id }}">En
+                                savoir plus</a>
                         </div>
 
                     </div>

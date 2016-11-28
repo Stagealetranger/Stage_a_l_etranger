@@ -10,15 +10,16 @@
             <h2>Liste des papiers</h2>
         </div>
         <div>
-
             {% for papier in liste %}
                 <div>
-                    <a href="index.php?page=suppPapier&id={{ papier.id }}"><img class="btnModif"
-                                                                                src="CSS/images/logoAdmin_supp.png"
-                                                                                alt=""></a>
-                    <a href="index.php?page=modifPapier&id={{ papier.id }}"><img class="btnModif"
-                                                                                 src="CSS/images/logoAdmin_modif.png"
-                                                                                 alt=""></a
+
+                        <a href="index.php?page=suppPapier&id={{ papier.id }}"><img class="btnModif"
+                                                                                    src="CSS/images/logoAdmin_supp.png"
+                                                                                    alt=""></a>
+                        <a href="index.php?page=modifPapier&id={{ papier.id }}"><img class="btnModif"
+                                                                                     src="CSS/images/logoAdmin_modif.png"
+                                                                                     alt=""></a>
+
                     <div>
                         <div class="titre">
                             <h5>{{ papier.nom }}</h5>
@@ -29,9 +30,7 @@
                         <p>{{ papier.duree }} jours</p>
                     </div>
                 </div>
-
             {% endfor %}
         </div>
-
     </article>
 {% endblock %}

@@ -5,7 +5,10 @@ require_once 'dao/DaoType.php';
 
 
 $daoEntreprise = new DaoEntreprise();
-$daoType = new DaoType();
+$daoEntreprise -> setLesTypes();
+
+
+
 
 
 $recherche = array(
@@ -26,6 +29,7 @@ $graphisme = $_GET['graphisme'];
 $listeEntreprise = $daoEntreprise->getListe();
 for ($i = 0; $i < count($listeEntreprise); $i++) {
     $daoEntreprise = new DaoEntreprise();
+    $daoType = new DaoType();
  /*if ((($_GET['pays']) != '')|(($_GET['ville']) != '')) {
      if (($_GET['pays']) != ''){
          $daoEntreprise->findByPays($listeEntreprise[$i]->getId());
@@ -37,6 +41,7 @@ for ($i = 0; $i < count($listeEntreprise); $i++) {
      }
  }
 else{*/
+   
     $daoEntreprise->find($listeEntreprise[$i]->getId());
     $daoEntreprise->setLesTypes();
   /*}*/
@@ -50,11 +55,11 @@ $param = array(
     "liste" => $listeEntreprise
 );
 
-
+/*
 echo "<pre>";
 print_r($param);
 echo "</pre>";
-
+*/
 if (($_SESSION['mail']) == '') {
     header('Location: index.php?page=accueil');
 
