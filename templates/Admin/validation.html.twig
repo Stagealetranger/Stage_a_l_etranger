@@ -5,10 +5,10 @@
 {% block contenu %}
    <article>
        {% for validation in listeValidation %}
-       <form action="index.php?page=listeValidation" enctype="multipart/form-data">
+       <form action="index.php?page=listeValidation&id={{ validation.id }}" method="post" enctype="multipart/form-data">
            <p>{{ validation.nom }} | {{ validation.prenom }}</p>
            <button type="submit" name="accepter"><img src="CSS/images/btn_accepter.jpg" alt="accepter"></button>
-           <button type="submit" name="refuser"><img src="CSS/images/btn_refuser.jpg" alt="refuser"></button>
+           <button type="submit" name="refuser" value="refuser" ><img src="CSS/images/btn_refuser.jpg" alt="refuser"></button>
        </form>
        {% endfor %}
    </article>

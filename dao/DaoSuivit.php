@@ -1,5 +1,6 @@
 <?php
 require_once 'classes/class.Suivit.php';
+require_once 'classes/class.Compose.php';
 
 require_once 'Dao.php';
 
@@ -15,19 +16,15 @@ class DaoSuivit extends Dao{
     {
         $donnees = $this->findById("suivit", "ID_SUIVIT", $id);
         $this->bean->setId($donnees['ID_SUIVIT']);
-        $this->bean->setEffectuer($donnees['EFFECTUER']);
 
     }
 
     public function create()
     {
-        $sql = "INSERT INTO suivit(EFFECTUER)
-            VALUES(?)";
+        $sql = "INSERT INTO suivit()
+            VALUES()";
 
         $requete = $this->pdo->prepare($sql);
-
-        $requete->bindValue(1, $this->bean->getEffectuer());
-
         $requete->execute();
     }
 
@@ -35,15 +32,21 @@ class DaoSuivit extends Dao{
     {
         $donnees = $this->deleteById("suivit", "ID_SUIVIT", $this->bean->getId());
     }
-
-    public function update(){
-        $sql = "UPDATE suivit SET EFFECTUER = ? WHERE ID_SUIVIT = ?";
+    
+    public function setEffectuer()
+    {
+        $sql = "SELECT ID_SUIVIT as EFFECTUER
+                FROM compose    
+                WHERE 
+                 ID_SUIVIT = " . $this->bean->getId();
         $requete = $this->pdo->prepare($sql);
-        $requete->bindValue(1, $this->bean->getEffectuer());
-        $requete->bindValue(2, $this->bean->getId());
-        $requete->execute();
+        $this->bean->setEffectuer(0);
+        if ($requete->execute()) {
+            if ($donnees = $requete->fetch()) {
+                $this->bean->setEffectuer($donnees['EFFECTUER']);
+            }
+        }
+
     }
-
-
 
 }
