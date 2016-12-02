@@ -16,13 +16,12 @@ if (isset($_GET["page"])) {
     $uriDemandee = $_GET["page"];
 }
 
-
 $page = $routes[$uriDemandee]["page"];
 $template = $routes[$uriDemandee]["template"];
 
 $param = array();
 
-if ($page != null) {
+if ($page != null){
     include($page);
 }
 

@@ -25,7 +25,7 @@ if (isset($_POST["valider"])) {
     exit();
 }
 
-
+/*
 if (($_SESSION['mail']) == ''){
     header('Location: index.php?page=accueil');
 
@@ -35,11 +35,7 @@ if (($_SESSION['mail']) == ''){
     }
 
 }
+*/
 
-
-$param = array(
-   
-   
-);
 
 ?>
