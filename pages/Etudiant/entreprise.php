@@ -10,7 +10,7 @@ $daoPersonne = new DaoPersonne();
 $daoEntreprise->find($_GET["id"]);
 
 $param = array(
-    "entreprise" => $daoEntreprise
+    "entreprise" => $daoEntreprise->bean
 );
 
 
