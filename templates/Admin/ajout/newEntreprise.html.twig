@@ -10,35 +10,34 @@
             <div class="titreAdmin">
                 <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
                                                         alt=""></a>
-                <h2>Ajouter un papier</h2>
+                <h2>Ajouter une entreprise</h2>
             </div>
-
             <div>
                 <label for="nom">Nom entreprise</label>
                 <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom" required/>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
-                <label for="visiter">Visiter</label>
+                <label for="visiter">Un etudiant est-il deja aller dans cette entreprise ?</label>
                 <div class="ratio">
                     <input type="radio" class="form-control" name="visiter" id="visiter" value="1" required>oui</input>
                     <input type="radio" class="form-control" name="visiter" id="visiter" value="0" required>non</input>
                 </div>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
                 <label for="description">Description</label>
                     <textarea class="form-control" name="description" id="description" placeholder="Description"
                               required></textarea>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
                 <label for="rue">Rue</label>
                 <input type="text" class="form-control" name="rue" id="rue" placeholder="rue" required/>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
@@ -46,20 +45,20 @@
                 <label for="ville">Ville</label>
 
                 <input type="text" class="form-control" name="ville" id="ville" placeholder="ville" required/>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
                 <label for="pays">A quelle pays doit-il etre associer ?</label>
                 <input type="pays" class="form-control" name="pays" id="pays" placeholder="pays" required/>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
                 <label for="descritpionAvis">Avis de l'étudiant</label>
                 <textarea class="form-control" name="descritpionAvis" id="descritpionAvis" placeholder="avis"
                           required></textarea>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
@@ -68,14 +67,14 @@
                     <input type="radio" class="form-control" name="avis" id="avis" value="1" required>Positif</input>
                     <input type="radio" class="form-control" name="avis" id="avis" value="0" required>Negatif</input>
                 </div>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
                 <label for="profil">Profil rechercher par l'entreprise</label>
                 <textarea class="form-control" name="profil" id="profil" placeholder="profil"
                           required></textarea>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
             <div>
@@ -86,7 +85,7 @@
                     <option value="2">Graphisme</option>
                     <option value="3">Developpement</option>
                 </select>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
             <div>
                 <label for="taille">Taille de l'entreprise</label>
@@ -95,7 +94,7 @@
                     <input type="radio" class="form-control" name="taille" id="taille" value="1" required>Grande
                     Entreprise</input>
                 </div>
-                <span class="en">nooooooooooooooooooooooooooooo</span>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
             <div>
                 <button type="submit" class="btn" name="valider">
@@ -103,5 +102,169 @@
                 </button>
             </div>
         </form>
+        <script>// Fonction de désactivation de l'affichage des "tooltips"
+            function deactivateTooltips() {
+
+                var tooltips = document.querySelectorAll('.correction'),
+                        tooltipsLength = tooltips.length;
+
+                for (var i = 0; i < tooltipsLength; i++) {
+                    tooltips[i].style.display = 'none';
+                }
+
+            }
+
+
+            // La fonction ci-dessous permet de récupérer la "tooltip" qui correspond à notre input
+
+            function getTooltip(elements) {
+
+                while (elements = elements.nextSibling) {
+                    if (elements.className === 'correction') {
+                        return elements;
+                    }
+                }
+
+                return false;
+
+            }
+
+
+            // Fonctions de vérification du formulaire, elles renvoient "true" si tout est ok
+
+            var check = {}; // On met toutes nos fonctions dans un objet littéral
+
+            check['nom'] = function(id) {
+
+                var name = document.getElementById(id),
+                        tooltipStyle = getTooltip(name).style;
+
+                if (name.value.length >= 2) {
+                    name.className = 'correct';
+                    tooltipStyle.display = 'none';
+                    return true;
+                } else {
+                    name.className = 'incorrect';
+                    tooltipStyle.display = 'inline-block';
+                    return false;
+                }
+
+            };
+
+
+            check['login'] = function() {
+
+                var login = document.getElementById('login'),
+                        tooltipStyle = getTooltip(login).style;
+
+                if (login.value.length >= 4) {
+                    login.className = 'correct';
+                    tooltipStyle.display = 'none';
+                    return true;
+                } else {
+                    login.className = 'incorrect';
+                    tooltipStyle.display = 'inline-block';
+                    return false;
+                }
+
+            };
+
+            check['pwd1'] = function() {
+
+                var pwd1 = document.getElementById('pwd1'),
+                        tooltipStyle = getTooltip(pwd1).style;
+
+                if (pwd1.value.length >= 6) {
+                    pwd1.className = 'correct';
+                    tooltipStyle.display = 'none';
+                    return true;
+                } else {
+                    pwd1.className = 'incorrect';
+                    tooltipStyle.display = 'inline-block';
+                    return false;
+                }
+
+            };
+
+            check['pwd2'] = function() {
+
+                var pwd1 = document.getElementById('pwd1'),
+                        pwd2 = document.getElementById('pwd2'),
+                        tooltipStyle = getTooltip(pwd2).style;
+
+                if (pwd1.value == pwd2.value && pwd2.value != '') {
+                    pwd2.className = 'correct';
+                    tooltipStyle.display = 'none';
+                    return true;
+                } else {
+                    pwd2.className = 'incorrect';
+                    tooltipStyle.display = 'inline-block';
+                    return false;
+                }
+
+            };
+
+            check['country'] = function() {
+
+                var country = document.getElementById('country'),
+                        tooltipStyle = getTooltip(country).style;
+
+                if (country.options[country.selectedIndex].value != 'none') {
+                    tooltipStyle.display = 'none';
+                    return true;
+                } else {
+                    tooltipStyle.display = 'inline-block';
+                    return false;
+                }
+
+            };
+
+
+            // Mise en place des événements
+
+            (function() { // Utilisation d'une IIFE pour éviter les variables globales.
+
+                var myForm = document.getElementById('myForm'),
+                        inputs = document.querySelectorAll('input[type=text], input[type=password]'),
+                        inputsLength = inputs.length;
+
+                for (var i = 0; i < inputsLength; i++) {
+                    inputs[i].addEventListener('keyup', function(e) {
+                        check[e.target.id](e.target.id); // "e.target" représente l'input actuellement modifié
+                    });
+                }
+
+                myForm.addEventListener('submit', function(e) {
+
+                    var result = true;
+
+                    for (var i in check) {
+                        result = check[i](i) && result;
+                    }
+
+                    if (result) {
+                        alert('Le formulaire est bien rempli.');
+                    }
+
+                    e.preventDefault();
+
+                });
+
+                myForm.addEventListener('reset', function() {
+
+                    for (var i = 0; i < inputsLength; i++) {
+                        inputs[i].className = '';
+                    }
+
+                    deactivateTooltips();
+
+                });
+
+            })();
+
+
+            // Maintenant que tout est initialisé, on peut désactiver les "tooltips"
+
+            deactivateTooltips();</script>
     </article>
 {% endblock %}

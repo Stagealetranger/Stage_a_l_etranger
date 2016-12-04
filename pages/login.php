@@ -26,7 +26,7 @@ if(isset($_POST["connexion"])) {
         header("Location:index.php?page=Etudiant");
     }
     else {
-        header("Location:index.php?page=accueil");
+        header("Location:index.php?page=accueil#myModal");
     }
 
 }
