@@ -19,32 +19,37 @@ for ($i = 0; $i < count($listeValidation); $i++) {
     $listeValidation[$i] = $daoValidation->bean;
 }
 
+
+if (isset($_POST["accepter"])) {
+    // Instanciation du Dao qui permettra la création
+    $daoValidation->find($_GET["id"]);
+
+    $daoPersonne = new DaoPersonne();
+    $daoPersonne->bean->setNom($daoValidation->bean->getNom());
+    $daoPersonne->bean->setPrenom($daoValidation->bean->getPrenom());
+    $daoPersonne->bean->setMail($daoValidation->bean->getMail());
+    $daoPersonne->bean->setMdp($daoValidation->bean->getMdp());
+
+    $daoPersonne->create();
+    $daoValidation->delete();
+    header('Location: index.php?page=listeValidation');
+}
+
+if (isset($_POST["refuser"])) {
+    $daoValidation = new DaoValidation();
+    $daoValidation->find($_GET["id"]);
+    $daoValidation->delete();
+    
+    header('Location: index.php?page=listeValidation');
+}
+
+
 $param = array(
     "session" => $_SESSION,
     "listeValidation" => $listeValidation
 );
 
 
-if (isset($_POST["accepter"])) {
-    // Instanciation du Dao qui permettra la création
-    $daoValidation->find($id);
-
-    $daoPersonne->bean->setNom($_POST['nom']);
-    $daoPersonne->bean->setPrenom($_POST['prenom']);
-    $daoPersonne->bean->setMail($_POST['mail']);
-    $daoPersonne->bean->setMdp(sha1($_POST['mdp']));
-
-    $daoPersonne->create();
-    header('Location: index.php?page=listeValidation');
-}
-
-if (isset($_POST["refuser"])) {
-    $daoValidation = new DaoValidation();
-    $daoValidation->findById();
-    $daoValidation->deleteById();
-    
-    header('Location: index.php?page=listeValidation');
-}
 
 echo "<pre>";
 print_r($param);
