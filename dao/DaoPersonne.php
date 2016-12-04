@@ -29,7 +29,6 @@ class DaoPersonne extends Dao
         $sql = "INSERT INTO personne (NOM,PRENOM,MAIL,MDP)
             VALUES(?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
-
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getPrenom());
         $requete->bindValue(3, $this->bean->getMail());
