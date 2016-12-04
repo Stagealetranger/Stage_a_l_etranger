@@ -12,8 +12,6 @@ $daoEntreprise->find($_GET["id"]);
 $param = array(
     "entreprise" => $daoEntreprise->bean
 );
-
-
 if (($_SESSION['mail']) == ''){
     header('Location: index.php?page=accueil');
 
