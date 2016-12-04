@@ -5,7 +5,8 @@ require_once 'dao/DaoType.php';
 
 
 $daoEntreprise = new DaoEntreprise();
-$ville = $_GET["ville"];
+$daoEntreprise->setLesTypes();
+
 
 $recherche = array(
     'communication' => $_GET['communication'],
@@ -16,29 +17,28 @@ $recherche = array(
     'connu' => $_GET['connu'],
     'inconnu' => $_GET['inconnu'],
     'aimer' => $_GET['aimer']
+
 );
 
 
 $graphisme = $_GET['graphisme'];
 
 $listeEntreprise = $daoEntreprise->getListe();
-
 for ($i = 0; $i < count($listeEntreprise); $i++) {
     $daoEntreprise = new DaoEntreprise();
-    /*
+    $daoType = new DaoType();
     if ((($_GET['pays']) != '') | (($_GET['ville']) != '')) {
         if (($_GET['pays']) != '') {
-            $daoEntreprise->findPays($listeEntreprise[$i]->get());
-          $algotest = "pays";
+            $daoEntreprise->findByPays($listeEntreprise[$i]->getId());
+          
         }
 
         if (($_GET['ville']) != '') {
-            $daoEntreprise->findVille($listeEntreprise[$i]->getVille());
-            $algotest = "ville";
+            $daoEntreprise->findByVille($listeEntreprise[$i]->getId());
+
         }
-    } else */{
+    } else {
         $daoEntreprise->find($listeEntreprise[$i]->getId());
-        $algotest = "noraml";
     }
 
 
@@ -48,7 +48,7 @@ $listeEntreprise[$i] = $daoEntreprise->bean;
 
 
 $param = array(
-    "utiliser" =>$algotest,
+    "ville" => $_GET['ville'],
     "recherche" => $recherche,
     "liste" => $listeEntreprise
 );
@@ -58,9 +58,10 @@ echo "<pre>";
 print_r($param);
 echo "</pre>";
 
-
 if (($_SESSION['mail']) == '') {
     header('Location: index.php?page=accueil');
+
+
 }
 
 ?>
