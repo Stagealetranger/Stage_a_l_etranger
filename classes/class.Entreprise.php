@@ -17,9 +17,7 @@ class Entreprise
     private $taille = false;
     private $description = null;
     private $rue = null;
-    private $description_avis = null;
     private $profil = null;
-    private $pays = null;
     private $ville = null;
 
     private $lesTypes = array();
@@ -28,7 +26,7 @@ class Entreprise
 
 
     // --- OPERATIONS ---
-    public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $description_avis = null, $profil = null, $pays = null, $ville = null)
+    public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $profil = null, $ville = null)
     {
         $this->id = $id;
         $this->nom = $nom;
@@ -37,9 +35,7 @@ class Entreprise
         $this->taille = $taille;
         $this->description = $description;
         $this->rue = $rue;
-        $this->description_avis = $description_avis;
         $this->profil = $profil;
-        $this->pays = $pays;
         $this->ville = $ville;
     }
     public function getId(){return $this->id;}
@@ -56,12 +52,8 @@ class Entreprise
     public function setDescription($description){$this->description = $description;}
     public function getRue(){return $this->rue;}
     public function setRue($rue){$this->rue = $rue;}
-    public function getDescriptionAvis(){return $this->description_avis;}
-    public function setDescriptionAvis($description_avis){$this->description_avis = $description_avis;}
     public function getProfil(){return $this->profil;}
     public function setProfil($profil){$this->profil = $profil;}
-    public function getPays(){return $this->pays;}
-    public function setPays($pays){$this->pays = $pays;}
     public function getVille(){return $this->ville;}
     public function setVille($ville){$this->ville = $ville;}
     public function getLesTypes(){return $this->lesTypes;}
