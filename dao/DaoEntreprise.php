@@ -128,23 +128,32 @@ class DaoEntreprise extends Dao
     public function setLesPersonnesVont()
     {
         $sql = "SELECT * 
+<<<<<<< HEAD
                 FROM personne, est_en_stage, entreprise    
                 WHERE 
                 entreprise.ID_ENTREPRISE = est_en_stage.ID_ENTREPRISE 
                 est_en_stage.ID_PERSONNE = personne.ID_PERSONNE 
                 AND entreprise.ID_ENTREPRISE = ".$this->bean->getId();
+=======
+                FROM est_en_stage,personne, entreprise  
+                WHERE entreprise.ID_ENTREPRISE = ".$this->bean->getId()."
+                AND est_en_stage.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
+                AND est_en_stage.ID_PERSONNE = personne.ID_PERSONNE";
+>>>>>>> dd3fda701c8dda693441001687032d435ba6bb35
         $requete = $this->pdo->prepare($sql);
-        if($requete->execute()){
-            $stage = new Personne(
-            );
-            if($donnees = $requete->fetch()){
-                $stage = new Personne(
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $listePersonne = new Personne(
                     $donnees['ID_PERSONNE'],
-                    $donnees['NOM_PERSONNE']
+                    $donnees['NOM'],
+                    $donnees['PRENOM'],
+                    $donnees['MAIL']
                 );
+                $liste[] = $listePersonne;
             }
-            $this->bean->setLesPersonnesVont($stage);
         }
+        $this->bean->setLesPersonnesVont($liste);
     }
 
 

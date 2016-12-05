@@ -27,7 +27,6 @@ $recherche = array(
 $listeEntreprise = $daoEntreprise->getListe();
 for ($i = 0; $i < count($listeEntreprise); $i++) {
     $daoEntreprise = new DaoEntreprise();
-    $daoType = new DaoType();
     if ((($_GET['pays']) != '') | (($_GET['ville']) != '')) {
         /*if (($_GET['pays']) != '') {
             $daoEntreprise->findByPays($listeEntreprise[$i]->getId());

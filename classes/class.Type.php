@@ -20,6 +20,10 @@ class Type
 
     }
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> dd3fda701c8dda693441001687032d435ba6bb35
     // --- OPERATIONS ---
 
     
