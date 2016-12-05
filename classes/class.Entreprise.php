@@ -18,16 +18,18 @@ class Entreprise
     private $description = null;
     private $rue = null;
     private $profil = null;
+    private $longitude = 0;
+    private $latitude = 0;
     private $ville = null;
-
-    private $lesPays = array();
+    private $contact = null;
+    private $telephone = null;
+    private $lePays = null;
     private $lesTypes = array();
-
     private $lesPersonnesVont = array();
 
 
     // --- OPERATIONS ---
-    public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $profil = null, $ville = null)
+    public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $profil = null, $longitude = 0, $latitude = 0, $ville = null, $contact = null, $telephone = 0)
     {
         $this->id = $id;
         $this->nom = $nom;
@@ -37,7 +39,11 @@ class Entreprise
         $this->description = $description;
         $this->rue = $rue;
         $this->profil = $profil;
+        $this->profil = $latitude;
+        $this->profil = $longitude;
         $this->ville = $ville;
+        $this->ville = $contact;
+        $this->ville = $telephone;
     }
     public function getId(){return $this->id;}
     public function setId($id){$this->id = $id;}
@@ -57,12 +63,22 @@ class Entreprise
     public function setProfil($profil){$this->profil = $profil;}
     public function getVille(){return $this->ville;}
     public function setVille($ville){$this->ville = $ville;}
-    public function getPays(){return $this->lesPays;}
-    public function setPays($lesPays){$this->lesPays = $lesPays;}
+    public function getLePays(){return $this->lePays;}
+    public function setLePays($lePays){$this->lePays = $lePays;}
     public function getLesTypes(){return $this->lesTypes;}
     public function setLesTypes($lesTypes){$this->lesTypes = $lesTypes;}
     public function getLesPersonnesVont(){return $this->lesPersonnesVont;}
     public function setLesPersonnesVont($lesPersonnesVont){$this->lesPersonnesVont = $lesPersonnesVont;}
+    public function getLongitude(){return $this->longitude;}
+    public function setLongitude($longitude){$this->longitude = $longitude;}
+    public function getLatitude(){return $this->latitude;}
+    public function setLatitude($latitude){$this->latitude = $latitude;}
+    public function getContact(){return $this->contact;}
+    public function setContact($contact){$this->contact = $contact;}
+    public function getTelephone(){return $this->telephone;}
+    public function setTelephone($telephone){$this->telephone = $telephone;}
+
+
 
 
 } /* end of class Entreprise */

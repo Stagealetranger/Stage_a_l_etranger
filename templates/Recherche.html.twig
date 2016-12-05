@@ -60,7 +60,7 @@
                         <h5>{{ entreprise.nom }}</h5>
                     </div>
                     <p class="descritpionEntreprise">{{ entreprise.description }}</p>
-                    <p class="villeEntreprise">{{ entreprise.ville }}, {{ entreprise.pays }}</p>
+                    <p class="villeEntreprise">{{ entreprise.ville }}, {{ entreprise.lesPays.nom }}</p>
                     <div class="pictoFiltres">
                         {% if entreprise.type == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
                                                            alt="communication">{% endif %}

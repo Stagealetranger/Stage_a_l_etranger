@@ -27,7 +27,12 @@ class DaoEntreprise extends Dao
         $this->bean->setAvis($donnees['AVIS']);
         $this->bean->setTaille($donnees['TAILLE']);
         $this->bean->setProfil($donnees['PROFIL']);
+        $this->bean->setLatitude($donnees['LATITUDE']);
+        $this->bean->setLongitude($donnees['LONGITUDE']);
         $this->bean->setVille($donnees['VILLE']);
+        $this->bean->setContact($donnees['CONTACT']);
+        $this->bean->setTelephone($donnees['TELEPHONE']);
+
     }
 
     public function findByVille($ville = '')
@@ -104,6 +109,10 @@ class DaoEntreprise extends Dao
                     $donnees['AVIS'],
                     $donnees['TAILLE'],
                     $donnees['PROFIL'],
+                    $donnees['CONTACT'],
+                    $donnees['LONGITUDE'],
+                    $donnees['LATITUDE'],
+                    $donnees['TELEPHONE'],
                     $donnees['VILLE']
                 );
                 $liste[] = $entreprise;
@@ -147,12 +156,12 @@ class DaoEntreprise extends Dao
     }
 
 
-    public function setPays()
+    public function setLePays()
     {
         $sql = "SELECT * 
                 FROM pays, entreprise   
-                WHERE pays.ID_PAYS = entreprise.ID_PAYS
-                AND entreprise.ID_PAYS = ".$this->bean->getId();
+                WHERE pays.ID_PAYS = entreprise.ID_PAYS 
+                AND entreprise.ID_ENTREPRISE =" .$this->bean->getId();
         $requete = $this->pdo->prepare($sql);
         if($requete->execute()){
             $pays = new Pays();
@@ -162,7 +171,7 @@ class DaoEntreprise extends Dao
                     $donnees['NOM_PAYS']
                 );
             }
-            $this->bean->setPays($pays);
+            $this->bean->setLePays($pays);
         }
     }
 

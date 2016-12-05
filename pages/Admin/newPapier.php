@@ -2,6 +2,14 @@
 require_once('dao/DaoPapier.php');
 
 
+$daoPays = New DaoPays();
+$listePays = $daoPays->getListe();
+for ($i = 0; $i < count($listePays); $i++) {
+    $daoPays = new DaoPays();
+    $daoPays->find($listePays[$i]->getId());
+    $listePays[$i] = $daoPays->bean;
+}
+
 
 if (isset($_POST["valider"])) {
     // Instanciation du Dao qui permettra la création
@@ -34,8 +42,7 @@ if (($_SESSION['mail']) == ''){
 
 
 $param = array(
-   
-  
+    "liste" => $listePays
 );
 
 ?>
