@@ -19,12 +19,6 @@ class Type
         $this->type = $type;
 
     }
-    
-<<<<<<< HEAD
-=======
-
->>>>>>> dd3fda701c8dda693441001687032d435ba6bb35
-    // --- OPERATIONS ---
 
     
     public function getId(){return $this->id;}

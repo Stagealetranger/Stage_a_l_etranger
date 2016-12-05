@@ -5,7 +5,7 @@
  * Date: 05/12/2016
  * Time: 13:23
  */
-
+/*
 require_once 'dao/DaoEntreprise.php';
 
 
@@ -27,6 +27,30 @@ $daoEntreprise ->setLesPersonnesVont();
 $param = array(
 
     "liste" => $listeEntreprise
+);
+*/
+require_once 'dao/DaoValidation.php';
+require_once 'dao/DaoPersonne.php';
+
+
+$daoPersonne = new DaoPersonne();
+
+
+$listePersonne = $daoPersonne ->getListePersonne();
+
+
+for ($i = 0; $i < count($listePersonne); $i++) {
+
+    $daoPersonne = new DaoPersonne();
+
+    $daoPersonne->find($listePersonne[$i]->getId());
+    $daoPersonne ->setLesEntreprisesAccueil();
+
+    $listePersonne[$i] = $daoPersonne->bean;
+}
+$param = array(
+
+    "liste" => $listePersonne
 );
 
 echo "<pre>";

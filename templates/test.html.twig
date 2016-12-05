@@ -87,6 +87,14 @@
             {% endfor %}
         </div>
     </article>
+    <article>
+        {% for personne in listePersonne %}
+            <form action="index.php?page=listePersonne&id={{ personne.id }}" method="post" enctype="multipart/form-data">
+                <p>{{ personne.nom }} | {{ personne.prenom }}</p>
+
+            </form>
+        {% endfor %}
+    </article>
     <script>
         (function () {
             "use strict";

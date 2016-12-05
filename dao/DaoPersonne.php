@@ -1,4 +1,7 @@
 <?php
+require_once 'classes/class.Entreprise.php';
+require_once 'classes/class.Papier.php';
+require_once 'classes/class.Suivit.php';
 require_once 'classes/class.Personne.php';
 
 require_once 'Dao.php';
@@ -73,5 +76,64 @@ class DaoPersonne extends Dao
 
             }
         }
+    }
+    public function getListePersonne()
+    {
+        $query = "SELECT * 
+                FROM personne   
+                ORDER BY  ID_PERSONNE";
+        // Préparation et chargement de la requete
+        $requete = $this->pdo->prepare($query);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $personne = new Personne(
+                    $donnees['ID_PERSONNE'],
+                    $donnees['NOM'],
+                    $donnees['PRENOM'],
+                    $donnees['MAIL'],
+                    $donnees['PHOTO'],
+                    $donnees['MDP']
+                );
+                $liste[] = $personne;
+            }
+        }
+        return $liste;
+    }
+
+
+    public function setLesEntreprisesAccueil(){
+        {
+            $sql = "SELECT * 
+                FROM est_en_stage,personne, entreprise  
+                WHERE personne.ID_PERSONNE = ".$this->bean->getId()."
+                AND est_en_stage.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
+                AND est_en_stage.ID_PERSONNE = personne.ID_PERSONNE";
+
+            $requete = $this->pdo->prepare($sql);
+            $liste = array();
+            if ($requete->execute()) {
+                while ($donnees = $requete->fetch()) {
+                    $listeEntreprise = new Entreprise(
+                        $donnees['ID_ENTREPRISE'],
+                        $donnees['NOM_ENTREPRISE'],
+                        $donnees['VISITER'],
+                        $donnees['DESCRIPTION'],
+                        $donnees['RUE'],
+                        $donnees['AVIS'],
+                        $donnees['TAILLE'],
+                        $donnees['PROFIL'],
+                        $donnees['VILLE'],
+                        $donnees['CONTACT'],
+                        $donnees['LATITUDE'],
+                        $donnees['LONGITUDE'],
+                        $donnees['TELEPHONE']
+                    );
+                    $liste[] = $listeEntreprise;
+                }
+            }
+            $this->bean->setLesEntreprisesAccueil($liste);
+        }
+
     }
 }
