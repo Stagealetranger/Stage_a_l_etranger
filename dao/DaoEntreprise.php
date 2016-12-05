@@ -44,9 +44,6 @@ class DaoEntreprise extends Dao
     }
 
 
-
-
-
     public function create()
     {
         $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, PROFIL, VILLE) 
@@ -114,31 +111,35 @@ class DaoEntreprise extends Dao
         return $liste;
     }
 
+
     public function setLesTypes()
     {
-        $sql = "SELECT * FROM `est_de_type` WHERE `ID_TYPE` = 1 
-AND `ID_ENTREPRISE` = " . $this->bean->getId();
+        $sql = "SELECT * 
+                FROM est_de_type, entreprise, type   
+                WHERE est_de_type.ID_ENTREPRISE = " . $this->bean->getId() . " 
+                AND est_de_type.ID_TYPE = type.ID_TYPE";
         $requete = $this->pdo->prepare($sql);
+        $liste = array();
         if ($requete->execute()) {
-            $type = new Type();
-            if ($donnees = $requete->fetch()) {
-                $type = new Type(
-                    $donnees['ID_TYPE'],
-                    $donnees['TYPE']
-                );
+            while ($donnees = $requete->fetch()) {
+                $listeType[] = new Type($donnees['ID_TYPE'], $donnees['TYPE']);
+                $liste[] = $listeType;
             }
-            $this->bean->setLesTypes($type);
         }
+        return $liste;
     }
-    public function setAvisPersonne(){
+
+
+    public function setAvisPersonne()
+    {
         $sql = "SELECT ID_ENTREPRISE as DESCRIPTION_AVIS 
                 FROM OnAccueilli     
                 WHERE 
-                 ID_ENTREPRISE = ".$this->bean->getId();
+                 ID_ENTREPRISE = " . $this->bean->getId();
         $requete = $this->pdo->prepare($sql);
         $this->bean->setDescriptionAvis(0);
-        if($requete->execute()){
-            if($donnees = $requete->fetch()){
+        if ($requete->execute()) {
+            if ($donnees = $requete->fetch()) {
                 $this->bean->setDescriptionAvis($donnees['DESCRIPTION_AVIS']);
             }
         }
