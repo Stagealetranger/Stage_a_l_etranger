@@ -28,7 +28,7 @@ for ($i = 0; $i < count($listeEntreprise); $i++) {
     $daoEntreprise = new DaoEntreprise();
     $daoType = new DaoType();
     if ((($_GET['pays']) != '') | (($_GET['ville']) != '')) {
-        if (($_GET['pays']) != '') {
+        /*if (($_GET['pays']) != '') {
             $daoEntreprise->findByPays($listeEntreprise[$i]->getId());
           
         }
@@ -36,7 +36,7 @@ for ($i = 0; $i < count($listeEntreprise); $i++) {
         if (($_GET['ville']) != '') {
             $daoEntreprise->findByVille($listeEntreprise[$i]->getId());
 
-        }
+        }*/
     } else {
         $daoEntreprise->find($listeEntreprise[$i]->getId());
     }
@@ -44,6 +44,8 @@ for ($i = 0; $i < count($listeEntreprise); $i++) {
 
 }
 $daoEntreprise->setLesTypes();
+$daoEntreprise->setPays();
+
 $listeEntreprise[$i] = $daoEntreprise->bean;
 
 

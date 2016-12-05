@@ -1,5 +1,6 @@
 <?php
 require_once 'classes/class.Entreprise.php';
+require_once 'classes/class.Pays.php';
 require_once 'classes/class.Type.php';
 require_once 'classes/class.OnAccueilli.php';
 
