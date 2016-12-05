@@ -44,7 +44,10 @@ for ($i = 0; $i < count($listePersonne); $i++) {
     $daoPersonne = new DaoPersonne();
 
     $daoPersonne->find($listePersonne[$i]->getId());
-    $daoPersonne ->setLesEntreprisesAccueil();
+   /*$daoPersonne ->setLesEntreprisesOnAccueilli();*/
+   /* $daoPersonne ->setLesEntreprisesAccueil();*/
+    /*$daoPersonne ->setLesPapiers();*/
+    /*$daoPersonne ->setLeSuivit();*/
 
     $listePersonne[$i] = $daoPersonne->bean;
 }
