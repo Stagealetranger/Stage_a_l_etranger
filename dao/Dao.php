@@ -30,6 +30,11 @@ class Dao
         }
     }
 
+  
+
+
+
+
     public function deleteById($table = null, $colonne = null, $valeur = 0)
     {
         $sql = "DELETE FROM " . $table . " WHERE " . $colonne . " = " . $valeur;

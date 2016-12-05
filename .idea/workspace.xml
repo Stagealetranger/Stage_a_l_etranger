@@ -5,21 +5,12 @@
     <list default="true" id="9f503669-1c90-4ee9-a1eb-18a87514254a" name="Default" comment="" />
 =======
     <list default="true" id="9f503669-1c90-4ee9-a1eb-18a87514254a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/images/logoMMImenu.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/styles.css" afterPath="$PROJECT_DIR$/CSS/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/Dao.php" afterPath="$PROJECT_DIR$/dao/Dao.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/DaoEntreprise.php" afterPath="$PROJECT_DIR$/dao/DaoEntreprise.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/DaoPersonne.php" afterPath="$PROJECT_DIR$/dao/DaoPersonne.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/Admin/newEntreprise.php" afterPath="$PROJECT_DIR$/pages/Admin/newEntreprise.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/Etudiant/recherche.php" afterPath="$PROJECT_DIR$/pages/Etudiant/recherche.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login.php" afterPath="$PROJECT_DIR$/pages/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/param/param.ini" afterPath="$PROJECT_DIR$/param/param.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/ajout/newEntreprise.html.twig" afterPath="$PROJECT_DIR$/templates/Admin/ajout/newEntreprise.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/general.html.twig" afterPath="$PROJECT_DIR$/templates/general.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html.twig" afterPath="$PROJECT_DIR$/templates/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/inscription.html.twig" afterPath="$PROJECT_DIR$/templates/inscription.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/pageEtudiante.html.twig" afterPath="$PROJECT_DIR$/templates/pageEtudiante.html.twig" />
     </list>
 >>>>>>> origin/master
     <ignored path="Stage_a_l_etranger.iws" />
@@ -43,6 +34,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
+      <file leaf-file-name="recherche.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/Etudiant/recherche.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+=======
+<<<<<<< HEAD
       <file leaf-file-name="class.Compose.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/class.Compose.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,11 +53,29 @@
             <state relative-caret-position="1863">
               <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
 >>>>>>> origin/master
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="DaoEntreprise.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/DaoEntreprise.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <marker date="1480858526080" expanded="true" signature="1754:1922" placeholder="INSERT INTO entreprise... " />
+                <marker date="1480858526080" expanded="true" signature="2777:2936" placeholder="UPDATE entre... " />
+                <marker date="1480858526080" expanded="true" signature="3605:3681" placeholder="SELECT * FRO... entreprise" />
+                <marker date="1480858526080" expanded="true" signature="4583:4671" placeholder="SELECT * FRO... est_de_type" />
+                <marker date="1480858526080" expanded="true" signature="4583:4699" placeholder="SELECT * FRO... est_de_type" />
+                <marker date="1480858526080" expanded="true" signature="4583:4700" placeholder="SELECT * FRO... est_de_type" />
+                <marker date="1480858526080" expanded="true" signature="4583:4722" placeholder="SELECT * FRO... est_de_type" />
+                <marker date="1480858526080" expanded="true" signature="4583:4768" placeholder="SELECT * FRO... est_de_type" />
+              </folding>
+=======
 <<<<<<< HEAD
       <file leaf-file-name="DaoSuivit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/DaoSuivit.php">
@@ -78,10 +94,27 @@
               <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding />
 >>>>>>> origin/master
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Dao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/Dao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+              <folding>
+                <marker date="1480858621872" expanded="true" signature="599:653" placeholder="SELECT * FRO... ${$table}" />
+                <marker date="1480858621872" expanded="true" signature="964:1016" placeholder="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="DaoEntreprise.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/DaoEntreprise.php">
@@ -98,6 +131,7 @@
               </folding>
 =======
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+>>>>>>> origin/master
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="486">
@@ -121,7 +155,7 @@
       <file leaf-file-name="newEntreprise.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Admin/ajout/newEntreprise.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="567">
               <caret line="21" column="90" selection-start-line="21" selection-start-column="90" selection-end-line="21" selection-end-column="90" />
               <folding />
 >>>>>>> origin/master
@@ -129,6 +163,23 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSS/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18765">
+              <caret line="695" column="26" selection-start-line="695" selection-start-column="3" selection-end-line="695" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/general.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1350">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="74" />
+=======
 <<<<<<< HEAD
       <file leaf-file-name="suppEnt.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Admin/modif/suppEnt.php">
@@ -141,6 +192,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="841">
               <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+>>>>>>> origin/master
 >>>>>>> origin/master
               <folding />
             </state>
@@ -163,8 +215,8 @@
       <file leaf-file-name="param.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/param/param.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
               <folding />
 >>>>>>> origin/master
             </state>
@@ -182,7 +234,7 @@
       <file leaf-file-name="DaoPersonne.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/DaoPersonne.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="783">
               <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
               <folding>
                 <marker date="1480695938816" expanded="true" signature="682:755" placeholder="INSERT INTO personne... " />
@@ -194,6 +246,13 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="listeEntreprise.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/Admin/listeEntreprise.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="626">
+              <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+=======
 <<<<<<< HEAD
       <file leaf-file-name="routes.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/param/routes.ini">
@@ -245,6 +304,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="616">
               <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+>>>>>>> origin/master
 >>>>>>> origin/master
               <folding />
             </state>
@@ -309,18 +369,22 @@
         <option value="$PROJECT_DIR$/templates/suivi.html.twig" />
         <option value="$PROJECT_DIR$/templates/monProfil.html.twig" />
         <option value="$PROJECT_DIR$/templates/index.html.twig" />
-        <option value="$PROJECT_DIR$/dao/DaoEntreprise.php" />
-        <option value="$PROJECT_DIR$/pages/Etudiant/recherche.php" />
         <option value="$PROJECT_DIR$/templates/general.html.twig" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/templates/pageEtudiante.html.twig" />
         <option value="$PROJECT_DIR$/pages/Admin/newEntreprise.php" />
-        <option value="$PROJECT_DIR$/CSS/styles.css" />
         <option value="$PROJECT_DIR$/templates/Admin/ajout/newEntreprise.html.twig" />
         <option value="$PROJECT_DIR$/dao/DaoPersonne.php" />
         <option value="$PROJECT_DIR$/templates/inscription.html.twig" />
-        <option value="$PROJECT_DIR$/param/param.ini" />
         <option value="$PROJECT_DIR$/pages/login.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/CSS/styles.css" />
+        <option value="$PROJECT_DIR$/param/param.ini" />
+        <option value="$PROJECT_DIR$/dao/DaoEntreprise.php" />
+        <option value="$PROJECT_DIR$/dao/Dao.php" />
+        <option value="$PROJECT_DIR$/pages/Etudiant/recherche.php" />
+=======
+>>>>>>> origin/master
 >>>>>>> origin/master
       </list>
     </option>
@@ -365,6 +429,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scope" />
+=======
+>>>>>>> origin/master
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -394,6 +462,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+=======
               <option name="myItemId" value="Twig" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -544,10 +614,19 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+>>>>>>> origin/master
               <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Portfolio" />
+=======
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Stage_a_l_etranger" />
@@ -667,6 +746,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> origin/master
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
@@ -747,12 +827,24 @@
       <workItem from="1480414114069" duration="3042000" />
       <workItem from="1480513856240" duration="2223000" />
       <workItem from="1480595730436" duration="1053000" />
+<<<<<<< HEAD
+      <workItem from="1480693743250" duration="2909000" />
+      <workItem from="1480715091442" duration="71000" />
+      <workItem from="1480715826889" duration="83000" />
+      <workItem from="1480718114562" duration="27000" />
+      <workItem from="1480718897228" duration="5000" />
+      <workItem from="1480854622332" duration="2905000" />
+=======
       <workItem from="1480693743250" duration="2393000" />
+>>>>>>> origin/master
 >>>>>>> origin/master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="62186000" />
+=======
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="42200000" />
   </component>
@@ -763,12 +855,17 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19045064" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
 =======
     <option name="totallyTimeSpent" value="58579000" />
+>>>>>>> origin/master
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+<<<<<<< HEAD
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15511727" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23667377" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
 >>>>>>> origin/master
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -915,6 +1012,8 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/templates/Admin/modif/suppPapier.html.twig">
 =======
     <entry file="file://$PROJECT_DIR$/pages/Admin/listeEntreprise.php">
@@ -924,6 +1023,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/templates/Admin/ListePapier.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -1090,6 +1190,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/dao/Dao.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1120,6 +1222,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/dao/DaoValidation.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1162,6 +1265,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/templates/general.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -1171,6 +1276,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/templates/pageEtudiante.html.twig">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1179,6 +1285,8 @@
 =======
         <state relative-caret-position="2997">
           <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+<<<<<<< HEAD
+=======
           <folding />
 >>>>>>> origin/master
         </state>
@@ -1194,6 +1302,7 @@
           <caret line="882" column="1" selection-start-line="882" selection-start-column="1" selection-end-line="882" selection-end-column="1" />
           <folding />
 >>>>>>> origin/master
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -1205,7 +1314,10 @@
 =======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
+=======
           <folding />
+>>>>>>> origin/master
 >>>>>>> origin/master
         </state>
       </provider>
@@ -1218,17 +1330,19 @@
 =======
         <state relative-caret-position="108">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/inscription.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
+        <state relative-caret-position="972">
           <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+<<<<<<< HEAD
+=======
           <folding>
             <marker date="1480696153136" expanded="true" signature="114:1736" placeholder="{% block contenu ...%}" />
           </folding>
+>>>>>>> origin/master
 >>>>>>> origin/master
         </state>
       </provider>
@@ -1236,31 +1350,52 @@
     <entry file="file://$PROJECT_DIR$/param/routes.ini">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+        <state relative-caret-position="2241">
+=======
+<<<<<<< HEAD
         <state relative-caret-position="1425">
           <caret line="57" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
 =======
         <state relative-caret-position="841">
+>>>>>>> origin/master
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
           <folding />
 >>>>>>> origin/master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/param/param.ini">
+    <entry file="file://$PROJECT_DIR$/pages/Admin/newEntreprise.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="999">
+          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="475">
           <caret line="19" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="14" />
 =======
         <state relative-caret-position="243">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+>>>>>>> origin/master
           <folding />
 >>>>>>> origin/master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/DaoPersonne.php">
+    <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1593">
+          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+          <folding />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="350">
           <caret line="14" column="60" selection-start-line="13" selection-start-column="19" selection-end-line="14" selection-end-column="60" />
@@ -1273,17 +1408,23 @@
             <marker date="1480695938816" expanded="true" signature="1818:1890" placeholder="SELECT * FRO... personne" />
           </folding>
 >>>>>>> origin/master
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/login.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="486">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="900">
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="10" />
 =======
         <state relative-caret-position="729">
           <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+>>>>>>> origin/master
           <folding />
 >>>>>>> origin/master
         </state>
@@ -1313,8 +1454,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Etudiant/recherche.php">
+    <entry file="file://$PROJECT_DIR$/templates/Admin/ajout/newEntreprise.html.twig">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="567">
+          <caret line="21" column="90" selection-start-line="21" selection-start-column="90" selection-end-line="21" selection-end-column="90" />
+=======
         <state relative-caret-position="375">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
         </state>
@@ -1341,19 +1486,31 @@
 =======
         <state relative-caret-position="1863">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Admin/newEntreprise.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
 >>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="18765">
+          <caret line="695" column="26" selection-start-line="695" selection-start-column="3" selection-end-line="695" selection-end-column="26" />
+=======
+        <state relative-caret-position="616">
+          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+>>>>>>> origin/master
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/templates/general.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="74" />
+=======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/classes/class.Suivit.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1365,10 +1522,14 @@
         <state relative-caret-position="459">
           <caret line="21" column="90" selection-start-line="21" selection-start-column="90" selection-end-line="21" selection-end-column="90" />
 >>>>>>> origin/master
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/pages/Admin/listeEntreprise.php">
+=======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/classes/class.OnAccueilli.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1426,22 +1587,74 @@
           <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
 =======
     <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+        <state relative-caret-position="626">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/param/param.ini">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="54">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+=======
         <state relative-caret-position="486">
           <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+>>>>>>> origin/master
 >>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/dao/DaoPersonne.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <marker date="1480695938816" expanded="true" signature="682:755" placeholder="INSERT INTO personne... " />
+            <marker date="1480695938816" expanded="true" signature="1244:1334" placeholder="UPDATE perso... " />
+            <marker date="1480695938816" expanded="true" signature="1818:1890" placeholder="SELECT * FRO... personne" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/Dao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+          <folding>
+            <marker date="1480858621872" expanded="true" signature="599:653" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1480858621872" expanded="true" signature="964:1016" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/DaoEntreprise.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1480858526080" expanded="true" signature="1754:1922" placeholder="INSERT INTO entreprise... " />
+            <marker date="1480858526080" expanded="true" signature="2777:2936" placeholder="UPDATE entre... " />
+            <marker date="1480858526080" expanded="true" signature="3605:3681" placeholder="SELECT * FRO... entreprise" />
+            <marker date="1480858526080" expanded="true" signature="4583:4671" placeholder="SELECT * FRO... est_de_type" />
+            <marker date="1480858526080" expanded="true" signature="4583:4699" placeholder="SELECT * FRO... est_de_type" />
+            <marker date="1480858526080" expanded="true" signature="4583:4700" placeholder="SELECT * FRO... est_de_type" />
+            <marker date="1480858526080" expanded="true" signature="4583:4722" placeholder="SELECT * FRO... est_de_type" />
+            <marker date="1480858526080" expanded="true" signature="4583:4768" placeholder="SELECT * FRO... est_de_type" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Etudiant/recherche.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/param/param.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -1454,6 +1667,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>

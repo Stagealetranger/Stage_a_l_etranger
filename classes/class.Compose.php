@@ -4,6 +4,8 @@ require_once('class.Suivit.php');
 class Compose extends Suivit
 {
     private $effectuer = false;
+    
+    private $setlesPapiers = array();
 
     public function Compose($id=0, $effectuer)
     {
@@ -17,5 +19,9 @@ class Compose extends Suivit
 
     public function getEffectuer() {return $this->effectuer;}
     public function setEffectuer($effectuer){$this->effectuer=$effectuer;}
+    
+    public function getSetlesPapiers(){return $this->setlesPapiers;}
+    public function setSetlesPapiers($setlesPapiers){$this->setlesPapiers = $setlesPapiers;}
+    
 
 }

@@ -4,6 +4,7 @@ require_once('class.Entreprise.php');
 class OnAccueilli extends Entreprise
 {
     private $description_avis = 0;
+    private $lesPersonnesDeja = array();
 
     public function OnAccueilli($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $description_avis = null, $profil = null, $pays = null, $ville = null, $description_avis=0)
     {
@@ -18,4 +19,6 @@ class OnAccueilli extends Entreprise
     public function getDescriptionAvis() {return $this->description_avis;}
     public function setDescriptionAvis($description_avis){$this->description_avis=$description_avis;}
 
+    public function getLesPersonnesDeja(){return $this->lesPersonnesDeja;}
+    public function setLesPersonnesDeja($lesPersonnesDeja){$this->lesPersonnesDeja = $lesPersonnesDeja;}
 }

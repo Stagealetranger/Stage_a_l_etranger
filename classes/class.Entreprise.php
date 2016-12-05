@@ -21,7 +21,7 @@ class Entreprise
     private $ville = null;
 
     private $lesTypes = array();
-    private $lesPersonnesDeja = array();
+    
     private $lesPersonnesVont = array();
 
 
@@ -58,8 +58,6 @@ class Entreprise
     public function setVille($ville){$this->ville = $ville;}
     public function getLesTypes(){return $this->lesTypes;}
     public function setLesTypes($lesTypes){$this->lesTypes = $lesTypes;}
-    public function getLesPersonnesDeja(){return $this->lesPersonnesDeja;}
-    public function setLesPersonnesDeja($lesPersonnesDeja){$this->lesPersonnesDeja = $lesPersonnesDeja;}
     public function getLesPersonnesVont(){return $this->lesPersonnesVont;}
     public function setLesPersonnesVont($lesPersonnesVont){$this->lesPersonnesVont = $lesPersonnesVont;}
 

@@ -31,24 +31,16 @@ class DaoEntreprise extends Dao
 
     public function findByVille($ville = '')
     {
-        $sql = "SELECT * FROM entreprise WHERE VILLE = '.$ville.'";
-        $requete = $this->pdo->prepare($sql);
-        if ($requete->execute()) {
-            if ($donnees = $requete->fetch()) {
-                $this->bean->setId($donnees['ID_ENTREPRISE']);
-                $this->bean->setNom($donnees['NOM_ENTREPRISE']);
-                $this->bean->setVisiter($donnees['VISITER']);
-                $this->bean->setDescription($donnees['DESCRIPTION']);
-                $this->bean->setRue($donnees['RUE']);
-                $this->bean->setAvis($donnees['AVIS']);
-                $this->bean->setTaille($donnees['TAILLE']);
-                $this->bean->setProfil($donnees['PROFIL']);
-                $this->bean->setVille($donnees['VILLE']);
-                return $donnees;
-            }
-
-        }
-
+        $donnees = $this->findByVille("entreprise", "VILLE", $ville);
+        $this->bean->setId($donnees['ID_ENTREPRISE']);
+        $this->bean->setNom($donnees['NOM_ENTREPRISE']);
+        $this->bean->setVisiter($donnees['VISITER']);
+        $this->bean->setDescription($donnees['DESCRIPTION']);
+        $this->bean->setRue($donnees['RUE']);
+        $this->bean->setAvis($donnees['AVIS']);
+        $this->bean->setTaille($donnees['TAILLE']);
+        $this->bean->setProfil($donnees['PROFIL']);
+        $this->bean->setVille($donnees['VILLE']);
     }
 
 
@@ -99,7 +91,7 @@ class DaoEntreprise extends Dao
     {
         $query = "SELECT * 
                 FROM entreprise    
-                ORDER BY  PAYS";
+                ORDER BY VILLE";
         // Préparation et chargement de la requete
         $requete = $this->pdo->prepare($query);
         $liste = array();
@@ -152,3 +144,4 @@ AND `ID_ENTREPRISE` = " . $this->bean->getId();
         }
     }
 }
+

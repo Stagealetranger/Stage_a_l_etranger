@@ -6,8 +6,7 @@ require_once('class.Personne.php');
 class Suivit
 {
     private $id = 0;
-
-    private $lesPapiers = array();
+    
     private $lesPersonnes = array();
     
 
@@ -21,8 +20,7 @@ class Suivit
     
     public function getId(){return $this->id;}
     public function setId($id){$this->id = $id;}
-    public function getLesPapiers(){return $this->lesPapiers;}
-    public function setLesPapiers($lesPapiers){$this->lesPapiers = $lesPapiers;}
+    
     public function getLesPersonnes(){return $this->lesPersonnes;}
     public function setLesPersonnes($lesPersonnes){$this->lesPersonnes = $lesPersonnes;}
     
