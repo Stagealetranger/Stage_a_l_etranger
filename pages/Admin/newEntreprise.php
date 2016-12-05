@@ -13,12 +13,10 @@ if (isset($_POST["valider"])) {
     $DaoEntreprise->bean->setDescription($_POST['description']);
     $DaoEntreprise->bean->setRue($_POST['rue']);
     $DaoEntreprise->bean->setVille($_POST['ville']);
-    $DaoEntreprise->bean->setDescriptionAvis($_POST['descritpionAvis']);
     $DaoEntreprise->bean->setAvis($_POST['avis']);
     $DaoEntreprise->bean->setTaille($_POST['taille']);
     $DaoEntreprise->bean->setProfil($_POST['profil']);
-    $DaoEntreprise->bean->setPays($_POST['pays']);
-    $DaoEntreprise->bean->setlesTypes($_POST['type']);
+   
 
     $DaoEntreprise->create();
     header('Location: index.php?page=listeEntreprise');
