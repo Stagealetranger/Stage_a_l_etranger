@@ -1,0 +1,134 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/Recherche{% endblock %}
+
+{% block contenu %}
+    <article id="Liste">
+        <div id="filtres">
+
+            <div>
+                <h3 class="bleu">MMI Montbéliard</h3>
+                <h2 class="bleu">Vous propose ces offres de stage</h2>
+            </div>
+            <div id="ListeFiltre">
+                <div class="pictoFiltres">
+                    <img data-affiche="communication" id="affiche-communication"
+                         src="CSS/images/Picto/picto-communication.png" alt="">
+                </div>
+                <div class="pictoFiltres">
+                    <img data-affiche="graphisme" id="affiche-graphisme"
+                         src="CSS/images/Picto/picto-graphisme.png" alt="">
+                </div>
+                <div class="pictoFiltres">
+                    <img data-affiche="developpement" id="affiche-developpement"
+                         src="CSS/images/Picto/picto-developpement.png" alt="">
+                </div>
+                <div class="pictoFiltres">
+                    <img data-affiche="grandentreprise" id="affiche-grandentreprise"
+                         src="CSS/images/Picto/picto-grandentreprise.png" alt="">
+
+                </div>
+                <div class="pictoFiltres">
+                    <img data-affiche="pme" id="affiche-pme"
+                         src="CSS/images/Picto/picto-PME.png" alt="">
+
+                </div>
+                <div class="pictoFiltres">
+                    <img data-affiche="inconnu" id="affiche-inconnu"
+                         src="CSS/images/Picto/picto-inconnu.png" alt="">
+
+                </div>
+                <div class="pictoFiltres">
+                    <img data-affiche="connu" id="affiche-connu"
+                         src="CSS/images/Picto/picto-connu.png" alt="">
+
+                </div>
+                <div class="pictoFiltres">
+                    <img data-affiche="aimer" id="affiche-aimer"
+                         src="CSS/images/Picto/picto-aimer.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="Listentreprise"
+             class="col3  {% if recherche.communcation == 1 %}affiche-communication{% endif %} {% if recherche.graphisme == 1 %}affiche-graphisme{% endif %} {% if recherche.developpement == 1 %}affiche-developpement{% endif %} {% if recherche.PME == 1 %}affiche-pme{% endif %} {% if recherche.GE == 1 %}affiche-grandentreprise{% endif %} {% if recherche.inconnu == 1 %}affiche-inconnu{% endif %} {% if recherche.connu == 1 %}affiche-connu{% endif %} {% if recherche.aimer == 1 %}affiche-aimer{% endif %}">
+
+            {% for entreprise in liste %}
+                <div class="ficheEntreprise {% if entreprise.type == 1 %}communication{% endif %} {% if entreprise.type == 2 %}graphisme{% endif %} {% if entreprise.type == 3 %}developpement{% endif %} {% if entreprise.taile == 0 %}pme{% endif %} {% if entreprise.taile == 1 %}grandentreprise{% endif %}  {% if entreprise.visiter == 0 %}inconnu{% endif %} {% if entreprise.visiter == 1 %}connu{% endif %} {% if entreprise.avis == 1 %}aimer{% endif %}">
+                    <div class="titreEntreprise ">
+                        <h5>{{ entreprise.nom }}</h5>
+                    </div>
+                    <p class="descritpionEntreprise">{{ entreprise.description }}</p>
+                    <p class="villeEntreprise">{{ entreprise.ville }}, {{ entreprise.pays }}</p>
+                    <div class="pictoFiltres">
+                        {% if entreprise.type == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
+                                                           alt="communication">{% endif %}
+                        {% if entreprise.type == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
+                                                           alt="graphisme">{% endif %}
+                        {% if entreprise.type == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
+                                                           alt="developpement">{% endif %}
+                        {% if entreprise.taille == 1 %}<img src="CSS/images/Picto/picto2_grandenteprise.png"
+                                                            alt="GE">{% endif %}
+                        {% if entreprise.taille == 0 %}<img src="CSS/images/Picto/picto2_PME.png" alt="PME">{% endif %}
+                        {% if entreprisevisiter == 1 %}<img src="CSS/images/Picto/picto2_connu.png"
+                                                            alt="connu">{% endif %}
+                        {% if entreprisevisiter == 0 %}<img src="CSS/images/Picto/picto2_inconnu.png"
+                                                            alt="inconnu">{% endif %}
+                        {% if entreprise.avis == 1 %}<img src="CSS/images/Picto/picto2_aimer.png"
+                                                          alt="aimer">{% endif %}
+                    </div>
+                    <div class="Ensavoirplus">
+                        <a class="btnEntreprise bleu" href="index.php?page=Entreprise&id={{ entreprise.id }}">En savoir
+                            plus</a>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </article>
+    <script>
+        (function () {
+            "use strict";
+            var liste = document.querySelector("#Listentreprise");
+            // Etape 1 : un gestionnaire par bouton
+            var afficheCommunication = document.querySelector("#affiche-communication");
+            var afficheGraphisme = document.querySelector("#affiche-graphisme");
+            var afficheDeveloppement = document.querySelector("#affiche-developpement");
+            var afficheGrandentreprise = document.querySelector("#affiche-grandentreprise");
+            var affichePME = document.querySelector("#affiche-pme");
+            var afficheConnu = document.querySelector("#affiche-connu");
+            var afficheInconnu = document.querySelector("#affiche-inconnu");
+            var afficheAimer = document.querySelector("#affiche-aimer");
+            var filtres = document.querySelector("#filtres");
+
+
+            function clickAfficheTous() {
+                var affiche = event.target.dataset.affiche;
+
+                if (affiche === undefined) {
+                    return;
+                }
+                afficheliste.classList.add("affiche-" + affiche);
+            }
+
+            afficheCommunication.addEventListener("click", clickAfficheTous);
+            afficheGraphisme.addEventListener("click", clickAfficheTous);
+            afficheDeveloppement.addEventListener("click", clickAfficheTous);
+            afficheGrandentreprise.addEventListener("click", clickAfficheTous);
+            affichePME.addEventListener("click", clickAfficheTous);
+            afficheConnu.addEventListener("click", clickAfficheTous);
+            afficheInconnu.addEventListener("click", clickAfficheTous);
+            afficheAimer.addEventListener("click", clickAfficheTous);
+            var filtres = document.querySelector("#filtres");
+
+
+            function clickAffiche(evt) {
+                if (evt.target.matches("img")) {
+                    console.log("utilisez :", evt.target.id)
+
+                }
+            }
+        }());
+    </script>
+{% endblock %}

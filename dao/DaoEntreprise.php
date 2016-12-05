@@ -2,6 +2,7 @@
 require_once 'classes/class.Entreprise.php';
 require_once 'classes/class.Pays.php';
 require_once 'classes/class.Type.php';
+require_once 'classes/class.Pays.php';
 require_once 'classes/class.OnAccueilli.php';
 
 require_once 'Dao.php';
@@ -139,19 +140,25 @@ class DaoEntreprise extends Dao
         return $liste;
     }
 
-
-    public function setAvisPersonne()
+    public function setLesPersonnesVont()
     {
-        $sql = "SELECT ID_ENTREPRISE as DESCRIPTION_AVIS 
-                FROM OnAccueilli     
+        $sql = "SELECT * 
+                FROM personne, est_en_stage, entreprise    
                 WHERE 
-                 ID_ENTREPRISE = " . $this->bean->getId();
+                entreprise.ID_ENTREPRISE = est_en_stage.ID_ENTREPRISE 
+                est_en_stage.ID_PERSONNE = personne.ID_PERSONNE 
+                AND entreprise.ID_ENTREPRISE = ".$this->bean->getId();
         $requete = $this->pdo->prepare($sql);
-        $this->bean->setDescriptionAvis(0);
-        if ($requete->execute()) {
-            if ($donnees = $requete->fetch()) {
-                $this->bean->setDescriptionAvis($donnees['DESCRIPTION_AVIS']);
+        if($requete->execute()){
+            $stage = new Personne(
+            );
+            if($donnees = $requete->fetch()){
+                $stage = new Personne(
+                    $donnees['ID_PERSONNE'],
+                    $donnees['NOM_PERSONNE']
+                );
             }
+            $this->bean->setLesPersonnesVont($stage);
         }
     }
 
