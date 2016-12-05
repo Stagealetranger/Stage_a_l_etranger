@@ -144,5 +144,25 @@ class DaoEntreprise extends Dao
             }
         }
     }
-}
 
+
+    public function setPays()
+    {
+        $sql = "SELECT * 
+                FROM pays, entreprise   
+                WHERE pays.ID_PAYS = entreprise.ID_PAYS
+                AND entreprise.ID_PAYS = ".$this->bean->getId();
+        $requete = $this->pdo->prepare($sql);
+        if($requete->execute()){
+            $pays = new Pays();
+            if($donnees = $requete->fetch()){
+                $pays = new Pays(
+                    $donnees['ID_PAYS'],
+                    $donnees['NOM_PAYS']
+                );
+            }
+            $this->bean->setPays($pays);
+        }
+    }
+
+}

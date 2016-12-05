@@ -20,8 +20,9 @@ class Entreprise
     private $profil = null;
     private $ville = null;
 
+    private $lesPays = array();
     private $lesTypes = array();
-    
+
     private $lesPersonnesVont = array();
 
 
@@ -56,6 +57,8 @@ class Entreprise
     public function setProfil($profil){$this->profil = $profil;}
     public function getVille(){return $this->ville;}
     public function setVille($ville){$this->ville = $ville;}
+    public function getPays(){return $this->lesPays;}
+    public function setPays($lesPays){$this->lesPays = $lesPays;}
     public function getLesTypes(){return $this->lesTypes;}
     public function setLesTypes($lesTypes){$this->lesTypes = $lesTypes;}
     public function getLesPersonnesVont(){return $this->lesPersonnesVont;}
