@@ -62,7 +62,7 @@
                     <p class="descritpionEntreprise">{{ entreprise.description }}</p>
                     <p class="villeEntreprise">{{ entreprise.ville }}, {{ entreprise.lePays.nom }}</p>
                     <div class="pictoFiltres">
-                        {% for type in liste.lesTypes.bean %}
+                        {% for type in liste.lesTypes %}
                             {% if type.id == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
                                                                alt="communication">{% endif %}
                             {% if type.id == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
