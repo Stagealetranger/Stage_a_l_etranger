@@ -21,19 +21,18 @@ class DaoPapier extends Dao
         $this->bean->setDescription($donnees['DESCRIPTION']);
         $this->bean->setConseil($donnees['CONSEIL']);
         $this->bean->setDuree($donnees['DUREE']);
-        $this->bean->setPays($donnees['PAYS']);
     }
     public function create()
     {
-        $sql = "INSERT INTO papier (NOM_PAPIER,DESCRIPTION,CONSEIL,DUREE,PAYS)
-            VALUES(?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO papier (NOM_PAPIER,DESCRIPTION,CONSEIL,DUREE)
+            VALUES(?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
 
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getDescription());
         $requete->bindValue(3, $this->bean->getConseil());
         $requete->bindValue(4, $this->bean->getDuree());
-        $requete->bindValue(5, $this->bean->getPays());
+
 
         $requete->execute();
     }
@@ -51,7 +50,6 @@ class DaoPapier extends Dao
         $requete->bindValue(3, $this->bean->getDescription());
         $requete->bindValue(4, $this->bean->getConseil());
         $requete->bindValue(5, $this->bean->getDuree());
-        $requete->bindValue(6, $this->bean->getPays());
         $requete->execute();
     }
 
@@ -71,8 +69,7 @@ class DaoPapier extends Dao
                     $donnees['NOM_PAPIER'],
                     $donnees['DESCRIPTION'],
                     $donnees['CONSEIL'],
-                    $donnees['DUREE'],
-                    $donnees['PAYS']
+                    $donnees['DUREE']
                 );
                 $liste[] = $papier;
             }

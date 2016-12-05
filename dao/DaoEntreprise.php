@@ -31,7 +31,7 @@ class DaoEntreprise extends Dao
 
     public function findVille($ville)
     {
-<<<<<<< HEAD
+
         $donnees = $this->findByVille("entreprise", "VILLE", $ville);
         $this->bean->setId($donnees['ID_ENTREPRISE']);
         $this->bean->setNom($donnees['NOM_ENTREPRISE']);
@@ -44,7 +44,7 @@ class DaoEntreprise extends Dao
         $this->bean->setProfil($donnees['PROFIL']);
         $this->bean->setPays($donnees['PAYS']);
         $this->bean->setVille($donnees['VILLE']);
-=======
+
         $sql = "SELECT * FROM entreprise WHERE VILLE = '.$ville.'";
         $requete = $this->pdo->prepare($sql);
         if ($requete->execute()) {
@@ -62,8 +62,6 @@ class DaoEntreprise extends Dao
             }
 
         }
-
->>>>>>> origin/master
     }
 
 
