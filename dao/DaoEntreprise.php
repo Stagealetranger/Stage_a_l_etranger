@@ -128,7 +128,7 @@ class DaoEntreprise extends Dao
     public function setLesPersonnesVont()
     {
         $sql = "SELECT * 
-                FROM personne, est_en_stage, entreprise    
+                FROM personne, est_en_stage  
                 WHERE 
                 entreprise.ID_ENTREPRISE = est_en_stage.ID_ENTREPRISE 
                 est_en_stage.ID_PERSONNE = personne.ID_PERSONNE 
