@@ -1,5 +1,15 @@
 <?php
 require_once('dao/DaoEntreprise.php');
+require_once('dao/DaoPays.php');
+
+
+$daoPays = New DaoPays();
+$listePays = $daoPays->getListe();
+for ($i = 0; $i < count($listePays); $i++) {
+    $daoPays = new DaoPays();
+    $daoPays->find($listePays[$i]->getId());
+    $listePays[$i] = $daoPays->bean;
+}
 
 
 
@@ -25,7 +35,7 @@ if (isset($_POST["valider"])) {
     exit();
 }
 
-/*
+
 if (($_SESSION['mail']) == ''){
     header('Location: index.php?page=accueil');
 
@@ -35,7 +45,12 @@ if (($_SESSION['mail']) == ''){
     }
 
 }
-*/
+
+
+$param = array(
+    "liste" => $listePays
+);
+
 
 
 ?>

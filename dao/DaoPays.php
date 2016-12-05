@@ -31,17 +31,17 @@ class DaoPays extends Dao
         $donnees = $this->deleteById("pays", "ID_PAYS", $this->bean->getId());
     }
 
-    public function getListePays()
+    public function getListe()
     {
         $query = "SELECT * 
-                FROM pays   
-                ORDER BY  NOM";
+                FROM pays 
+                ORDER BY NOM_PAYS";
         // Préparation et chargement de la requete
         $requete = $this->pdo->prepare($query);
         $liste = array();
         if ($requete->execute()) {
             while ($donnees = $requete->fetch()) {
-                $pays= new Pays (
+                $pays = new Pays(
                     $donnees['ID_PAYS'],
                     $donnees['NOM_PAYS']
                 );

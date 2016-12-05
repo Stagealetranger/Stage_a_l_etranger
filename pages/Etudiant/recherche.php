@@ -5,7 +5,7 @@ require_once 'dao/DaoType.php';
 
 
 $daoEntreprise = new DaoEntreprise();
-$daoEntreprise->setLesTypes();
+
 
 
 $recherche = array(
@@ -21,7 +21,7 @@ $recherche = array(
 );
 
 
-$graphisme = $_GET['graphisme'];
+
 
 $listeEntreprise = $daoEntreprise->getListe();
 for ($i = 0; $i < count($listeEntreprise); $i++) {

@@ -50,7 +50,12 @@
 
             <div>
                 <label for="pays">A quelle pays doit-il etre associer ?</label>
-                <input type="pays" class="form-control" name="pays" id="pays" placeholder="pays" required/>
+                <select name="pays" id="pays">
+                    {% for pays in liste %}
+                    <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+
                 <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
 
