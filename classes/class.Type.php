@@ -19,13 +19,7 @@ class Type
         $this->type = $type;
 
     }
-
     
-    public function __construct($id, $type)
-    {
-        $this->id = $id;
-        $this->type = $type;
-    }
 
     // --- OPERATIONS ---
 

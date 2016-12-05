@@ -20,9 +20,8 @@ $listeEntreprise = $daoEntreprise->getListe();
 for ($i = 0; $i < count($listeEntreprise); $i++) {
 
     $daoEntreprise = new DaoEntreprise();
-
     $daoEntreprise->find($listeEntreprise[$i]->getId());
-
+$daoEntreprise ->setLesPersonnesVont();
     $listeEntreprise[$i] = $daoEntreprise->bean;
 }
 $param = array(
