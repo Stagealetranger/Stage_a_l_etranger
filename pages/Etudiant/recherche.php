@@ -4,6 +4,7 @@ require_once 'dao/DaoEntreprise.php';
 require_once 'dao/DaoType.php';
 
 
+
 $daoEntreprise = new DaoEntreprise();
 
 
@@ -44,7 +45,7 @@ for ($i = 0; $i < count($listeEntreprise); $i++) {
 
 }
 $daoEntreprise->setLesTypes();
-$daoEntreprise->setPays();
+$daoEntreprise->setLePays();
 
 $listeEntreprise[$i] = $daoEntreprise->bean;
 

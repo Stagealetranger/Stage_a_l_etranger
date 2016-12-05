@@ -123,22 +123,7 @@ class DaoEntreprise extends Dao
     }
 
 
-    public function setLesTypes()
-    {
-        $sql = "SELECT * 
-                FROM est_de_type, entreprise, type   
-                WHERE est_de_type.ID_ENTREPRISE = " . $this->bean->getId() . " 
-                AND est_de_type.ID_TYPE = type.ID_TYPE";
-        $requete = $this->pdo->prepare($sql);
-        $liste = array();
-        if ($requete->execute()) {
-            while ($donnees = $requete->fetch()) {
-                $listeType[] = new Type($donnees['ID_TYPE'], $donnees['TYPE']);
-                $liste[] = $listeType;
-            }
-        }
-        return $liste;
-    }
+
 
     public function setLesPersonnesVont()
     {
@@ -182,4 +167,25 @@ class DaoEntreprise extends Dao
         }
     }
 
+
+    public function setLesTypes()
+    {
+        $sql = "SELECT * 
+                FROM est_de_type,typeentreprise, entreprise  
+                WHERE entreprise.ID_ENTREPRISE = ".$this->bean->getId()."
+                AND est_de_type.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
+                AND est_de_type.ID_TYPE = typeentreprise.ID_TYPE";
+        $requete = $this->pdo->prepare($sql);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $listeType[] = new Type(
+                    $donnees['ID_TYPE'],
+                    $donnees['TYPE']
+                );
+                $liste[] = $listeType;
+            }
+        }
+        $this->bean->setLesTypes($liste);
+    }
 }

@@ -12,6 +12,9 @@ class DaoPays extends Dao
         parent::__construct();
         $this->bean = new Pays();
     }
+    
+    
+    
     public function find($id = 0)
     {
         $donnees = $this->findById("pays", "ID_PAYS", $id);

@@ -14,6 +14,14 @@ class Type
     
     
     private $lesEntreprises = array();
+
+    public function __construct( $id=0, $type=null)
+    {
+        $this->id = $id;
+        $this->nom = $type;
+
+    }
+
     
     // --- OPERATIONS ---
 
