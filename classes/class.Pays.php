@@ -12,10 +12,11 @@ class Pays
     private $lesPapiers = array();
 
   
-    public function __construct($nom=null, $id=0)
+    public function __construct( $id=0, $nom=null)
     {
-        $this->nom = $nom;
         $this->id = $id;
+        $this->nom = $nom;
+
     }
     
     public function getId(){return $this->id;}
