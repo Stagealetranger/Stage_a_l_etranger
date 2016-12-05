@@ -29,40 +29,22 @@ class DaoEntreprise extends Dao
         $this->bean->setVille($donnees['VILLE']);
     }
 
-    public function findVille($ville)
+    public function findByVille($ville = '')
     {
-
         $donnees = $this->findByVille("entreprise", "VILLE", $ville);
         $this->bean->setId($donnees['ID_ENTREPRISE']);
         $this->bean->setNom($donnees['NOM_ENTREPRISE']);
         $this->bean->setVisiter($donnees['VISITER']);
         $this->bean->setDescription($donnees['DESCRIPTION']);
         $this->bean->setRue($donnees['RUE']);
-        $this->bean->setDescriptionAvis($donnees['DESCRIPTION_AVIS']);
         $this->bean->setAvis($donnees['AVIS']);
         $this->bean->setTaille($donnees['TAILLE']);
         $this->bean->setProfil($donnees['PROFIL']);
-        $this->bean->setPays($donnees['PAYS']);
         $this->bean->setVille($donnees['VILLE']);
-
-        $sql = "SELECT * FROM entreprise WHERE VILLE = '.$ville.'";
-        $requete = $this->pdo->prepare($sql);
-        if ($requete->execute()) {
-            if ($donnees = $requete->fetch()) {
-                $this->bean->setId($donnees['ID_ENTREPRISE']);
-                $this->bean->setNom($donnees['NOM_ENTREPRISE']);
-                $this->bean->setVisiter($donnees['VISITER']);
-                $this->bean->setDescription($donnees['DESCRIPTION']);
-                $this->bean->setRue($donnees['RUE']);
-                $this->bean->setAvis($donnees['AVIS']);
-                $this->bean->setTaille($donnees['TAILLE']);
-                $this->bean->setProfil($donnees['PROFIL']);
-                $this->bean->setVille($donnees['VILLE']);
-                return $donnees;
-            }
-
-        }
     }
+
+
+
 
 
     public function create()
@@ -105,12 +87,11 @@ class DaoEntreprise extends Dao
     }
 
 
-
     public function getListe()
     {
         $query = "SELECT * 
                 FROM entreprise    
-                ORDER BY  PAYS";
+                ORDER BY VILLE";
         // Préparation et chargement de la requete
         $requete = $this->pdo->prepare($query);
         $liste = array();
@@ -133,14 +114,10 @@ class DaoEntreprise extends Dao
         return $liste;
     }
 
-
-   
-    
-
     public function setLesTypes()
     {
-        $sql = "SELECT * FROM est_de_type, entreprise, type WHERE est_de_type.ID_TYPE = type.ID_TYPE AND
-est_de_type.ID_ENTREPRISE = ".$this->bean->getId();
+        $sql = "SELECT * FROM `est_de_type` WHERE `ID_TYPE` = 1 
+AND `ID_ENTREPRISE` = " . $this->bean->getId();
         $requete = $this->pdo->prepare($sql);
         if ($requete->execute()) {
             $type = new Type();
@@ -167,3 +144,4 @@ est_de_type.ID_ENTREPRISE = ".$this->bean->getId();
         }
     }
 }
+
