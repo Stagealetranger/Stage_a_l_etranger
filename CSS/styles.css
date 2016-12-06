@@ -1102,7 +1102,7 @@ input[type="checkbox"]:not(:checked) + label {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        padding: 0 7% 10% 7%;
+        padding: 10% 7%;
 
     }
 
@@ -1117,7 +1117,7 @@ input[type="checkbox"]:not(:checked) + label {
 
     }
 
-    #top-menu > a > li > div {
+    #top-menu > li > a> div {
         width: 150px;
     }
 
@@ -1132,9 +1132,7 @@ input[type="checkbox"]:not(:checked) + label {
         margin-right: 0;
     }
 
-    #menu {
-        margin: 1% 2%;
-    }
+
 }
 
 
