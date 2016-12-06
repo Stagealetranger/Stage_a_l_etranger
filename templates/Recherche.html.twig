@@ -12,47 +12,43 @@
             </div>
             <div id="ListeFiltre">
                 <div class="pictoFiltres">
-                    <img data-affiche="communication" id="affiche-communication"
-                         src="CSS/images/Picto/picto-communication.png" alt="">
+                    <input name="communication" id="communication" value="1" type="checkbox" {% if recherche.communication == 1 %}checked{% endif %}>
+                    <label for="communication" class="com"></label>
                 </div>
                 <div class="pictoFiltres">
-                    <img data-affiche="graphisme" id="affiche-graphisme"
-                         src="CSS/images/Picto/picto-graphisme.png" alt="">
+                    <input name="graphisme" value="1" id="graphisme" type="checkbox" {% if recherche.graphisme == 1 %}checked{% endif %}>
+                    <label for="graphisme" class="graf"></label>
                 </div>
                 <div class="pictoFiltres">
-                    <img data-affiche="developpement" id="affiche-developpement"
-                         src="CSS/images/Picto/picto-developpement.png" alt="">
+                    <input name="developpement" value="1" id="developement" type="checkbox" {% if recherche.developpement == 1 %}checked{% endif %}>
+                    <label for="developement" class="dev"></label>
                 </div>
                 <div class="pictoFiltres">
-                    <img data-affiche="grandentreprise" id="affiche-grandentreprise"
-                         src="CSS/images/Picto/picto-grandentreprise.png" alt="">
-
+                    <input name="GE" value="1" id="GE" type="checkbox" {% if recherche.GE == 1 %}checked{% endif %}>
+                    <label for="GE" class="GE"></label>
                 </div>
                 <div class="pictoFiltres">
-                    <img data-affiche="pme" id="affiche-pme"
-                         src="CSS/images/Picto/picto-PME.png" alt="">
-
+                    <input name="PME" value="1" id="PME" type="checkbox" {% if recherche.PME == 1 %}checked{% endif %}>
+                    <label for="PME" class="PME"></label>
                 </div>
                 <div class="pictoFiltres">
-                    <img data-affiche="inconnu" id="affiche-inconnu"
-                         src="CSS/images/Picto/picto-inconnu.png" alt="">
-
+                    <input name="inconnu" value="1" id="inconnu" type="checkbox" {% if recherche.inconnu == 1 %}checked{% endif %}>
+                    <label for="inconnu" class="inconnu"></label>
                 </div>
                 <div class="pictoFiltres">
-                    <img data-affiche="connu" id="affiche-connu"
-                         src="CSS/images/Picto/picto-connu.png" alt="">
-
+                    <input name="connu" value="1" id="connu" type="checkbox" {% if recherche.connu == 1 %}checked{% endif %}>
+                    <label for="connu" class="connu"></label>
                 </div>
                 <div class="pictoFiltres">
-                    <img data-affiche="aimer" id="affiche-aimer"
-                         src="CSS/images/Picto/picto-aimer.png" alt="">
+                    <input name="aimer" value="1" id="aimer" type="checkbox" {% if recherche.aimer == 1 %}checked{% endif %}>
+                    <label for="aimer" class="aimer"></label>
                 </div>
             </div>
         </div>
 
 
         <div id="Listentreprise"
-             class="col3  {% if recherche.communcation == 1 %}affiche-communication{% endif %} {% if recherche.graphisme == 1 %}affiche-graphisme{% endif %} {% if recherche.developpement == 1 %}affiche-developpement{% endif %} {% if recherche.PME == 1 %}affiche-pme{% endif %} {% if recherche.GE == 1 %}affiche-grandentreprise{% endif %} {% if recherche.inconnu == 1 %}affiche-inconnu{% endif %} {% if recherche.connu == 1 %}affiche-connu{% endif %} {% if recherche.aimer == 1 %}affiche-aimer{% endif %}">
+             class="col3  {% if recherche.communication == 1 %}affiche-communication{% endif %} {% if recherche.graphisme == 1 %}affiche-graphisme{% endif %} {% if recherche.developpement == 1 %}affiche-developpement{% endif %} {% if recherche.PME == 1 %}affiche-pme{% endif %} {% if recherche.GE == 1 %}affiche-grandentreprise{% endif %} {% if recherche.inconnu == 1 %}affiche-inconnu{% endif %} {% if recherche.connu == 1 %}affiche-connu{% endif %} {% if recherche.aimer == 1 %}affiche-aimer{% endif %}">
             {% for entreprise in liste %}
 
                 <div class="ficheEntreprise {% if entreprise.type == 1 %}communication{% endif %} {% if entreprise.type == 2 %}graphisme{% endif %} {% if entreprise.type == 3 %}developpement{% endif %} {% if entreprise.taile == 0 %}pme{% endif %} {% if entreprise.taile == 1 %}grandentreprise{% endif %}  {% if entreprise.visiter == 0 %}inconnu{% endif %} {% if entreprise.visiter == 1 %}connu{% endif %} {% if entreprise.avis == 1 %}aimer{% endif %}">
@@ -64,11 +60,11 @@
                     <div class="pictoFiltres">
                         {% for type in liste.lesTypes %}
                             {% if type.id == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
-                                                               alt="communication">{% endif %}
+                                                       alt="communication">{% endif %}
                             {% if type.id == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
-                                                               alt="graphisme">{% endif %}
+                                                       alt="graphisme">{% endif %}
                             {% if type.id == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
-                                                               alt="developpement">{% endif %}
+                                                       alt="developpement">{% endif %}
                         {% endfor %}
 
                         {% if entreprise.taille == 1 %}<img src="CSS/images/Picto/picto2_grandenteprise.png"
@@ -113,6 +109,8 @@
                     return;
                 }
                 afficheliste.classList.add("affiche-" + affiche);
+
+
             }
 
             afficheCommunication.addEventListener("click", clickAfficheTous);

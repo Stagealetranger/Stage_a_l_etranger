@@ -294,14 +294,6 @@ article > div > img {
     margin: 10px 0;
 }
 
-.pictoRecherche img {
-    width: 100%;
-    max-width: 30px;
-    max-height: 30px;
-    cursor: pointer;
-
-}
-
 .pictoRecherche label {
     margin-left: 10px;
     color: #154A58;
@@ -551,21 +543,69 @@ input[type="checkbox"]:not(:checked) + label {
 }
 
 .pictoFiltres {
-    display: inline-block;
+    width: 30px;
+    display: flex;
     padding: 10px 5%;
 }
 
 #ListeFiltre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
-    width: 100%;
+    width: 80%;
+    margin: 0 10%;
+}
+
+.pictoFiltres label {
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 30px;
+}
+
+.pictoFiltres input {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.pictoFiltres .com {
+    background-image: url("images/Picto/logoInterface/picto-communication.png");
+}
+
+.pictoFiltres .dev {
+    background-image: url("images/Picto/logoInterface/picto-developpement.png");
+}
+
+.pictoFiltres .graf {
+    background-image: url("images/Picto/logoInterface/picto_graphisme.png");
+}
+
+.pictoFiltres .PME {
+    background-image: url("images/Picto/logoInterface/picto_PME.png");
+}
+
+.pictoFiltres .GE {
+    background-image: url("images/Picto/logoInterface/picto-grandentreprise.png");
+}
+
+.pictoFiltres .inconnu {
+    background-image: url("images/Picto/logoInterface/picto_inconnu.png");
+}
+
+.pictoFiltres .connu {
+    background-image: url("images/Picto/logoInterface/picto-connu.png");
+}
+
+.pictoFiltres .aimer {
+    background-image: url("images/Picto/logoInterface/picto-aimer.png");
 }
 
 .pictoFiltres img {
-    width: 100%;
-    max-width: 30px;
-    max-height: 30px;
-    cursor: pointer;
-
+    height: 35px;
+    width: 35px;
 }
 
 .Ensavoirplus {
@@ -873,7 +913,7 @@ input[type="checkbox"]:not(:checked) + label {
     margin: 2%;
 }
 
-.correction{
+.correction {
     background-color: white;
     border: 1px solid #3c3c3c;
     border-radius: 4px;
@@ -1092,7 +1132,7 @@ input[type="checkbox"]:not(:checked) + label {
         margin-right: 0;
     }
 
-    #menu{
+    #menu {
         margin: 1% 2%;
     }
 }

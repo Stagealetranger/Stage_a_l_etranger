@@ -63,9 +63,7 @@ $param = array(
 );
 
 
-echo "<pre>";
-print_r($param);
-echo "</pre>";
+
 
 if (($_SESSION['mail']) == '') {
     header('Location: index.php?page=accueil');
