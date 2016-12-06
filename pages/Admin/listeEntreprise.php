@@ -16,7 +16,8 @@ for ($i = 0; $i < count($listeEntreprise); $i++) {
     $daoEntreprise = new DaoEntreprise();
 
     $daoEntreprise->find($listeEntreprise[$i]->getId());
-
+    $daoEntreprise->setLePays();
+    $daoEntreprise->setLesTypes();
     $listeEntreprise[$i] = $daoEntreprise->bean;
 }
 

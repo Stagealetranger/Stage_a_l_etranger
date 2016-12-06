@@ -5,7 +5,6 @@
 {% block contenu %}
     <article id="Liste">
         <div id="filtres">
-
             <div>
                 <h3 class="bleu">MMI Montbéliard</h3>
                 <h2 class="bleu">Vous propose ces offres de stage</h2>
@@ -13,11 +12,11 @@
             <div id="ListeFiltre">
                 <div class="pictoFiltres">
                     <input name="communication" id="communication" value="1" type="checkbox" {% if recherche.communication == 1 %}checked{% endif %}>
-                    <label for="communication" class="com"></label>
+                    <label for="communication" id="affiche-communication" class="com"></label>
                 </div>
                 <div class="pictoFiltres">
                     <input name="graphisme" value="1" id="graphisme" type="checkbox" {% if recherche.graphisme == 1 %}checked{% endif %}>
-                    <label for="graphisme" class="graf"></label>
+                    <label for="graphisme" id=" affiche-graphisme" data-affiche="graphisme" class="graf"></label>
                 </div>
                 <div class="pictoFiltres">
                     <input name="developpement" value="1" id="developement" type="checkbox" {% if recherche.developpement == 1 %}checked{% endif %}>
@@ -99,7 +98,7 @@
             var afficheConnu = document.querySelector("#affiche-connu");
             var afficheInconnu = document.querySelector("#affiche-inconnu");
             var afficheAimer = document.querySelector("#affiche-aimer");
-            var filtres = document.querySelector("#filtres");
+            var filtres = document.querySelector("#ListeFiltres");
 
 
             function clickAfficheTous() {
@@ -108,9 +107,8 @@
                 if (affiche === undefined) {
                     return;
                 }
-                afficheliste.classList.add("affiche-" + affiche);
-
-
+                liste.className = '';
+                liste.classList.add("affiche-"+affiche);
             }
 
             afficheCommunication.addEventListener("click", clickAfficheTous);
@@ -121,11 +119,10 @@
             afficheConnu.addEventListener("click", clickAfficheTous);
             afficheInconnu.addEventListener("click", clickAfficheTous);
             afficheAimer.addEventListener("click", clickAfficheTous);
-            var filtres = document.querySelector("#filtres");
 
 
             function clickAffiche(evt) {
-                if (evt.target.matches("img")) {
+                if (evt.target.matches("label")) {
                     console.log("utilisez :", evt.target.id)
 
                 }

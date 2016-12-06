@@ -39,8 +39,8 @@ class DaoEntreprise extends Dao
 
     public function create()
     {
-        $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, PROFIL, VILLE, CONTACT, TELEPHONE) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, PROFIL, VILLE, CONTACT, TELEPHONE, ID_PAYS) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getVisiter());
@@ -52,6 +52,7 @@ class DaoEntreprise extends Dao
         $requete->bindValue(8, $this->bean->getVille());
         $requete->bindValue(9, $this->bean->getContact());
         $requete->bindValue(10, $this->bean->getTelephone());
+        $requete->bindValue(11, $this->bean->getLePays());
         $requete->execute();
     }
 
