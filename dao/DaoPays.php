@@ -33,7 +33,6 @@ class DaoPays extends Dao
     {
         $donnees = $this->deleteById("pays", "ID_PAYS", $this->bean->getId());
     }
-
     public function getListe()
     {
         $query = "SELECT * 
@@ -52,5 +51,34 @@ class DaoPays extends Dao
             }
         }
         return $liste;
+    }
+    public function setLesEntreprises()
+    {
+        $sql = "SELECT * 
+                FROM pays, entreprise   
+                WHERE pays.ID_PAYS = entreprise.ID_PAYS 
+                AND pays.ID_PAYS =" .$this->bean->getId();
+        $requete = $this->pdo->prepare($sql);
+        if($requete->execute()){
+            $entreprise= new Entreprise();
+            if($donnees = $requete->fetch()){
+                $entreprise = new Entreprise(
+                    $donnees['ID_ENTREPRISE'],
+                    $donnees['NOM_ENTREPRISE'],
+                    $donnees['VISITER'],
+                    $donnees['DESCRIPTION'],
+                    $donnees['RUE'],
+                    $donnees['AVIS'],
+                    $donnees['TAILLE'],
+                    $donnees['PROFIL'],
+                    $donnees['VILLE'],
+                    $donnees['CONTACT'],
+                    $donnees['LATITUDE'],
+                    $donnees['LONGITUDE'],
+                    $donnees['TELEPHONE']
+                );
+            }
+            $this->bean->setLesEntreprise($entreprise);
+        }
     }
 }

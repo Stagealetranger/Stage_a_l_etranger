@@ -174,7 +174,7 @@ class DaoEntreprise extends Dao
     {
         $sql = "SELECT * 
                 FROM est_de_type,typeentreprise, entreprise  
-                WHERE entreprise.ID_ENTREPRISE = ".$this->bean->getId()."
+                WHERE entreprise.ID_ENTREPRISE = " . $this->bean->getId() . "
                 AND est_de_type.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
                 AND est_de_type.ID_TYPE = typeentreprise.ID_TYPE";
         $requete = $this->pdo->prepare($sql);

@@ -37,6 +37,38 @@ class DaoType extends Dao
         }
         return $liste;
     }
+
+    public function setLesEntreprises()
+    {
+        $sql = "SELECT * 
+                FROM est_de_type,typeentreprise, entreprise  
+                WHERE typeentreprise.ID_TYPE = " . $this->bean->getId() . "
+                AND est_de_type.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
+                AND est_de_type.ID_TYPE = typeentreprise.ID_TYPE";
+        $requete = $this->pdo->prepare($sql);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $listeEntreprise[] = new Entreprise(
+                    $donnees['ID_ENTREPRISE'],
+                    $donnees['NOM_ENTREPRISE'],
+                    $donnees['VISITER'],
+                    $donnees['DESCRIPTION'],
+                    $donnees['RUE'],
+                    $donnees['AVIS'],
+                    $donnees['TAILLE'],
+                    $donnees['PROFIL'],
+                    $donnees['VILLE'],
+                    $donnees['CONTACT'],
+                    $donnees['LATITUDE'],
+                    $donnees['LONGITUDE'],
+                    $donnees['TELEPHONE']
+                );
+                $liste[] = $listeEntreprise;
+            }
+        }
+        $this->bean->setLesEntreprises($liste);
+    }
 }
 
 
