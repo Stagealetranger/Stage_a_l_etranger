@@ -36,25 +36,11 @@ class DaoEntreprise extends Dao
 
     }
 
-    public function findByVille($ville = '')
-    {
-        $donnees = $this->findByVille("entreprise", "VILLE", $ville);
-        $this->bean->setId($donnees['ID_ENTREPRISE']);
-        $this->bean->setNom($donnees['NOM_ENTREPRISE']);
-        $this->bean->setVisiter($donnees['VISITER']);
-        $this->bean->setDescription($donnees['DESCRIPTION']);
-        $this->bean->setRue($donnees['RUE']);
-        $this->bean->setAvis($donnees['AVIS']);
-        $this->bean->setTaille($donnees['TAILLE']);
-        $this->bean->setProfil($donnees['PROFIL']);
-        $this->bean->setVille($donnees['VILLE']);
-    }
-
 
     public function create()
     {
-        $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, PROFIL, VILLE) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, PROFIL, VILLE, CONTACT, TELEPHONE) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getVisiter());
@@ -64,6 +50,8 @@ class DaoEntreprise extends Dao
         $requete->bindValue(6, $this->bean->getTaille());
         $requete->bindValue(7, $this->bean->getProfil());
         $requete->bindValue(8, $this->bean->getVille());
+        $requete->bindValue(9, $this->bean->getContact());
+        $requete->bindValue(10, $this->bean->getTelephone());
         $requete->execute();
     }
 
@@ -122,14 +110,42 @@ class DaoEntreprise extends Dao
         return $liste;
     }
 
-
+    public function getListeByVille($ville = null)
+    {
+        $sql = "SELECT *
+                 FROM entreprise 
+                 WHERE entreprise.VILLE = ".$ville;
+        $requete = $this->pdo->prepare($sql);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $entreprise = new Entreprise(
+                    $donnees['ID_ENTREPRISE'],
+                    $donnees['NOM_ENTREPRISE'],
+                    $donnees['VISITER'],
+                    $donnees['DESCRIPTION'],
+                    $donnees['RUE'],
+                    $donnees['AVIS'],
+                    $donnees['TAILLE'],
+                    $donnees['PROFIL'],
+                    $donnees['CONTACT'],
+                    $donnees['LONGITUDE'],
+                    $donnees['LATITUDE'],
+                    $donnees['TELEPHONE'],
+                    $donnees['VILLE']
+                );
+                $liste[] = $entreprise;
+            }
+        }
+        return $liste;
+    }
 
 
     public function setLesPersonnesVont()
     {
         $sql = "SELECT * 
                 FROM est_en_stage,personne, entreprise  
-                WHERE entreprise.ID_ENTREPRISE = ".$this->bean->getId()."
+                WHERE entreprise.ID_ENTREPRISE = " . $this->bean->getId() . "
                 AND est_en_stage.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
                 AND est_en_stage.ID_PERSONNE = personne.ID_PERSONNE";
 
@@ -155,11 +171,11 @@ class DaoEntreprise extends Dao
         $sql = "SELECT * 
                 FROM pays, entreprise   
                 WHERE pays.ID_PAYS = entreprise.ID_PAYS 
-                AND entreprise.ID_ENTREPRISE =" .$this->bean->getId();
+                AND entreprise.ID_ENTREPRISE =" . $this->bean->getId();
         $requete = $this->pdo->prepare($sql);
-        if($requete->execute()){
+        if ($requete->execute()) {
             $pays = new Pays();
-            if($donnees = $requete->fetch()){
+            if ($donnees = $requete->fetch()) {
                 $pays = new Pays(
                     $donnees['ID_PAYS'],
                     $donnees['NOM_PAYS']

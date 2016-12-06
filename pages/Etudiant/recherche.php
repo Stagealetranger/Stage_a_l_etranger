@@ -4,9 +4,7 @@ require_once 'dao/DaoEntreprise.php';
 require_once 'dao/DaoType.php';
 
 
-
 $daoEntreprise = new DaoEntreprise();
-
 
 
 $recherche = array(
@@ -18,39 +16,42 @@ $recherche = array(
     'connu' => $_GET['connu'],
     'inconnu' => $_GET['inconnu'],
     'aimer' => $_GET['aimer']
-
 );
 
 
 
 
-$listeEntreprise = $daoEntreprise->getListe();
+if ((($_GET['pays']) != '') | (($_GET['ville']) != '')) {
+    /*if (($_GET['pays']) != '') {
+        $daoEntreprise->findByPays($listeEntreprise[$i]->getId());
+      $type = "pays"
+    }
+}*/
+    if (($_GET['ville']) != '') {
+        $ville = $_GET['ville'];
+        $daoEntreprise->getListeByVille($ville);
+        $type = "ville";
+    }
+} else {
+    $listeEntreprise = $daoEntreprise->getListe();
+    $type = "normal";
+}
+
+
 for ($i = 0; $i < count($listeEntreprise); $i++) {
     $daoEntreprise = new DaoEntreprise();
-    if ((($_GET['pays']) != '') | (($_GET['ville']) != '')) {
-        /*if (($_GET['pays']) != '') {
-            $daoEntreprise->findByPays($listeEntreprise[$i]->getId());
-          
-        }
-
-        if (($_GET['ville']) != '') {
-            $daoEntreprise->findByVille($listeEntreprise[$i]->getId());
-
-        }*/
-    } else {
-        $daoEntreprise->find($listeEntreprise[$i]->getId());
-    }
-
-
+   $daoEntreprise->find($listeEntreprise[$i]->getId());
+    $daoEntreprise->setLesTypes();
+    $daoEntreprise->setLePays();
+    $listeEntreprise[$i] = $daoEntreprise->bean;
 }
-$daoEntreprise->setLesTypes();
-$daoEntreprise->setLePays();
 
-$listeEntreprise[$i] = $daoEntreprise->bean;
 
 
 $param = array(
+
     "ville" => $_GET['ville'],
+    "type" => $type,
     "recherche" => $recherche,
     "liste" => $listeEntreprise
 );
@@ -67,5 +68,3 @@ if (($_SESSION['mail']) == '') {
 }
 
 ?>
-
-
