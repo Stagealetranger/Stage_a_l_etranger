@@ -140,6 +140,40 @@ class DaoEntreprise extends Dao
         return $liste;
     }
 
+    public function getListeByPays($pays = null)
+    {
+        $query = "SELECT *
+                 FROM entreprise 
+                 WHERE entreprise.ID_PAYS = '" . $pays . "'";
+        $requete = $this->pdo->prepare($query);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $entreprise = new Entreprise(
+                    $donnees['ID_ENTREPRISE'],
+                    $donnees['NOM_ENTREPRISE'],
+                    $donnees['VISITER'],
+                    $donnees['DESCRIPTION'],
+                    $donnees['RUE'],
+                    $donnees['AVIS'],
+                    $donnees['TAILLE'],
+                    $donnees['PROFIL'],
+                    $donnees['CONTACT'],
+                    $donnees['LONGITUDE'],
+                    $donnees['LATITUDE'],
+                    $donnees['TELEPHONE'],
+                    $donnees['VILLE']
+                );
+                $liste[] = $entreprise;
+            }
+        }
+        return $liste;
+    }
+
+
+
+
+
 
     public function setLesPersonnesVont()
     {

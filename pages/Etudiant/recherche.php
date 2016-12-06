@@ -2,6 +2,13 @@
 
 require_once 'dao/DaoEntreprise.php';
 require_once 'dao/DaoType.php';
+require_once 'dao/DaoPays.php';
+
+
+
+
+
+
 
 
 $recherche = array(
@@ -15,21 +22,29 @@ $recherche = array(
     'aimer' => $_GET['aimer']
 );
 
+
+
+
+
+
 $daoEntreprise = new DaoEntreprise();
 
 if ((($_GET['pays']) != '') | (($_GET['ville']) != '')) {
     if (($_GET['pays']) != '') {
-        $listeEntreprise = $daoEntreprise->getListeByPays($Pays);
-        $type = "pays";
+        $DaoPays = new DaoPays();
+        $pays = $_GET['pays'];
+        $DaoPays ->findByNom($pays);
+        $listeEntreprise = $daoEntreprise->getListeByPays($DaoPays->bean->getID());
+
     }
     if (($_GET['ville']) != '') {
         $ville = $_GET['ville'];
         $listeEntreprise = $daoEntreprise->getListeByVille($ville);
-        $type = "ville";
+
     }
 } else {
     $listeEntreprise = $daoEntreprise->getListe();
-    $type = "normal";
+
 }
 
 
@@ -43,9 +58,6 @@ for ($i = 0; $i < count($listeEntreprise); $i++) {
 
 
 $param = array(
-
-    "ville" => $_GET['ville'],
-    "type" => $type,
     "recherche" => $recherche,
     "liste" => $listeEntreprise
 );
