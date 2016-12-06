@@ -112,17 +112,17 @@ class DaoEntreprise extends Dao
 
     public function getListeByVille($ville = null)
     {
-        $sql = "SELECT *
+        $query = "SELECT *
                  FROM entreprise 
-                 WHERE entreprise.VILLE = ".$ville;
-        $requete = $this->pdo->prepare($sql);
+                 WHERE entreprise.VILLE = '" . $ville . "'";
+        $requete = $this->pdo->prepare($query);
         $liste = array();
         if ($requete->execute()) {
             while ($donnees = $requete->fetch()) {
                 $entreprise = new Entreprise(
                     $donnees['ID_ENTREPRISE'],
                     $donnees['NOM_ENTREPRISE'],
-                    $donnees['VISITER'],
+                $donnees['VISITER'],
                     $donnees['DESCRIPTION'],
                     $donnees['RUE'],
                     $donnees['AVIS'],
