@@ -12,15 +12,15 @@ class DaoPays extends Dao
         parent::__construct();
         $this->bean = new Pays();
     }
-    
-    
-    
+
+
     public function find($id = 0)
     {
         $donnees = $this->findById("pays", "ID_PAYS", $id);
         $this->bean->setId($donnees['ID_PAYS']);
         $this->bean->setNom($donnees['NOM_PAYS']);
     }
+
     public function create()
     {
         $sql = "INSERT INTO pays (NOM_PAYS)
@@ -29,10 +29,12 @@ class DaoPays extends Dao
         $requete->bindValue(1, $this->bean->getNom());
         $requete->execute();
     }
+
     public function delete()
     {
         $donnees = $this->deleteById("pays", "ID_PAYS", $this->bean->getId());
     }
+
     public function getListe()
     {
         $query = "SELECT * 
@@ -52,16 +54,17 @@ class DaoPays extends Dao
         }
         return $liste;
     }
+
     public function setLesEntreprises()
     {
         $sql = "SELECT * 
                 FROM pays, entreprise   
                 WHERE pays.ID_PAYS = entreprise.ID_PAYS 
-                AND pays.ID_PAYS =" .$this->bean->getId();
+                AND pays.ID_PAYS =" . $this->bean->getId();
         $requete = $this->pdo->prepare($sql);
-        if($requete->execute()){
-            $entreprise= new Entreprise();
-            if($donnees = $requete->fetch()){
+        if ($requete->execute()) {
+            $entreprise = new Entreprise();
+            if ($donnees = $requete->fetch()) {
                 $entreprise = new Entreprise(
                     $donnees['ID_ENTREPRISE'],
                     $donnees['NOM_ENTREPRISE'],
@@ -81,6 +84,7 @@ class DaoPays extends Dao
             $this->bean->setLesEntreprise($entreprise);
         }
     }
+
     public function setLesPapiers()
     {
         $sql = "SELECT * 
@@ -104,6 +108,7 @@ class DaoPays extends Dao
         }
         $this->bean->setLesPapiers($liste);
     }
+
     public function findByNom($pays = null)
     {
         $sql = "SELECT * 
@@ -116,4 +121,5 @@ class DaoPays extends Dao
                 $this->bean->setNom($donnees['NOM_PAYS']);
             }
         }
+    }
 }
