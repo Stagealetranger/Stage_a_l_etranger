@@ -1,5 +1,7 @@
 <?php
 require_once 'classes/class.Papier.php';
+require_once 'classes/class.Pays.php';
+require_once 'classes/class.Personne.php';
 
 require_once 'Dao.php';
 
@@ -77,7 +79,55 @@ class DaoPapier extends Dao
         return $liste;
     }
 
+    public function setLesPays()
+    {
+        $sql = "SELECT * 
+                FROM est_pour,pays, papier  
+                WHERE papier.ID_PAPIER = " . $this->bean->getId() . "
+                AND est_pour.ID_PAYS = pays.ID_PAYS 
+                AND est_pour.ID_PAPIER = papier.ID_PAPIER";
+        $requete = $this->pdo->prepare($sql);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $listePays[] = new Pays(
+                    $donnees['ID_PAYS'],
+                    $donnees['NOM_PAYS']
+                );
+                $liste[] = $listePays;
+            }
+        }
+        $this->bean->setLesPays ($liste);
+    }
+    public function setLesPersonnes()
+    {
+        {
+            $sql = "SELECT * 
+                FROM consulte,personne, papier  
+                WHERE papier.ID_PAPIER = " . $this->bean->getId() . "
+                AND consulte.ID_PAPIER = papier.ID_PAPIER
+                AND consulte.ID_PERSONNE = personne.ID_PERSONNE";
 
+            $requete = $this->pdo->prepare($sql);
+            $liste = array();
+            if ($requete->execute()) {
+                while ($donnees = $requete->fetch()) {
+                    $listePersonne = new Personne(
+                        $donnees['ID_PERSONNE'],
+                        $donnees['NOM'],
+                        $donnees['PRENOM'],
+                        $donnees['MAIL'],
+                        $donnees['ADMIN'],
+                        $donnees['PHOTO'],
+                        $donnees['MDP']
+                    );
+                    $liste[] = $listePersonne;
+                }
+            }
+            $this->bean->setLesPersonnes($liste);
+        }
+
+    }
 
 
 

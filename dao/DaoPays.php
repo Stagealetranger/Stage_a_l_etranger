@@ -81,4 +81,39 @@ class DaoPays extends Dao
             $this->bean->setLesEntreprise($entreprise);
         }
     }
+    public function setLesPapiers()
+    {
+        $sql = "SELECT * 
+                FROM est_pour,pays, papier  
+                WHERE pays.ID_PAYS = " . $this->bean->getId() . "
+                AND est_pour.ID_PAYS = pays.ID_PAYS 
+                AND est_pour.ID_PAPIER = papier.ID_PAPIER";
+        $requete = $this->pdo->prepare($sql);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $listePapier[] = new Papier(
+                    $donnees['ID_PAPIER'],
+                    $donnees['NOM_PAPIER'],
+                    $donnees['DESCRIPTION'],
+                    $donnees['CONSEIL'],
+                    $donnees['DUREE']
+                );
+                $liste[] = $listePapier;
+            }
+        }
+        $this->bean->setLesPapiers($liste);
+    }
+    public function findByNom($pays = null)
+    {
+        $sql = "SELECT * 
+                FROM pays 
+                WHERE pays.NOM_PAYS = '" . $pays . "'";
+        $requete = $this->pdo->prepare($sql);
+        if ($requete->execute()) {
+            if ($donnees = $requete->fetch()) {
+                $this->bean->setId($donnees['ID_PAYS']);
+                $this->bean->setNom($donnees['NOM_PAYS']);
+            }
+        }
 }

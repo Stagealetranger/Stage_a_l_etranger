@@ -1,6 +1,7 @@
 <?php
 require_once 'classes/class.Suivit.php';
 require_once 'classes/class.Compose.php';
+require_once 'classes/class.Personne.php';
 
 require_once 'Dao.php';
 
@@ -32,21 +33,29 @@ class DaoSuivit extends Dao{
     {
         $donnees = $this->deleteById("suivit", "ID_SUIVIT", $this->bean->getId());
     }
-    
-    public function setEffectuer()
-    {
-        $sql = "SELECT ID_SUIVIT as EFFECTUER
-                FROM compose    
-                WHERE 
-                 ID_SUIVIT = " . $this->bean->getId();
-        $requete = $this->pdo->prepare($sql);
-        $this->bean->setEffectuer(0);
-        if ($requete->execute()) {
-            if ($donnees = $requete->fetch()) {
-                $this->bean->setEffectuer($donnees['EFFECTUER']);
-            }
-        }
 
+    public function setLesPersonnes()
+    {
+        $sql = "SELECT * 
+                FROM personne, suivit   
+                WHERE suivit.ID_SUIVIT = personne.ID_SUIVIT 
+                AND suivit.ID_SUIVIT =" .$this->bean->getId();
+        $requete = $this->pdo->prepare($sql);
+        if($requete->execute()){
+            $personne= new Personne();
+            if($donnees = $requete->fetch()){
+                $personne = new Personne(
+                    $donnees['ID_PERSONNE'],
+                    $donnees['NOM'],
+                    $donnees['PRENOM'],
+                    $donnees['MAIL'],
+                    $donnees['ADMIN'],
+                    $donnees['PHOTO'],
+                    $donnees['MDP']
+                );
+            }
+            $this->bean->setLesPersonnes($personne);
+        }
     }
 
 }
