@@ -60,12 +60,12 @@ $param = array(
 );
 
 
-
+/*
 echo "<pre>";
 print_r($param);
 echo "</pre>";
 
-
+*/
 
 
 

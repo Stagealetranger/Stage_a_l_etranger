@@ -20,7 +20,6 @@ class DaoValidation extends Dao
         $this->bean->setNom($donnees['NOM']);
         $this->bean->setPrenom($donnees['PRENOM']);
         $this->bean->setMail($donnees['MAIL']);
-        $this->bean->setPhoto($donnees['PHOTO']);
         $this->bean->setMdp($donnees['MDP']);
     }
 
@@ -29,7 +28,6 @@ class DaoValidation extends Dao
         $sql = "INSERT INTO validation (NOM,PRENOM,MAIL,MDP)
             VALUES(?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
-
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getPrenom());
         $requete->bindValue(3, $this->bean->getMail());
@@ -39,14 +37,12 @@ class DaoValidation extends Dao
     
     public function update()
     {
-        $sql = "UPDATE validation SET NOM = ?, PRENOM = ?, MAIL = ?, PHOTO =?, MDP = ? WHERE ID_VALIDATION = ?";
+        $sql = "UPDATE validation SET NOM = ?, PRENOM = ?, MAIL = ?, MDP = ? WHERE ID_VALIDATION = ?";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
-        $requete->bindValue(2, $this->bean->getId());
-        $requete->bindValue(3, $this->bean->getPrenom());
-        $requete->bindValue(4, $this->bean->getMail());
-        $requete->bindValue(5, $this->bean->getPhoto());
-        $requete->bindValue(6, $this->bean->getMdp());
+        $requete->bindValue(2, $this->bean->getPrenom());
+        $requete->bindValue(3, $this->bean->getMail());
+        $requete->bindValue(4, $this->bean->getMdp());
         $requete->execute();
     }
 
@@ -89,7 +85,6 @@ class DaoValidation extends Dao
                     $donnees['NOM'],
                     $donnees['PRENOM'],
                     $donnees['MAIL'],
-                    $donnees['PHOTO'],
                     $donnees['MDP']
                 );
                 $liste[] = $validation;

@@ -3,35 +3,56 @@
 {% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
 
 {% block contenu %}
-    <article id="Entreprise">
+<article id="Entreprise">
+    <div class="col1">
+        <h1 class="bleu">{{ entreprise.nom }}</h1>
+        <div><h3 class="bleu">Présentation de l’entreprise :</h3>
+            <p class="bleu">{{ entreprise.description }}</p>
+        </div>
+        <div id="caractéristique"><h3 class="bleu">Caractéristique :</h3>
+            <ul>
+                <li><p>Type(s) :</p>
+                    <div> {% if type.id == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
+                                                     alt="communication">{% endif %}
+                        {% if type.id == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
+                                                   alt="graphisme">{% endif %}
+                        {% if type.id == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
+                                                   alt="developpement">{% endif %}
+                    </div>
+                </li>
+                <li><p>Taille :</p>
+                    <div>{% if entreprise.taille == 1 %}<img src="CSS/images/Picto/picto2_grandenteprise.png"
+                                                             alt="GE">{% endif %}
+                        {% if entreprise.taille == 0 %}<img src="CSS/images/Picto/picto2_PME.png" alt="PME">{% endif %}
+                    </div>
+                </li>
+                <li><p>Visite :</p>
+                    <div> {% if entreprisevisiter == 1 %}<img src="CSS/images/Picto/picto2_connu.png"
+                                                              alt="connu">{% endif %}
+                        {% if entreprisevisiter == 0 %}<img src="CSS/images/Picto/picto2_inconnu.png"
+                                                            alt="inconnu">{% endif %}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col1 map">
+        <img src="CSS/images/map.jpg" alt="">
+    </div>
+    <div class="col3">
         <div class="col1">
-            <h1 class="bleu">{{ entreprise.nom }}</h1>
-            <div><h3 class="bleu">Présentation de l’entreprise :</h3>
-                <p class="bleu">{{ entreprise.description }}</p>
-            </div>
-            <div><h3 class="bleu">Profil recherché :</h3>
-                <p class="bleu">{{ entreprise.profil }}</p>
-            </div>
+            <h3 class="bleu">Adresse :</h3>
+            <p class="bleu">{{ entreprise.rue }}</br>{{ entreprise.ville }} | {{ entreprise.LePays.nom }}</p>
         </div>
-        <div class="col1 map">
-            <img src="CSS/images/map.jpg" alt="">
+        <div class="col1">
+            <h3 class="bleu">Les contacter:</h3>
+            <p class="bleu">{{ entreprise.contact }}</br>
+                {{ entreprise.telephone }}</p>
         </div>
-        <div class="col3">
-            <div class="col1">
-                <h3 class="bleu">Adresse :</h3>
-                <p class="bleu">{{ entreprise.rue }},{{ entreprise.ville }} | {{ entreprise.pays }}</p>
-            </div>
-            <div class="col1">
-                <h3 class="bleu">Les contacter:</h3>
-                <p class="bleu">http://www.kaizensearch.co.uk/</br>
-                    contact@kaizensearch.co.uk</br>
-                    +44 20 3286 1806</p>
-            </div>
-        </div>
-        <div id="avisEntreprise">
-            <img class="imageAvis" src="CSS/images/sandrine.jpg" alt="">
-            <h4 class="blanc">Sandrine Ha / Devoleppeur web</h4>
-            <p class="texteAvis , bleu">{{ Avis.description_avis }}</p>
-        </div>
-    </article>
+    </div>
+    <div id="avisEntreprise">
+        <img class="imageAvis" src="CSS/images/sandrine.jpg" alt="">
+        <h4 class="blanc">Sandrine Ha / Devoleppeur web</h4>
+        <p class="texteAvis , bleu">{{ Avis.description_avis }}</p>
+    </div>
+</article>
 {% endblock %}

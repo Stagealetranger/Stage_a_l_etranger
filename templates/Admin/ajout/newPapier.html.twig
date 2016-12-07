@@ -30,14 +30,20 @@
                           required></textarea>
             </div>
 
-            <div >
+            <div>
                 <label for="duree">Duree</label>
                 <input type="text" class="form-control" name="duree" id="duree" placeholder="duree" required/>
             </div>
 
             <div>
                 <label for="pays">A quelle pays doit-il etre associer ?</label>
-                <input type="pays" class="form-control" name="pays" id="pays" placeholder="pays" required/>
+                <select name="pays" id="pays">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
             </div>
             <div>
                 <button type="submit" class="btn" name="valider">

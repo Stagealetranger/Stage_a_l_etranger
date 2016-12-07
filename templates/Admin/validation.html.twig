@@ -3,10 +3,10 @@
 {% block title %}MMI Stage à l'étranger/{{ nom.entreprise }}{% endblock %}
 
 {% block contenu %}
-   <article>
+   <article id="tableValidation">
        {% for validation in listeValidation %}
        <form action="index.php?page=listeValidation&id={{ validation.id }}" method="post" enctype="multipart/form-data">
-           <p>{{ validation.nom }} | {{ validation.prenom }}</p>
+           <p>{{ validation.nom }} {{ validation.prenom }}</p>
            <button type="submit" name="accepter"><img src="CSS/images/btn_accepter.jpg" alt="accepter"></button>
            <button type="submit" name="refuser" value="refuser" ><img src="CSS/images/btn_refuser.jpg" alt="refuser"></button>
        </form>

@@ -8,6 +8,8 @@ $daoPersonne = new DaoPersonne();
 
 
 $daoEntreprise->find($_GET["id"]);
+$daoEntreprise->setLePays();
+$daoEntreprise->setLesTypes();
 
 $param = array(
     "entreprise" => $daoEntreprise->bean

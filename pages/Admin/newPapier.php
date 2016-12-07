@@ -1,5 +1,6 @@
 <?php
 require_once('dao/DaoPapier.php');
+require_once('dao/DaoPays.php');
 
 
 $daoPays = New DaoPays();
@@ -19,7 +20,7 @@ if (isset($_POST["valider"])) {
     $DaoPapier->bean->setDescription($_POST['description']);
     $DaoPapier->bean->setConseil($_POST['conseil']);
     $DaoPapier->bean->setDuree($_POST['duree']);
-    $DaoPapier->bean->setPays($_POST['pays']);
+    $DaoPapier->bean->set($_POST['pays']);
 
     $DaoPapier->create();
     header('Location: index.php?page=listePapier');
