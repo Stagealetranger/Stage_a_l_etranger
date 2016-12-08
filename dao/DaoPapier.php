@@ -29,13 +29,10 @@ class DaoPapier extends Dao
         $sql = "INSERT INTO papier (NOM_PAPIER,DESCRIPTION,CONSEIL,DUREE)
             VALUES(?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
-
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getDescription());
         $requete->bindValue(3, $this->bean->getConseil());
         $requete->bindValue(4, $this->bean->getDuree());
-
-
         $requete->execute();
     }
 
@@ -45,7 +42,7 @@ class DaoPapier extends Dao
     }
 
     public function update(){
-        $sql = "UPDATE papier SET NOM_PAPIER = ?, DESCRIPTION = ?, CONSEIL = ?, DUREE=?, PAYS = ? WHERE ID_PAPIER = ?";
+        $sql = "UPDATE papier SET NOM_PAPIER = ?, DESCRIPTION = ?, CONSEIL = ?, DUREE=? WHERE ID_PAPIER = ?";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getId());
@@ -60,7 +57,7 @@ class DaoPapier extends Dao
     {
         $query = "SELECT * 
                 FROM papier    
-                ORDER BY  PAYS";
+                ORDER BY ID_PAPIER";
         // Préparation et chargement de la requete
         $requete = $this->pdo->prepare($query);
         $liste = array();

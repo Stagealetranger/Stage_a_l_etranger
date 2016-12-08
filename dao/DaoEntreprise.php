@@ -27,7 +27,7 @@ class DaoEntreprise extends Dao
         $this->bean->setRue($donnees['RUE']);
         $this->bean->setAvis($donnees['AVIS']);
         $this->bean->setTaille($donnees['TAILLE']);
-        $this->bean->setProfil($donnees['PROFIL']);
+
         $this->bean->setLatitude($donnees['LATITUDE']);
         $this->bean->setLongitude($donnees['LONGITUDE']);
         $this->bean->setVille($donnees['VILLE']);
@@ -39,7 +39,7 @@ class DaoEntreprise extends Dao
 
     public function create()
     {
-        $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, PROFIL, VILLE, CONTACT, TELEPHONE, ID_PAYS) 
+        $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, VILLE, CONTACT, TELEPHONE, ID_PAYS) 
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
@@ -48,11 +48,10 @@ class DaoEntreprise extends Dao
         $requete->bindValue(4, $this->bean->getRue());
         $requete->bindValue(5, $this->bean->getAvis());
         $requete->bindValue(6, $this->bean->getTaille());
-        $requete->bindValue(7, $this->bean->getProfil());
-        $requete->bindValue(8, $this->bean->getVille());
-        $requete->bindValue(9, $this->bean->getContact());
-        $requete->bindValue(10, $this->bean->getTelephone());
-        $requete->bindValue(11, $this->bean->getLePays());
+        $requete->bindValue(7, $this->bean->getVille());
+        $requete->bindValue(8, $this->bean->getContact());
+        $requete->bindValue(9, $this->bean->getTelephone());
+        $requete->bindValue(10, $this->bean->getLePays());
         $requete->execute();
     }
 
@@ -64,7 +63,7 @@ class DaoEntreprise extends Dao
 
     public function update()
     {
-        $sql = "UPDATE entreprise SET NOM_ENTREPRISE = ?, VISITER = ?, DESCRIPTION= ?,RUE= ?,  AVIS = ?, TAILLE=?, PROFIL=?,VILLE=?, WHERE ID_ENTREPRISE = ?";
+        $sql = "UPDATE entreprise SET NOM_ENTREPRISE = ?, VISITER = ?, DESCRIPTION= ?,RUE= ?,  AVIS = ?, TAILLE=?,VILLE=?, WHERE ID_ENTREPRISE = ?";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getVisiter());
@@ -72,8 +71,8 @@ class DaoEntreprise extends Dao
         $requete->bindValue(4, $this->bean->getRue());
         $requete->bindValue(5, $this->bean->getAvis());
         $requete->bindValue(6, $this->bean->getTaille());
-        $requete->bindValue(7, $this->bean->getProfil());
-        $requete->bindValue(8, $this->bean->getVille());
+
+        $requete->bindValue(7, $this->bean->getVille());
         $requete->execute();
 
         $requete->execute();
@@ -98,7 +97,6 @@ class DaoEntreprise extends Dao
                     $donnees['RUE'],
                     $donnees['AVIS'],
                     $donnees['TAILLE'],
-                    $donnees['PROFIL'],
                     $donnees['CONTACT'],
                     $donnees['LONGITUDE'],
                     $donnees['LATITUDE'],
@@ -123,12 +121,11 @@ class DaoEntreprise extends Dao
                 $entreprise = new Entreprise(
                     $donnees['ID_ENTREPRISE'],
                     $donnees['NOM_ENTREPRISE'],
-                $donnees['VISITER'],
+                    $donnees['VISITER'],
                     $donnees['DESCRIPTION'],
                     $donnees['RUE'],
                     $donnees['AVIS'],
                     $donnees['TAILLE'],
-                    $donnees['PROFIL'],
                     $donnees['CONTACT'],
                     $donnees['LONGITUDE'],
                     $donnees['LATITUDE'],
@@ -158,7 +155,6 @@ class DaoEntreprise extends Dao
                     $donnees['RUE'],
                     $donnees['AVIS'],
                     $donnees['TAILLE'],
-                    $donnees['PROFIL'],
                     $donnees['CONTACT'],
                     $donnees['LONGITUDE'],
                     $donnees['LATITUDE'],
@@ -170,10 +166,6 @@ class DaoEntreprise extends Dao
         }
         return $liste;
     }
-
-
-
-
 
 
     public function setLesPersonnesVont()

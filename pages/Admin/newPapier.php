@@ -20,7 +20,7 @@ if (isset($_POST["valider"])) {
     $DaoPapier->bean->setDescription($_POST['description']);
     $DaoPapier->bean->setConseil($_POST['conseil']);
     $DaoPapier->bean->setDuree($_POST['duree']);
-    $DaoPapier->bean->set($_POST['pays']);
+    $DaoPapier->bean->setLesPays($_POST['pays']);
 
     $DaoPapier->create();
     header('Location: index.php?page=listePapier');
