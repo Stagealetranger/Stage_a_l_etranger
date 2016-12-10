@@ -224,7 +224,7 @@ class DaoEntreprise extends Dao
         $liste = array();
         if ($requete->execute()) {
             while ($donnees = $requete->fetch()) {
-                $listeType[] = new Type(
+                $listeType = new Type(
                     $donnees['ID_TYPE'],
                     $donnees['TYPE']
                 );
