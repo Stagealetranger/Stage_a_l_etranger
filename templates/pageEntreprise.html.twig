@@ -12,12 +12,15 @@
         <div id="caractéristique"><h3 class="bleu">Caractéristique :</h3>
             <ul>
                 <li><p>Type(s) :</p>
-                    <div> {% if type.id == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
-                                                     alt="communication">{% endif %}
-                        {% if type.id == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
-                                                   alt="graphisme">{% endif %}
-                        {% if type.id == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
-                                                   alt="developpement">{% endif %}
+                    <div>  {% for type in entreprise.lesTypes %}
+
+                            {% if type.id == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
+                                                       alt="communication">{% endif %}
+                            {% if type.id == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
+                                                       alt="graphisme">{% endif %}
+                            {% if type.id == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
+                                                       alt="developpement">{% endif %}
+                        {% endfor %}
                     </div>
                 </li>
                 <li><p>Taille :</p>
