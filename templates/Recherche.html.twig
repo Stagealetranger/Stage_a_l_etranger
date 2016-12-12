@@ -19,7 +19,7 @@
                 <div class="pictoFiltres">
                     <input name="graphisme" value="1" id="graphisme" type="checkbox"
                            {% if recherche.graphisme == 1 %}checked{% endif %}>
-                    <label for="graphisme" id=" affiche-graphisme" data-affiche="graphisme" class="graf"></label>
+                    <label for="graphisme" id="affiche-graphisme" data-affiche="graphisme" class="graf"></label>
                 </div>
                 <div class="pictoFiltres">
                     <input name="developpement" value="1" id="developement" type="checkbox"
@@ -33,22 +33,22 @@
                 </div>
                 <div class="pictoFiltres">
                     <input name="PME" value="1" id="PME" type="checkbox" {% if recherche.PME == 1 %}checked{% endif %}>
-                    <label for="PME" class="PME"></label>
+                    <label for="PME" data-affiche="pme" id="affiche-pme" class="PME"></label>
                 </div>
                 <div class="pictoFiltres">
                     <input name="inconnu" value="1" id="inconnu" type="checkbox"
                            {% if recherche.inconnu == 1 %}checked{% endif %}>
-                    <label for="inconnu" class="inconnu"></label>
+                    <label for="inconnu" data-affiche="inconnu" id="affiche-inconnu" class="inconnu"></label>
                 </div>
                 <div class="pictoFiltres">
                     <input name="connu" value="1" id="connu" type="checkbox"
                            {% if recherche.connu == 1 %}checked{% endif %}>
-                    <label for="connu" class="connu"></label>
+                    <label for="connu" data-affiche="connu" id="affiche-connu" class="connu"></label>
                 </div>
                 <div class="pictoFiltres">
                     <input name="aimer" value="1" id="aimer" type="checkbox"
                            {% if recherche.aimer == 1 %}checked{% endif %}>
-                    <label for="aimer" class="aimer"></label>
+                    <label for="aimer" data-affiche="aimer" id="affiche-aimer" class="aimer"></label>
                 </div>
             </div>
         </div>
