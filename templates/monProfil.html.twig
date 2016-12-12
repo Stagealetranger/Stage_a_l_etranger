@@ -21,8 +21,14 @@
                 <span>{{ session.mail }}</span>
             </div>
             <div>
-                <span>Mon stage :</span>
-                <span>Kaizen</span>
+                {% if session.ID_SUIVI== "" %}
+                    <a href="">Je n'ai pas encore de stage</a>
+                {% endif %}
+                {% if session.ID_SUIVI!= "" %}
+                    <span>Mon stage :</span>
+                    <span>Kaizen</span>
+                {% endif %}
+
             </div>
         </div>
         <div class="col1 colonneaImage" id="imageProfil">
