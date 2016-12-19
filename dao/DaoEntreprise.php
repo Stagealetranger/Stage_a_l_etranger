@@ -27,7 +27,6 @@ class DaoEntreprise extends Dao
         $this->bean->setRue($donnees['RUE']);
         $this->bean->setAvis($donnees['AVIS']);
         $this->bean->setTaille($donnees['TAILLE']);
-
         $this->bean->setLatitude($donnees['LATITUDE']);
         $this->bean->setLongitude($donnees['LONGITUDE']);
         $this->bean->setVille($donnees['VILLE']);
@@ -67,8 +66,8 @@ class DaoEntreprise extends Dao
 
         public function create()
     {
-        $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, VILLE, CONTACT, TELEPHONE, ID_PAYS) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, VILLE, CONTACT,LONGITUDE, LATITUDE, TELEPHONE, ID_PAYS) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getVisiter());
@@ -78,8 +77,10 @@ class DaoEntreprise extends Dao
         $requete->bindValue(6, $this->bean->getTaille());
         $requete->bindValue(7, $this->bean->getVille());
         $requete->bindValue(8, $this->bean->getContact());
-        $requete->bindValue(9, $this->bean->getTelephone());
-        $requete->bindValue(10, $this->bean->getLePays());
+        $requete->bindValue(9, $this->bean->getLongitude());
+        $requete->bindValue(10, $this->bean->getLatitude());
+        $requete->bindValue(11, $this->bean->getTelephone());
+        $requete->bindValue(12, $this->bean->getLePays());
         $requete->execute();
     }
 
