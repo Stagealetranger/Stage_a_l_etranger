@@ -24,6 +24,27 @@ class DaoPapier extends Dao
         $this->bean->setConseil($donnees['CONSEIL']);
         $this->bean->setDuree($donnees['DUREE']);
     }
+    public function findByNomPap($nom)
+    {
+        $sql = "SELECT * 
+                FROM papier    
+                WHERE NOM_PAPIER = '".$nom."'
+                ORDER BY NOM_PAPIER";
+        $requete = $this->pdo->prepare($sql);
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $papier = new Papier(
+                    $donnees['ID_PAPIER'],
+                    $donnees['NOM_PAPIER'],
+                    $donnees['DESCRIPTION'],
+                    $donnees['CONSEIL'],
+                    $donnees['DUREE']
+                );
+                $this->bean = $papier;
+            }
+        }
+    }
+
     public function create()
     {
         $sql = "INSERT INTO papier (NOM_PAPIER,DESCRIPTION,CONSEIL,DUREE)
