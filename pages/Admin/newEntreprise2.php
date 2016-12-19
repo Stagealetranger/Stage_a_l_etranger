@@ -1,14 +1,11 @@
 <?php
 
+require_once('dao/DaoEntreprise.php');
 
-$param = array(
-    "nom" => $_GET["nom"]
-
-);
-
-$DaoEntreprise = new DaoEntreprise();
+$daoEntreprise = new DaoEntreprise();
 
 
+$daoEntreprise->find($_GET["nom"]);
 
 
 if (isset($_POST["valider"])) {
@@ -24,6 +21,18 @@ if (isset($_POST["valider"])) {
     header('Location: index.php?page=listeEntreprise');
     exit();
 }
+
+
+
+
+
+
+$param = array(
+    "nom" => $_GET["nom"],
+    "entreprie" => $daoEntreprise
+
+
+);
 
 
 
