@@ -1,61 +1,24 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Joshua
- * Date: 05/12/2016
- * Time: 13:23
- */
-/*
-require_once 'dao/DaoEntreprise.php';
-
-
+require_once('dao/DaoEntreprise.php');
 
 
 $daoEntreprise = new DaoEntreprise();
 
+/*A la place des ****** tu met le nom
+ d'une entreprise que tu a deja dans ta bdd*/
+$nom = "uuuu";
 
-$listeEntreprise = $daoEntreprise->getListe();
 
+$daoEntreprise->findByNomEnt($nom);
+$daoEntreprise->setLePays();
+$daoEntreprise->setLesTypes();
 
-for ($i = 0; $i < count($listeEntreprise); $i++) {
-
-    $daoEntreprise = new DaoEntreprise();
-    $daoEntreprise->find($listeEntreprise[$i]->getId());
-$daoEntreprise ->setLesPersonnesVont();
-    $listeEntreprise[$i] = $daoEntreprise->bean;
-}
 $param = array(
-
-    "liste" => $listeEntreprise
-);
-*/
-require_once 'dao/DaoValidation.php';
-require_once 'dao/DaoPersonne.php';
-
-
-$daoPersonne = new DaoPersonne();
-
-
-$listePersonne = $daoPersonne ->getListePersonne();
-
-
-for ($i = 0; $i < count($listePersonne); $i++) {
-
-    $daoPersonne = new DaoPersonne();
-
-    $daoPersonne->find($listePersonne[$i]->getId());
-   /*$daoPersonne ->setLesEntreprisesOnAccueilli();*/
-   /* $daoPersonne ->setLesEntreprisesAccueil();*/
-    /*$daoPersonne ->setLesPapiers();*/
-    /*$daoPersonne ->setLeSuivit();*/
-
-    $listePersonne[$i] = $daoPersonne->bean;
-}
-$param = array(
-
-    "liste" => $listePersonne
+    "entreprise" => $daoEntreprise->bean
 );
 
 echo "<pre>";
 print_r($param);
 echo "</pre>";
+
+?>

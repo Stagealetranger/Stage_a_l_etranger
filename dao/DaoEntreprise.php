@@ -35,9 +35,37 @@ class DaoEntreprise extends Dao
         $this->bean->setTelephone($donnees['TELEPHONE']);
 
     }
+    public function findByNomEnt($nom)
+    {
+        $sql = "SELECT * 
+                FROM entreprise    
+                WHERE NOM_ENTREPRISE = '".$nom."'
+                ORDER BY NOM_ENTREPRISE";
+        $requete = $this->pdo->prepare($sql);
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $entreprise = new Entreprise(
+                    $donnees['ID_ENTREPRISE'],
+                    $donnees['NOM_ENTREPRISE'],
+                    $donnees['VISITER'],
+                    $donnees['DESCRIPTION'],
+                    $donnees['RUE'],
+                    $donnees['AVIS'],
+                    $donnees['TAILLE'],
+                    $donnees['CONTACT'],
+                    $donnees['LONGITUDE'],
+                    $donnees['LATITUDE'],
+                    $donnees['TELEPHONE'],
+                    $donnees['VILLE']
+                );
+                $this->bean = $entreprise;
+            }
+        }
+    }
 
 
-    public function create()
+
+        public function create()
     {
         $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, VILLE, CONTACT, TELEPHONE, ID_PAYS) 
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
