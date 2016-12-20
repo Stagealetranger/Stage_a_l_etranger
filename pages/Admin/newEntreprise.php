@@ -27,6 +27,7 @@ if (isset($_POST["valider"])) {
     $DaoEntreprise->bean->setTaille($_POST['taille']);
     $DaoEntreprise->bean->setContact($_POST['contact']);
     $DaoEntreprise->bean->setLePays($_POST['pays']);
+    $DaoEntreprise->bean->setTelephone($_POST['telephone']);
     $DaoEntreprise->bean->setLongitude(4);
     $DaoEntreprise->bean->setLatitude(3);
 

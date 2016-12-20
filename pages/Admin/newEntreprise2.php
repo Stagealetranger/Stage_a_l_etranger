@@ -5,26 +5,21 @@ require_once('dao/DaoEntreprise.php');
 $daoEntreprise = new DaoEntreprise();
 
 
-$daoEntreprise->find($_GET["nom"]);
+$daoEntreprise->findByNomEnt($_GET["nom"]);
 
 
 if (isset($_POST["valider"])) {
     // Instanciation du Dao qui permettra la création
     $DaoEntreprise = new DaoEntreprise();
     // Chargement du nom sur le bean du dao
-    $DaoEntreprise->bean->setLesTypes();
 
+    $id_ent = $daoEntreprise->bean->getId();
+    $id_type = $_POST["type1"];
 
-
-
-    $DaoEntreprise->create();
+    $DaoEntreprise->addLesTypes($id_ent, $id_type);
     header('Location: index.php?page=listeEntreprise');
     exit();
 }
-
-
-
-
 
 
 $param = array(
@@ -35,11 +30,9 @@ $param = array(
 );
 
 
-
 echo "<pre>";
 print_r($param);
 echo "</pre>";
-
 
 
 if (($_SESSION['mail']) == '') {
