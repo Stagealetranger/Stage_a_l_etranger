@@ -38,8 +38,11 @@
             </ul>
         </div>
     </div>
-    <div class="col1 map">
-        <img src="CSS/images/map.jpg" alt="">
+    <div class="col1">
+        <style type="text/css">
+            #map { height: 100%; }
+        </style>
+        <div id="map"></div>
     </div>
     <div class="col3">
         <div class="col1">
@@ -58,6 +61,25 @@
         <h4 class="blanc">Sandrine Ha / Devoleppeur web</h4>
         <p class="texteAvis  bleu">{{ Avis.description_avis }}</p>
     </div>
+
+    <script type="text/javascript">
+
+
+
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat:{{ entreprise.longitude }}, lng:{{ entreprise.latitude }}},
+                zoom: 15
+            });
+        }
+
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoJ82u4A_xBSlTWf7SuC7BmIDdVLqTnDQ&callback=initMap">
+    </script>
+    </body>
+    </html>
 </article>
 {% endblock %}
 
