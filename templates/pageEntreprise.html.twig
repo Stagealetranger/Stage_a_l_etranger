@@ -65,12 +65,12 @@
     <script type="text/javascript">
 
 
-
         var map;
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat:{{ entreprise.longitude }}, lng:{{ entreprise.latitude }}},
-                zoom: 15
+                zoom: 15,
+
             });
         }
 
