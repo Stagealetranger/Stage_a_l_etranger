@@ -10,25 +10,20 @@ $daoType = new DaoType();
 $daoEntreprise->findByNomEnt($_GET["nom"]);
 
 if (isset($_POST["valider"])) {
-    
-    if ($_POST["type1"] != ""){
+
+   if (!empty($_POST["type1"])){
         $daoType->find($_POST["type1"]);
         $daoEntreprise->addTypes($daoType->bean);
     }
-
-    if ($_POST["type2"] != ""){
+   if (!empty($_POST["type2"])){
         $daoType->find($_POST["type2"]);
         $daoEntreprise->addTypes($daoType->bean);
     }
-
-    if ($_POST["type3"] != ""){
+    if (!empty($_POST["type3"])){
         $daoType->find($_POST["type3"]);
         $daoEntreprise->addTypes($daoType->bean);
     }
 
-    
-    
-    
     header('Location: index.php?page=listeEntreprise');
     exit();
 }
@@ -36,7 +31,7 @@ if (isset($_POST["valider"])) {
 
 $param = array(
     "nom" => $_GET["nom"],
-    "entreprie" => $daoEntreprise
+    "entreprise" => $daoEntreprise
 );
 
 

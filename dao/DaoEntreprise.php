@@ -52,12 +52,11 @@ class DaoEntreprise extends Dao
                     $donnees['RUE'],
                     $donnees['AVIS'],
                     $donnees['TAILLE'],
-                    $donnees['VILLE'],
                     $donnees['CONTACT'],
-                    $donnees['LATITUDE'],
                     $donnees['LONGITUDE'],
+                    $donnees['LATITUDE'],
                     $donnees['TELEPHONE'],
-                    $donnees['ID_PAYS']
+                    $donnees['VILLE']
                 );
                 $this->bean = $entreprise;
             }
@@ -264,7 +263,8 @@ class DaoEntreprise extends Dao
         $this->bean->setLesTypes($liste);
     }
 
-    public function addTypes($type){
+    public function addTypes($type)
+    {
         $sql = "INSERT INTO est_de_type (ID_TYPE,ID_ENTREPRISE) 
                 VALUES (?,?)";
 

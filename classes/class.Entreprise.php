@@ -17,7 +17,6 @@ class Entreprise
     private $taille = false;
     private $description = null;
     private $rue = null;
-    private $profil = null;
     private $longitude = 0;
     private $latitude = 0;
     private $ville = null;
@@ -38,7 +37,6 @@ class Entreprise
         $this->taille = $taille;
         $this->description = $description;
         $this->rue = $rue;
-        $this->profil = $profil;
         $this->profil = $latitude;
         $this->profil = $longitude;
         $this->ville = $ville;
@@ -59,8 +57,7 @@ class Entreprise
     public function setDescription($description){$this->description = $description;}
     public function getRue(){return $this->rue;}
     public function setRue($rue){$this->rue = $rue;}
-    public function getProfil(){return $this->profil;}
-    public function setProfil($profil){$this->profil = $profil;}
+   
     public function getVille(){return $this->ville;}
     public function setVille($ville){$this->ville = $ville;}
     public function getLePays(){return $this->lePays;}
