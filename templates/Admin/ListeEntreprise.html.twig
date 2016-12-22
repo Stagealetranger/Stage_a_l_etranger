@@ -24,12 +24,15 @@
                         <p class="descritpionEntreprise">{{ entreprise.description }}</p>
                         <p class="villeEntreprise">{{ entreprise.ville }}, {{ entreprise.Lepays.nom }}</p>
                         <div class="pictoFiltres">
-                            {% if entreprise.type == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
-                                                               alt="communication">{% endif %}
-                            {% if entreprise.type == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
-                                                               alt="graphisme">{% endif %}
-                            {% if entreprise.type == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
-                                                               alt="developpement">{% endif %}
+                            {% for type in entreprise.lesTypes %}
+
+                                {% if type.id == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
+                                                           alt="communication">{% endif %}
+                                {% if type.id == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
+                                                           alt="graphisme">{% endif %}
+                                {% if type.id == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
+                                                           alt="developpement">{% endif %}
+                            {% endfor %}
                             {% if entreprise.taille == 1 %}<img src="CSS/images/Picto/picto2_grandenteprise.png"
                                                                 alt="GE">{% endif %}
                             {% if entreprise.taille == 0 %}<img src="CSS/images/Picto/picto2_PME.png"

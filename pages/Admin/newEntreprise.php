@@ -4,6 +4,8 @@ require_once('dao/DaoPays.php');
 
 
 $daoPays = New DaoPays();
+
+
 $listePays = $daoPays->getListe();
 for ($i = 0; $i < count($listePays); $i++) {
     $daoPays = new DaoPays();
@@ -31,8 +33,7 @@ if (isset($_POST["valider"])) {
     $DaoEntreprise->bean->setLongitude(4);
     $DaoEntreprise->bean->setLatitude(3);
 
-
-
+  
 
     $DaoEntreprise->create();
     header('Location: index.php?page=newEntreprise2&nom='.$_POST["nom"]);

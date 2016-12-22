@@ -34,11 +34,12 @@ class DaoEntreprise extends Dao
         $this->bean->setTelephone($donnees['TELEPHONE']);
 
     }
+
     public function findByNomEnt($nom)
     {
         $sql = "SELECT * 
                 FROM entreprise    
-                WHERE NOM_ENTREPRISE = '".$nom."'
+                WHERE NOM_ENTREPRISE = '" . $nom . "'
                 ORDER BY NOM_ENTREPRISE";
         $requete = $this->pdo->prepare($sql);
         if ($requete->execute()) {
@@ -64,8 +65,7 @@ class DaoEntreprise extends Dao
     }
 
 
-
-        public function create()
+    public function create()
     {
         $sql = "INSERT INTO entreprise (NOM_ENTREPRISE, VISITER, DESCRIPTION, RUE, AVIS, TAILLE, VILLE, CONTACT,LONGITUDE, LATITUDE, TELEPHONE, ID_PAYS) 
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -264,13 +264,14 @@ class DaoEntreprise extends Dao
         $this->bean->setLesTypes($liste);
     }
 
-    public function addLesTypes($id_ent, $id_type)
-    {
-        $sql = "INSERT INTO `est_de_type` (`ID_TYPE`, `ID_ENTREPRISE`) VALUES (?, ?);";
+    public function addTypes($type){
+        $sql = "INSERT INTO est_de_type (ID_TYPE,ID_ENTREPRISE) 
+                VALUES (?,?)";
+
         $requete = $this->pdo->prepare($sql);
-        $requete->bindValue(2, $id_ent);
-        $requete->bindValue(1, $id_type);
+        $requete->bindValue(1, $type->getId());
+        $requete->bindValue(2, $this->bean->getId());
         $requete->execute();
     }
-    
+
 }

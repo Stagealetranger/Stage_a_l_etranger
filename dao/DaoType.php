@@ -69,6 +69,19 @@ class DaoType extends Dao
         }
         $this->bean->setLesEntreprises($liste);
     }
+
+
+    public function addEntreprise($entreprise)
+    {
+        $sql = "INSERT INTO est_de_type (ID_TYPE,ID_ENTREPRISE) 
+                VALUES (?,?)";
+
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(2, $entreprise->getId());
+        $requete->bindValue(1, $this->bean->getId());
+        $requete->execute();
+    }
+
 }
 
 
