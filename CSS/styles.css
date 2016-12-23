@@ -1026,6 +1026,10 @@ input[type="checkbox"]:not(:checked) + label {
     margin-left: -40px;
 }
 
+.none{
+    display: none;
+}
+
 
 @media screen and (min-width: 500px) {
 

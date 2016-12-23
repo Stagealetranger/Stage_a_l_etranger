@@ -1,0 +1,39 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
+
+{% block contenu %}
+    <article class="formulaireAdmin">
+        <form method="post" action="index.php?page=newAvis" enctype="multipart/form-data">
+            <div class="titreAdmin">
+                <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                        alt=""></a>
+                <h2>Ajouter les types</h2>
+            </div>
+            <div>
+                <select name="id" id="id" class="none">
+                    <option value="{{ entreprise.bean.id }}">{{ entreprise.bean.nom }}</option>
+                </select>
+                <label for="personne">Personne</label>
+                <select name="personne" id="personne">
+                    <option value="">...</option>
+                    {% for personne in listePersonnes %}
+                    <option value="{{ personne.id }}">{{ personne.prenom }} {{ personne.nom }}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+            <div>
+                <label for="avis">Avis</label>
+                    <textarea class="form-control" name="avis" id="avis" placeholder="avis"
+                              required></textarea>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <button type="submit" class="btn" name="valider">
+                    Ajouté
+                </button>
+            </div>
+        </form>
+    </article>
+{% endblock %}

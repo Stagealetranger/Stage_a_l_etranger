@@ -10,8 +10,11 @@
                                                         alt=""></a>
                 <h2>Ajouter les types</h2>
             </div>
-
             <div>
+                <select name="id" id="id" class="none">
+                    <option value="{{ entreprise.bean.id }}">{{ entreprise.bean.nom }}</option>
+                </select>
+
                 <label for="type1">Type de l'entreprise</label>
                 <select name="type1" id="type1">
                     <option value="">...</option>

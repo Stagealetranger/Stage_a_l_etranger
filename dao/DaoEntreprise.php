@@ -35,30 +35,26 @@ class DaoEntreprise extends Dao
 
     }
 
-    public function findByNomEnt($nom)
+    public function findByNom($nom = null)
     {
         $sql = "SELECT * 
-                FROM entreprise    
-                WHERE NOM_ENTREPRISE = '" . $nom . "'
-                ORDER BY NOM_ENTREPRISE";
+                FROM entreprise 
+                WHERE entreprise.NOM_ENTREPRISE = '" . $nom . "'";
         $requete = $this->pdo->prepare($sql);
         if ($requete->execute()) {
-            while ($donnees = $requete->fetch()) {
-                $entreprise = new Entreprise(
-                    $donnees['ID_ENTREPRISE'],
-                    $donnees['NOM_ENTREPRISE'],
-                    $donnees['VISITER'],
-                    $donnees['DESCRIPTION'],
-                    $donnees['RUE'],
-                    $donnees['AVIS'],
-                    $donnees['TAILLE'],
-                    $donnees['CONTACT'],
-                    $donnees['LONGITUDE'],
-                    $donnees['LATITUDE'],
-                    $donnees['TELEPHONE'],
-                    $donnees['VILLE']
-                );
-                $this->bean = $entreprise;
+            if ($donnees = $requete->fetch()) {
+                $this->bean->setId($donnees['ID_ENTREPRISE']);
+                $this->bean->setNom($donnees['NOM_ENTREPRISE']);
+                $this->bean->setVisiter($donnees['VISITER']);
+                $this->bean->setDescription($donnees['DESCRIPTION']);
+                $this->bean->setRue($donnees['RUE']);
+                $this->bean->setAvis($donnees['AVIS']);
+                $this->bean->setTaille($donnees['TAILLE']);
+                $this->bean->setLatitude($donnees['LATITUDE']);
+                $this->bean->setLongitude($donnees['LONGITUDE']);
+                $this->bean->setVille($donnees['VILLE']);
+                $this->bean->setContact($donnees['CONTACT']);
+                $this->bean->setTelephone($donnees['TELEPHONE']);
             }
         }
     }
@@ -263,15 +259,32 @@ class DaoEntreprise extends Dao
         $this->bean->setLesTypes($liste);
     }
 
-    public function addTypes($type)
+    public function addTypes($type = 0, $entreprise = 0)
     {
         $sql = "INSERT INTO est_de_type (ID_TYPE,ID_ENTREPRISE) 
                 VALUES (?,?)";
 
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $type->getId());
-        $requete->bindValue(2, $this->bean->getId());
+        $requete->bindValue(2, $entreprise);
         $requete->execute();
     }
+
+    public function addAvis($personne = 0, $entreprise = 0, $avis = null)
+    {
+        $sql = "INSERT INTO est_aller (DESCRIPTION_AVIS, ID_PERSONNE, ID_ENTREPRISE) 
+                VALUES (?, ?,?);";
+        $requete = $this->pdo->prepare($sql);
+
+        var_dump('id:'.$entreprise);
+        var_dump('personne:'.$personne);
+        var_dump('avis:'.$avis);
+
+        $requete->bindValue(2, $personne);
+        $requete->bindValue(3, $entreprise);
+        $requete->bindValue(1, $avis);
+        $requete->execute();
+    }
+
 
 }

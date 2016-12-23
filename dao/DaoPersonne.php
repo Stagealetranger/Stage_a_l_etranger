@@ -78,7 +78,7 @@ class DaoPersonne extends Dao
         }
     }
 
-    public function getListePersonne()
+    public function getListe()
     {
         $query = "SELECT * 
                 FROM personne   
