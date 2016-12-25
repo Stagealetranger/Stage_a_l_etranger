@@ -25,7 +25,9 @@ class Entreprise
     private $lePays = null;
     private $lesTypes = array();
     private $lesPersonnesVont = array();
+    private $SontAller = array();
 
+  
 
     // --- OPERATIONS ---
     public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $profil = null, $longitude = 0, $latitude = 0, $ville = null, $contact = null, $telephone = 0)
@@ -66,6 +68,8 @@ class Entreprise
     public function setLesTypes($lesTypes){$this->lesTypes = $lesTypes;}
     public function getLesPersonnesVont(){return $this->lesPersonnesVont;}
     public function setLesPersonnesVont($lesPersonnesVont){$this->lesPersonnesVont = $lesPersonnesVont;}
+    public function getSontAller(){return $this->SontAller;}
+    public function setSontAller($SontAller){$this->SontAller = $SontAller;}
     public function getLongitude(){return $this->longitude;}
     public function setLongitude($longitude){$this->longitude = $longitude;}
     public function getLatitude(){return $this->latitude;}

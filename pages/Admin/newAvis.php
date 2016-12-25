@@ -21,11 +21,11 @@ for ($i = 0; $i < count($listePersonne); $i++) {
 
 if (isset($_POST["valider"])) {
 
-    $id = $_POST['id'];
+    $id = $_GET['id'];
     $personne = $_POST['personne'];
     $avis = $_POST['avis'];
-
     $daoEntreprise->addAvis($personne,$id,$avis);
+    
     header('Location: index.php?page=listeEntreprise');
     exit();
 }

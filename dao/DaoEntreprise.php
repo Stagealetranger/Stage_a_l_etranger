@@ -272,8 +272,9 @@ class DaoEntreprise extends Dao
 
     public function addAvis($personne = 0, $entreprise = 0, $avis = null)
     {
+
         $sql = "INSERT INTO est_aller (DESCRIPTION_AVIS, ID_PERSONNE, ID_ENTREPRISE) 
-                VALUES (?, ?,?);";
+                VALUES (?, ?, ?);";
         $requete = $this->pdo->prepare($sql);
 
         var_dump('id:'.$entreprise);
@@ -286,5 +287,26 @@ class DaoEntreprise extends Dao
         $requete->execute();
     }
 
+    public function setSontAller()
+    {
+        $sql = "SELECT * 
+                FROM est_aller,personne, entreprise  
+                WHERE entreprise.ID_ENTREPRISE = " . $this->bean->getId() . "
+                AND est_aller.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
+                AND est_aller.ID_PERSONNE = personne.ID_PERSONNE";
+        $requete = $this->pdo->prepare($sql);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $listeAvis = new Avis(
+                    $donnees['ID_ENTREPRISE'],
+                    $donnees['ID_PERSONNE'],
+                    $donnees['AVIS']
+                );
+                $liste[] = $listeAvis ;
+            }
+        }
+        $this->bean->setSontAller($liste);
+    }
 
 }
