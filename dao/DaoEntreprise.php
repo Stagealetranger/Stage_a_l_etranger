@@ -290,7 +290,7 @@ class DaoEntreprise extends Dao
     public function setSontAller()
     {
         $sql = "SELECT * 
-                FROM est_aller,personne, entreprise  
+                FROM est_aller
                 WHERE entreprise.ID_ENTREPRISE = " . $this->bean->getId() . "
                 AND est_aller.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
                 AND est_aller.ID_PERSONNE = personne.ID_PERSONNE";
@@ -298,7 +298,7 @@ class DaoEntreprise extends Dao
         $liste = array();
         if ($requete->execute()) {
             while ($donnees = $requete->fetch()) {
-                $listeAvis = new Avis(
+                $listeAvis = new OnAccueilli(
                     $donnees['ID_ENTREPRISE'],
                     $donnees['ID_PERSONNE'],
                     $donnees['AVIS']
