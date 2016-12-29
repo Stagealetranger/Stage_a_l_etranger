@@ -10,15 +10,15 @@ $daoPersonne = new DaoPersonne();
 $daoEntreprise->find($_GET["id"]);
 $daoEntreprise->setLePays();
 $daoEntreprise->setLesTypes();
-$daoEntreprise->setSontAller();
+
 
 $param = array(
     "entreprise" => $daoEntreprise->bean
 );
 
-echo "<pre>";
-print_r($param);
-echo "</pre>";
+//echo "<pre>";
+//print_r($param);
+//echo "</pre>";
 
 
 if (($_SESSION['mail']) == ''){

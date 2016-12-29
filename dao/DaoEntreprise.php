@@ -296,6 +296,7 @@ class DaoEntreprise extends Dao
                 AND est_aller.ID_PERSONNE = personne.ID_PERSONNE";
         $requete = $this->pdo->prepare($sql);
         $liste = array();
+        
         if ($requete->execute()) {
             while ($donnees = $requete->fetch()) {
                 $listeAvis = new OnAccueilli(
