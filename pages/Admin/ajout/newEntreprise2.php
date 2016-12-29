@@ -44,7 +44,7 @@ $param = array(
 //echo "</pre>";
 
 if (($_GET["nom"]) == '') {
-    header('Location: index.php?page=newEntreprise');
+    header('Location: index.php?page=newPapier');
 
 }
 

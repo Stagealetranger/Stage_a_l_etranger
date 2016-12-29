@@ -24,23 +24,21 @@ class DaoPapier extends Dao
         $this->bean->setConseil($donnees['CONSEIL']);
         $this->bean->setDuree($donnees['DUREE']);
     }
+
     public function findByNomPap($nom)
     {
         $sql = "SELECT * 
                 FROM papier    
-                WHERE NOM_PAPIER = '".$nom."'
+                WHERE NOM_PAPIER = '" . $nom . "'
                 ORDER BY NOM_PAPIER";
         $requete = $this->pdo->prepare($sql);
         if ($requete->execute()) {
             while ($donnees = $requete->fetch()) {
-                $papier = new Papier(
-                    $donnees['ID_PAPIER'],
-                    $donnees['NOM_PAPIER'],
-                    $donnees['DESCRIPTION'],
-                    $donnees['CONSEIL'],
-                    $donnees['DUREE']
-                );
-                $this->bean = $papier;
+                $this->bean->setId($donnees['ID_PAPIER']);
+                $this->bean->setNom($donnees['NOM_PAPIER']);
+                $this->bean->setDescription($donnees['DESCRIPTION']);
+                $this->bean->setConseil($donnees['CONSEIL']);
+                $this->bean->setDuree($donnees['DUREE']);
             }
         }
     }
@@ -62,7 +60,8 @@ class DaoPapier extends Dao
         $donnees = $this->deleteById("papier", "ID_PAPIER", $this->bean->getId());
     }
 
-    public function update(){
+    public function update()
+    {
         $sql = "UPDATE papier SET NOM_PAPIER = ?, DESCRIPTION = ?, CONSEIL = ?, DUREE=? WHERE ID_PAPIER = ?";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
@@ -115,8 +114,9 @@ class DaoPapier extends Dao
                 $liste[] = $listePays;
             }
         }
-        $this->bean->setLesPays ($liste);
+        $this->bean->setLesPays($liste);
     }
+
     public function setLesPersonnes()
     {
         {
@@ -147,7 +147,15 @@ class DaoPapier extends Dao
 
     }
 
+    public function addPays($pays = 0, $papier = 0)
+    {
+        $sql = "INSERT INTO est_pour (ID_PAPIER,ID_PAYS) 
+                VALUES (?,?)";
 
-
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $papier);
+        $requete->bindValue(2, $pays);
+        $requete->execute();
+    }
 
 }

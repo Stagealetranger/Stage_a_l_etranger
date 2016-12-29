@@ -3,8 +3,7 @@
 {% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
 
 {% block contenu %}
-    <article id="inscription">
-
+    <article class="formulaireAdmin">
         <div>
             <div class="ficheEntreprise communication grandentreprise connu aimer">
                 <div class="titreEntreprise ">
@@ -12,19 +11,8 @@
                 </div>
                 <p class="descritpionEntreprise">{{ papier.bean.description }}</p>
                 <p class="villeEntreprise">{{ papier.bean.ville }}, {{ papier.bean.pays }}</p>
-                <div class="pictoFiltres">
-                    <img src="CSS/images/Picto/picto2_communication.png" alt="">
-                    <img src="CSS/images/Picto/picto2_grandenteprise.png" alt="">
-                    <img src="CSS/images/Picto/picto2_connu.png" alt="">
-                    <img src="CSS/images/Picto/picto2_aimer.png" alt="">
-                </div>
-                <div class="Ensavoirplus">
-                    <a class="btnEntreprise bleu" href="index.php?page=Entreprise">En savoir plus</a>
-                </div>
-
             </div>
         </div>
-
         <form method="post" action="index.php?page=suppPapier&id={{ papier.id }}" enctype="multipart/form-data">
             <span>Etes vous sur de vouloir supprimer ce papier ?</span>
 

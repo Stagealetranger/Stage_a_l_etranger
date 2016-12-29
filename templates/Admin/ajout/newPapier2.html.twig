@@ -1,0 +1,115 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
+
+{% block contenu %}
+    <article class="formulaireAdmin">
+        <form method="post" action="index.php?page=newPapier2" enctype="multipart/form-data">
+            <div class="titreAdmin">
+                <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                        alt=""></a>
+                <h2>Ajouter les pays</h2>
+            </div>
+            <div>
+                <select name="id" id="id" class="none">
+                    <option value="{{ papier.bean.id }}">{{ papier.bean.nom }}</option>
+                </select>
+
+                    <label for="pays1">A quelle pays doit-il etre associer ?</label>
+                    <select name="pays1" id="pays1">
+                        <option value="0">...</option>
+                        {% for pays in liste %}
+                            <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                        {% endfor %}
+                    </select>
+                    <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <label for="pays2">A quelle pays doit-il etre associer ?</label>
+                <select name="pays2" id="pays2">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <label for="pays3">A quelle pays doit-il etre associer ?</label>
+                <select name="pays3" id="pays3">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <label for="pays4">A quelle pays doit-il etre associer ?</label>
+                <select name="pays4" id="pays4">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <label for="pays5">A quelle pays doit-il etre associer ?</label>
+                <select name="pays5" id="pays5">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <label for="pays6">A quelle pays doit-il etre associer ?</label>
+                <select name="pays6" id="pays6">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <label for="pays7">A quelle pays doit-il etre associer ?</label>
+                <select name="pays7" id="pays7">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            </div>
+            <div>
+                <label for="pays8">A quelle pays doit-il etre associer ?</label>
+                <select name="pays8" id="pays8">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <label for="pays9">A quelle pays doit-il etre associer ?</label>
+                <select name="pays9" id="pays9">
+                    <option value="0">...</option>
+                    {% for pays in liste %}
+                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                    {% endfor %}
+                </select>
+                <span class="correction">nooooooooooooooooooooooooooooo</span>
+            </div>
+            <div>
+                <button type="submit" class="btn" name="valider">
+                    Ajouté
+                </button>
+            </div>
+        </form>
+    </article>
+{% endblock %}

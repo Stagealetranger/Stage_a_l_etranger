@@ -4,6 +4,7 @@ require_once('dao/DaoEntreprise.php');
 
 $daoEntreprise = new DaoEntreprise();
 $daoEntreprise->find($_GET["id"]);
+$daoEntreprise->setLesTypes();
 
 if (isset($_POST["oui"])) {
     $daoEntreprise->delete();
@@ -15,7 +16,6 @@ if (isset($_POST["non"])) {
 }
 
 $param = array(
-    "session" => $_SESSION,
 "entreprise" => $daoEntreprise->bean
 );
 
@@ -30,9 +30,9 @@ if (($_SESSION['mail']) == ''){
 
 }
 
-echo "<pre>";
-print_r($param);
-echo "</pre>";
+//echo "<pre>";
+//print_r($param);
+//echo "</pre>";
 
 
 
