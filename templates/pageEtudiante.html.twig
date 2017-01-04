@@ -108,7 +108,29 @@
             <a class="btn" href="index.php?page=Suivi#monSuivi">Acceder a mon suivi</a>
         </div>
 
+        <script>
+            var listePays = [
+                {% for pays in listePays %}
+                "{{ pays.nom }}",
+                {% endfor %}
+                "France"
+            ];
+            $('#pays').autocomplete({
+                source : listePays,
+               minLength : 3
+            });
 
+            var listeVille = [
+                {% for Entreprise in listeEntreprise %}
+                "{{ Entreprise.ville }}",
+                {% endfor %}
+                "Paris"
+            ];
+            $('#ville').autocomplete({
+                source : listeVille,
+                minLength : 3
+            });
+        </script>
     </article>
 
 {% endblock %}

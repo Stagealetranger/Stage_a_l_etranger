@@ -18,7 +18,7 @@ if (isset($_POST["valider"])) {
     $DaoValidation->create();
     header('Location: index.php?page=accueil');
 
-$mail = 'joshua.froehly@gmail.com'; // Déclaration de l'adresse de destination.
+$mail = $_POST['mail']; // Déclaration de l'adresse de destination.
 if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui présentent des bogues.
 {
     $passage_ligne = "\r\n";
