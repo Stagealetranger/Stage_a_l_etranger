@@ -32,8 +32,8 @@ if (isset($_POST["accepter"])) {
 
     $daoPersonne->create();
     $daoValidation->delete();
-    header('Location: index.php?page=listeValidation');
-    $mail = 'joshua.froehly@gmail.com'; // Déclaration de l'adresse de destination.
+
+    $mail = $daoValidation->bean->getMail(); // Déclaration de l'adresse de destination.
     if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui présentent des bogues.
     {
         $passage_ligne = "\r\n";
@@ -83,6 +83,7 @@ if (isset($_POST["accepter"])) {
 //=====Envoi de l'e-mail.
     mail($mail,$sujet,$message,$header);
 //==========
+    header('Location: index.php?page=listeValidation');
 }
 
 if (isset($_POST["refuser"])) {
