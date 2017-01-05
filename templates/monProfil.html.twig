@@ -3,15 +3,24 @@
 {% block title %}MMI Stage à l'étranger/Profil {{ session.nom }}{{ session.prenom }}{% endblock %}
 
 {% block contenu %}
+
+
     <article id="monProfil">
-        <div class="col1">
+
+        <div class="col6">
             <h3 class="blanc">MMI Montbéliard</h3>
             <h2 class="blanc">Mon profil</h2>
+        </div>
 
-            <div>
+                <div class="col1 colonneaImage" id="imageProfil">
+                    <img src="CSS/images/{{ session.photo }}" alt="">
+                </div>
+
+               <div class="col1">
+                <div>
                 <span>Nom :</span>
                 <span>{{ session.nom }}</span>
-            </div>
+                </div>
             <div>
                 <span>Prénom :</span>
                 <span>{{ session.prenom }}</span>
@@ -30,10 +39,8 @@
                 {% endif %}
 
             </div>
-        </div>
-        <div class="col1 colonneaImage" id="imageProfil">
-            <img src="CSS/images/{{ session.photo }}" alt="">
-        </div>
+               </div>
+
 
     </article>
 {% endblock %}

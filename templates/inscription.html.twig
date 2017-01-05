@@ -6,28 +6,27 @@
     <article id="inscription">
         <div class="col1">
             <h3 class="blanc">MMI Montbéliard</h3>
-            <h2 class="blanc">Rejoingnez nous !</h2>
+            <h2 class="blanc">Rejoignez nous !</h2>
         </div>
         <div class="col3">
             <form method="post" id="myForm" action="index.php?page=Inscription" enctype="multipart/form-data">
                 <div>
                     <label class="form_col" for="nom">Nom :</label>
-                    <input name="nom" id="nom" type="text"/>
-                    <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                    <input name="nom" id="nom" type="text" placeholder="Nom" required/>
+
                 </div>
                 <div>
-                    <label class="form_col" for="prenom">Prenom :</label>
-                    <input name="prenom" id="prenom" type="text"/>
-                    <span class="tooltip">Un prenom ne peut pas faire moins de 2 caractères</span>
+                    <label class="form_col" for="prenom">Prénom :</label>
+                    <input name="prenom" id="prenom" type="text" placeholder="Prénom" required/>
+
                 </div>
                 <div>
-                    <label class="form_col" for="mail">Adresse mail</label>
+                    <label class="form_col" for="mail">Adresse mail :</label>
                     <input type="email" name="mail" id="mail" placeholder="Adresse mail" required/>
                 </div>
                 <div>
-                    <label class="form_col" for="mdp">Mot de passe</label>
+                    <label class="form_col" for="mdp">Mot de passe :</label>
                     <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" required/>
-                    <span class="tooltip">Le mot de passe ne doit pas faire moins de 6 caractères</span>
                 </div>
                 <button type="submit" class="btn" name="valider" >M'inscrire</button>
             </form>

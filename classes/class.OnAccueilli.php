@@ -8,7 +8,7 @@ class OnAccueilli extends Entreprise
     private $lesPersonnesDeja = array();
 
 
-    public function OnAccueilli($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $description_avis = null, $profil = null, $pays = null, $ville = null, $description_avis=0)
+    public function OnAccueilli($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $profil = null, $pays = null, $ville = null, $description_avis=null)
     {
         // --- Appel du constructeur de la classe m�re ---
         // Ici la classe Casque pour lequel il faut id, nom et cout

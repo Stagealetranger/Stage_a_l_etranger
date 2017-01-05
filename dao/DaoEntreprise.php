@@ -3,7 +3,6 @@ require_once 'classes/class.Entreprise.php';
 require_once 'classes/class.Pays.php';
 require_once 'classes/class.Type.php';
 require_once 'classes/class.Pays.php';
-require_once 'classes/class.OnAccueilli.php';
 
 require_once 'Dao.php';
 
@@ -277,37 +276,14 @@ class DaoEntreprise extends Dao
                 VALUES (?, ?, ?);";
         $requete = $this->pdo->prepare($sql);
 
-        var_dump('id:'.$entreprise);
-        var_dump('personne:'.$personne);
-        var_dump('avis:'.$avis);
+        var_dump('id:' . $entreprise);
+        var_dump('personne:' . $personne);
+        var_dump('avis:' . $avis);
 
         $requete->bindValue(2, $personne);
         $requete->bindValue(3, $entreprise);
         $requete->bindValue(1, $avis);
         $requete->execute();
-    }
-
-    public function setSontAller()
-    {
-        $sql = "SELECT * 
-                FROM est_aller
-                WHERE entreprise.ID_ENTREPRISE = " . $this->bean->getId() . "
-                AND est_aller.ID_ENTREPRISE = entreprise.ID_ENTREPRISE
-                AND est_aller.ID_PERSONNE = personne.ID_PERSONNE";
-        $requete = $this->pdo->prepare($sql);
-        $liste = array();
-        
-        if ($requete->execute()) {
-            while ($donnees = $requete->fetch()) {
-                $listeAvis = new OnAccueilli(
-                    $donnees['ID_ENTREPRISE'],
-                    $donnees['ID_PERSONNE'],
-                    $donnees['AVIS']
-                );
-                $liste[] = $listeAvis ;
-            }
-        }
-        $this->bean->setSontAller($liste);
     }
 
 }

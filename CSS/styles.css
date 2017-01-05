@@ -37,10 +37,8 @@ footer {
 }
 
 footer img {
-    margin: 20px 0;
     width: 35px;
     height: 35px;
-    max-width: 50px;
 }
 
 footer p {
@@ -52,11 +50,13 @@ footer p {
 footer a {
     width: 100%;
     text-align: center;
+    margin: 0;
 }
 
 a {
     color: white;
     text-decoration: none;
+    margin: 0;
 }
 
 /*******************************************************
@@ -125,6 +125,10 @@ article {
 article > div > img {
     width: 50%;
     margin: 2em 15%;
+}
+
+#myForm{
+    font-family: "Montserrat", sans-serif;
 }
 
 /*******************************************************
@@ -217,6 +221,11 @@ article > div > img {
     height: 100%;
 }
 
+.col6{
+    width: 100%;
+    padding-left: 30px;
+}
+
 /*******************************************************
                         Accueil
 *******************************************************/
@@ -239,6 +248,14 @@ article > div > img {
 
 #accueil div {
     text-align: center;
+}
+
+p.blanc{
+    text-align: justify;
+}
+
+p.bleu{
+    text-align: justify;
 }
 
 #decouvrir {
@@ -404,12 +421,12 @@ input[type="checkbox"]:not(:checked) + label {
     color: #154A58;
 }
 
-#suivi > div > div {
-    width: 60%;
-    margin: 0;
-    text-align: right;
+/*#suivi > div > div {*/
+    /*width: 60%;*/
+    /*margin: 0;*/
+    /*text-align: right;*/
 
-}
+/*}*/
 
 #suivi > div {
     display: flex;
@@ -668,11 +685,12 @@ input[type="checkbox"]:not(:checked) + label {
 }
 
 #inscription > div > form > div {
-    width: 90%;
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 #inscription > div > form {
@@ -680,6 +698,18 @@ input[type="checkbox"]:not(:checked) + label {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+#myForm{
+    border: 2px solid white;
+}
+
+.tooltip {
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
 
 /*******************************************************
                        Modal
@@ -735,6 +765,12 @@ input[type="checkbox"]:not(:checked) + label {
 #monProfil img {
     width: 30%;
 }
+
+#monProfil span:first-child{
+   font-weight: bold;
+   font-family: "Montserrat", sans-serif;
+}
+
 
 /*******************************************************
                         Modal
@@ -843,8 +879,6 @@ input[type="checkbox"]:not(:checked) + label {
 }
 
 .titreAdmin {
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
     margin: 0 0 2em 10px;
     width: 100%;
@@ -852,11 +886,11 @@ input[type="checkbox"]:not(:checked) + label {
 
 .titreAdmin > h2 {
     padding: 0;
-    color: #3c3c3c;
+    color: white;
 }
 
 .formulaireAdmin {
-    background-color: #D3D3D3;
+    background-color: #154A58;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -864,9 +898,6 @@ input[type="checkbox"]:not(:checked) + label {
 }
 
 .formulaireAdmin > form {
-    background-color: #dbdbdb;
-    border: 4px solid #3c3c3c;
-    max-width: 500px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -874,25 +905,26 @@ input[type="checkbox"]:not(:checked) + label {
 }
 
 .formulaireAdmin > form > div {
-    width: 80%;
+    width: 40%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px 0;
-    border: 2px solid #3c3c3c;
+}
+
+.formulaireAdmin > form > div:first-child{
+    width: 100%;
 }
 
 .formulaireAdmin > form > div > .btn {
-    border: 2px solid #3c3c3c;
     color: #3c3c3c;
 }
 
 .formulaireAdmin > form > div > label {
     width: 100%;
-    color: #3c3c3c;
+    color: white;
     text-align: center;
-    margin: 20px 0;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .formulaireAdmin > form > div > input {
@@ -910,11 +942,12 @@ input[type="checkbox"]:not(:checked) + label {
 .formulaireAdmin > form > div > textarea {
     width: 70%;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .formulaireAdmin > form > div > div {
     width: 100%;
-    color: #3c3c3c;
+    color: white;
     margin: 20px 0;
     font-size: 1.2em;
     display: flex;
@@ -923,7 +956,7 @@ input[type="checkbox"]:not(:checked) + label {
 
 }
 
-.formulaireAdmin > form > div > div > input {
+input {
     height: 20px;
     width: 20px;
     margin: 2%;
@@ -940,7 +973,6 @@ input[type="checkbox"]:not(:checked) + label {
 
 #listeAdminE > div {
     background-color: #dbdbdb;
-    border: 4px solid #3c3c3c;
     width: 80%;
     display: flex;
     justify-content: center;
@@ -949,7 +981,6 @@ input[type="checkbox"]:not(:checked) + label {
 
 #listeAdminE > div > div {
     background-color: white;
-    border: 1px solid #154A58;
     width: 200px;
     margin: 20px;
 }

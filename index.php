@@ -1,5 +1,10 @@
 <?php
 
+ini_set('display_errors','on');
+error_reporting(E_ALL);
+
+define("RACINE", __DIR__);
+
 include_once('Twig/Autoloader.php');
 Twig_Autoloader::register();
 
