@@ -956,7 +956,7 @@ input[type="checkbox"]:not(:checked) + label {
 
 }
 
-input {
+.formulaireAdmin > form > div > div >input {
     height: 20px;
     width: 20px;
     margin: 2%;
