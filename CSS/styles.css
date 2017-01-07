@@ -224,6 +224,7 @@ article > div > img {
 .col6{
     width: 100%;
     padding-left: 30px;
+    display: inline-block;
 }
 
 /*******************************************************
@@ -421,12 +422,9 @@ input[type="checkbox"]:not(:checked) + label {
     color: #154A58;
 }
 
-/*#suivi > div > div {*/
-    /*width: 60%;*/
-    /*margin: 0;*/
-    /*text-align: right;*/
-
-/*}*/
+article#monSuivi{
+    padding: 0;
+}
 
 #suivi > div {
     display: flex;
