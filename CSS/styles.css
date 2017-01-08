@@ -204,6 +204,7 @@ article > div > img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: 0;
 }
 
 .col4 {
@@ -446,6 +447,7 @@ article#monSuivi{
     color: #154A58;
 }
 
+
 /*******************************************************
                       Entreprise
 *******************************************************/
@@ -674,6 +676,8 @@ article#monSuivi{
 *******************************************************/
 #inscription {
     background-color: #154A58;
+    margin: 0;
+    padding: 0;
 }
 
 #inscription > div > form > div > label {
@@ -683,12 +687,17 @@ article#monSuivi{
 }
 
 #inscription > div > form > div {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 15px;
     margin-top: 15px;
+}
+
+#inscription > div:first-child{
+    margin-top: 2%;
+    margin-left: 2%;
 }
 
 #inscription > div > form {
@@ -699,6 +708,7 @@ article#monSuivi{
 
 #myForm{
     border: 2px solid white;
+    margin: 3%;
 }
 
 .tooltip {
