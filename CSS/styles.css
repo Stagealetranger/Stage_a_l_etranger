@@ -127,7 +127,7 @@ article > div > img {
     margin: 2em 15%;
 }
 
-#myForm{
+#myForm {
     font-family: "Montserrat", sans-serif;
 }
 
@@ -222,7 +222,7 @@ article > div > img {
     height: 100%;
 }
 
-.col6{
+.col6 {
     width: 100%;
     padding-left: 30px;
     display: inline-block;
@@ -252,11 +252,11 @@ article > div > img {
     text-align: center;
 }
 
-p.blanc{
+p.blanc {
     text-align: justify;
 }
 
-p.bleu{
+p.bleu {
     text-align: justify;
 }
 
@@ -423,7 +423,7 @@ input[type="checkbox"]:not(:checked) + label {
     color: #154A58;
 }
 
-article#monSuivi{
+article#monSuivi {
     padding: 0;
 }
 
@@ -447,7 +447,6 @@ article#monSuivi{
     color: #154A58;
 }
 
-
 /*******************************************************
                       Entreprise
 *******************************************************/
@@ -456,8 +455,12 @@ article#monSuivi{
 }
 
 .map {
-    height: 150px;
-    overflow: hidden;
+    min-height: 200px;
+    width: 100%;
+}
+
+#map {
+    height: 200px;
 }
 
 .imageAvis {
@@ -484,24 +487,21 @@ article#monSuivi{
 
 }
 
-#caractéristique > ul > li{
+#caractéristique > ul > li {
     display: flex;
     height: 60px;
     line-height: 60px;
 }
 
-#caractéristique > ul > li > p{
+#caractéristique > ul > li > p {
     max-width: 75px;
     margin: 0;
 }
 
-#caractéristique > ul > li > div >img{
+#caractéristique > ul > li > div > img {
     width: 60px;
     height: 60px;
 }
-
-
-
 
 #avisEntreprise {
     width: 100%;
@@ -522,7 +522,6 @@ article#monSuivi{
 #Liste {
     padding: 0 0 2em 0;
 }
-
 
 #Listentreprise {
     display: flex;
@@ -694,7 +693,7 @@ article#monSuivi{
     margin-top: 15px;
 }
 
-#inscription > div:first-child{
+#inscription > div:first-child {
     margin-top: 2%;
     margin-left: 2%;
 }
@@ -705,7 +704,7 @@ article#monSuivi{
     justify-content: center;
 }
 
-#myForm{
+#myForm {
     border: 2px solid white;
     margin: 3%;
 }
@@ -716,7 +715,6 @@ article#monSuivi{
     font-weight: normal;
     font-size: 1.2em;
 }
-
 
 /*******************************************************
                        Modal
@@ -773,11 +771,10 @@ article#monSuivi{
     width: 30%;
 }
 
-#monProfil span:first-child{
-   font-weight: bold;
-   font-family: "Montserrat", sans-serif;
+#monProfil span:first-child {
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
 }
-
 
 /*******************************************************
                         Modal
@@ -874,7 +871,7 @@ article#monSuivi{
 
 #listeAdminE,
 #listeAdminP {
-   background-color: #154A58;
+    background-color: #154A58;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -920,7 +917,7 @@ article#monSuivi{
     margin: 20px 0;
 }
 
-.formulaireAdmin > form > div:first-child{
+.formulaireAdmin > form > div:first-child {
     width: 100%;
 }
 
@@ -964,7 +961,7 @@ article#monSuivi{
 
 }
 
-.formulaireAdmin > form > div > div >input {
+.formulaireAdmin > form > div > div > input {
     height: 20px;
     width: 20px;
     margin: 2%;
@@ -979,7 +976,7 @@ article#monSuivi{
     display: none;
 }
 
-#listeAdminE{
+#listeAdminE {
     background-color: #154A58;
 }
 
@@ -1032,26 +1029,24 @@ article#monSuivi{
     margin: 20px;
 }
 
-
-#tableValidation{
+#tableValidation {
     background-color: #154A58;
     min-height: 55vh;
 }
 
-
-#tableValidation > form{
+#tableValidation > form {
     background-color: white;
     height: 40px;
     display: flex;
     padding: 5px;
 }
 
-#tableValidation > form > p{
-   margin: 0 10px;
+#tableValidation > form > p {
+    margin: 0 10px;
     line-height: 40px;
 }
 
-#tableValidation > form > button{
+#tableValidation > form > button {
     height: 40px;
     overflow: hidden;
     width: 45px;
@@ -1061,75 +1056,13 @@ article#monSuivi{
 
 }
 
-#tableValidation > form > button > img{
+#tableValidation > form > button > img {
     height: 100%;
     margin-left: -40px;
 }
 
-.none{
+.none {
     display: none;
-}
-
-
-@media screen and (min-width: 500px) {
-
-
-    #tableValidation > form > button{
-        height: 40px;
-        overflow:inherit;
-        width:inherit;
-    }
-
-    #tableValidation > form > button > img{
-        margin-left:0px;
-    }
-
-
-    article {
-        padding: 5em 0;
-    }
-
-    #decouvrir {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-    }
-
-    .btn {
-        margin: 5%;
-
-    }
-
-
-
-    #carteI {
-        text-align: center;
-    }
-
-    #acceuilSuivi {
-        background-size: 2000px;
-        background-repeat: no-repeat;
-
-    }
-
-    #monProfil {
-
-        align-items: center;
-    }
-
-    #monProfil > .col1 > div {
-        font-size: 1.5em;
-    }
-
-    #monProfil img {
-        width: 70%;
-    }
-
-    #carteI img {
-
-        margin: -130px 355px 0 355px;
-    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -1163,6 +1096,7 @@ article#monSuivi{
     .pictoFiltres {
         padding: 10px 3%;
     }
+
     .listePictorecherche {
         padding: 0;
 
@@ -1224,7 +1158,7 @@ article#monSuivi{
 
     }
 
-    #top-menu > li > a> div {
+    #top-menu > li > a > div {
         width: 150px;
     }
 
@@ -1239,7 +1173,63 @@ article#monSuivi{
         margin-right: 0;
     }
 
+    #map {
+        height: 100%;
+    }
 
+    #tableValidation > form > button {
+        height: 40px;
+        overflow: inherit;
+        width: inherit;
+    }
+
+    #tableValidation > form > button > img {
+        margin-left: 0px;
+    }
+
+    article {
+        padding: 5em 0;
+    }
+
+    #decouvrir {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .btn {
+        margin: 5%;
+
+    }
+
+    #carteI {
+        text-align: center;
+    }
+
+    #acceuilSuivi {
+        background-size: 2000px;
+        background-repeat: no-repeat;
+
+    }
+
+    #monProfil {
+
+        align-items: center;
+    }
+
+    #monProfil > .col1 > div {
+        font-size: 1.5em;
+    }
+
+    #monProfil img {
+        width: 70%;
+    }
+
+    #carteI img {
+
+        margin: -130px 355px 0 355px;
+    }
 }
 
 
