@@ -42,7 +42,7 @@
                 </div>
                 <div class="pictoFiltres">
                     <input name="connu" value="1" id="connu" type="checkbox"
-                           {% if recherche.connu == 1 %}checked{% endif %}>
+                           {% if recherche.connu == 0 %}checked{% endif %}>
                     <label for="connu" data-affiche="connu" id="affiche-connu" class="connu"></label>
                 </div>
                 <div class="pictoFiltres">
@@ -55,14 +55,14 @@
 
 
         <div id="Listentreprise"
-             class="col3  {% if recherche.communication == 1 %}affiche-communication{% endif %} {% if recherche.graphisme == 1 %}affiche-graphisme{% endif %} {% if recherche.developpement == 1 %}affiche-developpement{% endif %} {% if recherche.PME == 1 %}affiche-pme{% endif %} {% if recherche.GE == 1 %}affiche-grandentreprise{% endif %} {% if recherche.inconnu == 1 %}affiche-inconnu{% endif %} {% if recherche.connu == 1 %}affiche-connu{% endif %} {% if recherche.aimer == 1 %}affiche-aimer{% endif %}">
+             class="col3  {% if recherche.communication == 1 %}affiche-communication{% endif %} {% if recherche.graphisme == 1 %}affiche-graphisme{% endif %} {% if recherche.developpement == 1 %}affiche-developpement{% endif %} {% if recherche.PME == 1 %}affiche-pme{% endif %} {% if recherche.GE == 1 %}affiche-grandentreprise{% endif %} {% if recherche.inconnu == 1 %}affiche-inconnu{% endif %} {% if recherche.connu == 0 %}affiche-connu{% endif %} {% if recherche.aimer == 1 %}affiche-aimer{% endif %}">
             {% for entreprise in liste %}
 
             <div class="ficheEntreprise  {% for type in entreprise.lesTypes %}  {% if type.id == 1 %}communication{% endif %} {% if type.id == 2 %}graphisme"{% endif %} {% if type.id == 3 %} developpement{% endif %} {% endfor %}
                 {% if entreprise.type == 1 %}communication{% endif %} {% if entreprise.type == 2 %}
                     graphisme{% endif %} {% if entreprise.type == 3 %}developpement{% endif %} {% if entreprise.taile == 0 %}
-                    pme{% endif %} {% if entreprise.taile == 1 %}grandentreprise{% endif %} {% if entreprise.visiter == 0 %}
-                    inconnu{% endif %} {% if entreprise.visiter == 1 %}connu{% endif %} {% if entreprise.avis == 1 %}
+                    pme{% endif %} {% if entreprise.taile == 1 %}grandentreprise{% endif %} {% if entreprise.visiter == 1 %}
+                    inconnu{% endif %} {% if entreprise.visiter == 0 %}connu{% endif %} {% if entreprise.avis == 1 %}
                  aimer{% endif %}">
             <div class="titreEntreprise ">
                 <h5>{{ entreprise.nom }}</h5>
@@ -83,9 +83,9 @@
                 {% if entreprise.taille == 1 %}<img src="CSS/images/Picto/picto2_grandenteprise.png"
                                                     alt="GE">{% endif %}
                 {% if entreprise.taille == 0 %}<img src="CSS/images/Picto/picto2_PME.png" alt="PME">{% endif %}
-                {% if entreprisevisiter == 1 %}<img src="CSS/images/Picto/picto2_connu.png"
+                {% if entreprisevisiter == 0 %}<img src="CSS/images/Picto/picto2_connu.png"
                                                     alt="connu">{% endif %}
-                {% if entreprisevisiter == 0 %}<img src="CSS/images/Picto/picto2_inconnu.png"
+                {% if entreprisevisiter == 1 %}<img src="CSS/images/Picto/picto2_inconnu.png"
                                                     alt="inconnu">{% endif %}
                 {% if entreprise.avis == 1 %}<img src="CSS/images/Picto/picto2_aimer.png"
                                                   alt="aimer">{% endif %}
