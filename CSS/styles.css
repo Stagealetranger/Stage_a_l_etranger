@@ -235,7 +235,7 @@ article > div > img {
 #accueil {
     background-image: url("images/fond_planete_premiere_page.jpg");
     background-position: center;
-    /**background-size: 100%;**/
+    background-size: 2000px;
     text-align: center;
     width: 100%;
     height: 85vh;
@@ -362,7 +362,7 @@ input[type="checkbox"]:not(:checked) + label {
 
 .listePictorecherche {
     padding: 0 10%;
-    border-bottom: solid 1px #154A58;
+    border: solid 1px #154A58;
     width: 80%;
 }
 
@@ -668,7 +668,6 @@ article#monSuivi{
     width: 50%;
     max-width: 200px;
     max-height: 150px;
-    margin-left: 20px;
 }
 
 /*******************************************************
@@ -725,7 +724,7 @@ article#monSuivi{
 
 #blocConnection {
     background-image: url("images/fond_modal.jpg");
-    background-size: 120%;
+    background-size: 160%;
     background-position: center;
 }
 
@@ -1102,11 +1101,7 @@ article#monSuivi{
 
     }
 
-    .listePictorecherche {
-        padding: 0;
-        border-bottom: 0px;
-        border-right: solid 1px #154A58;
-    }
+
 
     #carteI {
         text-align: center;
@@ -1168,7 +1163,10 @@ article#monSuivi{
     .pictoFiltres {
         padding: 10px 3%;
     }
+    .listePictorecherche {
+        padding: 0;
 
+    }
 }
 
 @media screen and (min-width: 800px) {
