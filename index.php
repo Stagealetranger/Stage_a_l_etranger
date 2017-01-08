@@ -30,8 +30,12 @@ if ($page != null){
     include($page);
 }
 
+try{
+    $template = $twig->loadTemplate($template);
+} catch (Twig_Error_Loader $e) {
+    header('Location: index.php?page=Erreur');
+}
 
-$template = $twig->loadTemplate($template);
 
 $param["session"] = $_SESSION;
 
