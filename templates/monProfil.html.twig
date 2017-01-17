@@ -8,15 +8,17 @@
     <article id="monProfil">
 
         <div class="col6">
-            <h3 class="blanc">MMI Montbéliard</h3>
-            <h2 class="blanc">Mon profil</h2>
+            <div>
+                <h3 class="blanc">MMI Montbéliard</h3>
+                <h2 class="blanc">Mon profil</h2>
+            </div>
         </div>
 
         <div class="col1">
-                <div>
+            <div>
                 <span>Nom :</span>
                 <span>{{ session.nom }}</span>
-                </div>
+            </div>
             <div>
                 <span>Prénom :</span>
                 <span>{{ session.prenom }}</span>
@@ -35,7 +37,7 @@
                 {% endif %}
 
             </div>
-               </div>
+        </div>
 
         <div class="col1 colonneaImage" id="imageProfil">
             <img src="CSS/images/{{ session.photo }}" alt="">

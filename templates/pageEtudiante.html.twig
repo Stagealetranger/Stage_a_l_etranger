@@ -109,23 +109,14 @@
         </div>
 
         <script>
-            var listePays = [
-                {% for pays in listePays %}
-                "{{ pays.nom }}",
-                {% endfor %}
-                "France"
+            var listePays = [{% for pays in listePays %}"{{ pays.nom }}",{% endfor %}"France"
             ];
             $('#pays').autocomplete({
                 source : listePays,
                minLength : 3
             });
 
-            var listeVille = [
-                {% for Entreprise in listeEntreprise %}
-                "{{ Entreprise.ville }}",
-                {% endfor %}
-                "Paris"
-            ];
+            var listeVille = [{% for Entreprise in listeEntreprise %}"{{ Entreprise.ville }}",{% endfor %}"Paris"];
             $('#ville').autocomplete({
                 source : listeVille,
                 minLength : 3

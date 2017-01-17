@@ -568,6 +568,7 @@ article#monSuivi {
 .villeEntreprise {
     padding: 10px 20px;
     margin: 0;
+    height: 44px;
 }
 
 .pictoFiltres {
@@ -676,7 +677,12 @@ article#monSuivi {
     background-color: #154A58;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 85vh;
 }
+
 
 #inscription > div > form > div > label {
     text-align: center;
@@ -1031,8 +1037,11 @@ article#monSuivi {
 
 #tableValidation {
     background-color: #154A58;
-    min-height: 55vh;
+    min-height: 85vh;
 }
+
+
+
 
 #tableValidation > form {
     background-color: white;
@@ -1066,6 +1075,18 @@ article#monSuivi {
 }
 
 @media screen and (min-width: 1000px) {
+    .titreIns{
+        width: 1000px;
+    }
+
+   .col6{
+       display: flex;
+       justify-content: center;
+   }
+    .col6 > div {
+        width: 1000px;
+    }
+
     #decouvrirEtudiant > .bouton {
         margin: 5%;
 
