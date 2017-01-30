@@ -11,7 +11,7 @@ $daoEntreprise->findByNom($_GET["nom"]);
 
 if (isset($_POST["valider"])) {
 
-$id = $_POST['id'];
+$id = $_GET['id'];
    if (!empty($_POST["type1"])){
         $daoType->find($_POST["type1"]);
 

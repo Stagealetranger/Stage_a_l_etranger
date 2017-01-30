@@ -20,7 +20,7 @@ $daoPapier->findByNomPap($_GET['nom']);
 
 if (isset($_POST["valider"])) {
 
-    $id = $_POST['id'];
+    $id = $_GET['id'];
     if (!empty($_POST["pays1"])){
         $daoPapier->addPays($_POST['pays1'],$id);
     }

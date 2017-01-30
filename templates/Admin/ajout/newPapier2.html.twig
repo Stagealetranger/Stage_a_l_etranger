@@ -4,16 +4,13 @@
 
 {% block contenu %}
     <article class="formulaireAdmin">
-        <form method="post" action="index.php?page=newPapier2" enctype="multipart/form-data">
+        <form method="post" action="index.php?page=newPapier2&id={{ papier.bean.id }}" enctype="multipart/form-data">
             <div class="titreAdmin">
                 <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
                                                         alt=""></a>
                 <h2>Ajouter les pays</h2>
             </div>
             <div>
-                <select name="id" id="id" class="none">
-                    <option value="{{ papier.bean.id }}">{{ papier.bean.nom }}</option>
-                </select>
 
                     <label for="pays1">A quelle pays doit-il etre associer ?</label>
                     <select name="pays1" id="pays1">

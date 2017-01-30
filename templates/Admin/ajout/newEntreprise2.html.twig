@@ -4,17 +4,13 @@
 
 {% block contenu %}
     <article class="formulaireAdmin">
-        <form method="post" action="index.php?page=newEntreprise2" enctype="multipart/form-data">
+        <form method="post" action="index.php?page=newEntreprise2&id={{ entreprise.bean.id }}" enctype="multipart/form-data">
             <div class="titreAdmin">
                 <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
                                                         alt=""></a>
                 <h2>Ajouter les types</h2>
             </div>
             <div>
-                <select name="id" id="id" class="none">
-                    <option value="{{ entreprise.bean.id }}">{{ entreprise.bean.nom }}</option>
-                </select>
-
                 <label for="type1">Type de l'entreprise</label>
                 <select name="type1" id="type1">
                     <option value="">...</option>

@@ -109,18 +109,24 @@
         </div>
 
         <script>
-            var listePays = [{% for pays in listePays %}"{{ pays.nom }}",{% endfor %}"France"
-            ];
-            $('#pays').autocomplete({
-                source : listePays,
-               minLength : 3
-            });
+            $(document).ready(
+                    function () {
+                        var listePays = [{% for pays in listePays %}"{{ pays.nom }}",{% endfor %}"France"
+                        ];
+                        $('#pays').autocomplete({
+                            source : listePays,
+                            minLength : 2
+                        });
 
-            var listeVille = [{% for Entreprise in listeEntreprise %}"{{ Entreprise.ville }}",{% endfor %}"Paris"];
-            $('#ville').autocomplete({
-                source : listeVille,
-                minLength : 3
-            });
+                        var listeVille = [{% for Entreprise in listeEntreprise %}"{{ Entreprise.ville }}",{% endfor %}"Paris"];
+                        $('#ville').autocomplete({
+                            source : listeVille,
+                            minLength : 2
+                        });
+                    }
+            );
+
+
         </script>
     </article>
 
