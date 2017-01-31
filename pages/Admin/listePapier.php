@@ -11,12 +11,13 @@ $daoPays = new DaoPays();
 $listePapier = $daoPapier->getListe();
 
 
+
 for ($i = 0; $i < count($listePapier); $i++) {
 
     $daoPapier = new DaoPapier();
 
     $daoPapier->find($listePapier[$i]->getId());
-
+    $daoPapier->setLesPays();
     $listePapier[$i] = $daoPapier->bean;
 }
 
@@ -33,10 +34,12 @@ if (($_SESSION['mail']) == '') {
 
 
 $param = array(
-
     "liste" => $listePapier
 );
 
+//echo "<pre>";
+//print_r($param);
+//echo "</pre>";
 ?>
 
 

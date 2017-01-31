@@ -8,50 +8,51 @@
         <div><h1>MMI Montbéliard</h1>
             <h2>vous accompagne pour votre stage à l’étranger</h2>
         </div>
-        <a class="btn" href="#monSuivi">Voir mon suivi</a>
-        <a class="btn" href="#monSuiviQuoi">A quoi sert mon suivi ?</a>
+        <a class="bouton2" href="#monSuivi">Voir mon suivi</a>
+        <a class="bouton2" href="#monSuiviQuoi">A quoi sert mon suivi ?</a>
     </article>
     <article id="monSuivi">
-        <div class="col6">
-            <h3 class="bleu">MMI Montbéliard</h3>
-            <h2 class="bleu">Mon suivi personnalisé</h2>
+        <div class="col5">
+            <div class="col1">
+                <h3 class="bleu">MMI Montbéliard</h3>
+                <h2 class="bleu">Mon suivi personnalisé</h2>
             </div>
 
+        </div>
 
-            <div class="col6">
-                <h3 class="bleu">Mon stage :</h3>
-                <span class="monStage">Kaizen</span>
-                </div>
+
         <div class="col6">
-                <h3 class="bleu">Pays :</h3>
-                <span class="monStage">Angleterre</span>
+            <h3 class="bleu">Mon stage :{{ suivit.nom }}</h3>
+        </div>
+        <div class="col3">
+            <h3 class="bleu">Pays :{{ suivit.id_pays }}</h3>
+        </div>
+<div class="col5">
+    <h3 class="bleu">Mes démarches</h3>
+</div>
+
+        <div class="col3">
+
+            <div class="col1">
+                {% for papier in liste %}
+                    <form action="" id="suivi">
+                        <div>
+                            <div><span>{{ papier.nom }}</span>
+                                <span>13 janvier 2017 </span></div>
+                            <input type="checkbox" name="paiper{{ papier.id }}"></div>
+                    </form>
+                {% endfor %}
             </div>
-
-
-        <div class="col6">
-            <h3 class="bleu">Mes démarches</h3>
-            <form action="" id="suivi">
-                <div>
-                    <div><span>Curriculum-Vitae </span>
-                        <span>13 janvier 2017 </span></div>
-                    <input type="checkbox"></div>
-                <div>
-                    <div><span>Curriculum-Vitae </span>
-                        <span>13 janvier 2017 </span></div>
-                    <input type="checkbox"></div>
-                <div>
-                    <div><span>Curriculum-Vitae </span>
-                        <span>13 janvier 2017 </span></div>
-                    <input type="checkbox"></div>
-                <div>
-                    <div><span>Curriculum-Vitae </span>
-                        <span>13 janvier 2017 </span></div>
-                    <input type="checkbox"></div>
-                <div>
-                    <div><span>Curriculum-Vitae </span>
-                        <span>13 janvier 2017 </span></div>
-                    <input type="checkbox"></div>
-            </form>
+            <div class="col1">
+                {% for papier in liste %}
+                    <form action="" id="suivi">
+                        <div>
+                            <div><span>{{ papier.nom }}</span>
+                                <span>13 janvier 2017 </span></div>
+                            <input type="checkbox" name="paiper{{ papier.id }}"></div>
+                    </form>
+                {% endfor %}
+            </div>
         </div>
 
     </article>
@@ -59,7 +60,8 @@
         <div class="col1">
             <h3 class="blanc">MMI Montbéliard</h3>
             <h2 class="blanc">Tu es étudiant en MMI à Montbéliard ? Inscris toi !</h2>
-            <p class="blanc">Vous êtes étudiants au DUT MMI de Montbéliard ? Alors inscrivez-vous sur MMI Montbéliard Stage
+            <p class="blanc">Vous êtes étudiants au DUT MMI de Montbéliard ? Alors inscrivez-vous sur MMI Montbéliard
+                Stage
                 à
                 l’étranger afin d’accéder à une large liste d’entreprises susceptibles de vous accueillir, ainsi qu’à un
                 suivi administratif qui vous permettra de partir en toute sérénité.</p>

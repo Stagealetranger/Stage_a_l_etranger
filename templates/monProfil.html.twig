@@ -29,20 +29,19 @@
             </div>
             <div>
                 {% if session.ID_SUIVI== "" %}
-                    <a href="">Je n'ai pas encore de stage</a>
+                    <a class="bouton2" href="">J'ai trouvé mon stage</a>
+
                 {% endif %}
                 {% if session.ID_SUIVI!= "" %}
                     <span>Mon stage :</span>
                     <span>Kaizen</span>
                 {% endif %}
-
             </div>
         </div>
 
         <div class="col1 colonneaImage" id="imageProfil">
             <img src="CSS/images/{{ session.photo }}" alt="">
         </div>
-
 
     </article>
 {% endblock %}

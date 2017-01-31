@@ -107,7 +107,7 @@ class DaoPapier extends Dao
         $liste = array();
         if ($requete->execute()) {
             while ($donnees = $requete->fetch()) {
-                $listePays[] = new Pays(
+                $listePays = new Pays(
                     $donnees['ID_PAYS'],
                     $donnees['NOM_PAYS']
                 );
@@ -158,4 +158,5 @@ class DaoPapier extends Dao
         $requete->execute();
     }
 
+   
 }

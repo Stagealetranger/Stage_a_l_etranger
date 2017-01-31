@@ -122,4 +122,28 @@ class DaoPays extends Dao
             }
         }
     }
+
+    public function getListePays($id)
+    {
+        $query = "SELECT * 
+                FROM est_pour 
+                WHERE ID_PAYS = '" . $id. "'
+                ORDER BY ID_PAPIER";
+        // Préparation et chargement de la requete
+        $requete = $this->pdo->prepare($query);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $papier = new Papier(
+                    $donnees['ID_PAPIER'],
+                    $donnees['NOM_PAPIER'],
+                    $donnees['DESCRIPTION'],
+                    $donnees['CONSEIL'],
+                    $donnees['DUREE']
+                );
+                $liste[] = $papier;
+            }
+        }
+        return $liste;
+    }
 }
