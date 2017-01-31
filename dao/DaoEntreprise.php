@@ -107,7 +107,7 @@ class DaoEntreprise extends Dao
     {
         $query = "SELECT * 
                 FROM entreprise    
-                ORDER BY VILLE";
+                ORDER BY ID_PAYS";
         // Préparation et chargement de la requete
         $requete = $this->pdo->prepare($query);
         $liste = array();

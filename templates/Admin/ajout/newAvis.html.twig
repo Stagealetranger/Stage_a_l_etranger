@@ -1,7 +1,9 @@
 {% extends 'general.html.twig' %}
 
 {% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
-
+{% block boostrap %}
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
 {% block contenu %}
     <article class="formulaireAdmin">
         <form method="post" action="index.php?page=newAvis&id={{ entreprise.bean.id }}" enctype="multipart/form-data">

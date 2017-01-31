@@ -1,9 +1,11 @@
 <?php
 require_once 'dao/DaoValidation.php';
 require_once 'dao/DaoPersonne.php';
+require_once 'dao/DaoSuivit.php';
 
 
 $daoValidation = new DaoValidation();
+$daoSuivi = new DaoSuivit();
 
 
 $listeValidation = $daoValidation->getListe();
@@ -28,9 +30,13 @@ if (isset($_POST["accepter"])) {
     $daoPersonne->bean->setPrenom($daoValidation->bean->getPrenom());
     $daoPersonne->bean->setMail($daoValidation->bean->getMail());
     $daoPersonne->bean->setMdp($daoValidation->bean->getMdp());
-
-    $daoPersonne->create();
+    
+    $daoSuivi->create();
+    $idSuivi = $daoSuivi->bean->getId();
+    var_dump($idSuivi);
+    $daoPersonne->create($idSuivi);
     $daoValidation->delete();
+    
 
     $mail = $daoValidation->bean->getMail(); // Déclaration de l'adresse de destination.
     if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui présentent des bogues.

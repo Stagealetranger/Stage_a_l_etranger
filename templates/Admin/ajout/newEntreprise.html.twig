@@ -1,104 +1,149 @@
 {% extends 'general.html.twig' %}
 
 {% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
+{% block boostrap %}
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
 
 {% block contenu %}
+
     <article class="formulaireAdmin">
-        <form method="post" action="index.php?page=newEntreprise" enctype="multipart/form-data">
-            <div class="titreAdmin">
-                <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
-                                                        alt=""></a>
-                <h2>Ajouter une entreprise</h2>
+<div class="container">
+    <form method="post" action="index.php?page=newEntreprise" enctype="multipart/form-data">
+        <div><a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                     alt="">Retour au menu administateur</a></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Ajouter une entreprise</strong>
             </div>
-            <div>
-                <label for="nom">Nom entreprise</label>
-                <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom" required/>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
+            <div class="panel-body">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                <span class="input-group-addon">
+                    <label for="nom">Nom entreprise</label>
+                </span>
+                                <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom" required/>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="visiter">Entreprise connu ?</label>
+                                   </span>
 
-            <div>
-                    <label for="visiter">Un etudiant est-il déjà allé dans cette entreprise ?</label>
-                <div class="ratio">
-                    <input type="radio" class="form-control" name="visiter" id="visiter" value="1" required>oui</input>
-                    <input type="radio" class="form-control" name="visiter" id="visiter" value="0" required>non</input>
-                </div>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
+                                <input type="radio" class="radio-inline" name="visiter" id="visiter" value="1" required>oui</input>
+                                <input type="radio" class="radio-inline" name="visiter" id="visiter" value="0" required>non</input>
 
-            <div>
-                <label for="description">Description</label>
-                    <textarea class="form-control" name="description" id="description" placeholder="Description"
-                              required></textarea>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
 
-            <div>
-                <label for="rue">Rue</label>
-                <input type="text" class="form-control" name="rue" id="rue" placeholder="rue" required/>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                         <label for="rue">Rue</label>
+                                   </span>
+                                <input type="text" class="form-control" name="rue" id="rue" placeholder="rue" required/>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="description">Description</label>
+                                   </span>
+                                   <textarea class="form-control" name="description" id="description" placeholder="Description"
+                                             required></textarea>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="ville">Ville</label>
+                                   </span>
+                                <input type="text" class="form-control" name="ville" id="ville" placeholder="ville" required/>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="pays">A quel pays doit-il etre associé ?</label>
+                                   </span>
+                                <select name="pays" id="pays" class="form-control">
+                                    <option value="0">...</option>
+                                    {% for pays in liste %}
+                                        <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                                    {% endfor %}
+                                </select>
 
-            <div>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                     <label for="contact">Contact</label>
+                                   </span>
+                                <input type="text" class="form-control" name="contact" id="contact" placeholder="contact" required/>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="telephone">Telephone</label>
+                                   </span>
+                                <input type="text" class="form-control" name="telephone" id="telephone" placeholder="telephone" required/>
 
-                <label for="ville">Ville</label>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="avis">Avis:</label>
+                                   </span>
 
-                <input type="text" class="form-control" name="ville" id="ville" placeholder="ville" required/>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
+                                <input type="radio" class="radio-inline" name="avis" id="avis" value="1" required>Positif</input>
+                                <input type="radio" class="radio-inline" name="avis" id="avis" value="0" required>Negatif</input>
 
-            <div>
-                <label for="pays">A quel pays doit-il etre associé ?</label>
-                <select name="pays" id="pays">
-                    <option value="0">...</option>
-                    {% for pays in liste %}
-                    <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                    {% endfor %}
-                </select>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                         <label for="taille">Taille de l'entreprise</label>
+                                   </span>
+                                <input type="radio" class="radio-inline" name="taille" id="taille" value="0" required>PME</input>
+                                <input type="radio" class="radio-inline" name="taille" id="taille" value="1" required>Grande
+                                Entreprise</input>
+
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="longitude">Longitude</label>
+                                   </span>
+                                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="longitude" required/>
+
+                            </div>
+
+                            <br/>
+
+                            <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="latitude">Latitude</label>
+                                   </span>
+
+                                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="latitude" required/>
+
+                            </div>
+
+                            <br/>
+                            <div class="panel-footer">
+                                <button type="submit" class="btn btn-default" name="valider">
+                                    Créér
+                                </button>
+                            </div>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <div>
-                <label for="contact">Contact</label>
-                <input type="text" class="form-control" name="contact" id="contact" placeholder="contact" required/>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
-            <div>
-                <label for="telephone">Telephone</label>
-                <input type="text" class="form-control" name="telephone" id="telephone" placeholder="telephone" required/>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
-            <div>
-                <label for="avis">Avis:</label>
-                <div>
-                    <input type="radio" class="form-control" name="avis" id="avis" value="1" required>Positif</input>
-                    <input type="radio" class="form-control" name="avis" id="avis" value="0" required>Negatif</input>
-                </div>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
-            <div>
-                <label for="taille">Taille de l'entreprise</label>
-                <div>
-                    <input type="radio" class="form-control" name="taille" id="taille" value="0" required>PME</input>
-                    <input type="radio" class="form-control" name="taille" id="taille" value="1" required>Grande
-                    Entreprise</input>
-                </div>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
-            <div>
-                <label for="longitude">Longitude</label>
-                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="longitude" required/>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
-            <div>
-                <label for="latitude">Latitude</label>
-                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="latitude" required/>
-                <span class="correction">nooooooooooooooooooooooooooooo</span>
-            </div>
-            <div>
-                <button type="submit" class="btn" name="valider">
-                    Créér
-                </button>
-            </div>
-        </form>
+        </div>
+    </form>
+</div>
+
         <script>// Fonction de désactivation de l'affichage des "tooltips"
             function deactivateTooltips() {
 

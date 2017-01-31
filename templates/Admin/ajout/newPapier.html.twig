@@ -1,47 +1,78 @@
 {% extends 'general.html.twig' %}
 
 {% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
-
+{% block boostrap %}
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
 {% block contenu %}
     <article class="formulaireAdmin">
 
+        <div class="container">
+            <form method="post" action="index.php?page=newPapier" enctype="multipart/form-data">
+                <div class="titreAdmin">
+                    <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                            alt="RetourAccueil"></a>
 
-        <form method="post" action="index.php?page=newPapier" enctype="multipart/form-data">
-            <div class="titreAdmin">
-                <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
-                                                        alt="RetourAccueil"></a>
-                <h2>Ajouter un papier</h2>
-            </div>
-            <div>
-                <label for="nom">Nom papier</label>
-                <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom" required/>
-            </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>Ajouter un papier</strong>
+                    </div>
 
-            <div>
-                <label for="description">Description</label>
-                <textarea class="form-control" name="description" id="description" placeholder="Description"
-                          required></textarea>
+                    <div class="panel-body">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <label for="nom">Nom papier</label>
+                                        </span>
+                                        <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom"
+                                               required/>
+                                    </div>
+                                    <br/>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                             <label for="description">Description</label>
+                                        </span>
+                                        <textarea class="form-control" name="description" id="description"
+                                                  placeholder="Description"
+                                                  required></textarea></div>
+                                    <br/>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <label for="conseil">Conseil</label>
+                                        </span>
+                                        <textarea class="form-control" name="conseil" id="conseil" placeholder="Conseil" required></textarea>
+                                    </div>
+                                    <br/>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <label for="duree">Duree</label>
+                                        </span>
+                                        <input type="text" class="form-control" name="duree" id="duree" placeholder="duree" required/>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button type="submit" class="btn btn btn-default" name="valider">
+                                            Ajouter
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-            </div>
-
-            <div>
-                <label for="conseil">Conseil</label>
-                <textarea class="form-control" name="conseil" id="conseil" placeholder="Conseil"
-                          required></textarea>
-            </div>
-
-            <div>
-                <label for="duree">Duree</label>
-                <input type="text" class="form-control" name="duree" id="duree" placeholder="duree" required/>
-            </div>
 
 
-            <div>
-                <button type="submit" class="btn" name="valider">
-                    M'inscrire
-                </button>
-            </div>
-        </form>
+
+
+
+            </form>
+        </div>
+
 
     </article>
 {% endblock %}

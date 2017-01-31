@@ -7,23 +7,31 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic' rel='stylesheet' type='text/css'>
-
+{% block boostrap %}
     <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.css">
+{% endblock %}
     <script src="CSS/bootstrap-3.2.0-dist/js/jquery-1.10.2.js"></script>
     <script src="CSS/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
+{% if session.nom == "" %}
+<header id="FirstConnexion" >
+    <a data-toggle="modal" data-target="#myModalCo">Connexion</a>
+</header>
+{% endif %}
+{% if session.nom != "" %}
 <header>
     <div class="Nav" id="home">
         <div class="navWarpper">
             <div class="navbar1">
                 <div>
                     <p id="nomMenu">{% if session.admin == 1 %} <a
-                                href="index.php?page=pageAdmin">Administrateur</a> | {% endif %}<a href="index.php?page=Profil">{{ session.prenom }} {{ session.nom }}</a></p>
-                    <img id="menu" data-toggle="modal" data-target="#myModal" src="CSS/images/logoMMImenu2.png"
+                            href="index.php?page=pageAdmin">Administrateur</a> | {% endif %}<a href="index.php?page=Profil">{{ session.prenom }} {{ session.nom }}</a></p>
+                    <img id="menu" data-toggle="modal" data-target="#myModalMenu" src="CSS/images/logoMMImenu2.png"
                          alt="menu">
                 </div>
 
@@ -32,7 +40,7 @@
         </div>
     </div>
 </header>
-
+{% endif %}
 
 {% block contenu %}
 {% endblock %}
@@ -45,7 +53,38 @@
     </div>
 
 </footer>
-<div id="myModal" class="modal fade" role="dialog">
+{% if session.nom == "" %}
+<div id="myModalCo" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div id="blocConnection">
+                <form method="post" action="index.php?page=accueil" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <label for="mail">Mail</label>
+                        <input type="text" class="form-control" name="mail" id="mail" placeholder="Mail" required/>
+                    </div>
+                    <div class="input-group">
+                        <label for="mdp">Mdp</label>
+                        <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Mdp" required/>
+                    </div>
+                    <a class="bleu" href="index.php?page=Inscription">Pas encore inscrit ?</a>
+                    <div class="panel panel-footer">
+                        <button type="submit" class="btn" name="connexion">
+                            connexion
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endif %}
+{% if session.nom != "" %}
+<div id="myModalMenu" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -88,8 +127,7 @@
 
     </div>
 </div>
+{% endif %}
 </body>
 </html>
-
-
 

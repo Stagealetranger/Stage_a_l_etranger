@@ -1,19 +1,48 @@
 {% extends 'general.html.twig' %}
 
 {% block title %}MMI Stage à l'étranger/{{ nom.entreprise }}{% endblock %}
+{% block boostrap %}
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
 
 {% block contenu %}
    <article id="tableValidation">
-       <div class="titreAdmin">
-           <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png" alt=""></a>
-           <h2>Liste des validations</h2>
+       <div class="container">
+           <div class="titreAdmin">
+               <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png" alt=""></a>
+
+           </div>
+           <div class="panel panel-default">
+               <div class="panel-heading">
+                   <strong>Liste des validations</strong>
+               </div>
+               <div class="panel-body">
+                   <table>
+                       <thead>
+                       <tr class="alert alert-info">
+                           <td>Nom</td>
+                           <td>Prenom</td>
+                           <td>mail</td>
+                           <td>Validation</td>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       {% for validation in listeValidation %}
+                           <form action="index.php?page=listeValidation&id={{ validation.id }}" method="post" enctype="multipart/form-data">
+                               <tr>
+                                   <td><p>{{ validation.nom }}</p></td>
+                                   <td><p> {{ validation.prenom }}</p></td>
+                                   <td><p> {{ validation.mail }}</p></td>
+                                   <td><button type="submit" class="bouton_val" name="accepter"><img src="CSS/images/btn_accepter.jpg" alt="accepter"></button>
+                                       <button type="submit" class="bouton_val" name="refuser" value="refuser" ><img src="CSS/images/btn_refuser.jpg" alt="refuser"></button></td>
+                               </tr>bouton_val
+                           </form>
+                       {% endfor %}
+                       </tbody>
+                   </table>
+               </div>
+           </div>
        </div>
-       {% for validation in listeValidation %}
-       <form action="index.php?page=listeValidation&id={{ validation.id }}" method="post" enctype="multipart/form-data">
-           <p>{{ validation.nom }} {{ validation.prenom }}</p>
-           <button type="submit" name="accepter"><img src="CSS/images/btn_accepter.jpg" alt="accepter"></button>
-           <button type="submit" name="refuser" value="refuser" ><img src="CSS/images/btn_refuser.jpg" alt="refuser"></button>
-       </form>
-       {% endfor %}
+
    </article>
 {% endblock %}
