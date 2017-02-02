@@ -8,7 +8,9 @@ class Suivit
     private $id = 0;
     private $nom = null;
     
+    
     private $lesPersonnes = array();
+    private $lesPapiers = array();
     private $lePays = null;
 
 
@@ -31,6 +33,10 @@ class Suivit
 
     public function getLesPersonnes(){return $this->lesPersonnes;}
     public function setLesPersonnes($lesPersonnes){$this->lesPersonnes = $lesPersonnes;}
+
+    public function getLesPapiers(){return $this->lesPapiers;}
+    public function setLesPapiers($lesPapiers){$this->lesPapiers = $lesPapiers;}
+    
     
 } 
 
