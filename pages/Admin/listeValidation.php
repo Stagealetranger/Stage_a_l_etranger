@@ -5,7 +5,7 @@ require_once 'dao/DaoSuivit.php';
 
 
 $daoValidation = new DaoValidation();
-$daoSuivi = new DaoSuivit();
+
 
 
 $listeValidation = $daoValidation->getListe();
@@ -22,6 +22,10 @@ for ($i = 0; $i < count($listeValidation); $i++) {
 
 
 if (isset($_POST["accepter"])) {
+
+    $daoSuivit = new DaoSuivit();
+
+
     // Instanciation du Dao qui permettra la création
     $daoValidation->find($_GET["id"]);
 
@@ -30,12 +34,16 @@ if (isset($_POST["accepter"])) {
     $daoPersonne->bean->setPrenom($daoValidation->bean->getPrenom());
     $daoPersonne->bean->setMail($daoValidation->bean->getMail());
     $daoPersonne->bean->setMdp($daoValidation->bean->getMdp());
+
+
+    $mail = $daoValidation->bean->getid();
     
-    $daoSuivi->create();
-    $idSuivi = $daoSuivi->bean->getId();
-    var_dump($idSuivi);
-    $daoPersonne->create($idSuivi);
+    $daoSuivit->create($mail);
+    $daoSuivit->findNom($mail);
+    $idSuvivit = $daoSuivit->bean->getId();
+    $daoPersonne->create($idSuvivit);
     $daoValidation->delete();
+    $daoSuivit->updateNom($daoSuivit->bean->getId());
     
 
     $mail = $daoValidation->bean->getMail(); // Déclaration de l'adresse de destination.

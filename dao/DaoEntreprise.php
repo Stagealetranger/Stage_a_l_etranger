@@ -286,4 +286,27 @@ class DaoEntreprise extends Dao
         $requete->execute();
     }
 
+    public function setAvis()
+    {
+        $sql = "SELECT est_aller.*, personne.* 
+                    FROM est_aller, personne 
+                    WHERE 
+                    est_aller.ID_ENTREPRISE = " . $this->bean->getId() . "
+                    AND est_aller.ID_PERSONNE = personne.ID_PERSONNE 
+                    ORDER BY NOM
+                    ";
+        $requete = $this->pdo->prepare($sql);
+        $listePersonne = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $OnAccueilli = new OnAccueilli(
+                    $donnees['ID_PERSONNE'], $donnees['NOM'], $donnees['PRENOM'], $donnees['MAIL'], $donnees['ADMIN'], $donnees['PHOTO'], $donnees['MDP'],  $donnees['ID_SUIVIT'], $donnees['DESCRIPTION_AVIS']
+                );
+                $listePersonne[] = $OnAccueilli;
+            }
+        }
+        $this->bean->setSontAller($listePersonne);
+    }
+
+
 }

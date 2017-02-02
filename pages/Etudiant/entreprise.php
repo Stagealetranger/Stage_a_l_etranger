@@ -10,6 +10,7 @@ $daoPersonne = new DaoPersonne();
 $daoEntreprise->find($_GET["id"]);
 $daoEntreprise->setLePays();
 $daoEntreprise->setLesTypes();
+$daoEntreprise->setAvis();
 
 
 $param = array(

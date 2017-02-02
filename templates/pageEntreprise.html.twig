@@ -54,13 +54,13 @@
                 {{ entreprise.telephone }}</p>
         </div>
     </div>
-
-    {#<div id="avisEntreprise">#}
-        {#<img class="imageAvis" src="CSS/images/sandrine.jpg" alt="">#}
-        {#<h4 class="blanc">Sandrine Ha / Devoleppeur web</h4>#}
-        {#<p class="texteAvis  bleu">{{ Avis.description_avis }}</p>#}
-    {#</div>#}
-
+{% for Avis in entreprise.SontAller %}
+    <div id="avisEntreprise">
+        <img class="imageAvis" src="CSS/images/{{ Avis.photo }}" alt="">
+        <h4 class="blanc">{{ Avis.prenom }} {{ Avis.nom }}</h4>
+        <p class="texteAvis  bleu">{{ Avis.description_avis }}</p>
+    </div>
+{% endfor %}
     <script type="text/javascript">
 
 

@@ -20,11 +20,24 @@ class DaoSuivit extends Dao{
 
     }
 
-    public function create()
+    public function findNom($nom)
+    {
+        $donnees = $this->findById("suivit", "NOM_ENT", $nom);
+        $this->bean->setId($donnees['ID_SUIVIT']);
+    }
+
+    public function create($nom)
     {
         $sql = "INSERT INTO suivit(NOM_ENT)
             VALUES(?)";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1,$nom);
+        $requete->execute();
+    }
 
+    public function updateNom($id)
+    {
+        $sql = "UPDATE `suivit` SET `NOM_ENT` = '' WHERE `suivit`.`ID_SUIVIT` = '".$id."';";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
         $requete->execute();

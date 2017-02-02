@@ -28,17 +28,17 @@ class DaoPersonne extends Dao
         $this->bean->setMdp($donnees['MDP']);
     }
 
-    public function create($suivi)
+    public function create($suivit)
     {
         $sql = "INSERT INTO personne (NOM,PRENOM,MAIL,MDP,ID_SUIVIT)
             VALUES(?, ?, ?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
-        var_dump($suivi);
+ 
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getPrenom());
         $requete->bindValue(3, $this->bean->getMail());
         $requete->bindValue(4, $this->bean->getMdp());
-        $requete->bindValue(5, 1);
+        $requete->bindValue(5, $suivit);
         $requete->execute();
     }
 
