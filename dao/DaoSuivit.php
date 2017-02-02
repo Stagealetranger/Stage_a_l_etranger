@@ -76,5 +76,4 @@ class DaoSuivit extends Dao{
             $this->bean->setLePays($pays);
         }
     }
-
 }

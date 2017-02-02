@@ -49,17 +49,31 @@ class DaoPersonne extends Dao
 
     public function update()
     {
-        $sql = "UPDATE personne SET NOM = ?, PRENOM = ?, MAIL = ?, PHOTO =?, MDP = ? WHERE ID_PERSONNE = ?";
+        $sql = "UPDATE personne SET NOM = ?, PRENOM = ?, MAIL = ? WHERE ID_PERSONNE = ?";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
-        $requete->bindValue(2, $this->bean->getId());
-        $requete->bindValue(3, $this->bean->getPrenom());
-        $requete->bindValue(4, $this->bean->getMail());
-        $requete->bindValue(5, $this->bean->getPhoto());
-        $requete->bindValue(6, $this->bean->getMdp());
+        $requete->bindValue(2, $this->bean->getPrenom());
+        $requete->bindValue(3, $this->bean->getMail());
+        $requete->bindValue(4, $this->bean->getId());
         $requete->execute();
     }
-
+    public function updateMdp()
+    {
+        $sql = "UPDATE personne SET MDP = ? WHERE ID_PERSONNE = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getMdp());
+        $requete->bindValue(2, $this->bean->getId());
+        $requete->execute();
+    }
+    public function updatePhoto()
+    {
+        $sql = "UPDATE personne SET PHOTO = ?  WHERE ID_PERSONNE = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getPhoto());
+        $requete->bindValue(2, $this->bean->getId());
+        $requete->execute();
+    }
+    
     public function connect($mail, $mdp)
     {
         $sql = "SELECT * FROM personne WHERE MAIL = '" . $mail . "' AND MDP = '" . $mdp . "';";

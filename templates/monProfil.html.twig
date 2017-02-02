@@ -1,7 +1,6 @@
 {% extends 'general.html.twig' %}
 
 {% block title %}MMI Stage à l'étranger/Profil {{ session.nom }}{{ session.prenom }}{% endblock %}
-
 {% block contenu %}
     <article id="monProfil">
 
@@ -38,8 +37,9 @@
         </div>
 
         <div class="col1 colonneaImage" id="imageProfil">
-            <img src="CSS/images/{{ session.photo }}" alt="">
+            <img src="imagesappli/{{ session.photo }}" alt="">
         </div>
 
+        <a href="index.php?page=modifProfil"><img class="btnModif" src="CSS/images/logoAdmin_add.png" alt=""></a>
     </article>
 {% endblock %}
