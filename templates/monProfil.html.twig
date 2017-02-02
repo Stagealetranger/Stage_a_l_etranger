@@ -3,8 +3,6 @@
 {% block title %}MMI Stage à l'étranger/Profil {{ session.nom }}{{ session.prenom }}{% endblock %}
 
 {% block contenu %}
-
-
     <article id="monProfil">
 
         <div class="col6">
@@ -28,13 +26,13 @@
                 <span>{{ session.mail }}</span>
             </div>
             <div>
-                {% if session.ID_SUIVI== "" %}
+                {% if suivit.nom== "" %}
                     <a class="bouton2" href="">J'ai trouvé mon stage</a>
-
                 {% endif %}
-                {% if session.ID_SUIVI!= "" %}
+
+                {% if suivit.nom != "" %}
                     <span>Mon stage :</span>
-                    <span>Kaizen</span>
+                    <span>{{ suivit.nom }}</span>
                 {% endif %}
             </div>
         </div>
