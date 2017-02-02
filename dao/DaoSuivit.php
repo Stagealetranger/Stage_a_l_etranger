@@ -22,10 +22,11 @@ class DaoSuivit extends Dao{
 
     public function create()
     {
-        $sql = "INSERT INTO suivit()
-            VALUES()";
+        $sql = "INSERT INTO suivit(NOM_ENT)
+            VALUES(?)";
 
         $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getNom());
         $requete->execute();
     }
 
@@ -55,6 +56,24 @@ class DaoSuivit extends Dao{
                 );
             }
             $this->bean->setLesPersonnes($personne);
+        }
+    }
+    public function setLePays()
+    {
+        $sql="SELECT *
+        FROM pays
+        WHERE pays.ID_PAYS = suivit.ID_SUIVIT
+        AND suivit.ID_SUIVIT =" . $this->bean->getId();
+        $requete = $this->pdo->prepare($sql);
+        if ($requete->execute()) {
+            $pays = new Pays();
+            if ($donnees = $requete->fetch()) {
+                $pays = new Pays(
+                    $donnees['ID_PAYS'],
+                    $donnees['NOM_PAYS']
+                );
+            }
+            $this->bean->setLePays($pays);
         }
     }
 

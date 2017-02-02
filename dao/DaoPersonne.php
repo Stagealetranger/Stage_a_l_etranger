@@ -38,7 +38,7 @@ class DaoPersonne extends Dao
         $requete->bindValue(2, $this->bean->getPrenom());
         $requete->bindValue(3, $this->bean->getMail());
         $requete->bindValue(4, $this->bean->getMdp());
-        $requete->bindValue(5, $suivi);
+        $requete->bindValue(5, 1);
         $requete->execute();
     }
 

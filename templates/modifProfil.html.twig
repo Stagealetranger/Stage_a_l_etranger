@@ -1,0 +1,56 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/Profil {{ session.nom }}{{ session.prenom }}{% endblock %}
+
+{% block contenu %}
+    <form method="post" action="index.php?page=modifProfil&id={{ personne.id }}" enctype="multipart/form-data" >
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Modification profil</strong>
+            </div>
+            <div class="panel-body">
+                <table class="table-hover table-striped col-md-12 col-sm-12 col-xs-12">
+                    <thead>
+                    <tr class="alert alert-info">
+                        <td class="centree">image</td>
+                        <td class="col-md-6 col-sm-6 col-xs-6 ">Infos</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+
+                        <td>
+                            <br/>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <label>Nom : </label>
+                                </span>
+                                <input type="text" class="form-control" name="nom" value="{{ personne.nom }}" placeholder="Nom" required>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <label>Prénom : </label>
+                                </span>
+                                <input type="text" class="form-control" name="prenom" value="{{ personne.prenom }}" placeholder="Prénom" required>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <label>mail : </label>
+                                </span>
+                                <input type="email" class="form-control" name="mail" value="{{ personne.mail }}" placeholder="Mail" >
+                            <br/>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-default" name="valider">Valider</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
