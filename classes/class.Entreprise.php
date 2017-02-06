@@ -16,6 +16,7 @@ class Entreprise
     private $avis = false;
     private $taille = false;
     private $description = null;
+    private $profil = null;
     private $rue = null;
     private $longitude = 0;
     private $latitude = 0;
@@ -30,7 +31,7 @@ class Entreprise
   
 
     // --- OPERATIONS ---
-    public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $rue = null, $profil = null, $longitude = 0, $latitude = 0, $ville = null, $contact = null, $telephone = 0)
+    public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $profil=null, $rue = null, $profil = null, $longitude = 0, $latitude = 0, $ville = null, $contact = null, $telephone = 0)
     {
         $this->id = $id;
         $this->nom = $nom;
@@ -59,7 +60,8 @@ class Entreprise
     public function setDescription($description){$this->description = $description;}
     public function getRue(){return $this->rue;}
     public function setRue($rue){$this->rue = $rue;}
-   
+    public function getProfil(){return $this->profil;}
+    public function setProfil($profil){$this->profil = $profil;}
     public function getVille(){return $this->ville;}
     public function setVille($ville){$this->ville = $ville;}
     public function getLePays(){return $this->lePays;}

@@ -1,0 +1,136 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/Profil {{ session.nom }}{{ session.prenom }}{% endblock %}
+{% block boostrap %}
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
+{% block contenu %}
+    <article class="formulaireAdmin">
+        <div class="container">
+            <form method="post" action="index.php?page=modifEnt&id={{ entreprise.id }}" enctype="multipart/form-data">
+                <div><a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                             alt="">Retour au menu administateur</a></div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>modification profil : </strong>
+                    </div>
+                    <div class="panel-body">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                <span class="input-group-addon">
+                    <label for="nom">Nom</label>
+                </span>
+                                        <input type="text" class="form-control" name="nom" value="{{ entreprise.nom }}"
+                                               placeholder="Nom" required>
+                                    </div>
+                                    <br/>
+                                    <div class="input-group">
+                                   <span class="input-group-addon">
+                                         <label for="prenom">visiter</label>
+                                   </span>
+                                        <input type="text" class="form-control" name="prenom"
+                                               value="{{ personne.prenom }}" placeholder="Prénom" required>
+                                    </div>
+                                    <br/>
+                                    <div class="input-group">
+                                   <span class="input-group-addon">
+                                        <label for="mail">mail</label>
+                                   </span>
+                                        <input type="email" class="form-control" name="mail" value="{{ personne.mail }}"
+                                               placeholder="Mail">
+                                    </div>
+                                    <br/>
+
+                                    <div class="panel-footer">
+                                        <button type="submit" class="btn btn-default" name="valider">
+                                            modifier
+                                        </button>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <form method="post" action="index.php?page=modifProfil&id={{ personne.id }}" enctype="multipart/form-data">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>modification mot de passe : </strong>
+                    </div>
+                    <div class="panel-body">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                <span class="input-group-addon">
+                    <label for="mdp">Mot de passe </label>
+                </span>
+                                        <input type="password" class="form-control" name="mdp"
+                                               value="{{ personne.mdp }}"
+                                               placeholder="mdp" required>
+                                    </div>
+                                    <br/>
+                                    <div class="panel-footer">
+                                        <button type="submit" class="btn btn-default" name="valider2">
+                                            modifier
+                                        </button>
+                                    </div>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+
+            <form method="post" action="index.php?page=modifProfil&id={{ personne.id }}" enctype="multipart/form-data">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>modification mot de passe : </strong>
+                    </div>
+                    <div class="panel-body">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                <span class="input-group-addon">
+                                <td class="image">
+                                    <div class="centree">
+                                        <img src="imagesappli/{{ personne.photo }}" id="previewImage" class="imageUp img-thumbnail" alt="votre image actuelle"/>
+                                    </div>
+                                    <hr/>
+                                    <div class="form-group">
+                                        <input id="file-input-1" type="file" name="image" class="file-inputs" title="Rechercher" />
+                                    </div>
+                                </td>
+                                <br/>
+                                <div class="panel-footer">
+                                    <button type="submit" class="btn btn-default" name="valider3">
+                                        modifier
+                                    </button>
+                                </div>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </article>
+{% endblock %}
+<select class="form-control" name="pays">
+    {% for pays in liste %}
+        <option value="{{ pays.id }}"
+                {% if pays.id == entreprise.pays.id %}
+                    selected
+                {% endif %}
+        >
+            {{ pays.nom }}&nbsp;</option>
+    {% endfor %}
+</select>

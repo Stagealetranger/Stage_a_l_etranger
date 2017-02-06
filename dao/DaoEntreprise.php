@@ -87,7 +87,7 @@ class DaoEntreprise extends Dao
 
     public function update()
     {
-        $sql = "UPDATE entreprise SET NOM_ENTREPRISE = ?, VISITER = ?, DESCRIPTION= ?,RUE= ?,  AVIS = ?, TAILLE=?,VILLE=?, WHERE ID_ENTREPRISE = ?";
+        $sql = "UPDATE entreprise SET NOM_ENTREPRISE = ?, VISITER = ?, DESCRIPTION= ?,RUE= ?,  AVIS = ?, TAILLE=?, PROFIL=?,VILLE=?,CONTACT=?,TELEPHONE=?, ID_PAYS WHERE ID_ENTREPRISE = ?";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getVisiter());
@@ -95,10 +95,12 @@ class DaoEntreprise extends Dao
         $requete->bindValue(4, $this->bean->getRue());
         $requete->bindValue(5, $this->bean->getAvis());
         $requete->bindValue(6, $this->bean->getTaille());
-
-        $requete->bindValue(7, $this->bean->getVille());
-        $requete->execute();
-
+        $requete->bindValue(7, $this->bean->getProfil());
+        $requete->bindValue(8, $this->bean->getVille());
+        $requete->bindValue(9, $this->bean->getContact());
+        $requete->bindValue(10, $this->bean->getTelephone());
+        $requete->bindValue(11, $this->bean->getLePays()->getId());
+        $requete->bindValue(12, $this->bean->getId());
         $requete->execute();
     }
 
