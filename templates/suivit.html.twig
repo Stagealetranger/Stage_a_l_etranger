@@ -22,17 +22,16 @@
 
 
         <div class="col6">
-            <h3 class="bleu">Mon stage :{{ suivit.nom }}</h3>
+            <h3 class="bleu">Mon stage :{{ ent.bean.nom }}</h3>
         </div>
         <div class="col3">
-            <h3 class="bleu">Pays :{{ suivit.id_pays }}</h3>
+            <h3 class="bleu">Pays :{{ pays.bean.nom}}</h3>
         </div>
 <div class="col5">
     <h3 class="bleu">Mes démarches</h3>
 </div>
 
         <div class="col3">
-
             <div class="col1">
                 {% for papier in suivit %}
                     <form action="" id="suivi">
