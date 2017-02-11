@@ -3,7 +3,7 @@
 {% block title %}MMI Stage à l'étranger/Suivi{% endblock %}
 
 {% block contenu %}
-    <article id="acceuilSuivi">
+    <article id="acceuilSuivit">
         <img src="CSS/images/logoMMI.png" alt="">
         <div><h1>MMI Montbéliard</h1>
             <h2>vous accompagne pour votre stage à l’étranger</h2>
@@ -11,7 +11,7 @@
         <a class="bouton2" href="#monSuivi">Voir mon suivi</a>
         <a class="bouton2" href="#monSuiviQuoi">A quoi sert mon suivi ?</a>
     </article>
-    <article id="monSuivi">
+    <article id="monSuivit">
         <div class="col5">
             <div class="col1">
                 <h3 class="bleu">MMI Montbéliard</h3>
@@ -33,22 +33,22 @@
 
         <div class="col3">
             <div class="col1">
-                {% for papier in suivit %}
+                {% for papier in ent.bean.lesPapiers %}
                     <form action="" id="suivi">
                         <div>
                             <div><span>{{ papier.nom }}</span>
-                                <span>13 janvier 2017 </span></div>
-                            <input type="checkbox" name="paiper{{ papier.id }}"></div>
+                                <span>{{ papier.dateval }}</span></div>
+                            <input type="checkbox" name="paiper"></div>
                     </form>
                 {% endfor %}
             </div>
             <div class="col1">
-                {% for papier in liste %}
+                {% for papier in ent.bean.lesPapiers %}
                     <form action="" id="suivi">
                         <div>
                             <div><span>{{ papier.nom }}</span>
-                                <span>13 janvier 2017 </span></div>
-                            <input type="checkbox" name="paiper{{ papier.id }}"></div>
+                                <span>{{ papier.dateval }}</span></div>
+                            <input type="checkbox" name="paiper"></div>
                     </form>
                 {% endfor %}
             </div>

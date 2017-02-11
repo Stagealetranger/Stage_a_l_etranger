@@ -117,7 +117,7 @@ class DaoSuivit extends Dao{
 
     public function getlisteByPays()
     {
-        $sql = "SELECT papier.* 
+        $sql = "SELECT DISTINCT papier.* 
                 FROM suivit,papier,est_pour  
                 WHERE est_pour.ID_PAYS = suivit.ID_PAYS
                 AND papier.ID_PAPIER = est_pour.ID_PAPIER
@@ -139,7 +139,38 @@ class DaoSuivit extends Dao{
        return $liste;
     }
 
+    public function addCompose($papier,$date)
+    {
+        $sql = "INSERT INTO compose (ID_PAPIER,ID_SUIVIT,DATE_VALID,EFFECTUER) 
+                VALUES (?,?,?,?)";
+        var_dump($papier);
+        var_dump($this->bean->getId());
+        var_dump($date);
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $papier);
+        $requete->bindValue(2, $this->bean->getId());
+        $requete->bindValue(3, $date);
+        $requete->bindValue(4, 0);
+        $requete->execute();
+    }
 
+    public function getlisteCompose()
+    {
+        $sql = "SELECT DISTINCT papier.* 
+                FROM compose,papier  
+                WHERE compose.ID_PAPIER = papier.ID_PAPIER
+                AND compose.ID_SUIVIT = " .$this->bean->getId();
 
-
+        $requete = $this->pdo->prepare($sql);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $Compose = new Compose(
+                    $donnees['ID_PAPIER'], $donnees['NOM_PAPIER'], $donnees['DESCRIPTION'], $donnees['CONSEIL'], $donnees['DUREE']
+                );
+                $liste[] = $Compose;
+            }
+        }
+       return $liste;
+    }
 }

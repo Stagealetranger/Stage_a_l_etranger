@@ -12,23 +12,11 @@ $script_tz = date_default_timezone_get();
 $daoPays = new DaoPays();
 
 
-
 $daoSuivit = new DaoSuivit();
 $daoSuivit->find($_SESSION["id_suivit"]);
-
 $daoPays->find($daoSuivit->bean->getLePays());
-
-
-
-
-
 $daoSuivit->setCompose();
-
-
-
-
-if ($daoSuivit->setCompose() == "") {
-
+if(sizeof($daoSuivit->getlisteCompose()) === 0) {
 
     $JourDateFinal = 20;
     $MoisDateFinal = 3;
@@ -128,7 +116,6 @@ if ($daoSuivit->setCompose() == "") {
             }
 
         } else {
-
             if ($JourDate < 0) {
 
                 for ($j = 0; $var < 0; $j++) {
@@ -156,55 +143,69 @@ if ($daoSuivit->setCompose() == "") {
             }
         }
 
+//
+//        if ($MoisDate == 1) {
+//            $Mois = "Janvier";
+//        }
+//        if ($MoisDate == 2) {
+//            $Mois = "Frevrier";
+//        }
+//        if ($MoisDate == 3) {
+//            $Mois = "Mars";
+//        }
+//        if ($MoisDate == 4) {
+//            $Mois = "Avril";
+//        }
+//        if ($MoisDate == 5) {
+//            $Mois = "Mai";
+//        }
+//        if ($MoisDate == 6) {
+//            $Mois = "Juin";
+//        }
+//        if ($MoisDate == 7) {
+//            $Mois = "Juillet";
+//        }
+//        if ($MoisDate == 8) {
+//            $Mois = "Août";
+//        }
+//        if ($MoisDate == 9) {
+//            $Mois = "Septembre";
+//        }
+//        if ($MoisDate == 10) {
+//            $Mois = "Octobre";
+//        }
+//        if ($MoisDate == 11) {
+//            $Mois = "Novembre";
+//        }
+//        if ($MoisDate == 12) {
+//            $Mois = "Decembre";
+//        }
 
-        if ($MoisDate == 1) {
-            $Mois = "Janvier";
-        }
-        if ($MoisDate == 2) {
-            $Mois = "Frevrier";
-        }
-        if ($MoisDate == 3) {
-            $Mois = "Mars";
-        }
-        if ($MoisDate == 4) {
-            $Mois = "Avril";
-        }
-        if ($MoisDate == 5) {
-            $Mois = "Mai";
-        }
-        if ($MoisDate == 6) {
-            $Mois = "Juin";
-        }
-        if ($MoisDate == 7) {
-            $Mois = "Juillet";
-        }
-        if ($MoisDate == 8) {
-            $Mois = "Août";
-        }
-        if ($MoisDate == 9) {
-            $Mois = "Septembre";
-        }
-        if ($MoisDate == 10) {
-            $Mois = "Octobre";
-        }
-        if ($MoisDate == 11) {
-            $Mois = "Novembre";
-        }
-        if ($MoisDate == 12) {
-            $Mois = "Decembre";
-        }
+        $date = "$AnneeDate-$MoisDate-$JourDate";
 
-        $date = "$JourDate $Mois $AnneeDate";
-//        var_dump($date);
-//$daoPapier->addCompose($_SESSION["id_suivit"],$date);
+        $daoSuivit->addCompose($daoPapier->bean->getId(),$date);
         $listePapier[$i] = $daoPapier->bean;
     }
 }
 
 
+//mail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $param = array(
     "ent" => $daoSuivit,
-    "suivit" => $listePapier,
     "pays" => $daoPays
 );
 

@@ -12,28 +12,20 @@
         <div id="caractéristique"><h3 class="bleu">Caractéristique :</h3>
             <ul>
                 <li><p>Type(s) :</p>
-                    <div>  {% for type in entreprise.lesTypes %}
-
-                            {% if type.id == 1 %} <img src="CSS/images/Picto/picto2_communication.png"
-                                                       alt="communication">{% endif %}
-                            {% if type.id == 2 %} <img src="CSS/images/Picto/picto2_graphisme.png"
-                                                       alt="graphisme">{% endif %}
-                            {% if type.id == 3 %} <img src="CSS/images/Picto/picto2_developpement.png"
-                                                       alt="developpement">{% endif %}
+                    <div>{% for type in entreprise.lesTypes %}
+                            {% if type.id == 1 %}communication{% endif %}
+                            {% if type.id == 2 %} graphisme{% endif %}
+                            {% if type.id == 3 %} developpement{% endif %}
                         {% endfor %}
                     </div>
-                </li>
                 <li><p>Taille :</p>
-                    <div>{% if entreprise.taille == 1 %}<img src="CSS/images/Picto/picto2_grandenteprise.png"
-                                                             alt="GE">{% endif %}
-                        {% if entreprise.taille == 0 %}<img src="CSS/images/Picto/picto2_PME.png" alt="PME">{% endif %}
+                    <div>{% if entreprise.taille == 1 %}grande entreprise{% endif %}
+                        {% if entreprise.taille == 0 %}PME{% endif %}
                     </div>
                 </li>
                 <li><p>Visite :</p>
-                    <div> {% if entreprisevisiter == 0 %}<img src="CSS/images/Picto/picto2_connu.png"
-                                                              alt="connu">{% endif %}
-                        {% if entreprisevisiter == 1 %}<img src="CSS/images/Picto/picto2_inconnu.png"
-                                                            alt="inconnu">{% endif %}</div>
+                    <div> {% if entreprisevisiter == 0 %}L'entreprise a déja été visiter{% endif %}
+                        {% if entreprisevisiter == 1 %}L'entreprise n'a jamais été visiter{% endif %}</div>
                 </li>
             </ul>
         </div>
@@ -43,22 +35,24 @@
         <div id="map"></div>
     </div>
     <div class="col3">
+
+
+        <div class="col1">
+            <h3 class="bleu">Les contacter:</h3>
+            <p class="bleu">{{entreprise.contact}}</br>
+                {{ entreprise.telephone }}</p>
+        </div>
         <div class="col1">
             <h3 class="bleu">Adresse :</h3>
             <p class="bleu">{{ entreprise.rue }}</br>{{ entreprise.ville }} | {{ entreprise.LePays.nom }}</p>
         </div>
-
-        <div class="col1">
-            <h3 class="bleu">Les contacter:</h3>
-            <p class="bleu">{{ entreprise.contact }}</br>
-                {{ entreprise.telephone }}</p>
-        </div>
     </div>
 {% for Avis in entreprise.SontAller %}
+
     <div id="avisEntreprise">
         <img class="imageAvis" src="imagesappli/{{ Avis.photo }}" alt="">
         <h4 class="blanc">{{ Avis.prenom }} {{ Avis.nom }}</h4>
-        <p class="texteAvis  bleu">{{ Avis.description_avis }}</p>
+        <p class="texteAvis  bleu">{{ Avis.descriptionAvis }}</p>
     </div>
 {% endfor %}
     <script type="text/javascript">

@@ -28,7 +28,7 @@ class Entreprise
     private $lesPersonnesVont = array();
     private $SontAller = array();
 
-  
+
 
     // --- OPERATIONS ---
     public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $profil=null, $rue = null, $profil = null, $longitude = 0, $latitude = 0, $ville = null, $contact = null, $telephone = 0)
@@ -40,11 +40,12 @@ class Entreprise
         $this->taille = $taille;
         $this->description = $description;
         $this->rue = $rue;
-        $this->profil = $latitude;
-        $this->profil = $longitude;
+      
+        $this->latitude = $latitude;
+        $this->plongitude = $longitude;
         $this->ville = $ville;
-        $this->ville = $contact;
-        $this->ville = $telephone;
+        $this->contact = $contact;
+        $this->telephone = $telephone;
     }
     public function getId(){return $this->id;}
     public function setId($id){$this->id = $id;}
