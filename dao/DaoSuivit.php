@@ -143,9 +143,7 @@ class DaoSuivit extends Dao{
     {
         $sql = "INSERT INTO compose (ID_PAPIER,ID_SUIVIT,DATE_VALID,EFFECTUER) 
                 VALUES (?,?,?,?)";
-        var_dump($papier);
-        var_dump($this->bean->getId());
-        var_dump($date);
+       
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $papier);
         $requete->bindValue(2, $this->bean->getId());
@@ -173,4 +171,16 @@ class DaoSuivit extends Dao{
         }
        return $liste;
     }
+
+    public function findDonner($id)
+    {
+        $donnees = $this->findById("compose", "ID_PAPIER", $id);
+        $info = array(
+            "effectuer"=>$donnees['EFFECTUER'],
+            "date_val" =>($donnees['DATE_VALID'])
+        );
+        return $info;
+    }
+
+
 }

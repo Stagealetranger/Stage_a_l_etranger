@@ -25,7 +25,6 @@
                             <h5>{{ papier.nom }}</h5>
                         </div>
                         <p class="descritpionEntreprise">{{ papier.description }}</p>
-                        <p class="descritpionEntreprise">{{ papier.conseil }}</p>
                         <p class="villeEntreprise">{% for pays in papier.lesPays %}{{ pays.nom }} {% endfor %}</p>
                         <p>{{ papier.duree }} jours</p>
                     </div>
