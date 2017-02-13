@@ -13,12 +13,17 @@ if (isset($_POST["valider"])) {
     $dao->bean->setMail($_POST["mail"]);
     $dao->update();
     header('Location: index.php?page=modifProfil');
+
+    $_SESSION['nom'] = $_POST["nom"];
+    $_SESSION['prenom'] = $_POST["prenom"];
+    $_SESSION['mail'] = $_POST["mail"];
 }
 
 if (isset($_POST["valider2"])) {
     $dao->bean->setMdp(sha1($_POST["mdp"]));
     $dao->updateMdp();
     header('Location: index.php?page=modifProfil');
+    $_SESSION['mdp'] = $_POST["mdp"];
 }
 if (isset($_POST["valider3"])) {
 // Sil y a un fichier, on remplace l'ancien
@@ -33,6 +38,7 @@ if (isset($_POST["valider3"])) {
             // Si on a pu deplacer le fichier telecharge,
             // On cree la personne
             $dao->bean->setPhoto($image);
+            $_SESSION['photo'] = $_POST["photo"];
         }
     }
 }

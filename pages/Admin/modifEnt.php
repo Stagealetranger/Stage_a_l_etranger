@@ -1,11 +1,11 @@
 <?php
 require_once 'dao/DaoEntreprise.php';
 require_once 'dao/DaoPays.php';
-require_once 'dao/DaoPersonne.php';
+
 
 
 $dao = new DaoEntreprise();
-$dao->find($_SESSION["id"]);
+$dao->find($_GET["id"]);
 $dao->setLePays();
 
 $daoPays = new DaoPays();
@@ -19,12 +19,14 @@ if (isset($_POST["valider"])) {
     $dao->bean->setRue($_POST["rue"]);
     $dao->bean->setAvis($_POST["avis"]);
     $dao->bean->setTaille($_POST["taille"]);
-    $dao->bean->setProfil($_POST["profil"]);
     $dao->bean->setVille($_POST["ville"]);
     $dao->bean->setContact($_POST["contact"]);
     $dao->bean->setTelephone($_POST["telephone"]);
+    $daoPays->find($_POST["pays"]);
+    $dao->bean->setLePays($_POST["pays"]);
     $dao->update();
-    header('Location: index.php?page=modifEnt');
+    
+    header('Location: index.php?page=modifEnt&id='.$_GET['id']);
 
     if (($_SESSION['mail']) == '') {
         header('Location: index.php?page=accueil');
@@ -35,3 +37,14 @@ if (isset($_POST["valider"])) {
         }
     }
 }
+
+
+
+$param = array(
+    "liste" => $liste,
+    "entreprise" => $dao
+);
+
+//echo "<pre>";
+//print_r($param);
+//echo "</pre>";

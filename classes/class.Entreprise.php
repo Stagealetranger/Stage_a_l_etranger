@@ -13,39 +13,53 @@ class Entreprise
     private $id = 0;
     private $nom = null;
     private $visiter = false;
+    private $description = null;
+    private $rue = null;
     private $avis = false;
     private $taille = false;
-    private $description = null;
-    private $profil = null;
-    private $rue = null;
-    private $longitude = 0;
-    private $latitude = 0;
     private $ville = null;
     private $contact = null;
+    private $longitude = 0;
+    private $latitude = 0;
     private $telephone = null;
+
     private $lePays = null;
     private $lesTypes = array();
     private $lesPersonnesVont = array();
     private $SontAller = array();
 
-  
-
-    // --- OPERATIONS ---
-    public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $profil=null, $rue = null, $profil = null, $longitude = 0, $latitude = 0, $ville = null, $contact = null, $telephone = 0)
+    /**
+     * Entreprise constructor.
+     * @param int $id
+     * @param null $nom
+     * @param bool $visiter
+     * @param null $description
+     * @param null $rue
+     * @param bool $avis
+     * @param bool $taille
+     * @param null $ville
+     * @param null $contact
+     * @param int $longitude
+     * @param int $latitude
+     * @param null $telephone
+     */
+    public function __construct($id=0, $nom=null, $visiter=false, $description=null, $rue=null, $avis=0, $taille=0, $ville=null, $contact=null, $longitude=0, $latitude=0, $telephone=null)
     {
         $this->id = $id;
         $this->nom = $nom;
         $this->visiter = $visiter;
-        $this->avis = $avis;
-        $this->taille = $taille;
         $this->description = $description;
         $this->rue = $rue;
-        $this->profil = $latitude;
-        $this->profil = $longitude;
+        $this->avis = $avis;
+        $this->taille = $taille;
         $this->ville = $ville;
-        $this->ville = $contact;
-        $this->ville = $telephone;
+        $this->contact = $contact;
+        $this->longitude = $longitude;
+        $this->latitude = $latitude;
+        $this->telephone = $telephone;
     }
+
+
     public function getId(){return $this->id;}
     public function setId($id){$this->id = $id;}
     public function getNom(){return $this->nom;}
@@ -60,8 +74,6 @@ class Entreprise
     public function setDescription($description){$this->description = $description;}
     public function getRue(){return $this->rue;}
     public function setRue($rue){$this->rue = $rue;}
-    public function getProfil(){return $this->profil;}
-    public function setProfil($profil){$this->profil = $profil;}
     public function getVille(){return $this->ville;}
     public function setVille($ville){$this->ville = $ville;}
     public function getLePays(){return $this->lePays;}

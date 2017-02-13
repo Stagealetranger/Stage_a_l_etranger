@@ -62,13 +62,12 @@ class DaoPapier extends Dao
 
     public function update()
     {
-        $sql = "UPDATE papier SET NOM_PAPIER = ?, DESCRIPTION = ?, CONSEIL = ?, DUREE=? WHERE ID_PAPIER = ?";
+        $sql = "UPDATE papier SET NOM_PAPIER = ?, DESCRIPTION = ?, DUREE=?  WHERE ID_PAPIER = ?";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
-        $requete->bindValue(2, $this->bean->getId());
-        $requete->bindValue(3, $this->bean->getDescription());
-        $requete->bindValue(4, $this->bean->getConseil());
-        $requete->bindValue(5, $this->bean->getDuree());
+        $requete->bindValue(2, $this->bean->getDescription());
+        $requete->bindValue(3, $this->bean->getDuree());
+        $requete->bindValue(4, $this->bean->getId());
         $requete->execute();
     }
 

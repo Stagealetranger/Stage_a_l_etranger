@@ -5,12 +5,6 @@ require_once 'dao/DaoType.php';
 require_once 'dao/DaoPays.php';
 
 
-
-
-
-
-
-
 $recherche = array(
     'communication' => $_GET['communication'],
     'graphisme' => $_GET['graphisme'],
