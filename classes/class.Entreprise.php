@@ -28,6 +28,7 @@ class Entreprise
     private $lesPersonnesVont = array();
     private $SontAller = array();
 
+<<<<<<< HEAD
     /**
      * Entreprise constructor.
      * @param int $id
@@ -44,18 +45,32 @@ class Entreprise
      * @param null $telephone
      */
     public function __construct($id=0, $nom=null, $visiter=false, $description=null, $rue=null, $avis=0, $taille=0, $ville=null, $contact=null, $longitude=0, $latitude=0, $telephone=null)
+=======
+
+
+    // --- OPERATIONS ---
+    public function __construct($id = 0, $nom = null, $visiter = false, $avis = false, $taille = false, $description = null, $profil=null, $rue = null, $profil = null, $longitude = 0, $latitude = 0, $ville = null, $contact = null, $telephone = 0)
+>>>>>>> origin/master
     {
         $this->id = $id;
         $this->nom = $nom;
         $this->visiter = $visiter;
         $this->description = $description;
         $this->rue = $rue;
+<<<<<<< HEAD
         $this->avis = $avis;
         $this->taille = $taille;
         $this->ville = $ville;
         $this->contact = $contact;
         $this->longitude = $longitude;
         $this->latitude = $latitude;
+=======
+      
+        $this->latitude = $latitude;
+        $this->plongitude = $longitude;
+        $this->ville = $ville;
+        $this->contact = $contact;
+>>>>>>> origin/master
         $this->telephone = $telephone;
     }
 
