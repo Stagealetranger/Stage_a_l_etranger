@@ -9,7 +9,10 @@ include_once('Twig/Autoloader.php');
 Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('templates');
-$twig = new Twig_Environment($loader, array('cache' => false));
+$twig = new Twig_Environment($loader, array(
+    'debug' => true,
+    'cache' => false
+));
 $uriDemandee = "accueil";
 $routes = parse_ini_file("param/routes.ini", true);
 

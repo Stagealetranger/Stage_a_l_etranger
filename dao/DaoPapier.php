@@ -157,5 +157,14 @@ class DaoPapier extends Dao
         $requete->execute();
     }
 
+    public function addCompose($suivit)
+    {
+        $sql = "INSERT INTO compose (ID_PAPIER,ID_SUIVIT) 
+                VALUES (?,?)";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $requete->bindValue(2, $suivit);
+        $requete->execute();
+    }
    
 }

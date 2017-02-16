@@ -19,7 +19,7 @@ $param = array(
     "suivit" =>$daoSuivit
 );
 
-echo "<pre>";
-print_r($param);
-echo "</pre>";
+//echo "<pre>";
+//print_r($param);
+//echo "</pre>";
 
