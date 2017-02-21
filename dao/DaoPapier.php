@@ -2,6 +2,7 @@
 require_once 'classes/class.Papier.php';
 require_once 'classes/class.Pays.php';
 require_once 'classes/class.Personne.php';
+require_once 'classes/class.Compose.php';
 
 require_once 'Dao.php';
 
@@ -231,5 +232,24 @@ class DaoPapier extends Dao
         $requete->bindValue(2, $suivit);
         $requete->execute();
     }
-   
+
+    public function setLesSuivits()
+    {
+        $sql = "SELECT DISTINCT papier.* 
+                FROM compose,papier  
+                WHERE compose.ID_PAPIER = papier.ID_PAPIER
+                AND compose.ID_PAPIER = " .$this->bean->getId();
+
+        $requete = $this->pdo->prepare($sql);
+        $liste = array();
+        if ($requete->execute()) {
+            while ($donnees = $requete->fetch()) {
+                $Compose = new Compose(
+                    $donnees['ID_PAPIER'], $donnees['NOM_PAPIER'], $donnees['DESCRIPTION'], $donnees['CONSEIL'], $donnees['DUREE']
+                );
+                $liste[] = $Compose;
+            }
+        }
+        $this->bean->setLesSuivits($liste);
+    }
 }

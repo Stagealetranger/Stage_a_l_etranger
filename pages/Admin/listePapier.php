@@ -18,6 +18,7 @@ for ($i = 0; $i < count($listePapier); $i++) {
 
     $daoPapier->find($listePapier[$i]->getId());
     $daoPapier->setLesPays();
+    $daoPapier->setLesSuivits();
     $listePapier[$i] = $daoPapier->bean;
 }
 
@@ -37,9 +38,9 @@ $param = array(
     "liste" => $listePapier
 );
 
-//echo "<pre>";
-//print_r($param);
-//echo "</pre>";
+echo "<pre>";
+print_r($param);
+echo "</pre>";
 ?>
 
 

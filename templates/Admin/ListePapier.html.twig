@@ -13,11 +13,12 @@
         <div>
             {% for papier in liste %}
                 <div>
-
+                    {%if ((papier.lesSuivits | length) == 0) %}
                         <a href="index.php?page=suppPapier&id={{ papier.id }}"><img class="btnModif"
                                                                                     src="CSS/images/logoAdmin_supp.png"
                                                                                     alt=""></a>
-                        <a href="index.php?page=modifPapier&id={{ papier.id }}"><img class="btnModif"
+                    {%endif%}
+                    <a href="index.php?page=modifPapier&id={{ papier.id }}"><img class="btnModif"
                                                                                      src="CSS/images/logoAdmin_modif.png"
                                                                                      alt=""></a>
                     <div>
