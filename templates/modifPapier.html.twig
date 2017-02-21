@@ -7,11 +7,11 @@
 {% block contenu %}
     <article class="formulaireAdmin">
         <div class="container">
-            <div><a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
-                                                         alt="">Retour au menu administateur</a></div>
+            <div><a href="index.php?page=listePapier"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                         alt="">Retour à la liste des papiers</a></div>
             <div class="panel panel-default">
-            <form method="post" action="index.php?page=modifPapier&id={{ papier.bean.id }}"
-                  enctype="multipart/form-data">
+                <form method="post" action="index.php?page=modifPapier&id={{ papier.bean.id }}"
+                      enctype="multipart/form-data">
 
                     <div class="panel-heading">
                         <strong>modification papier : </strong>
@@ -31,42 +31,98 @@
                                     </div>
                                     <br/>
                                     <div class="input-group">
-                                    <br/>
-                                    <div class="input-group">
+                                        <br/>
+                                        <div class="input-group">
                                    <span class="input-group-addon">
                                         <label for="description">description</label>
                                    </span>
-                                        <input type="text" class="form-control" name="description"
-                                               value="{{ papier.bean.description }}"
-                                               placeholder="Description">
-                                    </div>
-                                    <br/>
+                                            <input type="text" class="form-control" name="description"
+                                                   value="{{ papier.bean.description }}"
+                                                   placeholder="Description">
+                                        </div>
+                                        <br/>
 
-                                    <div class="input-group">
+                                        <div class="input-group">
                                    <span class="input-group-addon">
                                         <label for="duree">duree</label>
                                    </span>
-                                        <input type="text" class="form-control" name="duree"
-                                               value="{{ papier.bean.duree }}"
-                                               placeholder="duree">
-                                    </div>
-                                    <br/>
+                                            <input type="text" class="form-control" name="duree"
+                                                   value="{{ papier.bean.duree }}"
+                                                   placeholder="duree">
+                                        </div>
+                                        <br/>
 
 
-                                    <br/>
-                                    <div class="panel-footer">
-                                        <button type="submit" class="btn btn-default" name="valider">
-                                            modifier
-                                        </button>
+                                        <br/>
+
+                                        <div class="panel-footer">
+                                            <button type="submit" class="btn btn-default" name="valider">
+                                                modifier
+                                            </button>
+                                        </div>
+                                        <br/>
+                                        <div class="panel panel-default col-md-9 col-sm-9 col-xs-12">
+                                            <div class="panel-heading">
+                                                <strong>Attribution des pays : {{ papier.bean.nom }}</strong>
+                                            </div>
+                                            <div class="panel-body">
+                                                <form method="post" action="#">
+                                                    <div class="panel panel-default" >
+                                                        <div class="panel-heading">
+                                                            <strong>Nouveau pays </strong>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <div class="input-group" >
+                                                                <span class="input-group-addon">Pays : </span>
+                                                                <select name="pays" class="form-control"  >
+                                                                    {% for pays in listePays %}
+                                                                        <option value="{{pays.id}}">{{ pays.nom }}</option>
+                                                                    {% endfor %}
+                                                                </select>
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-info" title="Attacher le pays" name="creer">
+                                    <i class="fa fa-save fa-lg" ></i>
+                                </button>
+                            </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <strong>Pays Actuels</strong>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        {% for pays in papier.bean.lesPays %}
+                                                            <form method="post" action="#" >
+
+                                                                <div class="input-group" >
+                                                                    <span class="input-group-addon">Pays : </span>
+
+                                                                    <input type="text" class="form-control hidden" value="{{pays.id}}" name="idPays">
+                                                                    <input type="text" class="form-control" value="{{pays.nom}}" disabled>
+
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-info" title="Supprimer le pays" name="supp">
+                                        <i class="fa fa-times fa-lg" ></i>
+                                    </button>
+                                </span>
+                                                                </div>
+                                                            </form>
+                                                        {%endfor%}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </td>
-
                             </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </article>
 {% endblock %}

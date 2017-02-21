@@ -5,7 +5,6 @@ require_once('dao/DaoEntreprise.php');
 $daoEntreprise = new DaoEntreprise();
 $daoEntreprise->find($_GET["id"]);
 $daoEntreprise->setLesTypes();
-$daoEntreprise->setLesPersonnesVont();
 
 if (isset($_POST["oui"])) {
     $daoEntreprise->delete();
