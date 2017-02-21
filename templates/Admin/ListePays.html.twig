@@ -1,0 +1,43 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/{{ nom.entreprise }}{% endblock %}
+{% block boostrap %}
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
+
+{% block contenu %}
+    <article id="tableValidation">
+        <div class="container">
+            <div class="titreAdmin">
+                <div><a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                             alt="">Retour au menu administateur</a></div>
+
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Liste des validations</strong>
+                </div>
+                <div class="panel-body">
+                    <table id="listePays">
+                        <thead>
+                        <tr class="alert alert-info">
+                            <td>Nom</td>
+                            <td>Action</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for pays in liste %}
+                            <tr>
+                                <td><p>{{ pays.nom }}</p></td>
+                                <td><a href=""><img src="CSS/images/logoAdmin_modif.png" alt="modif"></a><a href=""><img
+                                                src="CSS/images/logoAdmin_supp.png" alt="supp"></a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </article>
+{% endblock %}

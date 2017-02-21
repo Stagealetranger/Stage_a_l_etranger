@@ -25,32 +25,24 @@
             <h3 class="bleu">Mon stage :{{ ent.bean.nom }}</h3>
         </div>
         <div class="col3">
-            <h3 class="bleu">Pays :{{ pays.bean.nom}}</h3>
+            <h3 class="bleu">Pays :{{ pays.bean.nom }}</h3>
         </div>
-<div class="col5">
-    <h3 class="bleu">Mes démarches</h3>
-</div>
+        <div class="col5">
+            <h3 class="bleu">Mes démarches</h3>
+        </div>
 
         <div class="col3">
             <div class="col1">
-                {% for papier in ent.bean.lesPapiers %}
-                    <form action="" id="suivi">
-                        <div>
-                            <div><span>{{ papier.nom }}</span>
-                                <span>{{ papier.dateval }}</span></div>
-                            <input type="checkbox" name="paiper"></div>
-                    </form>
+                <form action="index.php?page=Suivi#monSuivi" id="Form">
+                    {% for papier in ent.bean.lesPapiers %}
+                    <div>
+                        <div><span>{{ papier.nom }}</span>
+                            <span>{{ papier.dateval }}</span></div>
+                        <input type="checkbox" name="paiper"></div>
+                </form>
                 {% endfor %}
             </div>
             <div class="col1">
-                {% for papier in ent.bean.lesPapiers %}
-                    <form action="" id="suivi">
-                        <div>
-                            <div><span>{{ papier.nom }}</span>
-                                <span>{{ papier.dateval }}</span></div>
-                            <input type="checkbox" name="paiper"></div>
-                    </form>
-                {% endfor %}
             </div>
         </div>
 
@@ -69,4 +61,11 @@
             <img src="CSS/images/listesuivi.png" alt="">
         </div>
     </article>
+    <script>
+        $(document).ready(
+                $('form').change(function () {
+                    $.post($(this).attr('action'),$(this).serialize());
+                })
+        )
+    </script>
 {% endblock %}

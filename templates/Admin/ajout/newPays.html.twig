@@ -1,0 +1,48 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
+{% block boostrap %}
+<link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
+{% block contenu %}
+<article class="formulaireAdmin">
+
+    <div class="container">
+        <form method="post" action="index.php?page=newPays" enctype="multipart/form-data">
+            <div class="titreAdmin">
+                <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                        alt="RetourAccueil"></a>
+
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Ajouter un pays</strong>
+                </div>
+
+                <div class="panel-body">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <label for="nom">Nom pays</label>
+                                        </span>
+                                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom"
+                                           required/>
+                                </div>
+                                <div class="panel-footer">
+                                    <button type="submit" class="btn btn btn-default" name="valider">
+                                        Ajouter
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</article>
+{% endblock %}

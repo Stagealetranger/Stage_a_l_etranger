@@ -198,7 +198,7 @@ $script_tz = date_default_timezone_get();
 // variable du jours
 $joursA = date("d");
 $moisA = date("m");
-$annaA = date("Y");
+$anneA = date("Y");
 
 
 $param = array(
@@ -219,7 +219,7 @@ for ($i = 0; $i < count($listeForMail); $i++) {
     $info['date_val'];
 
     $date = explode("-", $info['date_val']);
-    var_dump($date);
+//    var_dump($date);
 
     $validation = false;
     $date[2] = $date[2] - 10;
@@ -239,7 +239,7 @@ for ($i = 0; $i < count($listeForMail); $i++) {
         }
     }
 
-    if($date[0]==$annaA && $date[1]= $moisA && $date[2]==$joursA){
+    if($date[0]==$anneA && $date[1]= $moisA && $date[2]==$joursA){
         $validation = true;
     }
 
