@@ -12,6 +12,7 @@
 {% endblock %}
     <script src="CSS/bootstrap-3.2.0-dist/js/jquery-1.10.2.js"></script>
     <script src="CSS/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="CSS/font-awesome.css">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -20,7 +21,7 @@
 <body>
 {% if session.nom == "" %}
 <header id="FirstConnexion" >
-    <a data-toggle="modal" data-target="#myModalCo">Connexion</a>
+    <a data-toggle="modal" data-target="#myModalCo">Connexion <i class="fa fa-power-off fa-lg"></i></a>
 </header>
 {% endif %}
 {% if session.nom != "" %}

@@ -152,7 +152,7 @@ article > div > img {
     color: #217689;
 }
 
-.bouton2{
+.bouton2 {
     width: 55%;
     /*height: 40px;*/
     max-width: 180px;
@@ -167,7 +167,7 @@ article > div > img {
     display: inline-block;
 }
 
-#deco{
+#deco {
     width: 25px;
     margin: 0 0 0 10px;
 }
@@ -394,9 +394,9 @@ input[type="checkbox"]:not(:checked) + label {
 }
 
 /*******************************************************
-                      Suivi
+                      Suivit
 *******************************************************/
-#acceuilSuivi {
+#acceuilSuivit {
     background-image: url("images/fond_acceuil_etudiant.jpg");
     background-position: center;
     /**background-size: 100%;**/
@@ -405,41 +405,41 @@ input[type="checkbox"]:not(:checked) + label {
     height: 85vh;
 }
 
-#acceuilSuivi img {
+#acceuilSuivit img {
     margin: 5% 10%;
     max-width: 150px;
     width: 20%;
 
 }
 
-#monSuiviQuoi {
+#monSuivitQuoi {
     background-color: #154A58;
 }
 
-#suivi {
+#suivit {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 20px 0;
 }
 
-#suivi span {
+#suivit span {
     width: 100%;
     color: #154A58;
 }
 
-article#monSuivi {
+article#monSuivit {
     padding: 0;
 }
 
-#suivi > div {
+#suivit > div {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 90%;
 }
 
-#suivi input {
+#suivit input {
     width: 50px;
     height: 50px;
     border: solid 1px #154A58;
@@ -688,7 +688,6 @@ article#monSuivi {
     min-height: 85vh;
 }
 
-
 #inscription > div > form > div > label {
     text-align: center;
     color: white;
@@ -929,8 +928,6 @@ article#monSuivi {
     margin: 20px 0;
 }
 
-
-
 #listeAdminE {
     background-color: #154A58;
 }
@@ -989,9 +986,6 @@ article#monSuivi {
     min-height: 85vh;
 }
 
-
-
-
 #tableValidation > form {
     background-color: white;
     height: 40px;
@@ -1004,7 +998,7 @@ article#monSuivi {
     line-height: 40px;
 }
 
-.bouton_val{
+.bouton_val {
     height: 40px;
     overflow: hidden;
     width: 45px;
@@ -1013,54 +1007,66 @@ article#monSuivi {
     padding: 0;
 
 }
+
 .input-group {
     width: 100%;
 }
 
-.bouton_val > img{
+.bouton_val > img {
     height: 100%;
     margin-left: -40px;
 }
 
-#Admin li{
-      list-style: none;
-      margin: 10% 0;
-  }
+#Admin li {
+    list-style: none;
+    margin: 10% 0;
+    max-width: 200px;
+}
 
 #Admin ul {
-    margin:0;
+    margin: 0;
     padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-#Admin li > a > div{
-     display: flex;
-     align-items: center;
+#Admin li > a > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 3px solid white;
+    min-height: 200px;
 
+}
 
- }
-
-#Admin li > a > div > img{
+#Admin li > a > div > img {
     width: 50px;
-    margin-right:30px;
+    margin: 30px 30px 0 30px;
 
 }
 
-
-
+#Admin li > a > div > p {
+     color: white;
+     text-align: center;
+ }
 
 #listePays img {
     width: 25px;
 }
 
 @media screen and (min-width: 1000px) {
-    .titreIns{
+    .titreIns {
         width: 1000px;
     }
 
-   .col6{
-       display: flex;
-       justify-content: center;
-   }
+    .col6 {
+        display: flex;
+        justify-content: center;
+    }
+
     .col6 > div {
         width: 1000px;
     }
@@ -1127,11 +1133,11 @@ article#monSuivi {
     #decouvrirEtudiant,
     #recherche,
     #carteI,
-    #accesSuivi,
+    #accesSuivit,
     #monProfil,
     #Entreprise,
     #Liste,
-    #monSuiviQuoi {
+    #monSuivitQuoi {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -1206,7 +1212,7 @@ article#monSuivi {
         text-align: center;
     }
 
-    #acceuilSuivi {
+    #acceuilSuivit {
         background-size: 2000px;
         background-repeat: no-repeat;
 
