@@ -70,7 +70,14 @@ class DaoPapier extends Dao
         $requete->bindValue(4, $this->bean->getId());
         $requete->execute();
     }
-
+    public function updatePays()
+    {
+        $sql = "UPDATE est_pour SET ID_PAYS  WHERE ID_PAPIER = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $requete->bindValue(4, $this->bean->getId());
+        $requete->execute();
+    }
 
     public function getListe()
     {
@@ -114,6 +121,22 @@ class DaoPapier extends Dao
             }
         }
         $this->bean->setLesPays($liste);
+    }
+    public function addPays2($listePays){
+        $sql = "INSERT INTO est_pour(ID_PAPIER, ID_PAYS) VALUES(?, ?)";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $requete->bindValue(2, $listePays->getId());
+
+        $requete->execute();
+    }
+    public function delPays($listePays){
+        $sql = "DELETE FROM est_pour WHERE ID_PAPIER = ? AND ID_PAYS = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $requete->bindValue(2, $listePays->getId());
+
+        $requete->execute();
     }
 
     public function setLesPersonnes()

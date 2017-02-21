@@ -79,9 +79,51 @@ class DaoEntreprise extends Dao
         $requete->execute();
     }
 
-    public function delete()
-    {
-        $donnees = $this->deleteById("entreprise", "ID_ENTREPRISE", $this->bean->getId());
+    public function delete(){
+        // Recherche des type
+        $sql = "SELECT * FROM est_de_type WHERE ID_ENTREPRISE = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $liste = array();
+        if($requete->execute()){
+            while($donnees = $requete->fetch()){
+                $liste[] = $donnees['ID_TYPE'];
+            }
+        }
+        // Suppression des liens type
+        for($i=0;$i<count($liste);$i++){
+            $sql = "DELETE FROM est_de_type 
+                    WHERE ID_TYPE = ?";
+            $requete = $this->pdo->prepare($sql);
+            $requete->bindValue(1, $liste[$i]);
+            $requete->execute();
+
+        }
+
+        // Recherche des personnes
+        $sql = "SELECT * FROM est_aller WHERE ID_ENTREPRISE = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $liste = array();
+        if($requete->execute()){
+            while($donnees = $requete->fetch()){
+                $liste[] = $donnees['ID_PERSONNE'];
+            }
+        }
+        // Suppression des liens personne
+        for($i=0;$i<count($liste);$i++){
+            $sql = "DELETE FROM est_aller  
+                    WHERE ID_PERSONNE = ?";
+            $requete = $this->pdo->prepare($sql);
+            $requete->bindValue(1, $liste[$i]);
+            $requete->execute();
+
+
+            $this->deleteById("personne", "ID_PERSONNE", $liste[$i]);
+        }
+
+        // Suppression de l'ent
+        $this->deleteById("entreprise", "ID_ENTREPRISE", $this->bean->getId());
     }
 
 
