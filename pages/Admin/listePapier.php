@@ -38,9 +38,9 @@ $param = array(
     "liste" => $listePapier
 );
 
-echo "<pre>";
-print_r($param);
-echo "</pre>";
+//echo "<pre>";
+//print_r($param);
+//echo "</pre>";
 ?>
 
 
