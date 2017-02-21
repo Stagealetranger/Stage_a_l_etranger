@@ -311,6 +311,21 @@ class DaoEntreprise extends Dao
         $requete->bindValue(2, $entreprise);
         $requete->execute();
     }
+    public function addType2($listeType){
+        $sql = "INSERT INTO est_de_type(ID_ENTREPRISE, ID_TYPE) VALUES(?, ?)";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $requete->bindValue(2, $listeType->getId());
+
+        $requete->execute();
+    }
+    public function delType($listeType){
+        $sql = "DELETE FROM est_de_type WHERE ID_ENTREPRISE = ? AND ID_TYPE = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $requete->bindValue(2, $listeType->getId());
+        $requete->execute();
+    }
 
     public function addAvis($personne = 0, $entreprise = 0, $avis = null)
     {

@@ -11,7 +11,7 @@ if (isset($_POST["valider"])) {
     $dao->bean->setNom($_POST['nom']);
     $dao->create();
 
-    header('Location: index.php?page=listeEntreprise');
+    header('Location: index.php?page=listePays');
     exit();
 }
 

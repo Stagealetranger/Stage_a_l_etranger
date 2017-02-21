@@ -18,7 +18,10 @@ class DaoType extends Dao
         $this->bean->setId($donnees['ID_TYPE']);
         $this->bean->setType($donnees['TYPE']);
     }
-
+    public function delete()
+    {
+        $donnees = $this->deleteById("type", "ID_TYPE", $this->bean->getId());
+    }
     public function getListe()
     {
         $query = "SELECT * 
