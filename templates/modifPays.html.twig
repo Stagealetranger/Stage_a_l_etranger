@@ -1,0 +1,47 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/Profil {{ session.nom }}{{ session.prenom }}{% endblock %}
+{% block boostrap %}
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
+{% block contenu %}
+    <article class="formulaireAdmin">
+        <div class="container">
+            <div><a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                         alt="">Retour au menu administateur</a></div>
+            <div class="panel panel-default">
+                <form method="post" action="index.php?page=modifPays&id={{ pays.bean.id }}"
+                      enctype="multipart/form-data">
+
+                    <div class="panel-heading">
+                        <strong>modification pays : </strong>
+                    </div>
+                    <div class="panel-body">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                <span class="input-group-addon"><label for="nom">Nom</label></span>
+                                        <input type="text" class="form-control" name="nom"
+                                               value="{{ pays.bean.nom }}"
+                                               placeholder="Nom" required></div>
+                                        <br/>
+
+
+                                        <br/>
+                                        <div class="panel-footer">
+                                            <button type="submit" class="btn btn-default" name="valider">
+                                                modifier
+                                            </button>
+                                        </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+{% endblock %}

@@ -1,24 +1,20 @@
 <?php
 require_once 'dao/DaoPapier.php';
 require_once 'dao/DaoPays.php';
+require_once 'dao/DaoEntreprise.php';
 
 
 
-$dao = new DaoPapier();
+$dao = new DaoPays();
 $dao->find($_GET["id"]);
-$dao->setLesPays();
-
-//$daoPays = new DaoPays();
-//$liste = $daoPays->getListe();
-
+$dao->setLesPapiers();
+$dao->setLesEntreprises();
 
 if (isset($_POST["valider"])) {
     $dao->bean->setNom($_POST["nom"]);
-    $dao->bean->setDescription($_POST["description"]);
-    $dao->bean->setDuree($_POST["duree"]);
     $dao->update();
 
-    header('Location: index.php?page=modifPapier&id='.$_GET['id']);
+    header('Location: index.php?page=modifPays&id='.$_GET['id']);
 
     if (($_SESSION['mail']) == '') {
         header('Location: index.php?page=accueil');
@@ -36,7 +32,3 @@ $param = array(
 //    "liste" => $liste,
     "papier" => $dao
 );
-
-//echo "<pre>";
-//print_r($param);
-//echo "</pre>";

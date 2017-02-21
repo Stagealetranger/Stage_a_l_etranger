@@ -30,9 +30,51 @@ class DaoPays extends Dao
         $requete->execute();
     }
 
-    public function delete()
-    {
-        $donnees = $this->deleteById("pays", "ID_PAYS", $this->bean->getId());
+    public function delete(){
+        // Recherche des compos
+        $sql = "SELECT * FROM est_pour WHERE ID_PAYS = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $liste = array();
+        if($requete->execute()){
+            while($donnees = $requete->fetch()){
+                $liste[] = $donnees['ID_PAPIER'];
+            }
+        }
+        // Suppression des liens COMPOSE
+        for($i=0;$i<count($liste);$i++){
+            $sql = "DELETE FROM est_pour
+                    WHERE ID_PAPIER = ?";
+            $requete = $this->pdo->prepare($sql);
+            $requete->bindValue(1, $liste[$i]);
+            $requete->execute();
+
+        }
+
+        // Recherche des ent
+        $sql = "SELECT * FROM entreprise WHERE ID_PAYS = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $liste = array();
+        if($requete->execute()){
+            while($donnees = $requete->fetch()){
+                $liste[] = $donnees['ID_ENTREPRISE'];
+            }
+        }
+        // Suppression des liens pays
+        for($i=0;$i<count($liste);$i++){
+            $sql = "DELETE FROM entreprise
+                    WHERE ID_ENTREPRISE  = ?";
+            $requete = $this->pdo->prepare($sql);
+            $requete->bindValue(1, $liste[$i]);
+            $requete->execute();
+
+
+            $this->deleteById("entreprise", "ID_ENTREPRISE", $liste[$i]);
+        }
+
+        // Suppression du pays 
+        $this->deleteById("pays", "ID_PAYS", $this->bean->getId());
     }
 
     public function getListe()
@@ -145,5 +187,14 @@ class DaoPays extends Dao
             }
         }
         return $liste;
+    }
+    
+    public function update()
+    {
+        $sql = "UPDATE pays SET NOM_PAYS = ? WHERE ID_PAYS = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getNom());
+        $requete->bindValue(2, $this->bean->getId());
+        $requete->execute();
     }
 }

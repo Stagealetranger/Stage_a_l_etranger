@@ -95,10 +95,10 @@ class DaoPapier extends Dao
             $requete->execute();
 
 
-            $this->deleteById("pAYS", "ID_PAYS", $liste[$i]);
+            $this->deleteById("pays", "ID_PAYS", $liste[$i]);
         }
 
-        // Suppression de l'ent
+        // Suppression du papier
         $this->deleteById("papier", "ID_PAPIER", $this->bean->getId());
     }
 
