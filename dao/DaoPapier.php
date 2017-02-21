@@ -55,9 +55,51 @@ class DaoPapier extends Dao
         $requete->execute();
     }
 
-    public function delete()
-    {
-        $donnees = $this->deleteById("papier", "ID_PAPIER", $this->bean->getId());
+    public function delete(){
+        // Recherche des compos
+        $sql = "SELECT * FROM compose WHERE ID_PAPIER = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $liste = array();
+        if($requete->execute()){
+            while($donnees = $requete->fetch()){
+                $liste[] = $donnees['ID_SUIVIT'];
+            }
+        }
+        // Suppression des liens COMPOSE
+        for($i=0;$i<count($liste);$i++){
+            $sql = "DELETE FROM compose
+                    WHERE ID_SUIVIT = ?";
+            $requete = $this->pdo->prepare($sql);
+            $requete->bindValue(1, $liste[$i]);
+            $requete->execute();
+
+        }
+
+        // Recherche des pays
+        $sql = "SELECT * FROM est_pour WHERE ID_PAPIER = ?";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1, $this->bean->getId());
+        $liste = array();
+        if($requete->execute()){
+            while($donnees = $requete->fetch()){
+                $liste[] = $donnees['ID_PAYS'];
+            }
+        }
+        // Suppression des liens pays
+        for($i=0;$i<count($liste);$i++){
+            $sql = "DELETE FROM est_pour 
+                    WHERE ID_PAYS  = ?";
+            $requete = $this->pdo->prepare($sql);
+            $requete->bindValue(1, $liste[$i]);
+            $requete->execute();
+
+
+            $this->deleteById("pAYS", "ID_PAYS", $liste[$i]);
+        }
+
+        // Suppression de l'ent
+        $this->deleteById("papier", "ID_PAPIER", $this->bean->getId());
     }
 
     public function update()
