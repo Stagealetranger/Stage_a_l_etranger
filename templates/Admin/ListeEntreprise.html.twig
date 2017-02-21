@@ -11,15 +11,9 @@
         <div>
             {% for entreprise in liste %}
                 <div>
-                    <a href="index.php?page=suppEntreprise&id={{ entreprise.id }}"><img class="btnModif"
-                                                                                        src="CSS/images/logoAdmin_supp.png"
-                                                                                        alt=""></a>
-                    <a href="index.php?page=modifEnt&id={{ entreprise.id }}"><img class="btnModif"
-                                                                                         src="CSS/images/logoAdmin_modif.png"
-                                                                                         alt=""></a>
-                    <a href="index.php?page=newAvis&id={{ entreprise.id }}"><img class="btnModif"
-                                                                                         src="CSS/images/logoAdmin_add.png"
-                                                                                         alt=""></a>
+                    <a href="index.php?page=suppEntreprise&id={{ entreprise.id }}"><i class="fa fa-times fa-lg"></i></a>
+                    <a href="index.php?page=modifEnt&id={{ entreprise.id }}"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="index.php?page=newAvis&id={{ entreprise.id }}"><i class="fa fa-users fa-lg"></i></a>
                     <div>
                         <div class="titre">
                             <h5>{{ entreprise.nom }}</h5>

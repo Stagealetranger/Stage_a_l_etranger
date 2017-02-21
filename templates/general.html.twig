@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic' rel='stylesheet' type='text/css'>
-{% block boostrap %}
-    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.css">
-{% endblock %}
+    {% block boostrap %}
+        <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.css">
+    {% endblock %}
     <script src="CSS/bootstrap-3.2.0-dist/js/jquery-1.10.2.js"></script>
     <script src="CSS/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="CSS/font-awesome.css">
@@ -20,29 +20,31 @@
 </head>
 <body>
 {% if session.nom == "" %}
-<header id="FirstConnexion" >
-    <a data-toggle="modal" data-target="#myModalCo">Connexion <i class="fa fa-power-off fa-lg"></i></a>
-</header>
+    <header id="FirstConnexion">
+        <a data-toggle="modal" data-target="#myModalCo">Connexion <i class="fa fa-power-off fa-lg"></i></a>
+    </header>
 {% endif %}
 {% if session.nom != "" %}
-<header>
-    <div class="Nav" id="home">
-        <div class="navWarpper">
-            <div class="navbar1">
-                <div>
-                    <p id="nomMenu">{% if session.admin == 1 %} <a
-                            href="index.php?page=pageAdmin">Administrateur</a> | {% endif %}<a href="index.php?page=Profil">{{ session.prenom }} {{ session.nom }}</a>
-                       </p>
-                    <img data-toggle="modal" data-target="#myModalDeco" id="deco" src="CSS/images/deconnexion.png" alt="bouton de deconnexion">
-                    <img  id="menu" data-toggle="modal" data-target="#myModalMenu" src="CSS/images/logoMMImenu2.png"
-                         alt="menu">
+    <header>
+        <div class="Nav" id="home">
+            <div class="navWarpper">
+                <div class="navbar1">
+                    <div>
+                        <p id="nomMenu">
+
+                            {% if session.admin == 1 %}<a
+                                href="index.php?page=pageAdmin">Administrateur</a> | {% endif %}<a
+                                    href="index.php?page=Profil">{{ session.prenom }} {{ session.nom }}</a>
+                        <i class="fa fa-power-off fa-lg" data-toggle="modal" data-target="#myModalDeco"></i></p>
+                        <img id="menu" data-toggle="modal" data-target="#myModalMenu" src="CSS/images/logoMMImenu2.png"
+                             alt="menu">
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
-    </div>
-</header>
+    </header>
 {% endif %}
 
 {% block contenu %}
@@ -57,78 +59,78 @@
 
 </footer>
 {% if session.nom == "" %}
-<div id="myModalCo" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div id="myModalCo" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div id="blocConnection">
-                <form method="post" action="index.php?page=accueil" enctype="multipart/form-data">
-                    <div class="input-group">
-                        <label for="mail">Mail</label>
-                        <input type="text" class="form-control" name="mail" id="mail" placeholder="Mail" required/>
-                    </div>
-                    <div class="input-group">
-                        <label for="mdp">Mdp</label>
-                        <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Mdp" required/>
-                    </div>
-                    <a class="bleu" href="index.php?page=Inscription">Pas encore inscrit ?</a>
-                    <div class="panel panel-footer">
-                        <button type="submit" class="btn" name="connexion">
-                            connexion
-                        </button>
-                    </div>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="blocConnection">
+                    <form method="post" action="index.php?page=accueil" enctype="multipart/form-data">
+                        <div class="input-group">
+                            <label for="mail">Mail</label>
+                            <input type="text" class="form-control" name="mail" id="mail" placeholder="Mail" required/>
+                        </div>
+                        <div class="input-group">
+                            <label for="mdp">Mdp</label>
+                            <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Mdp" required/>
+                        </div>
+                        <a class="bleu" href="index.php?page=Inscription">Pas encore inscrit ?</a>
+                        <div class="panel panel-footer">
+                            <button type="submit" class="btn" name="connexion">
+                                connexion
+                            </button>
+                        </div>
 
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
 {% endif %}
 {% if session.nom != "" %}
-<div id="myModalMenu" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <ul id="top-menu">
-                <li>
-                    <a href="index.php?page=Etudiant">
-                        <div>
-                            <img src="CSS/images/logoMenu_accueil.png" alt="">
-                            Accueil
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.php?page=Profil">
-                        <div>
-                            <img src="CSS/images/logoMenu_profil.png" alt="">
-                            Mon profil
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.php?page=Suivi#monSuivi">
-                        <div>
-                            <img src="CSS/images/logoMenu_suivi.png" alt="">
-                            Mon suivi
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.php?page=Etudiant#recherche">
-                        <div>
-                            <img src="CSS/images/logoMenu_recherche.png" alt="">
-                            Recherche de stage
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <div id="myModalMenu" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <ul id="top-menu">
+                    <li>
+                        <a href="index.php?page=Etudiant">
+                            <div>
+                                <img src="CSS/images/logoMenu_accueil.png" alt="">
+                                Accueil
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.php?page=Profil">
+                            <div>
+                                <img src="CSS/images/logoMenu_profil.png" alt="">
+                                Mon profil
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.php?page=Suivi#monSuivi">
+                            <div>
+                                <img src="CSS/images/logoMenu_suivi.png" alt="">
+                                Mon suivi
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.php?page=Etudiant#recherche">
+                            <div>
+                                <img src="CSS/images/logoMenu_recherche.png" alt="">
+                                Recherche de stage
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
+        </div>
     </div>
-</div>
     <div id="myModalDeco" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
