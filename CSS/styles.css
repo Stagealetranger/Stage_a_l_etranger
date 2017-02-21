@@ -932,6 +932,29 @@ article#monSuivit {
     background-color: #154A58;
 }
 
+#listeAdminE a{
+    color: #154A58;
+}
+
+#listeAdminE i{
+    margin:5px 2px;
+}
+
+#listeAdminP a{
+    color: #154A58;
+}
+
+#listeAdminP i{
+    margin:5px 2px;
+}
+
+#tableValidation a{
+    color: #154A58;
+}
+
+#tableValidation i{
+    margin:5px 2px;
+}
 #listeAdminE > div {
     width: 80%;
     display: flex;

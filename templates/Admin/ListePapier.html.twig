@@ -14,13 +14,11 @@
             {% for papier in liste %}
                 <div>
                     {%if ((papier.lesSuivits | length) == 0) %}
-                        <a href="index.php?page=suppPapier&id={{ papier.id }}"><img class="btnModif"
-                                                                                    src="CSS/images/logoAdmin_supp.png"
-                                                                                    alt=""></a>
+                        <a href="index.php?page=suppPapier&id={{ papier.id }}"><i class="fa fa-times fa-lg"></i></a>
+                    {%else%}
+                        <a href=""><i class="fa fa-square-o fa-lg" ></i></a>
                     {%endif%}
-                    <a href="index.php?page=modifPapier&id={{ papier.id }}"><img class="btnModif"
-                                                                                     src="CSS/images/logoAdmin_modif.png"
-                                                                                     alt=""></a>
+                    <a href="index.php?page=modifPapier&id={{ papier.id }}"><i class="fa fa-edit fa-lg"></i></a>
                     <div>
                         <div class="titre">
                             <h5>{{ papier.nom }}</h5>

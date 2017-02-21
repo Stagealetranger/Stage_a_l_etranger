@@ -29,9 +29,10 @@
                         {% for pays in liste %}
                             <tr>
                                 <td><p>{{ pays.nom }}</p></td>
-                                <td><a href=""><img src="CSS/images/logoAdmin_modif.png" alt="modif"></a><a href=""><img
-                                                src="CSS/images/logoAdmin_supp.png" alt="supp"></a></td>
+                                <td><a href="index.php?page=modifPays&id={{ pays.id }}"><i class="fa fa-edit fa-lg"></i></a><a href="index.php?page=suppPays&id={{ pays.id }}"><i class="fa fa-times fa-lg"></i></a></td>
                             </tr>
+
+
                         {% endfor %}
                         </tbody>
                     </table>

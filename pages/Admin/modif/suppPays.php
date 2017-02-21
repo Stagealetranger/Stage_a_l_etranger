@@ -1,5 +1,6 @@
 <?php
 require_once('dao/DaoPapier.php');
+require_once('dao/DaoPays.php');
 
 
 $daoPays = new DaoPays();
