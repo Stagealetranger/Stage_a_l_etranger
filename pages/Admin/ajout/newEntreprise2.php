@@ -5,37 +5,63 @@ require_once('dao/DaoType.php');
 
 
 $daoEntreprise = new DaoEntreprise();
-$daoType = new DaoType();
 
-$daoEntreprise->findByNom($_GET["nom"]);
+    $daoEntreprise->findByNom($_GET["nom"]);
+
+$daoEntreprise->setLesTypes();
+
+
+
+$daoType = new DaoType();
+$listeType = $daoType->getListe();
+if(sizeof($daoEntreprise->bean->getLesTypes()) != 0) {
+    $listeTypeEnt = $daoEntreprise->bean->getLesTypes();
+
+    for ($i = 0; $i < count($listeType); $i++) {
+        $trouve = false;
+        for ($j = 0; $j < count($listeTypeEnt); $j++) {
+            if ($listeType[$i]->getId() == $listeTypeEnt[$j]->getId()) {
+                $trouve = true;
+            }
+        }
+        if (!$trouve) {
+            $listeTemp[] = $listeType[$i];
+        }
+    }
+    $listeType = $listeTemp;
+}
+
+
 
 if (isset($_POST["valider"])) {
-
-$id = $_GET['id'];
-   if (!empty($_POST["type1"])){
-        $daoType->find($_POST["type1"]);
-
-       $daoEntreprise->addTypes($daoType->bean,$id);
-    }
-   if (!empty($_POST["type2"])){
-        $daoType->find($_POST["type2"]);
-
-       $daoEntreprise->addTypes($daoType->bean,$id);
-    }
-    if (!empty($_POST["type3"])){
-        $daoType->find($_POST["type3"]);
-
-        $daoEntreprise->addTypes($daoType->bean,$id);
-    }
-
     header('Location: index.php?page=listeEntreprise');
     exit();
 }
 
 
+if (isset($_POST["creer"])) {
+    $daoType->find($_POST["type"]);
+
+    $daoEntreprise->addType2($daoType->bean);
+
+    // redirection formulaire
+    header('Location: index.php?page=newEntreprise2&nom='.$_GET["nom"]);
+}
+
+if (isset($_POST["supp"])) {
+    $daoType->find($_POST["idType"]);
+
+    $daoEntreprise->delType($daoType->bean);
+
+    header('Location: index.php?page=newEntreprise2&nom='.$_GET["nom"]);
+}
+
+
 $param = array(
+    "liste" => $listeType,
     "nom" => $_GET["nom"],
-    "entreprise" => $daoEntreprise
+    "entreprise" => $daoEntreprise,
+
 );
 
 

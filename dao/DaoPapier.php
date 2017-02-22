@@ -46,13 +46,12 @@ class DaoPapier extends Dao
 
     public function create()
     {
-        $sql = "INSERT INTO papier (NOM_PAPIER,DESCRIPTION,CONSEIL,DUREE)
-            VALUES(?, ?, ?, ?)";
+        $sql = "INSERT INTO papier (NOM_PAPIER,DESCRIPTION,DUREE)
+            VALUES(?, ?, ?)";
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getNom());
         $requete->bindValue(2, $this->bean->getDescription());
-        $requete->bindValue(3, $this->bean->getConseil());
-        $requete->bindValue(4, $this->bean->getDuree());
+        $requete->bindValue(3, $this->bean->getDuree());
         $requete->execute();
     }
 

@@ -16,7 +16,7 @@ $daoSuivit = new DaoSuivit();
 $daoSuivit->find($_SESSION["id_suivit"]);
 $daoPays->find($daoSuivit->bean->getLePays());
 $daoSuivit->setCompose();
-var_dump(sizeof($daoSuivit->getlisteCompose()));
+
 if (sizeof($daoSuivit->getlisteCompose()) === 0) {
 
     $JourDateFinal = 20;
@@ -301,9 +301,9 @@ for ($i = 0; $i < count($listeForMail); $i++) {
 
 }
 
-echo "<pre>";
-print_r($param);
-echo "</pre>";
+//echo "<pre>";
+//print_r($param);
+//echo "</pre>";
 
 
 if (($_SESSION['mail']) == '') {

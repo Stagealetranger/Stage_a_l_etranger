@@ -1,0 +1,49 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/Profil {{ session.nom }}{{ session.prenom }}{% endblock %}
+{% block boostrap %}
+    <link rel="stylesheet" href="CSS/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+{% endblock %}
+{% block contenu %}
+    <article class="formulaireAdmin">
+        <div class="container">
+            <div class="panel panel-default">
+                <form method="post" action="index.php?page=newStage"
+                      enctype="multipart/form-data">
+                    <div class="panel-heading">
+                        <strong>Créé son stage :</strong>
+                    </div>
+                    <div class="panel-body">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><label for="nom">Nom</label></span>
+                                        <input type="text" class="form-control" name="nom"
+                                               value="{{ pays.bean.nom }}"
+                                               placeholder="Nom" required></div>
+                                    <br/>
+                                    <select class="form-control" name="pays">
+                                        <option value="0">...</option>
+                                        {% for pays in liste %}
+                                            <option value="{{ pays.id }}">{{ pays.nom }}</option>
+
+                                        {% endfor %}
+                                    </select>
+                                    <br/>
+                                    <div class="panel-footer">
+                                        <button type="submit" class="btn btn-default" name="valider">
+                                            modifier
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+{% endblock %}

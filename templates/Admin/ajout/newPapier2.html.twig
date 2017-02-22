@@ -7,142 +7,84 @@
 {% block contenu %}
     <article class="formulaireAdmin">
         <div class="container">
-            <form method="post" action="index.php?page=newPapier2&id={{ papier.bean.id }}"
-                  enctype="multipart/form-data">
-                <div class="titreAdmin">
-                    <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
-                                                            alt=""></a>
 
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <strong>Ajouter les pays</strong>
-                    </div>
-                    <div class="panel-body">
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays1">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays1" id="pays1">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays2">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays2" id="pays2">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays3">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays3" id="pays3">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays4">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays4" id="pays4">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays5">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays5" id="pays5">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays6">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays6" id="pays6">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays7">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays7" id="pays7">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays8">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays8" id="pays8">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                <span class="input-group-addon">
-                                     <label for="pays9">A quelle pays doit-il etre associer ?</label>
-                                </span>
-                                        <select class="form-control" name="pays9" id="pays9">
-                                            <option value="0">...</option>
-                                            {% for pays in liste %}
-                                                <option value="{{ pays.id }}">{{ pays.nom }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button type="submit" class="btn" name="valider">
-                                            Ajouté
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
-            </form>
+            <div class="titreAdmin">
+                <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                        alt=""></a>
+
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Ajouter les pays</strong>
+                </div>
+                <div class="panel-body">
+                    <table>
+                        <tbody>
+                        <tr>
+
+                            <div class="panel panel-default col-xs-12">
+                                <div class="panel-heading">
+                                    <strong>Attribution des pays : {{ papier.bean.nom }}</strong>
+                                </div>
+                                <div class="panel-body">
+                                    <form method="post" action="#">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <strong>Nouveau pays </strong>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Pays : </span>
+                                                    <select name="pays" class="form-control">
+                                                        {% for pays in liste %}
+                                                            <option value="{{ pays.id }}">{{ pays.nom }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-info" title="Attacher le pays" name="creer">
+                                    <i class="fa fa-save fa-lg"></i>
+                                </button>
+                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <strong>Pays Actuels</strong>
+                                        </div>
+                                        <div class="panel-body">
+                                            {% for pays in papier.bean.lesPays %}
+                                                <form method="post" action="#">
+
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Pays : </span>
+
+                                                        <input type="text" class="form-control hidden"
+                                                               value="{{ pays.id }}" name="idPays">
+                                                        <input type="text" class="form-control" value="{{ pays.nom }}"
+                                                               disabled>
+
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-info" title="Supprimer le pays" name="supp">
+                                        <i class="fa fa-times fa-lg"></i>
+                                    </button>
+                                </span>
+                                                    </div>
+                                                </form>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <a href="index.php?page=pageAdmin" class="bouton">Terminer</a>
+                </div>
+            </div>
         </div>
 
     </article>

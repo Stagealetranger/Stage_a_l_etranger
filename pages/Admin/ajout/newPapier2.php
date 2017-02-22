@@ -3,56 +3,48 @@
 require_once('dao/DaoPapier.php');
 require_once('dao/DaoPays.php');
 
-$daoPays = New DaoPays();
+
 $daoPapier = New DaoPapier();
+$daoPapier->findByNomPap($_GET['nom']);
+$daoPapier->setLesPays();
 
-
+$daoPays = new DaoPays();
 $listePays = $daoPays->getListe();
-for ($i = 0; $i < count($listePays); $i++) {
-    $daoPays = new DaoPays();
-    $daoPays->find($listePays[$i]->getId());
-    $listePays[$i] = $daoPays->bean;
+if(sizeof($daoPapier->bean->getLesPays()) != 0) {
+    $listePaysPapier = $daoPapier->bean->getLesPays();
+
+    for ($i = 0; $i < count($listePays); $i++) {
+        $trouve = false;
+        for ($j = 0; $j < count($listePaysPapier); $j++) {
+            if ($listePays[$i]->getId() == $listePaysPapier[$j]->getId()) {
+                $trouve = true;
+            }
+        }
+        if (!$trouve) {
+            $listeTemp[] = $listePays[$i];
+        }
+    }
+    $listePays = $listeTemp;
+
 }
 
-$daoPapier->findByNomPap($_GET['nom']);
 
 
+if (isset($_POST["creer"])) {
 
-if (isset($_POST["valider"])) {
+    $daoPays->find($_POST["pays"]);
+    $daoPapier->addPays2($daoPays->bean);
 
-    $id = $_GET['id'];
-    if (!empty($_POST["pays1"])){
-        $daoPapier->addPays($_POST['pays1'],$id);
-    }
-    if (!empty($_POST["pays2"])){
-        $daoPapier->addPays($_POST['pays2'],$id);
-    }
-    if (!empty($_POST["pays3"])){
-        $daoPapier->addPays($_POST['pays3'],$id);
-    }
-    if (!empty($_POST["pays4"])){
-        $daoPapier->addPays($_POST['pays4'],$id);
-    }
-    if (!empty($_POST["pays4"])){
-        $daoPapier->addPays($_POST['pays4'],$id);
-    }
-    if (!empty($_POST["pays5"])){
-        $daoPapier->addPays($_POST['pays5'],$id);
-    }
-    if (!empty($_POST["pays6"])){
-        $daoPapier->addPays($_POST['pays6'],$id);
-    }
-    if (!empty($_POST["pays7"])){
-        $daoPapier->addPays($_POST['pays7'],$id);
-    }
-    if (!empty($_POST["pays8"])){
-        $daoPapier->addPays($_POST['pays8'],$id);
-    }
-    if (!empty($_POST["pays9"])){
-        $daoPapier->addPays($_POST['pays9'],$id);
-    }
-    header('Location: index.php?page=listePapier');
-    exit();
+    // redirection formulaire
+    header('Location: index.php?page=newPapier2&nom='.$_GET["nom"]);
+}
+
+if (isset($_POST["supp"])) {
+
+    $daoPays->find($_POST["idPays"]);
+    $daoPapier->delPays($daoPays->bean);
+
+    header('Location: index.php?page=newPapier2&nom=' . $_GET["nom"]);
 }
 
 

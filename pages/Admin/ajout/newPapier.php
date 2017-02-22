@@ -11,7 +11,6 @@ if (isset($_POST["valider"])) {
     // Chargement du nom sur le bean du dao
     $DaoPapier->bean->setNom($_POST['nom']);
     $DaoPapier->bean->setDescription($_POST['description']);
-    $DaoPapier->bean->setConseil($_POST['conseil']);
     $DaoPapier->bean->setDuree($_POST['duree']);
     $DaoPapier->create();
     header('Location: index.php?page=newPapier2&nom='.$_POST['nom']);

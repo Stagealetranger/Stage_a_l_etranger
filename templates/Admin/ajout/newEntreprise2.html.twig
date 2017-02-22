@@ -7,69 +7,84 @@
 {% block contenu %}
     <article class="formulaireAdmin">
         <div class="container">
-            <form method="post" action="index.php?page=newEntreprise2&id={{ entreprise.bean.id }}"
-                  enctype="multipart/form-data">
-                <div class="titreAdmin">
-                    <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
-                                                            alt=""></a>
+            <div class="titreAdmin">
+                <a href="index.php?page=pageAdmin"><img class="retourAccueil" src="CSS/images/retourAdmin.png"
+                                                        alt=""></a>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Ajouter les types</strong>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <strong>Ajouter les types</strong>
-                    </div>
-                    <div class="panel-body">
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <label for="type1">Type de l'entreprise</label>
-                                    </span>
-                                        <select class="form-control" name="type1" id="type1">
-                                            <option value="">...</option>
-                                            <option value="1">Communication</option>
-                                            <option value="2">Graphisme</option>
-                                            <option value="3">Developpement</option>
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <label for="type2">Type de l'entreprise</label>
-                                    </span>
-                                        <select class="form-control" name="type2" id="type2">
-                                            <option value="">...</option>
-                                            <option value="1">Communication</option>
-                                            <option value="2">Graphisme</option>
-                                            <option value="3">Developpement</option>
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <label for="type3">Type de l'entreprise</label>
-                                    </span>
-                                        <select class="form-control" name="type3" id="type3">
-                                            <option value="">...</option>
-                                            <option value="1">Communication</option>
-                                            <option value="2">Graphisme</option>
-                                            <option value="3">Developpement</option>
-                                        </select>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button type="submit" class="btn btn-default" name="valider">
-                                            Ajouté
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </form>
-        </div>
+                <div class="panel-body">
+                    <table>
+                        <tbody>
+                        <tr>
 
+
+                                <div class="panel panel-default col-xs-12">
+                                    <div class="panel-heading">
+                                        <strong>Attribution des types : {{ entreprise.bean.nom }}</strong>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form method="post"
+                                              action="index.php?page=newEntreprise2&nom={{ entreprise.bean.nom }}">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <strong>Nouveau types </strong>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Types : </span>
+                                                        <select name="type" class="form-control">
+                                                            {% for type in liste %}
+                                                                <option value="{{ type.id }}">{{ type.type }}</option>
+                                                            {% endfor %}
+                                                        </select>
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-info" title="Attacher le type" name="creer">
+                                    <i class="fa fa-save fa-lg"></i>
+                                </button>
+                            </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <strong>Type Actuels</strong>
+                                            </div>
+                                            <div class="panel-body">
+                                                {% for type in entreprise.bean.lesTypes %}
+                                                    <form method="post" action="#">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">Type : </span>
+
+                                                            <input type="text" class="form-control hidden"
+                                                                   value="{{ type.id }}" name="idType">
+                                                            <input type="text" class="form-control"
+                                                                   value="{{ type.type }}" disabled>
+
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-info" title="Supprimer le type" name="supp">
+                                        <i class="fa fa-times fa-lg"></i>
+                                    </button>
+                                </span>
+                                                        </div>
+                                                    </form>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <a href="index.php?page=pageAdmin" class="bouton">Terminer</a>
+                </div>
+
+            </div>
+        </div>
     </article>
 {% endblock %}

@@ -316,7 +316,6 @@ class DaoEntreprise extends Dao
         $requete = $this->pdo->prepare($sql);
         $requete->bindValue(1, $this->bean->getId());
         $requete->bindValue(2, $listeType->getId());
-
         $requete->execute();
     }
     public function delType($listeType){

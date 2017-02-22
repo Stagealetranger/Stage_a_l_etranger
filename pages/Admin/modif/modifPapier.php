@@ -8,6 +8,20 @@ $daoPapier->setLesPays();
 
 $daoPays = new DaoPays();
 $listePays = $daoPays->getListe();
+$listePaysPapier = $daoPapier->bean->getLesPays();
+
+for ($i = 0; $i < count($listePays); $i++) {
+    $trouve = false;
+    for ($j = 0; $j < count($listePaysPapier); $j++) {
+        if ($listePays[$i]->getId() == $listePaysPapier[$j]->getId()) {
+            $trouve = true;
+        }
+    }
+    if (!$trouve) {
+        $listeTemp[] = $listePays[$i];
+    }
+}
+$listePays = $listeTemp;
 
 if (isset($_POST["valider"])) {
     $daoPapier->bean->setNom($_POST["nom"]);

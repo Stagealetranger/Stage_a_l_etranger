@@ -16,6 +16,20 @@ $liste = $daoPays->getListe();
 $daoType = new DaoType();
 $listeType = $daoType->getListe();
 
+$listeTypeEnt = $daoEntreprise->bean->getLesTypes();
+
+for ($i = 0; $i < count($listeType); $i++) {
+    $trouve = false;
+    for ($j = 0; $j < count($listeTypeEnt); $j++) {
+        if ($listeType[$i]->getId() == $listeTypeEnt[$j]->getId()) {
+            $trouve = true;
+        }
+    }
+    if (!$trouve) {
+        $listeTemp[] = $listeType[$i];
+    }
+}
+$listeType = $listeTemp;
 
 if (isset($_POST["valider"])) {
     $daoEntreprise->bean->setNom($_POST["nom"]);
@@ -41,27 +55,22 @@ if (isset($_POST["valider"])) {
             header('Location: index.php?page=Etudiant');
         }
     }
+}
+if (isset($_POST["creer"])) {
+    $daoType->find($_POST["type"]);
 
-    if (isset($_POST["creer"])) {
+    $daoEntreprise->addType2($daoType->bean);
 
-        $daoType->find($_POST["type"]);
+    // redirection formulaire
+    header('Location: index.php?page=modifEnt&id='.$_GET["id"]);
+}
 
-        $daoEntreprise->addType2($daoType->bean);
-        
-        // redirection formulaire
-        header('Location: index.php?page=modifPapier&id=' . $_GET["id"]);
-    }
-        
-        if (isset($_POST["supp"])) {
+if (isset($_POST["supp"])) {
+    $daoType->find($_POST["idType"]);
 
-            $daoType->find($_POST["idType"]);
+    $daoEntreprise->delType($daoType->bean);
 
-            $daoEntreprise->delType($daoType->bean);
-
-            header('Location: index.php?page=modifEnt&id=' . $_GET["id"]);
-        }
-
-    
+    header('Location: index.php?page=modifEnt&id='.$_GET["id"]);
 }
 
 

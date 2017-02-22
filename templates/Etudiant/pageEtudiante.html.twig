@@ -1,0 +1,133 @@
+{% extends 'general.html.twig' %}
+
+{% block title %}MMI Stage à l'étranger/Etuidant {{ session.nom }}{{ session.prenom }}{% endblock %}
+
+{% block contenu %}
+
+
+    <article id="decouvrirEtudiant">
+        <div class="col1">
+            <h3 class="blanc">MMI Montbéliard</h3>
+            <h2 class="blanc">vous accompagne pour votre stage à l’étranger</h2>
+            <p class="blanc">Vous souhaitez faire votre stage à l’étranger mais ne savez pas où regarder ? Envie de
+                partir
+                sans savoir comment vous y prendre ? Nous sommes là pour vous ! Vous trouverez sur ce site adresses,
+                noms et
+                procédures requises afin de vous aider au mieux dans votre recherche et vous accompagner tout au long
+                des
+                procédures.</p>
+        </div>
+        <div class="col1 colonneaImage">
+            <img src="CSS/images/planet.png" alt="planetMMI">
+        </div>
+        <div class="col5">
+            <a class="bouton2" href="index.php?page=Suivi#monSuivi">J'ai déjà mon stage</a>
+            <a class="bouton2" href="index.php?page=Etudiant#recherche">Je cherche un stage</a>
+        </div>
+    </article>
+    <article id="recherche">
+        <div class="col3 col3titre">
+            <div class="col1">
+                <h3 class="bleu">MMI Montbéliard</h3>
+                <h2 class="bleu">Des étudiants y sont déja allé</h2>
+            </div>
+        </div>
+        <form method="post" action="index.php?page=Etudiant" enctype="multipart/form-data">
+            <div class="col3">
+                <div class="col2 listePictorecherche">
+                    <div class="pictoRecherche">
+                        <input name="communication" id="communication" value="1" type="checkbox" checked>
+                        <label for="communication" class="com">Communication</label>
+                    </div>
+                    <div class="pictoRecherche">
+                        <input name="graphisme" value="1" id="graphisme" type="checkbox" checked>
+                        <label for="graphisme" class="graf">Graphisme</label>
+
+                    </div>
+                    <div class="pictoRecherche">
+                        <input name="developpement" value="1" id="developement" type="checkbox" checked>
+                        <label for="developement" class="dev">Developpement</label>
+                    </div>
+                </div>
+                <div class="col2 listePictorecherche">
+                    <div class="pictoRecherche">
+                        <input name="GE" value="1" id="GE" type="checkbox" checked>
+                        <label for="GE" class="GE">Grande entreprise</label>
+                    </div>
+                    <div class="pictoRecherche">
+                        <input name="PME" value="1" id="PME" type="checkbox" checked>
+                        <label for="PME" class="PME">Petite/Moyen entreprise</label>
+
+                    </div>
+                </div>
+                <div class="col2 listePictorecherche">
+                    <div class="pictoRecherche">
+                        <input name="inconnu" value="1" id="inconnu" type="checkbox" checked>
+                        <label for="inconnu" class="inconnu">Nouvelle entreprise</label>
+                    </div>
+                    <div class="pictoRecherche">
+                        <input name="connu" value="1" id="connu" type="checkbox" checked>
+                        <label for="connu" class="connu">Un etudiant y est deja allé</label>
+                    </div>
+                    <div class="pictoRecherche">
+                        <input name="aimer" value="1" id="aimer" type="checkbox" checked>
+                        <label for="aimer" class="aimer">Avis positif sur l'entreprise</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col3">
+                <div class="col1 selectRecherche">
+                    <span>Choisir un pays</span>
+                    <input name="pays" id="pays" type="search">
+                </div>
+
+                <div class="col1 selectRecherche">
+                    <span>Choisir une ville</span>
+                    <input name="ville" id="ville" type="search">
+                </div>
+            </div>
+            <div class="col3">
+                <button type="submit" class="bouton bleu" name="recherche">
+                    Rechercher
+                </button>
+            </div>
+        </form>
+    </article>
+    <article id="accesSuivit">
+        <div class="col1">
+            <h3 class="blanc">MMI Montbéliard</h3>
+            <h2 class="blanc">Je souhaite accéder au suivi de mon stage à l’étranger </h2>
+            <p class="blanc">Le suivi personnalisé vous met à disposition un moyen simple et efficace de ne rater aucune
+                étape administrative et de partir en toute sécurité. Nos conseils et celui des anciens étudiants sont
+                également disponibles pour vous accompagner et vous faciliter les choses afin de partir sans soucis.</p>
+        </div>
+        <div class="col1 colonneaImage">
+            <img src="CSS/images/check.png" alt="">
+        </div>
+        <div class="col3">
+            <a class="bouton2" href="index.php?page=Suivi#monSuivi">Accéder a mon suivi</a>
+        </div>
+
+        <script>
+            $(document).ready(
+                    function () {
+                        var listePays = [{% for pays in listePays %}"{{ pays.nom }}",{% endfor %}"France"
+                        ];
+                        $('#pays').autocomplete({
+                            source : listePays,
+                            minLength : 2
+                        });
+
+                        var listeVille = [{% for Entreprise in listeEntreprise %}"{{ Entreprise.ville }}",{% endfor %}"Paris"];
+                        $('#ville').autocomplete({
+                            source : listeVille,
+                            minLength : 2
+                        });
+                    }
+            );
+
+
+        </script>
+    </article>
+
+{% endblock %}
