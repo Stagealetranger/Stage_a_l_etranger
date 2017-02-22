@@ -3,15 +3,11 @@
 {% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
 
 {% block contenu %}
-    <article class="formulaireAdmin">
+    <article class="formulaireAdminSupp">
         <form method="post" action="index.php?page=suppEntreprise&id={{ entreprise.id }}" enctype="multipart/form-data">
-            <span>Etes vous sur de vouloir supprimer cette enteprise ?</span>
-            <button type="submit" class="btn" name="oui">
-                oui
-            </button>
-            <button type="submit" class="btn" name="non">
-                non
-                </button>
+            <span>Etes vous sur de vouloir supprimer cette enteprise nomée {{ entreprise.nom }} ?</span>
+            <button type="submit" class="btn" name="oui">oui</button>
+            <button type="submit" class="btn" name="non">non</button>
         </form>
     </article>
 {% endblock %}

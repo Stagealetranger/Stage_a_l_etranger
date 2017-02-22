@@ -3,15 +3,11 @@
 {% block title %}MMI Stage à l'étranger/{{ pays.nom }}{% endblock %}
 
 {% block contenu %}
-    <article class="formulaireAdmin">
+    <article class="formulaireAdminSupp">
         <form method="post" action="index.php?page=suppPays&id={{ pays.id }}" enctype="multipart/form-data">
-            <span>Etes vous sur de vouloir supprimer ce pays ?</span>
-            <button type="submit" class="btn" name="oui">
-                oui
-            </button>
-            <button type="submit" class="btn" name="non">
-                non
-            </button>
+            <span>Etes vous sur de vouloir supprimer ce pays nomé {{ pays.nom }} ?</span>
+            <button type="submit" class="btn" name="oui">oui</button>
+            <button type="submit" class="btn" name="non">non</button>
         </form>
     </article>
 {% endblock %}

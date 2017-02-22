@@ -10,6 +10,8 @@ $listePays = $daoPays->getListe();
 for ($i = 0; $i < count($listePays); $i++) {
     $daoPays = new DaoPays();
     $daoPays->find($listePays[$i]->getId());
+    $daoPays->setLesEntreprises();
+    $daoPays->setLesPapiers();
     $listePays[$i] = $daoPays->bean;
 }
 

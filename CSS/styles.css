@@ -131,6 +131,10 @@ article > div > img {
     font-family: "Montserrat", sans-serif;
 }
 
+#blocConnection h3 {
+    color: white;
+}
+
 /*******************************************************
                       bouton
 *******************************************************/
@@ -902,7 +906,8 @@ article#monSuivit {
 .titreAdmin > h2 {
     padding: 0;
     color: white;
-    display: inline-block;
+    display: flex;
+    align-items: center;
 }
 
 .formulaireAdmin {

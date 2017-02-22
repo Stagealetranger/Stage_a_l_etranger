@@ -3,16 +3,6 @@ require_once('dao/DaoPersonne.php');
 $daoPersonne = new DaoPersonne;
 
 
-if ($_SESSION != '') {
-    unset($_SESSION['id']);
-    unset($_SESSION['nom']);
-    unset($_SESSION['prenom']);
-    unset($_SESSION['mail']);
-    unset($_SESSION['admin']);
-    unset($_SESSION['photo']);
-    unset($_SESSION['mdp']);
-    unset($_SESSION['id_suivit']);
-}
 
 
 if (isset($_POST["connexion"])) {
@@ -50,5 +40,8 @@ if (isset($_POST["deconnexion"])) {
 
 }
 
+if (isset($_POST["non"])) {
+    header("Location:index.php?page=Etudiant");
+}
 
 ?>

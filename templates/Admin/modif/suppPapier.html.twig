@@ -3,30 +3,11 @@
 {% block title %}MMI Stage à l'étranger/{{ entreprise.nom }}{% endblock %}
 
 {% block contenu %}
-    <article class="formulaireAdmin">
-        <div>
-            <div class="ficheEntreprise communication grandentreprise connu aimer">
-                <div class="titreEntreprise ">
-                    <h5>{{ papier.bean.nom }}</h5>
-                </div>
-                <p class="descritpionEntreprise">{{ papier.bean.description }}</p>
-                <p class="villeEntreprise">{{ papier.bean.ville }}, {{ papier.bean.pays }}</p>
-            </div>
-        </div>
+    <article class="formulaireAdminSupp">
         <form method="post" action="index.php?page=suppPapier&id={{ papier.id }}" enctype="multipart/form-data">
-            <span>Etes vous sur de vouloir supprimer ce papier ?</span>
-
-            <div class="panel panel-footer">
-                <button type="submit" class="btn" name="oui">
-                    oui
-                </button>
-            </div>
-            <div class="panel panel-footer">
-                <button type="submit" class="btn" name="non">
-                    non
-                </button>
-            </div>
+            <span>Etes vous sur de vouloir supprimer ce papier nomé {{ papier.nom }} ?</span>
+            <button type="submit" class="btn" name="oui">oui</button>
+            <button type="submit" class="btn" name="non">non</button>
         </form>
-
     </article>
 {% endblock %}

@@ -76,7 +76,7 @@
                         </div>
                         <a class="bleu" href="index.php?page=Inscription">Pas encore inscrit ?</a>
                         <div class="panel panel-footer">
-                            <button type="submit" class="btn" name="connexion">
+                            <button type="submit" class="bouton2" name="connexion">
                                 connexion
                             </button>
                         </div>
@@ -135,14 +135,18 @@
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
-                <form action="index.php?page=accueil">
-                    <h3>Se deconnecter ?</h3>
-                    <button type="submit" value="deconnexion">Oui</button>
+                <div id="blocConnection">
+                    <form action="index.php?page=accueil">
+                        <h3>Se deconnecter ?</h3>
+                        <div >
+                            <button type="submit" value="deconnexion" class="bouton2">Oui</button>
+                            <button type="submit" value="non" class="bouton2">non</button>
+                        </div>
 
-                </form>
 
+                    </form>
+                </div>
             </div>
-
         </div>
     </div>
 {% endif %}
