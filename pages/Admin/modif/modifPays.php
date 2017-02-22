@@ -30,5 +30,8 @@ if (isset($_POST["valider"])) {
 
 $param = array(
 //    "liste" => $liste,
-    "papier" => $dao
+    "pays" => $dao
 );
+echo "<pre>";
+print_r($param);
+echo "</pre>";
