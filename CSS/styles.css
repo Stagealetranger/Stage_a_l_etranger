@@ -679,6 +679,8 @@ article#monSuivit {
     max-height: 150px;
 }
 
+
+
 /*******************************************************
                       Inscription
 *******************************************************/
@@ -791,6 +793,29 @@ article#monSuivit {
     font-family: "Montserrat", sans-serif;
 }
 
+.col1 div {
+    margin: 30px;
+    padding-left: 45px;
+}
+
+.col6 h3{
+    font-size: 40px;
+}
+
+.col6 h2{
+    font-size: 30px;
+}
+
+#modifinfos{
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+
+
 /*******************************************************
                         Modal
 *******************************************************/
@@ -876,6 +901,10 @@ article#monSuivit {
     min-height: 90vh;
     display: flex;
     justify-content: center;
+}
+
+#top-menu> li{
+    margin-top: 5px;
 }
 
 .retourAccueil {

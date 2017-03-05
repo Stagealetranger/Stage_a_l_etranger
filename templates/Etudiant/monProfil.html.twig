@@ -34,12 +34,13 @@
                     <span>{{ suivit.bean.nom }}</span>
                 {% endif %}
             </div>
-            <a href="index.php?page=modifProfil">Modifier ces informations</a>
         </div>
 
         <div class="col1 colonneaImage" id="imageProfil">
             <img src="imagesappli/{{ session.photo }}" alt="">
         </div>
+
+        <a href="index.php?page=modifProfil" id="modifinfos">Modifier ces informations</a>
 
     </article>
 {% endblock %}
