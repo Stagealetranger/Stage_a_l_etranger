@@ -9,51 +9,53 @@
         <div><h3 class="bleu">Présentation de l’entreprise :</h3>
             <p class="bleu">{{ entreprise.description }}</p>
         </div>
-        <div id="caractéristique"><h3 class="bleu">Caractéristique :</h3>
+        <div id="caractéristique"><h3 class="bleu">Caractéristiques :</h3>
             <ul>
-                <li><p>Type(s) :</p>
+                <li><p>Type(s):</p>
                     <div>{% for type in entreprise.lesTypes %}
-                            {% if type.id == 1 %}communication{% endif %}
-                            {% if type.id == 2 %} graphisme{% endif %}
-                            {% if type.id == 3 %} developpement{% endif %}
+                            {% if type.id == 1 %}Communication{% endif %}
+                            {% if type.id == 2 %}Graphisme{% endif %}
+                            {% if type.id == 3 %}Developpement{% endif %}
                         {% endfor %}
                     </div>
                 <li><p>Taille :</p>
-                    <div>{% if entreprise.taille == 1 %}grande entreprise{% endif %}
+                    <div>{% if entreprise.taille == 1 %}Grande entreprise{% endif %}
                         {% if entreprise.taille == 0 %}PME{% endif %}
                     </div>
                 </li>
                 <li><p>Visite :</p>
-                    <div> {% if entreprisevisiter == 0 %}L'entreprise a déja été visiter{% endif %}
-                        {% if entreprisevisiter == 1 %}L'entreprise n'a jamais été visiter{% endif %}</div>
+                    <div> {% if entreprisevisiter == 0 %}L'entreprise a déja été visitée{% endif %}
+                        {% if entreprisevisiter == 1 %}L'entreprise n'a jamais été visitée{% endif %}</div>
                 </li>
             </ul>
+
+            <div class="col1">
+                <h3 class="bleu">Les contacter:</h3>
+                <p class="bleu">{{entreprise.contact}}</br>
+                    {{ entreprise.telephone }}</p>
+            </div>
+
+            <div class="col1">
+                <h3 class="bleu">Adresse :</h3>
+                <p class="bleu">{{ entreprise.rue }}</br>{{ entreprise.ville }} | {{ entreprise.LePays.nom }}</p>
+            </div>
         </div>
     </div>
     <div class="col1 map">
 
         <div id="map"></div>
-    </div>
-    <div class="col3">
 
 
-        <div class="col1">
-            <h3 class="bleu">Les contacter:</h3>
-            <p class="bleu">{{entreprise.contact}}</br>
-                {{ entreprise.telephone }}</p>
-        </div>
-        <div class="col1">
-            <h3 class="bleu">Adresse :</h3>
-            <p class="bleu">{{ entreprise.rue }}</br>{{ entreprise.ville }} | {{ entreprise.LePays.nom }}</p>
-        </div>
     </div>
+
 {% for Avis in entreprise.SontAller %}
 
     <div id="avisEntreprise">
-        <img class="imageAvis" src="imagesappli/{{ Avis.photo }}" alt="">
+        <img class="imageAvis" src="imagesappli/{{ Avis.photo }}" alt="Avatardel'etudiant">
         <h4 class="blanc">{{ Avis.prenom }} {{ Avis.nom }}</h4>
         <p class="texteAvis  bleu">{{ Avis.descriptionAvis }}</p>
     </div>
+
 {% endfor %}
     <script type="text/javascript">
 
@@ -76,8 +78,6 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoJ82u4A_xBSlTWf7SuC7BmIDdVLqTnDQ&callback=initMap">
     </script>
-    </body>
-    </html>
 </article>
 {% endblock %}
 
