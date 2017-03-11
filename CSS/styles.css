@@ -712,7 +712,6 @@ article#monSuivit {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: 85vh;
 }
 
 #inscription > div > form > div > label {
@@ -730,20 +729,10 @@ article#monSuivit {
     margin-top: 15px;
 }
 
-#inscription > div:first-child {
-    margin-top: 2%;
-    margin-left: 2%;
-}
-
 #inscription > div > form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-#myForm {
-    border: 2px solid white;
-    margin: 3%;
 }
 
 .tooltip {
