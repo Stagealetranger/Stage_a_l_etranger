@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    width: 100%;
 }
 
 /*******************************************************
@@ -44,7 +45,8 @@ footer img {
 footer p {
     text-align: center;
     margin: 0;
-    width: 80%;
+    width: 100%;
+    padding: 10px;
 }
 
 footer a {
@@ -129,6 +131,8 @@ article > div > img {
 
 #terre{
     width: 80%;
+    margin: 0;
+    justify-content: center;
 }
 
 #myForm {
@@ -200,6 +204,7 @@ article > div > img {
     max-width: 500px;
     display: inline-block;
     width: 100%;
+    padding-left: 5px;
 }
 
 .colonneaImage {
@@ -227,9 +232,7 @@ article > div > img {
 }
 
 .col5 {
-    text-align: center;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     max-width: 1000px;
     width: 100%;
@@ -237,9 +240,16 @@ article > div > img {
 }
 
 .col6 {
-    width: 100%;
-    padding-left: 30px;
+    font-size: 3em;
+    padding-left: 10px;
     display: inline-block;
+}
+
+.demarches{
+    text-align: center;
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
 }
 
 /*******************************************************
@@ -809,7 +819,7 @@ article#monSuivit {
 }
 
 .col6 h3{
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .col6 h2{
