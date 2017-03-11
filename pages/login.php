@@ -3,6 +3,7 @@ require_once('dao/DaoPersonne.php');
 $daoPersonne = new DaoPersonne;
 
 
+session_unset();
 
 
 if (isset($_POST["connexion"])) {
