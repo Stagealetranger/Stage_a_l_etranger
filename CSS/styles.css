@@ -113,7 +113,7 @@ h6 {
 }
 
 p {
-    width: 80%;
+    width: 90%;
     margin: 20px 20px;
     color: #154A58;
     font-size: 1.2em;
@@ -218,11 +218,11 @@ article > div > img {
 }
 
 .col3 {
-    max-width: 1000px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    text-align: center;
     margin: 0;
 }
 
@@ -243,6 +243,7 @@ article > div > img {
     font-size: 3em;
     padding-left: 10px;
     display: inline-block;
+    width: 100%;
 }
 
 .demarches{
@@ -250,6 +251,27 @@ article > div > img {
     padding: 20px;
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
+}
+
+.row1{
+    display: inline-block;
+    width: 100%;
+    margin-left: 5em;
+}
+
+.row1 img,h4{
+    display: inline-block;
+
+}
+
+.row1 img{
+    width: 200px;
+    height: 200px;
+}
+
+.row1 h4{
+    font-size: 40px;
+    margin-left: 20px;
 }
 
 /*******************************************************
@@ -482,17 +504,10 @@ article#monSuivit {
 .map {
     min-height: 200px;
     width: 100%;
-
 }
 
 #map {
     height: 200px;
-}
-
-.imageAvis {
-    max-width: 75px;
-    max-height: 75px;
-
 }
 
 .texteAvis {
@@ -808,7 +823,7 @@ article#monSuivit {
 }
 
 .col6 h3{
-    font-size: 25px;
+    font-size: 40px;
 }
 
 .col6 h2{

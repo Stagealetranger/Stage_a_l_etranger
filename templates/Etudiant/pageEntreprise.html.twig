@@ -51,8 +51,10 @@
 {% for Avis in entreprise.SontAller %}
 
     <div id="avisEntreprise">
+        <div class="row1">
         <img class="imageAvis" src="imagesappli/{{ Avis.photo }}" alt="Avatardel'etudiant">
         <h4 class="blanc">{{ Avis.prenom }} {{ Avis.nom }}</h4>
+        </div>
         <p class="texteAvis  bleu">{{ Avis.descriptionAvis }}</p>
     </div>
 
