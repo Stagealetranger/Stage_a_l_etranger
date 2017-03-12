@@ -179,6 +179,22 @@ article > div > img {
     display: inline-block;
 }
 
+.bouton2bleu {
+    width: 55%;
+    color: #154A58;
+    /*height: 40px;*/
+    max-width: 180px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8em;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 0.5em;
+    border: 2px solid #154A58;
+    margin: 10%;
+    display: inline-block;
+}
+
 #deco {
     width: 25px;
     margin: 0 0 0 10px;

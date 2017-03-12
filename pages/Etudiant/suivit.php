@@ -14,10 +14,11 @@ $daoPays = new DaoPays();
 
 $daoSuivit = new DaoSuivit();
 $daoSuivit->find($_SESSION["id_suivit"]);
-$daoPays->find($daoSuivit->bean->getLePays());
+if ($daoSuivit->bean->getNom() != ""){
+$daoPays->find($daoSuivit->bean->getLePays());}
 $daoSuivit->setCompose();
 
-if (sizeof($daoSuivit->getlisteCompose()) === 0) {
+if ((sizeof($daoSuivit->getlisteCompose()) === 0)&&$daoSuivit->bean->getNom() != "") {
 
     $JourDateFinal = 20;
     $MoisDateFinal = 3;
