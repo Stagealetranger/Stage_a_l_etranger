@@ -308,6 +308,10 @@ for ($i = 0; $i < count($listeForMail); $i++) {
 
 if (isset($_POST["suivit"])) {
     var_dump("ok");
+    
+    $dao->addValide($_GET['papier'],$dao->bean->getId(),$_POST['papier']);
+    
+    
 }
 
 

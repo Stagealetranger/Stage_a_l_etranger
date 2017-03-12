@@ -44,7 +44,7 @@
                         <div class="papierSuivit">
                             <div><span> {{ papier.nom }}</span>
                                 <span> {{ papier.dateval }}</span></div>
-                            <input type="checkbox" name="paiper"></div>
+                            <input type="checkbox" name="papier" value="1"></div>
                     </form>
                 {% endfor %}
             </div>
@@ -74,7 +74,7 @@
     <script>
         {% for papier in ent.bean.lesPapiers %}
         $('#Form{{ papier.id }} input').click(function () {
-            $('#Form{{ papier.id }}').submit()
+            $.post($('#Form{{ papier.id }}').attr('action'), $('#Form{{ papier.id }}').serialize())
         });
         {% endfor %}
 

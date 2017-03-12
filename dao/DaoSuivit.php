@@ -192,5 +192,13 @@ class DaoSuivit extends Dao{
         return $info;
     }
 
+    public function addValide($papier,$id,$value){
+        $sql = "UPDATE `compose` SET `EFFECTUER` = ? WHERE `compose`.`ID_PAPIER` = ".$papier." AND `compose`.`ID_SUIVIT` = ".$id.";";
+        $requete = $this->pdo->prepare($sql);
+        $requete->bindValue(1,$value);
+        $requete->execute();
+    }
+
+
 
 }
