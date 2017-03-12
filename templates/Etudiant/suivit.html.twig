@@ -40,7 +40,7 @@
         <div class="col3">
             <div class="col1">
                 {% for papier in ent.bean.lesPapiers %}
-                    <form action="index.php?page=Suivi&id={{ ent.bean.id }}&papier={{ papier.id }}" id="Form{{ papier.id }}">
+                    <form action="index.php?page=Suivi&id={{ ent.bean.id }}&papier={{ papier.id }}" id="Form{{papier.id}}" method="post">
                         <div class="papierSuivit">
                             <div><span> {{ papier.nom }}</span>
                                 <span> {{ papier.dateval }}</span></div>
@@ -73,8 +73,8 @@
     </article>
     <script>
         {% for papier in ent.bean.lesPapiers %}
-        $('#Form{{ papier.id }} input').click(function () {
-            $.post($('#Form{{ papier.id }}').attr('action'), $('#Form{{ papier.id }}').serialize())
+        $('#Form{{papier.id}} input').click(function () {
+            $.post($('#Form{{papier.id}}').attr('action'), $('#Form{{ papier.id }}').serialize())
         });
         {% endfor %}
 

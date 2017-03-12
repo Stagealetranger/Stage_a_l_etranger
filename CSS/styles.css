@@ -273,15 +273,6 @@ article > div > img {
 
 }
 
-.row1 img{
-    width: 150px;
-    height: 150px;
-}
-
-.row1 h4{
-    font-size: 30px;
-    margin-left: 20px;
-}
 
 /*******************************************************
                         Accueil
@@ -774,9 +765,19 @@ article#monSuivit {
 
 #blocConnection > form > div > label {
     text-align: center;
-    color: #154A58;
+    color: white;
     width: 100%;
+    font-size: 1.5em;
 }
+
+#blocConnection  a {
+    text-align: center;
+    color: white;
+    width: 100%;
+    font-size: 1em;
+}
+
+
 
 #blocConnection > form > div {
     width: 90%;
