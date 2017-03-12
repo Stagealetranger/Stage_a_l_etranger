@@ -306,6 +306,17 @@ for ($i = 0; $i < count($listeForMail); $i++) {
 //echo "</pre>";
 
 
+if (isset($_POST["suivit"])) {
+    var_dump("ok");
+}
+
+
+
+
+
+
+
+
 if (($_SESSION['mail']) == '') {
     header('Location: index.php?page=accueil');
 

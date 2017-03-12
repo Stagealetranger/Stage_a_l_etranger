@@ -8,66 +8,75 @@
         <div><h1>MMI Montbéliard</h1>
             <h2>vous accompagne pour votre stage à l’étranger</h2>
         </div>
-        <a class="bouton2" href="#monSuivi">Voir mon suivi</a>
-        <a class="bouton2" href="#monSuiviQuoi">A quoi sert mon suivi ?</a>
+        <a class="bouton2" href="#monSuivit">Voir mon suivi</a>
+        <a class="bouton2" href="#monSuivitQuoi">A quoi sert mon suivi ?</a>
     </article>
     <article id="monSuivit">
-        <div class="col5">
+        <div class="col3 col3titre">
             <div class="col1">
                 <h3 class="bleu">MMI Montbéliard</h3>
                 <h2 class="bleu">Mon suivi personnalisé</h2>
             </div>
-
         </div>
 
+        {% if ent.bean.nom == "" %}
+            <a class="bouton2" href="index.php?page=newStage">J'ai trouvé mon stage</a>
+        {% endif %}
+        {% if ent.bean.nom != "" %}
+        <div class="col3 col3titre">
+            <div class="col1">
+                <h3 class="bleu">Mon stage : {{ ent.bean.nom }}</h3>
+            </div>
+            <div class="col1">
+                <h3 class="bleu">Pays : {{ pays.bean.nom }}</h3>
+            </div>
+        </div>
+        <div class="col3 col3titre">
+            <div class="col1">
+                <h3 class="bleu">Mes démarches :</h3>
+            </div>
 
-        <div class="col6">
-            <h3 class="bleu">Mon stage : {{ ent.bean.nom }}</h3>
         </div>
-        <div class="col6">
-            <h3 class="bleu">Pays : {{ pays.bean.nom }}</h3>
-        </div>
-        <div class="col6">
-            <h3 class="bleu">Mes démarches :</h3>
-        </div>
-
-        <div class="demarches">
         <div class="col3">
             <div class="col1">
-                <form action="index.php?page=Suivi#monSuivi" id="Form">
-                    {% for papier in ent.bean.lesPapiers %}
-                    <div>
-                        <div><span> {{ papier.nom }}</span>
-                            <span> {{ papier.dateval }}</span></div>
-                        <input type="checkbox" name="paiper"></div>
-                </form>
+                {% for papier in ent.bean.lesPapiers %}
+                    <form action="index.php?page=Suivi&id={{ ent.bean.id }}&papier={{ papier.id }}" id="Form{{ papier.id }}">
+                        <div class="papierSuivit">
+                            <div><span> {{ papier.nom }}</span>
+                                <span> {{ papier.dateval }}</span></div>
+                            <input type="checkbox" name="paiper"></div>
+                    </form>
                 {% endfor %}
             </div>
             <div class="col1">
+                <p></p>
             </div>
         </div>
-        </div>
-
+        {% endif %}
     </article>
     <article id="monSuivitQuoi">
+
         <div class="col1">
             <h3 class="blanc">MMI Montbéliard</h3>
             <h2 class="blanc">Tu es étudiant en MMI à Montbéliard ? Inscris toi !</h2>
-            <p class="blanc">Vous êtes étudiants au DUT MMI de Montbéliard ? Alors inscrivez-vous sur MMI Montbéliard
+            <p class="blanc">Vous êtes étudiants au DUT MMI de Montbéliard ? Alors inscrivez-vous sur MMI
+                Montbéliard
                 Stage
                 à
-                l’étranger afin d’accéder à une large liste d’entreprises susceptibles de vous accueillir, ainsi qu’à un
+                l’étranger afin d’accéder à une large liste d’entreprises susceptibles de vous accueillir, ainsi
+                qu’à un
                 suivi administratif qui vous permettra de partir en toute sérénité.</p>
         </div>
         <div class="col1 colonneaImage">
-            <img src="CSS/images/listesuivi.png" alt="">
+            <img id="suivitImage" src="CSS/images/listesuivi.png" alt="">
         </div>
     </article>
     <script>
-        $(document).ready(
-                $('form').change(function () {
-                    $.post($(this).attr('action'),$(this).serialize());
-                })
-        )
+        {% for papier in ent.bean.lesPapiers %}
+        $('#Form{{ papier.id }} input').click(function () {
+            $('#Form{{ papier.id }}').submit()
+        });
+        {% endfor %}
+
     </script>
 {% endblock %}
